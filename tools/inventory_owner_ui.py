@@ -10,6 +10,9 @@ def inventory(root=ROOT):
     lock_bytes=(ui/'package-lock.json').read_bytes()
     lock=json.loads(lock_bytes)
     components=[];texts=[]
+    disclosure_path=root/'docs/OWNER_UI_NOTICE_DISCLOSURES.txt'
+    disclosure={'file':'docs/OWNER_UI_NOTICE_DISCLOSURES.txt','sha256':hashlib.sha256(disclosure_path.read_bytes()).hexdigest(),'owner_treatment_confirmed_on':'2026-10-07','upstream_text_recovered':False}
+    disclosed_versions={('de-indent','1.0.2'),('lodash-unified','1.0.3')}
     supplements=json.loads((root/'docs/OWNER_UI_UPSTREAM_NOTICES.json').read_text())['entries']
     for location,row in sorted(lock['packages'].items()):
         if not location:continue
@@ -35,11 +38,12 @@ def inventory(root=ROOT):
             if hashlib.sha256(raw).hexdigest()!=supplemental['sha256']:raise ValueError('upstream notice changed')
             notices.append({'file':'upstream/LICENSE','sha256':supplemental['sha256'],'url':supplemental['url'],'version_link_evidence':supplemental['version_link_evidence']})
             texts.append(f"\n===== {location} @ {row['version']} / upstream LICENSE =====\nSource: {supplemental['url']}\n"+supplemental['text']+'\n')
-        components.append({'lock_path':location,'name':package.get('name') or location.rsplit('node_modules/',1)[-1],
+        disclosed=not notices and (package.get('name') or location.rsplit('node_modules/',1)[-1],row['version']) in disclosed_versions
+        components.append({'notice_disclosure':disclosure if disclosed else None,'lock_path':location,'name':package.get('name') or location.rsplit('node_modules/',1)[-1],
                            'version':row['version'],'resolved':row.get('resolved'),'integrity':row.get('integrity'),
                            'development_only_declared':row.get('dev',False),'optional_declared':row.get('optional',False),
                            'license_declared':package.get('license',row.get('license')),'installed_for_this_inventory':installed,
-                           'notice_files':notices,'notice_status':'upstream_text_recorded' if notices else 'not_installed_platform_optional' if not installed and row.get('optional') else 'missing_upstream_text_requires_review'})
+                           'notice_files':notices,'notice_status':'upstream_text_recorded' if notices else 'owner_disclosure_recorded_upstream_text_absent' if disclosed else 'not_installed_platform_optional' if not installed and row.get('optional') else 'missing_upstream_text_requires_review'})
     result={'format':'awesome-owner-ui-dependencies-v1','lock_sha256':hashlib.sha256(lock_bytes).hexdigest(),
             'scope':'Full lock graph; installed package root notices. Not a claim that every dependency is in browser chunks. Other-platform optional packages are not installed or vendored.',
             'legal_approved':False,'public_release_approved':False,'components':components}

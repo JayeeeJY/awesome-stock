@@ -1,5 +1,7 @@
 # Changelog
 
+2026-10-07 发布准备补充：新增首次使用、模型/行情凭据获取与测试/保存/失败指引，连接页提供可展开步骤；携带所有者批准的两包MIT元数据与参考文本透明披露，不冒充恢复上游正文。尚未公开发行。
+
 ## Unreleased — v1.0.0 stable release preparation, 2026-10-07
 
 - Deferred Yahoo public chart integration from this first release. Manual prices, CSV import and user-owned APIs remain available; legacy public-query endpoints reject without network access or writes. Existing source history is preserved.

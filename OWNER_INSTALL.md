@@ -23,6 +23,8 @@ python3 start_owner.py --data-dir "$HOME/Awesome-Stock-Data" --open-browser
 
 再次启动和升级时继续使用相同`--data-dir`，避免误用空账本。端口被占用时可加`--port 4324`。终端按Ctrl+C停止服务，数据目录保留。不要同时启动两个服务写同一个账本，也不要删除数据目录解决登录问题。
 
+第一次建账、成交CSV和手工价格步骤见[第一次使用](docs/QUICKSTART.md)。模型/行情凭据获取、配置、测试和失败处理见[配置指南](docs/OPTIONAL_PROVIDERS.md)。
+
 可选本地模型使用127.0.0.1:11434的Ollama，由用户自行安装、启动和配置模型。云端API Key仅在当前进程内存，退出、改密或重启后需重新配置，见[可选连接](docs/OPTIONAL_PROVIDERS.md)。
 
 ## 备份与恢复

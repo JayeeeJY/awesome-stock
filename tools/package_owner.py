@@ -8,7 +8,7 @@ from pathlib import Path
 import tarfile
 
 ROOT=Path(__file__).resolve().parents[1]
-STATIC=['LICENSE','LICENSING.md','CHANGELOG.md','README.md','README.en.md','CONTRIBUTING.md','docs/PRODUCT_SCOPE.md','docs/QUICKSTART.md','docs/OPTIONAL_PROVIDERS.md','docs/DATA_AND_PRIVACY.md','docs/TROUBLESHOOTING.md','docs/VALIDATION.md','docs/RELEASE_SECURITY_REVIEW.md','docs/DEVELOPMENT.md','docs/screenshots/settings.png','docs/screenshots/cockpit.png','tools/audit_owner_package.py','start_owner.py','OWNER_INSTALL.md','SECURITY.md','OWNER_SUPPLY_CHAIN.json','docs/OWNER_UI_DEPENDENCIES.json','docs/OWNER_UI_UPSTREAM_NOTICES.json','docs/OWNER_UI_SBOM.cdx.json','docs/OWNER_UI_THIRD_PARTY_LICENSES.txt','tools/inventory_owner_ui.py','docs/THIRD_PARTY_NOTICES_CANDIDATE.md','tools/package_owner.py']
+STATIC=['LICENSE','LICENSING.md','CHANGELOG.md','README.md','README.en.md','CONTRIBUTING.md','docs/PRODUCT_SCOPE.md','docs/QUICKSTART.md','docs/OPTIONAL_PROVIDERS.md','docs/DATA_AND_PRIVACY.md','docs/TROUBLESHOOTING.md','docs/VALIDATION.md','docs/RELEASE_SECURITY_REVIEW.md','docs/DEVELOPMENT.md','docs/screenshots/settings.png','docs/screenshots/cockpit.png','tools/audit_owner_package.py','start_owner.py','OWNER_INSTALL.md','SECURITY.md','OWNER_SUPPLY_CHAIN.json','docs/OWNER_UI_DEPENDENCIES.json','docs/OWNER_UI_UPSTREAM_NOTICES.json','docs/OWNER_UI_NOTICE_DISCLOSURES.txt','docs/OWNER_UI_SBOM.cdx.json','docs/OWNER_UI_THIRD_PARTY_LICENSES.txt','tools/inventory_owner_ui.py','docs/THIRD_PARTY_NOTICES_CANDIDATE.md','tools/package_owner.py']
 
 UI_CONFIG={'package.json','package-lock.json','vite.config.ts','tsconfig.json','index.html','write-build-manifest.mjs'}
 
@@ -66,6 +66,9 @@ def build(output,root=ROOT):
     licensing=project_license_metadata(root)
     dependency_inventory=json.loads((root/'docs/OWNER_UI_DEPENDENCIES.json').read_text())
     if dependency_inventory.get('lock_sha256')!=hashlib.sha256((root/'frontend/owner-ui/package-lock.json').read_bytes()).hexdigest():raise ValueError('stale dependency inventory; regenerate before packaging')
+    for component in dependency_inventory['components']:
+        disclosure=component.get('notice_disclosure')
+        if disclosure and (disclosure['file']!='docs/OWNER_UI_NOTICE_DISCLOSURES.txt' or disclosure['sha256']!=hashlib.sha256((root/disclosure['file']).read_bytes()).hexdigest()):raise ValueError('stale notice disclosure; regenerate inventory before packaging')
     files=sorted(set(ui_files(root)+STATIC+[p.relative_to(root).as_posix() for p in (root/'backend/src').rglob('*.py')]+[p.relative_to(root).as_posix() for p in (root/'frontend').glob('owner*.js')]+['frontend/owner.html','frontend/owner.css']))
     payloads={}
     for name in files:

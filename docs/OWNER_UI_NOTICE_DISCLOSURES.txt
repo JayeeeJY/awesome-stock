@@ -1,0 +1,44 @@
+OWNER-APPROVED TRANSPARENT NOTICE TREATMENT — 2026-10-07
+
+The project owner approved publishing this disclosure alongside preserved upstream notices. This records the owner's notice treatment, not a recovered upstream notice or independent legal certification.
+
+Two npm package declarations with missing package-specific notice text
+
+de-indent 1.0.2
+Publisher metadata: license MIT; author Evan You.
+Official package metadata: https://registry.npmjs.org/de-indent/1.0.2
+Matching source commit: 5861bd7a39c09f0056fd361d82e570e56bd2c275
+Use: build-only dependency through @vue/compiler-vue2.
+The published archive and matching commit have no LICENSE/NOTICE body.
+
+lodash-unified 1.0.3
+Publisher metadata: license MIT; author Jack Works.
+Official package metadata: https://registry.npmjs.org/lodash-unified/1.0.3
+Use: Element Plus dependency in the production lock graph.
+The published archive has no LICENSE/NOTICE body; version metadata gives no repository.
+
+The author fields above are reproduced as publisher metadata, not as independently established copyright ownership. No copyright year is invented. The reference text below describes the declared MIT license and is not represented as recovered package-specific upstream notice text. Existing upstream notices for other packages are retained unchanged. This disclosure does not relicense third-party software under the project's AGPL license or grant market-data rights.
+
+MIT reference text — SPDX License List
+Source: https://spdx.org/licenses/MIT.html
+Data commit: https://github.com/spdx/license-list-data/blob/31ba1a50e5397e00a304dbadc76531740e89ee48/json/details/MIT.json
+The copyright placeholders below belong to the reference template and do not assert a package-specific copyright year or owner.
+
+MIT License
+
+Copyright (c) <year> <copyright holders>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+associated documentation files (the "Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.

@@ -12,14 +12,14 @@ Docker installation files, the container launcher and prebuilt images are exclud
 
 [OWNER_UI_SBOM.cdx.json](OWNER_UI_SBOM.cdx.json) records the complete npm lock graph, including optional platform dependencies. [OWNER_UI_DEPENDENCIES.json](OWNER_UI_DEPENDENCIES.json) binds the inventory to the lock hash, distinguishes installed packages from other-platform optional packages, and records upstream root notice hashes. [OWNER_UI_THIRD_PARTY_LICENSES.txt](OWNER_UI_THIRD_PARTY_LICENSES.txt) contains collected upstream notice texts. Not every package in the lock graph executes in the browser.
 
-Three supplemental notices are bound to exact upstream versions in [OWNER_UI_UPSTREAM_NOTICES.json](OWNER_UI_UPSTREAM_NOTICES.json) and included in the collected text. Two packages still have unresolved notice gaps:
+Three supplemental notices are bound to exact upstream versions in [OWNER_UI_UPSTREAM_NOTICES.json](OWNER_UI_UPSTREAM_NOTICES.json) and included in the collected text. Two packages have no package-specific upstream notice body. The owner approved transparent metadata and MIT reference disclosure on 2026-10-07; see [the shipped disclosure](OWNER_UI_NOTICE_DISCLOSURES.txt). This resolves the owner notice-treatment decision without representing the absent upstream text as recovered:
 
 | Package | Use | Publisher metadata | Remaining gap |
 | --- | --- | --- | --- |
 | de-indent 1.0.2 | Build-only, via Vue's compatibility compiler | MIT; author Evan You; npm gitHead 5861bd7a39c09f0056fd361d82e570e56bd2c275 | The npm archive and the matching upstream commit have no LICENSE/NOTICE body |
 | lodash-unified 1.0.3 | Element Plus dependency in the production graph | MIT; author Jack Works | The npm archive has no LICENSE/NOTICE body and version metadata provides no source repository |
 
-Official metadata: [de-indent 1.0.2](https://registry.npmjs.org/de-indent/1.0.2), [matching de-indent commit](https://github.com/yyx990803/de-indent/tree/5861bd7a39c09f0056fd361d82e570e56bd2c275), [lodash-unified 1.0.3](https://registry.npmjs.org/lodash-unified/1.0.3). Author metadata is not an independently established copyright notice. We do not invent copyright years, copy a different project's notice, or describe the generic MIT template as recovered upstream text. Notice treatment remains under review.
+Official metadata: [de-indent 1.0.2](https://registry.npmjs.org/de-indent/1.0.2), [matching de-indent commit](https://github.com/yyx990803/de-indent/tree/5861bd7a39c09f0056fd361d82e570e56bd2c275), [lodash-unified 1.0.3](https://registry.npmjs.org/lodash-unified/1.0.3). Author metadata is not an independently established copyright notice. We do not invent copyright years, copy a different project's notice, or describe the generic MIT template as recovered upstream text. The shipped disclosure preserves these limitations, labels the generic SPDX MIT text as a reference, and does not assert invented copyright years or owners. The inventory binds that disclosure to these exact versions and its SHA256. Tool-generated legal_approved and third_party_rights_review_complete fields remain false because the tools do not issue independent legal certification; they do not mean the recorded owner decision is pending.
 
 ## Development tooling
 

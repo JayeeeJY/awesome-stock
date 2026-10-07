@@ -24,6 +24,7 @@ def test_reproducible_archive_and_manifest(tmp_path):
         assert not manifest['third_party_rights_review_complete']
         assert tar.extractfile('awesome-stock-owner/LICENSE').read()==(ROOT/'LICENSE').read_bytes()
         assert 'awesome-stock-owner/LICENSING.md' in names
+        assert 'awesome-stock-owner/docs/OWNER_UI_NOTICE_DISCLOSURES.txt' in names
         assert all(not any(bad in n for bad in ['.owner-state','.env','qa/','.sqlite','.git/']) for n in names)
         assert 'awesome-stock-owner/start_owner.py' in names
         assert manifest['installation']=='native-source-only'
@@ -89,3 +90,14 @@ def test_ui_stale_sources_or_added_files_are_rejected(tmp_path):
     shutil.copyfile(ROOT/'frontend/owner-ui/src/main.ts',source)
     (root/'frontend/owner-ui/src/unbuilt.ts').write_text('// not built')
     with pytest.raises(ValueError,match='inventory changed'):package.ui_files(root)
+
+
+def test_stale_disclosure_blocks_archive(tmp_path):
+    import shutil
+    root=tmp_path/'source'
+    for name in ['LICENSE','docs/OWNER_UI_DEPENDENCIES.json','docs/OWNER_UI_NOTICE_DISCLOSURES.txt','frontend/owner-ui/package-lock.json']:
+        target=root/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,target)
+    with (root/'docs/OWNER_UI_NOTICE_DISCLOSURES.txt').open('a') as f:f.write('Changed disclosure\n')
+    with pytest.raises(ValueError,match='stale notice disclosure'):
+        package.build(tmp_path/'unsafe.tar.gz',root)
+    assert not (tmp_path/'unsafe.tar.gz').exists()

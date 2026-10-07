@@ -6,6 +6,7 @@
   "public_release_approved": false,
   "components": [
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@babel/helper-string-parser",
       "name": "@babel/helper-string-parser",
       "version": "7.29.7",
@@ -24,6 +25,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@babel/helper-validator-identifier",
       "name": "@babel/helper-validator-identifier",
       "version": "7.29.7",
@@ -42,6 +44,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@babel/parser",
       "name": "@babel/parser",
       "version": "7.29.9",
@@ -60,6 +63,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@babel/types",
       "name": "@babel/types",
       "version": "7.29.8",
@@ -78,6 +82,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@ctrl/tinycolor",
       "name": "@ctrl/tinycolor",
       "version": "4.2.1",
@@ -96,6 +101,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@element-plus/icons-vue",
       "name": "@element-plus/icons-vue",
       "version": "2.3.2",
@@ -114,6 +120,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@floating-ui/core",
       "name": "@floating-ui/core",
       "version": "1.8.0",
@@ -132,6 +139,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@floating-ui/dom",
       "name": "@floating-ui/dom",
       "version": "1.8.0",
@@ -150,6 +158,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@floating-ui/utils",
       "name": "@floating-ui/utils",
       "version": "0.2.12",
@@ -168,6 +177,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@jridgewell/sourcemap-codec",
       "name": "@jridgewell/sourcemap-codec",
       "version": "1.6.0",
@@ -186,6 +196,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@oxc-project/types",
       "name": "@oxc-project/types",
       "version": "0.150.0",
@@ -204,6 +215,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher",
       "name": "@parcel/watcher",
       "version": "2.6.0",
@@ -222,6 +234,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-android-arm64",
       "name": "@parcel/watcher-android-arm64",
       "version": "2.6.0",
@@ -235,6 +248,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-darwin-arm64",
       "name": "@parcel/watcher-darwin-arm64",
       "version": "2.6.0",
@@ -253,6 +267,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-darwin-x64",
       "name": "@parcel/watcher-darwin-x64",
       "version": "2.6.0",
@@ -266,6 +281,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-freebsd-x64",
       "name": "@parcel/watcher-freebsd-x64",
       "version": "2.6.0",
@@ -279,6 +295,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-linux-arm-glibc",
       "name": "@parcel/watcher-linux-arm-glibc",
       "version": "2.6.0",
@@ -292,6 +309,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-linux-arm-musl",
       "name": "@parcel/watcher-linux-arm-musl",
       "version": "2.6.0",
@@ -305,6 +323,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-linux-arm64-glibc",
       "name": "@parcel/watcher-linux-arm64-glibc",
       "version": "2.6.0",
@@ -318,6 +337,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-linux-arm64-musl",
       "name": "@parcel/watcher-linux-arm64-musl",
       "version": "2.6.0",
@@ -331,6 +351,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-linux-x64-glibc",
       "name": "@parcel/watcher-linux-x64-glibc",
       "version": "2.6.0",
@@ -344,6 +365,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-linux-x64-musl",
       "name": "@parcel/watcher-linux-x64-musl",
       "version": "2.6.0",
@@ -357,6 +379,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-win32-arm64",
       "name": "@parcel/watcher-win32-arm64",
       "version": "2.6.0",
@@ -370,6 +393,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@parcel/watcher-win32-x64",
       "name": "@parcel/watcher-win32-x64",
       "version": "2.6.0",
@@ -383,6 +407,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@popperjs/core",
       "name": "@sxzz/popperjs-es",
       "version": "2.11.8",
@@ -401,6 +426,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-android-arm-eabi",
       "name": "@rolldown/binding-android-arm-eabi",
       "version": "1.2.9",
@@ -414,6 +440,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-android-arm64",
       "name": "@rolldown/binding-android-arm64",
       "version": "1.2.9",
@@ -427,6 +454,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-darwin-arm64",
       "name": "@rolldown/binding-darwin-arm64",
       "version": "1.2.9",
@@ -447,6 +475,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-darwin-x64",
       "name": "@rolldown/binding-darwin-x64",
       "version": "1.2.9",
@@ -460,6 +489,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-freebsd-x64",
       "name": "@rolldown/binding-freebsd-x64",
       "version": "1.2.9",
@@ -473,6 +503,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-linux-arm-gnueabihf",
       "name": "@rolldown/binding-linux-arm-gnueabihf",
       "version": "1.2.9",
@@ -486,6 +517,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-linux-arm64-gnu",
       "name": "@rolldown/binding-linux-arm64-gnu",
       "version": "1.2.9",
@@ -499,6 +531,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-linux-arm64-musl",
       "name": "@rolldown/binding-linux-arm64-musl",
       "version": "1.2.9",
@@ -512,6 +545,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-linux-ppc64-gnu",
       "name": "@rolldown/binding-linux-ppc64-gnu",
       "version": "1.2.9",
@@ -525,6 +559,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-linux-s390x-gnu",
       "name": "@rolldown/binding-linux-s390x-gnu",
       "version": "1.2.9",
@@ -538,6 +573,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-linux-x64-gnu",
       "name": "@rolldown/binding-linux-x64-gnu",
       "version": "1.2.9",
@@ -551,6 +587,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-linux-x64-musl",
       "name": "@rolldown/binding-linux-x64-musl",
       "version": "1.2.9",
@@ -564,6 +601,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-openharmony-arm64",
       "name": "@rolldown/binding-openharmony-arm64",
       "version": "1.2.9",
@@ -577,6 +615,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-win32-arm64-msvc",
       "name": "@rolldown/binding-win32-arm64-msvc",
       "version": "1.2.9",
@@ -590,6 +629,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/binding-win32-x64-msvc",
       "name": "@rolldown/binding-win32-x64-msvc",
       "version": "1.2.9",
@@ -603,6 +643,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@rolldown/pluginutils",
       "name": "@rolldown/pluginutils",
       "version": "1.0.1",
@@ -621,6 +662,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@types/lodash",
       "name": "@types/lodash",
       "version": "4.17.25",
@@ -639,6 +681,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@types/lodash-es",
       "name": "@types/lodash-es",
       "version": "4.17.12",
@@ -657,6 +700,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@types/node",
       "name": "@types/node",
       "version": "20.19.43",
@@ -675,6 +719,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@types/web-bluetooth",
       "name": "@types/web-bluetooth",
       "version": "0.0.21",
@@ -693,6 +738,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vitejs/plugin-vue",
       "name": "@vitejs/plugin-vue",
       "version": "6.0.8",
@@ -711,6 +757,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@volar/language-core",
       "name": "@volar/language-core",
       "version": "2.4.28",
@@ -729,6 +776,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@volar/source-map",
       "name": "@volar/source-map",
       "version": "2.4.28",
@@ -747,6 +795,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@volar/typescript",
       "name": "@volar/typescript",
       "version": "2.4.28",
@@ -765,6 +814,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/compiler-core",
       "name": "@vue/compiler-core",
       "version": "3.5.42",
@@ -783,6 +833,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/compiler-dom",
       "name": "@vue/compiler-dom",
       "version": "3.5.42",
@@ -801,6 +852,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/compiler-sfc",
       "name": "@vue/compiler-sfc",
       "version": "3.5.42",
@@ -819,6 +871,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/compiler-ssr",
       "name": "@vue/compiler-ssr",
       "version": "3.5.42",
@@ -837,6 +890,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/compiler-vue2",
       "name": "@vue/compiler-vue2",
       "version": "2.7.16",
@@ -857,6 +911,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/devtools-api",
       "name": "@vue/devtools-api",
       "version": "6.6.4",
@@ -877,6 +932,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/language-core",
       "name": "@vue/language-core",
       "version": "2.0.29",
@@ -895,6 +951,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/reactivity",
       "name": "@vue/reactivity",
       "version": "3.5.42",
@@ -913,6 +970,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/runtime-core",
       "name": "@vue/runtime-core",
       "version": "3.5.42",
@@ -931,6 +989,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/runtime-dom",
       "name": "@vue/runtime-dom",
       "version": "3.5.42",
@@ -949,6 +1008,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/server-renderer",
       "name": "@vue/server-renderer",
       "version": "3.5.42",
@@ -967,6 +1027,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vue/shared",
       "name": "@vue/shared",
       "version": "3.5.42",
@@ -985,6 +1046,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vueuse/core",
       "name": "@vueuse/core",
       "version": "14.4.0",
@@ -1003,6 +1065,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vueuse/metadata",
       "name": "@vueuse/metadata",
       "version": "14.4.0",
@@ -1021,6 +1084,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/@vueuse/shared",
       "name": "@vueuse/shared",
       "version": "14.4.0",
@@ -1039,6 +1103,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/async-validator",
       "name": "async-validator",
       "version": "4.2.5",
@@ -1057,6 +1122,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/balanced-match",
       "name": "balanced-match",
       "version": "1.0.2",
@@ -1075,6 +1141,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/brace-expansion",
       "name": "brace-expansion",
       "version": "2.1.7",
@@ -1093,6 +1160,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/chokidar",
       "name": "chokidar",
       "version": "5.0.0",
@@ -1111,6 +1179,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/computeds",
       "name": "computeds",
       "version": "0.0.1",
@@ -1129,6 +1198,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/csstype",
       "name": "csstype",
       "version": "3.2.3",
@@ -1147,6 +1217,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/dayjs",
       "name": "dayjs",
       "version": "1.11.23",
@@ -1165,6 +1236,12 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": {
+        "file": "docs/OWNER_UI_NOTICE_DISCLOSURES.txt",
+        "sha256": "a0afbe9bc162cc17fe253e73963bee89db41eb9614307a8200d49c2694220c92",
+        "owner_treatment_confirmed_on": "2026-10-07",
+        "upstream_text_recovered": false
+      },
       "lock_path": "node_modules/de-indent",
       "name": "de-indent",
       "version": "1.0.2",
@@ -1175,9 +1252,10 @@
       "license_declared": "MIT",
       "installed_for_this_inventory": true,
       "notice_files": [],
-      "notice_status": "missing_upstream_text_requires_review"
+      "notice_status": "owner_disclosure_recorded_upstream_text_absent"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/detect-libc",
       "name": "detect-libc",
       "version": "2.1.2",
@@ -1196,6 +1274,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/element-plus",
       "name": "element-plus",
       "version": "2.14.5",
@@ -1214,6 +1293,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/entities",
       "name": "entities",
       "version": "7.0.1",
@@ -1232,6 +1312,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/estree-walker",
       "name": "estree-walker",
       "version": "2.0.2",
@@ -1250,6 +1331,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/fdir",
       "name": "fdir",
       "version": "6.5.0",
@@ -1268,6 +1350,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/fsevents",
       "name": "fsevents",
       "version": "2.3.3",
@@ -1286,6 +1369,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/he",
       "name": "he",
       "version": "1.2.0",
@@ -1304,6 +1388,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/immutable",
       "name": "immutable",
       "version": "5.1.9",
@@ -1322,6 +1407,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/is-extglob",
       "name": "is-extglob",
       "version": "2.1.1",
@@ -1340,6 +1426,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/is-glob",
       "name": "is-glob",
       "version": "4.0.3",
@@ -1358,6 +1445,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss",
       "name": "lightningcss",
       "version": "1.33.0",
@@ -1376,6 +1464,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-android-arm64",
       "name": "lightningcss-android-arm64",
       "version": "1.33.0",
@@ -1389,6 +1478,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-darwin-arm64",
       "name": "lightningcss-darwin-arm64",
       "version": "1.33.0",
@@ -1407,6 +1497,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-darwin-x64",
       "name": "lightningcss-darwin-x64",
       "version": "1.33.0",
@@ -1420,6 +1511,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-freebsd-x64",
       "name": "lightningcss-freebsd-x64",
       "version": "1.33.0",
@@ -1433,6 +1525,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-linux-arm-gnueabihf",
       "name": "lightningcss-linux-arm-gnueabihf",
       "version": "1.33.0",
@@ -1446,6 +1539,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-linux-arm64-gnu",
       "name": "lightningcss-linux-arm64-gnu",
       "version": "1.33.0",
@@ -1459,6 +1553,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-linux-arm64-musl",
       "name": "lightningcss-linux-arm64-musl",
       "version": "1.33.0",
@@ -1472,6 +1567,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-linux-x64-gnu",
       "name": "lightningcss-linux-x64-gnu",
       "version": "1.33.0",
@@ -1485,6 +1581,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-linux-x64-musl",
       "name": "lightningcss-linux-x64-musl",
       "version": "1.33.0",
@@ -1498,6 +1595,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-win32-arm64-msvc",
       "name": "lightningcss-win32-arm64-msvc",
       "version": "1.33.0",
@@ -1511,6 +1609,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lightningcss-win32-x64-msvc",
       "name": "lightningcss-win32-x64-msvc",
       "version": "1.33.0",
@@ -1524,6 +1623,7 @@
       "notice_status": "not_installed_platform_optional"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lodash",
       "name": "lodash",
       "version": "4.18.1",
@@ -1542,6 +1642,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/lodash-es",
       "name": "lodash-es",
       "version": "4.18.1",
@@ -1560,6 +1661,12 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": {
+        "file": "docs/OWNER_UI_NOTICE_DISCLOSURES.txt",
+        "sha256": "a0afbe9bc162cc17fe253e73963bee89db41eb9614307a8200d49c2694220c92",
+        "owner_treatment_confirmed_on": "2026-10-07",
+        "upstream_text_recovered": false
+      },
       "lock_path": "node_modules/lodash-unified",
       "name": "lodash-unified",
       "version": "1.0.3",
@@ -1570,9 +1677,10 @@
       "license_declared": "MIT",
       "installed_for_this_inventory": true,
       "notice_files": [],
-      "notice_status": "missing_upstream_text_requires_review"
+      "notice_status": "owner_disclosure_recorded_upstream_text_absent"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/magic-string",
       "name": "magic-string",
       "version": "0.30.21",
@@ -1591,6 +1699,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/memoize-one",
       "name": "memoize-one",
       "version": "6.0.0",
@@ -1609,6 +1718,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/minimatch",
       "name": "minimatch",
       "version": "9.0.9",
@@ -1627,6 +1737,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/muggle-string",
       "name": "muggle-string",
       "version": "0.4.1",
@@ -1645,6 +1756,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/nanoid",
       "name": "nanoid",
       "version": "3.3.19",
@@ -1663,6 +1775,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/node-addon-api",
       "name": "node-addon-api",
       "version": "7.1.1",
@@ -1681,6 +1794,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/normalize-wheel-es",
       "name": "normalize-wheel-es",
       "version": "1.2.0",
@@ -1699,6 +1813,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/path-browserify",
       "name": "path-browserify",
       "version": "1.0.1",
@@ -1717,6 +1832,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/picocolors",
       "name": "picocolors",
       "version": "1.1.1",
@@ -1735,6 +1851,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/picomatch",
       "name": "picomatch",
       "version": "4.0.7",
@@ -1753,6 +1870,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/pinia",
       "name": "pinia",
       "version": "2.3.1",
@@ -1771,6 +1889,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/pinia/node_modules/vue-demi",
       "name": "vue-demi",
       "version": "0.14.10",
@@ -1789,6 +1908,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/postcss",
       "name": "postcss",
       "version": "8.5.28",
@@ -1807,6 +1927,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/readdirp",
       "name": "readdirp",
       "version": "5.1.1",
@@ -1825,6 +1946,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/rolldown",
       "name": "rolldown",
       "version": "1.2.9",
@@ -1843,6 +1965,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/sass",
       "name": "sass",
       "version": "1.104.0",
@@ -1861,6 +1984,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/semver",
       "name": "semver",
       "version": "7.8.5",
@@ -1879,6 +2003,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/source-map-js",
       "name": "source-map-js",
       "version": "1.2.2",
@@ -1897,6 +2022,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/tinyglobby",
       "name": "tinyglobby",
       "version": "0.2.17",
@@ -1915,6 +2041,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/typescript",
       "name": "typescript",
       "version": "5.3.3",
@@ -1933,6 +2060,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/undici-types",
       "name": "undici-types",
       "version": "6.21.0",
@@ -1951,6 +2079,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/vite",
       "name": "vite",
       "version": "8.2.2",
@@ -1969,6 +2098,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/vscode-uri",
       "name": "vscode-uri",
       "version": "3.2.0",
@@ -1987,6 +2117,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/vue",
       "name": "vue",
       "version": "3.5.42",
@@ -2005,6 +2136,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/vue-component-type-helpers",
       "name": "vue-component-type-helpers",
       "version": "3.3.11",
@@ -2023,6 +2155,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/vue-router",
       "name": "vue-router",
       "version": "4.6.4",
@@ -2041,6 +2174,7 @@
       "notice_status": "upstream_text_recorded"
     },
     {
+      "notice_disclosure": null,
       "lock_path": "node_modules/vue-tsc",
       "name": "vue-tsc",
       "version": "2.0.29",

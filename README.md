@@ -2,9 +2,9 @@
 
 个人投资工作台：从真实账本出发，把研究、判断、计划与复盘连接起来。每位使用者在自己的电脑运行，管理自己的数据和模型服务。
 
-**当前状态：v1.0.0 正式稳定版发布准备，尚未公开发行。** 项目许可为 AGPL-3.0-only；第三方/行情来源收口与最终发行批准仍待完成。截图只含合成验证数据。
+**当前状态：v1.0.0 正式稳定版发布准备，尚未公开发行。** 项目许可为 AGPL-3.0-only；许可通知处置与行情范围已按所有者决定落实，最终工程核验与发行批准按当前记录执行。截图只含合成验证数据。
 
-[English](README.en.md) · [安装与恢复](OWNER_INSTALL.md) · [可选模型与行情](docs/OPTIONAL_PROVIDERS.md) · [隐私](docs/DATA_AND_PRIVACY.md) · [安全](SECURITY.md)
+[English](README.en.md) · [第一次使用](docs/QUICKSTART.md) · [安装与恢复](OWNER_INSTALL.md) · [可选模型与行情](docs/OPTIONAL_PROVIDERS.md) · [隐私](docs/DATA_AND_PRIVACY.md) · [安全](SECURITY.md)
 
 ![系统设置，合成验证数据](docs/screenshots/settings.png)
 
@@ -18,7 +18,7 @@ python3 start_owner.py --open-browser
 
 打开 `http://127.0.0.1:4322/ledger`，创建自己的本地账号，再建立资金账户。没有默认口令，不会预先放入演示持仓。
 
-首发采用原生源码安装，不包含 Docker 安装入口或预构建镜像；Windows、Linux 和 Intel Mac 暂不列入正式支持范围。详细安装、更新和恢复步骤见 [安装说明](OWNER_INSTALL.md)。
+首发采用原生源码安装，不包含 Docker 安装入口或预构建镜像；Windows、Linux 和 Intel Mac 暂不列入正式支持范围。详细安装、更新和恢复步骤见 [安装说明](OWNER_INSTALL.md)。从第一次建账到备份的步骤见 **[第一次使用](docs/QUICKSTART.md)**；模型/行情的 Key 获取、配置、测试成功反馈与故障处理见 **[配置指南](docs/OPTIONAL_PROVIDERS.md)**，连接页也可展开使用步骤。
 
 ## 六个工作区
 
@@ -38,7 +38,7 @@ python3 start_owner.py --open-browser
 ## 数据与服务边界
 
 - 每位使用者自备 OpenAI / DeepSeek API Key 或自行安装 Ollama 模型；费用由使用者承担。项目不提供统一密钥或代付。云端模型 ID 由使用者按账号权限填写；连接适配测试不代替真实服务验收。
-- 首发暂不提供 Yahoo 免 Key 行情。可手工录入带来源的价格或导入 CSV；自动查询需配置自己的 Alpha Vantage（USD/CNY）或 EODHD（HKD），连接默认关闭，先核对后保存，不自动换源。不是实时行情，详见[可选连接](docs/OPTIONAL_PROVIDERS.md)。
+- 首发暂不提供 Yahoo 免 Key 行情。可手工录入带来源的价格或导入 CSV 成交（不是行情导入）；自动查询需配置自己的 Alpha Vantage（USD/CNY）或 EODHD（HKD），连接默认关闭，先核对后保存，不自动换源。不是实时行情，详见[可选连接](docs/OPTIONAL_PROVIDERS.md)。
 - Key 仅保留在服务进程内存，退出、改密或重启后清除，不进入备份和导出。Ask Awesome 支持自由提问与追问，发送前核对问题、附加材料及本次对话历史；对话只留在当前页面内存，刷新清除。不自动下单或执行模型输出。
 - 没有行情/汇率时明确显示缺失，不把成本当市值，跨币种汇总仅使用已记录且有效的用户汇率折算 USD，缺汇率不合计。不支持空头、期权记账或券商同步。
 - 数据保存在 `.owner-state`，可用 `--data-dir` 指定位置。备份未加密，包含口令摘要和历史数据，请另行妥善保管。
@@ -52,4 +52,4 @@ python3 start_owner.py --open-browser
 
 ## 许可与发行
 
-Copyright (c) 2026 Evan。项目自有代码采用 **AGPL-3.0-only**，见 [LICENSE](LICENSE) 和 [许可范围说明](LICENSING.md)。本次不提供独立商业许可，遵守 AGPL 的商业使用仍被允许。第三方代码保留其原有许可；[第三方输入清单](docs/THIRD_PARTY_NOTICES_CANDIDATE.md) 中的通知及来源核查、行情使用条件与公开发行批准仍需分别收口。当前不分发预构建容器镜像、模型权重或私有 Git 历史。
+Copyright (c) 2026 Evan。项目自有代码采用 **AGPL-3.0-only**，见 [LICENSE](LICENSE) 和 [许可范围说明](LICENSING.md)。本次不提供独立商业许可，遵守 AGPL 的商业使用仍被允许。第三方代码保留其原有许可；[第三方输入清单](docs/THIRD_PARTY_NOTICES_CANDIDATE.md) 附有保留的上游正文，以及所有者批准的[两包缺失通知透明披露](docs/OWNER_UI_NOTICE_DISCLOSURES.txt)。源码许可不授予行情使用权；公开发行尚未执行。当前不分发预构建容器镜像、模型权重或私有 Git 历史。
