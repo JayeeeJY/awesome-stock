@@ -2,19 +2,24 @@
 
 **An AI-native personal investing workspace that evolves with your experience.**
 
+**Powered by Atom Awareness**<br>
+Independent AI Product & Research Studio.
+
 **Evolve Every Trade.**
 
-Investing includes more than buying and selling: the research behind a decision, the assumptions you held, the limits in your plan, and what you learn afterward. Awesome Stock connects those steps so you can understand your assets, act with a documented basis, and develop an investing approach that fits you.
+Released · Community v1.0.1 · Runs locally · macOS Apple Silicon
 
-**Community is a released local investing workspace, designed around AI-native collaboration with your own material.** Run it on your own computer and connect your ledger, research, decisions, plans, trades and reviews. When useful, ask questions, follow up or explicitly attach material in Ask Awesome, then confirm the outbound content and model call. Core manual workflows need no model or market-data API.
+Connect your assets, research, decisions, plans and reviews. Preserve the basis of each decision and develop an investing approach that fits you.
+
+Ask questions, follow up or explicitly attach your own material in Ask Awesome. You confirm the outbound content and model call, and review AI replies as drafts. Decisions and actions remain yours. Core workflows need no model or market-data API.
 
 [Download Community v1.0.1](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [Get started](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [Configure optional services](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/OPTIONAL_PROVIDERS.md)
 
-The first release supports macOS Apple Silicon and Python 3.10+. Maintained by Evan; project-owned code is AGPL-3.0-only.
+Supports macOS Apple Silicon and Python 3.10+. Project-owned code is AGPL-3.0-only.
 
 ![Community cockpit: asset facts and items to review](docs/screenshots/cockpit.png)
 
-*All screenshots show the released Community v1.0.1 interface. Accounts, symbols, trades, prices, research and plans are synthetic examples, not a real portfolio or a performance claim.*
+*Screenshots were captured on 2026-10-07 and show the released Community v1.0.1 interface. Accounts, symbols, trades, prices, research and plans are synthetic examples, not a real portfolio or a performance claim.*
 
 ## Turn scattered records into a process you can revisit
 
@@ -64,11 +69,11 @@ Keep an investing journal and revisit the research and decision you held at the 
 
 ### 5. Add AI when it helps
 
-Ask Awesome supports free questions and follow-ups. Ask a question on its own or explicitly attach current-page material. Review the actual outbound content before confirming a call to your configured cloud or local model.
+Start with a question, or bring current-page material into the conversation. Use Ask Awesome to explain concepts, check the basis of a decision or identify missing evidence.
 
 ![Ask Awesome: free questions and optional material](docs/screenshots/ask-awesome.png)
 
-Responses are for you to read and check. The application does not place trades or automatically turn model output into confirmed decisions or plans.
+Responses are for you to read, check and organize. Model connections, outbound content and costs are explained below.
 
 <details>
 <summary>See Academy and a mobile-width layout</summary>
@@ -113,7 +118,7 @@ If you want to manage your own investing records, preserve the basis for your de
 
 ### Built through everyday use, continually improved
 
-Awesome Stock is founded and maintained by Evan. I will keep refining Community's features and experience through my own everyday use. I welcome your questions, ideas and suggestions.
+Awesome Stock is a personal investing product from Atom Awareness, created and maintained by Evan. I will keep improving Community through my own everyday use, and welcome questions, ideas and feedback from yours.
 
 You can reach me through:
 
@@ -134,3 +139,8 @@ Copyright (c) 2026 Evan. Project-owned code is [AGPL-3.0-only](https://github.co
 Create your local account on first use; sign in on subsequent visits. The page features a midnight-blue starfield with particle connections and shows static stars when reduced motion is enabled.
 
 [简体中文](README.md)
+
+---
+
+Awesome Stock Community / Powered by Atom Awareness<br>
+Independent AI Product & Research Studio · Make complexity perceivable.

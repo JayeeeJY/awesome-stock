@@ -1,20 +1,25 @@
 # Awesome Stock Community
 
-**AI Native 个人投资进化系统。**
+**AI 原生个人投资进化系统。**
+
+**Powered by Atom Awareness**<br>
+Independent AI Product & Research Studio.
 
 **Evolve Every Trade.**
 
-投资不只有买入和卖出。还有你的研究依据、当时的判断、计划中的约束，以及事后值得留下的经验。Awesome Stock 把这些环节连接起来，帮助你看清资产、做出有依据的行动，并逐步形成更适合自己的投资方法。
+已发布 · Community v1.0.1 · 本地运行 · macOS Apple Silicon
 
-**Community 是已经公开发布的本地投资工作台，以 AI Native 为设计方向，让 AI 围绕你自己的材料协作。** 在你自己的电脑上，把账本、研究、判断、计划和复盘组织成一套完整流程；需要时，在 Ask Awesome 中提问、追问或主动附加材料，由自己确认发送内容与模型调用。基础业务不需要模型或行情 API。
+把资产、研究、判断、计划与复盘连接起来，让每一次投资留下可回看的依据，逐步形成更适合自己的投资方法。
+
+需要时，在 Ask Awesome 中自由提问、追问，或主动附加自己的材料。发送内容与模型调用由你确认，AI 回复作为可核对的草稿；判断与行动由你掌握。基础业务无需模型或行情 API。
 
 [下载 Community v1.0.1](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [第一次使用](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [模型与行情配置](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/OPTIONAL_PROVIDERS.md)
 
-首发支持 macOS Apple Silicon，Python 3.10+。由 Evan 维护，项目自有代码采用 AGPL-3.0-only。
+支持 macOS Apple Silicon，Python 3.10+。项目自有代码采用 AGPL-3.0-only。
 
 ![Community 驾驶舱：从资产事实与待办开始](docs/screenshots/cockpit.png)
 
-*以下界面来自正式发布的 Community v1.0.1。账号、标的、交易、价格、研究和计划均为合成示例，用于展示使用流程，不代表真实投资组合或收益。*
+*以下界面截取于 2026-10-07，来自正式发布的 Community v1.0.1。账号、标的、交易、价格、研究和计划均为合成示例，用于展示使用流程，不代表真实投资组合或收益。*
 
 ## 把分散的投资记录，连接成可以回看的过程
 
@@ -64,11 +69,11 @@ Awesome Stock 帮你留下这条线：
 
 ### 5. 需要时，让 AI 协助你理解材料
 
-Ask Awesome 支持自由提问和追问。可以只问一个问题，也可以主动附加当前页面的材料；发送前可以核对实际内容，再确认调用自己配置的云端或本地模型。
+从一个问题开始，也可以把当前页面的材料带入对话。用 Ask Awesome 梳理概念、核对依据，或找出还需要补充的证据。
 
 ![Ask Awesome：自由提问与可选材料](docs/screenshots/ask-awesome.png)
 
-AI 回复供你阅读、核对和整理。系统不会自动下单，也不会把模型输出直接变成已确认的判断或计划。
+AI 回复供你阅读、核对和整理；模型连接、发送内容与费用说明见下文。
 
 <details>
 <summary>查看学院与手机宽度界面</summary>
@@ -83,7 +88,7 @@ AI 回复供你阅读、核对和整理。系统不会自动下单，也不会�
 
 ## AI 围绕你的材料协作，判断与行动由你掌握
 
-AI Native 在 Community 中的具体体验，是让模型帮助理解和核对材料，同时保留你的控制权：
+AI 原生在 Community 中的具体体验，是让模型帮助理解和核对材料，同时保留你的控制权：
 
 - **直接提问，也可以继续追问。** Ask Awesome 有自由输入对话框，可以讨论投资概念，也可以围绕已有材料展开交流。
 - **上下文由你选择。** 主动附加当前页面材料，发送前核对问题、材料与对话历史；打开助手不会自动调用模型。
@@ -113,7 +118,7 @@ AI Native 在 Community 中的具体体验，是让模型帮助理解和核对�
 
 ### 由真实使用驱动，持续迭代
 
-Awesome Stock 由 Evan 创立并维护。我会基于自己的日常使用，不断打磨 Community 的功能与体验，也欢迎你分享使用中的问题、想法与建议。
+Awesome Stock 是 Atom Awareness 工作室的个人投资产品，由 Evan 创建并维护。我会基于自己的日常使用，持续打磨 Community 的功能与体验，也欢迎你分享使用中的问题、想法与建议。
 
 欢迎通过以下渠道与我交流：
 
@@ -134,3 +139,8 @@ Copyright (c) 2026 Evan。项目自有代码采用 [AGPL-3.0-only](https://githu
 首次使用创建自己的本地账号；已有账号直接登录。深蓝星空与粒子连线构成登录页背景，系统开启「减少动效」时保留静态星光。
 
 [English](README.en.md)
+
+---
+
+Awesome Stock Community / Powered by Atom Awareness<br>
+Independent AI Product & Research Studio · Make complexity perceivable.
