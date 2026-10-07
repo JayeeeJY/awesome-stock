@@ -1,12 +1,12 @@
-# Awesome Stock
+# Awesome Stock Community
 
-**你的个人投资进化系统。**
+**AI Native 个人投资进化系统。**
 
 **Evolve Every Trade.**
 
 投资不只有买入和卖出。还有你的研究依据、当时的判断、计划中的约束，以及事后值得留下的经验。Awesome Stock 把这些环节连接起来，帮助你看清资产、做出有依据的行动，并逐步形成更适合自己的投资方法。
 
-**Community 是 Awesome Stock 家族已经公开发布的本地工作台。** 在你自己的电脑上，把账本、研究、判断、计划和复盘组织成一套完整流程。AI 可以按需加入，基础业务不需要模型或行情 API。
+**Community 是已经公开发布的本地投资工作台，以 AI Native 为设计方向，让 AI 围绕你自己的材料协作。** 在你自己的电脑上，把账本、研究、判断、计划和复盘组织成一套完整流程；需要时，在 Ask Awesome 中提问、追问或主动附加材料，由自己确认发送内容与模型调用。基础业务不需要模型或行情 API。
 
 [下载 Community v1.0.1](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [第一次使用](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [模型与行情配置](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/OPTIONAL_PROVIDERS.md)
 
@@ -81,17 +81,15 @@ AI 回复供你阅读、核对和整理。系统不会自动下单，也不会�
 
 </details>
 
-## 三种产品形式，一个持续进化的方向
+## AI 围绕你的材料协作，判断与行动由你掌握
 
-Awesome Stock 希望帮助使用者逐步形成自己的投资体系。三种形式面向不同的交付方式与迭代阶段。
+AI Native 在 Community 中的具体体验，是让模型帮助理解和核对材料，同时保留你的控制权：
 
-| 产品形式 | 面向谁、怎样使用 | 能力与状态 |
-| --- | --- | --- |
-| **Community · 社区版** | 公开分发；在自己的电脑上运行，管理自己的数据与可选服务 | **v1.0.1 已发布。** 账本、研究、判断、计划、复盘与可选 AI 助手组成完整手工工作流程；以 GitHub 实际发行范围为准。 |
-| **Personal · 自用版** | 创始人持续使用与验证新能力的内部产品线 | 在既有 Plan、Ask Awesome 和 Evolve 中探索个人策略共建、计划校准、持续观察和周期经验演进。相关增量已有内部工程验证，真实长期使用仍在继续；不代表这些能力均包含在 Community v1.0.1 中。 |
-| **Cloud · 未来在线版** | 规划中的托管产品，降低本地部署与服务配置门槛 | **尚未上线。** 方向包括更深入的 AI Native 协作、更多市场与资产类型（包括期权）的支持，以及个人策略生成与演进。具体范围、数据权限、上线时间与定价尚未公布。 |
+- **直接提问，也可以继续追问。** Ask Awesome 有自由输入对话框，可以讨论投资概念，也可以围绕已有材料展开交流。
+- **上下文由你选择。** 主动附加当前页面材料，发送前核对问题、材料与对话历史；打开助手不会自动调用模型。
+- **服务由你配置，结论由你核对。** 使用自己的 DeepSeek、OpenAI API Key 或本地 Ollama。模型回复是辅助草稿，不自动成为已确认的判断、计划或交易。
 
-Community 本身可以完成一套有用的投资工作流程。Personal 用来持续验证更深入的能力，Cloud 是未来交付方向。后续进展将通过这个仓库公开说明；当前可下载的产品是 Community。
+模型是可选连接，账本、研究、计划与复盘可以独立使用。数据默认保存在本机；只有你确认发送的内容会交给所配置的模型服务。
 
 ## 不配 API，也可以先用起来
 
@@ -113,6 +111,18 @@ Community 本身可以完成一套有用的投资工作流程。Personal 用来�
 
 [下载稳定版](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [阅读使用指南](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [提出问题与产品反馈](https://github.com/JayeeeJY/awesome-stock/issues) · [关注版本进展](https://github.com/JayeeeJY/awesome-stock/releases)
 
+### 由真实使用驱动，持续迭代
+
+Awesome Stock 由 Evan 创立并维护。我会基于自己的日常使用，不断打磨 Community 的功能与体验，也欢迎你分享使用中的问题、想法与建议。
+
+欢迎通过以下渠道与我交流：
+
+| 渠道 | 联系方式 |
+| --- | --- |
+| WhatsApp 用户名 | `Jiayong987` |
+| 微信号 | `ChuanL007` |
+| 邮箱 | [316600025@qq.com](mailto:316600025@qq.com) |
+
 首发接收 Issue 与产品反馈，暂不接收外部代码贡献。请勿公开 API Key、真实持仓、交易明细或备份；安全问题请使用 [GitHub 私密漏洞报告](https://github.com/JayeeeJY/awesome-stock/security/advisories/new)。
 
 Copyright (c) 2026 Evan。项目自有代码采用 [AGPL-3.0-only](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/LICENSE)，第三方保留原许可；本次不提供独立商业许可。安装、隐私、安全与验证细节见仓库文档。
@@ -121,6 +131,6 @@ Copyright (c) 2026 Evan。项目自有代码采用 [AGPL-3.0-only](https://githu
 
 ![Community 登录页：星光与粒子连线](docs/screenshots/login.png)
 
-首次使用创建自己的本地账号；已有账号直接登录。界面沿用 Personal 的星空视觉，系统开启「减少动效」时保留静态星光。
+首次使用创建自己的本地账号；已有账号直接登录。深蓝星空与粒子连线构成登录页背景，系统开启「减少动效」时保留静态星光。
 
 [English](README.en.md)

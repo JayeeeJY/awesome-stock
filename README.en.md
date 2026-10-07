@@ -1,12 +1,12 @@
-# Awesome Stock
+# Awesome Stock Community
 
-**A personal investing system that evolves with your experience.**
+**An AI-native personal investing workspace that evolves with your experience.**
 
 **Evolve Every Trade.**
 
 Investing includes more than buying and selling: the research behind a decision, the assumptions you held, the limits in your plan, and what you learn afterward. Awesome Stock connects those steps so you can understand your assets, act with a documented basis, and develop an investing approach that fits you.
 
-**Community is the publicly released local workspace in the Awesome Stock family.** Run it on your own computer and connect your ledger, research, decisions, plans, trades and reviews. AI is optional; core manual workflows need no model or market-data API.
+**Community is a released local investing workspace, designed around AI-native collaboration with your own material.** Run it on your own computer and connect your ledger, research, decisions, plans, trades and reviews. When useful, ask questions, follow up or explicitly attach material in Ask Awesome, then confirm the outbound content and model call. Core manual workflows need no model or market-data API.
 
 [Download Community v1.0.1](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [Get started](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [Configure optional services](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/OPTIONAL_PROVIDERS.md)
 
@@ -81,15 +81,15 @@ Responses are for you to read and check. The application does not place trades o
 
 </details>
 
-## One product direction, three editions
+## AI works with your material; you own the judgment and action
 
-| Edition | Who it serves and how it is delivered | Capabilities and status |
-| --- | --- | --- |
-| **Community** | Public distribution; run locally with your own data and optional services | **v1.0.1 is released.** A complete manual workflow connecting ledger, research, decisions, plans and reviews, with optional AI. Availability follows the actual GitHub release scope. |
-| **Personal** | The founder's internal product line for ongoing use and validation | Explores personal strategy co-creation, plan calibration, ongoing observation and learning across review periods in Plan, Ask Awesome and Evolve. Related increments have internal engineering validation; long-term real use continues. These are not all included in Community v1.0.1. |
-| **Cloud** | A planned hosted product intended to reduce local deployment and configuration effort | **Not launched.** Directions include deeper AI-native collaboration, broader markets and asset types including options, and personal strategy generation and evolution. Scope, data permissions, timing and pricing have not been announced. |
+In Community, AI-native collaboration means help understanding and checking material while preserving your control:
 
-Community already provides a useful workflow. Personal validates deeper capabilities; Cloud is a future delivery direction. This repository will explain future progress. Community is the product available to download today.
+- **Ask freely and follow up.** Ask Awesome has a free-text conversation box for investing concepts or discussion of your material.
+- **Choose the context.** Explicitly attach current-page material and review the question, material and conversation history before sending. Opening the assistant does not call a model.
+- **Choose your service and check the answer.** Use your own DeepSeek or OpenAI API key, or local Ollama. Model responses are assistive drafts, not automatically confirmed decisions, plans or trades.
+
+Models are optional. Ledger, research, planning and review workflows work independently. Data is local by default; only content you confirm for sending is passed to your configured model service.
 
 ## Start without an API
 
@@ -97,7 +97,7 @@ Create a local login and capital account, record opening cash and trades, save r
 
 Add optional services when you need them:
 
-- **Models:** your own DeepSeek or OpenAI API account, or user-installed Ollama. Cloud charges go to your provider account.
+- **Models:** your own DeepSeek or OpenAI API account, or user-installed Ollama. API usage charges go to your provider account.
 - **Daily market data:** your own Alpha Vantage access for US/A-share data, or EODHD access for Hong Kong. Inspect the query result before explicitly saving it. Yahoo key-free data is deferred; no shared project key or subsidy is provided.
 - **Data:** local by default, with a configurable directory and backups. Keys stay in server process memory and are excluded from backups and exports. Full backups are unencrypted and need safe storage.
 
@@ -111,6 +111,18 @@ If you want to manage your own investing records, preserve the basis for your de
 
 [Download](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [Read the guide](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [Share feedback](https://github.com/JayeeeJY/awesome-stock/issues) · [Follow releases](https://github.com/JayeeeJY/awesome-stock/releases)
 
+### Built through everyday use, continually improved
+
+Awesome Stock is founded and maintained by Evan. I will keep refining Community's features and experience through my own everyday use. I welcome your questions, ideas and suggestions.
+
+You can reach me through:
+
+| Channel | Contact |
+| --- | --- |
+| WhatsApp username | `Jiayong987` |
+| WeChat ID | `ChuanL007` |
+| Email | [316600025@qq.com](mailto:316600025@qq.com) |
+
 The first release accepts issues and product feedback, not external code contributions. Do not publish API keys, real holdings, transaction details or backups. Security issues should use [GitHub private vulnerability reporting](https://github.com/JayeeeJY/awesome-stock/security/advisories/new).
 
 Copyright (c) 2026 Evan. Project-owned code is [AGPL-3.0-only](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/LICENSE); third-party inputs retain their licenses. No separate commercial license is offered for this release. See repository documentation for installation, privacy, security and validation details.
@@ -119,6 +131,6 @@ Copyright (c) 2026 Evan. Project-owned code is [AGPL-3.0-only](https://github.co
 
 ![Community sign-in: stars and particle connections](docs/screenshots/login.png)
 
-Create your local account on first use; sign in on subsequent visits. The page restores the Personal starfield design and shows static stars when reduced motion is enabled.
+Create your local account on first use; sign in on subsequent visits. The page features a midnight-blue starfield with particle connections and shows static stars when reduced motion is enabled.
 
 [简体中文](README.md)
