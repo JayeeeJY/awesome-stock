@@ -1,0 +1,25 @@
+name: Bug report / 问题反馈
+description: Reproduce with synthetic data. 不要上传密钥、账本或备份。
+body:
+  - type: markdown
+    attributes:
+      value: "For security issues follow SECURITY.md; do not post exploits or secrets here. 外部代码贡献暂不开放。"
+  - type: input
+    id: version
+    attributes:
+      label: Candidate or release identifier / 版本
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: OS, browser, source or Docker / 环境
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps, expected result, actual result / 步骤与结果
+      description: Use synthetic account and instrument names only.
+    validations:
+      required: true

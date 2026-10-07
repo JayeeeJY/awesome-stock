@@ -1,0 +1,21 @@
+'use strict';
+let csvPreview=null,csvInput=null,csvOperation=null;
+function downloadFile(name,content,type){const url=URL.createObjectURL(new Blob([content],{type}));const a=element('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);}
+function invalidateCsv(){csvPreview=null;csvInput=null;csvOperation=null;$('csv-result').replaceChildren();$('csv-confirm').hidden=true;}
+function lockTransferControls(){$('csv-confirm').disabled=!csvPreview?.can_import||!csvPreview?.new_count;}
+function syncTransferAccounts(){const selected=$('csv-account').value;$('csv-account').replaceChildren();for(const a of ledger.accounts){const o=element('option',`${a.name} · ${a.currency}`);o.value=a.id;$('csv-account').append(o);}if([...$('csv-account').options].some(o=>o.value===selected))$('csv-account').value=selected;if(csvInput&&csvInput.account_id!==$('csv-account').value)invalidateCsv();}
+function renderCsv(){
+ const p=csvPreview,root=$('csv-result');root.replaceChildren();root.append(element('h3',`新增 ${p.new_count} 笔 · 重复跳过 ${p.duplicate_count} 笔 · ${p.currency}`));
+ if(p.rows.some(r=>r.possible_duplicate))root.append(element('p','注意：存在编号不同、成交事实相同的记录。请确认它们确实是不同成交，再继续导入。'));
+ for(const error of p.errors)root.append(element('p',error));
+ const wrap=element('div');wrap.className='table-wrap';wrap.append(table(['数据行','成交编号','结果','标的 / 方向','数量 / 价格 / 费用','成交时间 UTC','说明'],p.rows.map(r=>[String(r.row),r.record_id||'—',{new:'新增',duplicate:'跳过',conflict:'冲突',invalid:'无效'}[r.status],r.trade?`${r.trade.symbol} / ${r.trade.side}`:'—',r.trade?`${r.trade.quantity} / ${r.trade.price} / ${r.trade.fee}`:'—',r.trade?.executed_at||'—',r.message])));root.append(wrap);
+ if(p.after){root.append(element('p',`账户：${p.before.name} · ${p.currency}；现金 ${p.before.cash} → ${p.after.cash}`));const symbols=new Set([...p.before.holdings,...p.after.holdings].map(h=>h.symbol));const comparisons=[];for(const symbol of symbols){const before=p.before.holdings.find(h=>h.symbol===symbol),after=p.after.holdings.find(h=>h.symbol===symbol);comparisons.push([symbol,`${before?.quantity||'0'} → ${after?.quantity||'0'}`,`${before?.open_cost||'0'} → ${after?.open_cost||'0'}`,`${before?.realized_pnl||'0'} → ${after?.realized_pnl||'0'}`]);}const facts=element('div');facts.className='table-wrap';facts.append(table(['标的','持有数量：前 → 后','剩余成本：前 → 后','已实现损益：前 → 后'],comparisons));root.append(facts);}
+ root.append(element('p',p.can_import?(p.new_count?'请核对成交明细、币种和前后账目，再确认导入。':'没有新增记录，无需导入。'):'存在错误或冲突，整批不会导入。'));
+ $('csv-confirm').hidden=!p.can_import||!p.new_count;lockTransferControls();
+}
+$('csv-account').onchange=invalidateCsv;$('csv-file').onchange=invalidateCsv;
+$('csv-form').onsubmit=e=>{e.preventDefault();run(async()=>{invalidateCsv();const file=$('csv-file').files[0];if(!file||file.size>32768)throw Error('请选择不超过32KiB的UTF-8 CSV文件。');let csv;try{csv=new TextDecoder('utf-8',{fatal:true}).decode(await file.arrayBuffer());}catch{throw Error('文件不是有效UTF-8，请转换编码后重试。');}csvInput={account_id:$('csv-account').value,csv};csvPreview=await request('/api/v1/owner/import-preview','POST',csvInput);csvOperation=crypto.randomUUID();renderCsv();message('预览完成，尚未写入交易。');});};
+$('csv-confirm').onclick=()=>run(async()=>{if(!csvPreview?.can_import||!csvPreview.new_count)return;const receipt=await request('/api/v1/owner/import-confirm','POST',{...csvInput,preview_token:csvPreview.preview_token,operation_id:csvOperation});invalidateCsv();$('csv-file').value='';await reload();message(`已导入 ${receipt.imported} 笔，跳过 ${receipt.skipped} 笔重复记录。`);});
+$('csv-template').onclick=()=>downloadFile('awesome-stock-trades-template.csv','record_id,symbol,side,quantity,price,fee,executed_at\n','text/csv;charset=utf-8');
+$('business-export').onclick=()=>run(async()=>{const data=await request('/api/v1/owner/export');downloadFile('awesome-stock-business-'+data.exported_at.slice(0,10)+'.json',JSON.stringify(data,null,2)+'\n','application/json');$('business-export-result').textContent='已生成业务 JSON 并发起下载，请在浏览器下载列表确认文件。';message('业务导出已生成。');});
+function clearTransfer(){invalidateCsv();$('csv-file').value='';$('csv-account').replaceChildren();$('business-export-result').replaceChildren();}

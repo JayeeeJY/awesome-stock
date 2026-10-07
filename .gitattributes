@@ -1,0 +1,3 @@
+# Preserve authoritative license bytes; copied upstream notices may contain trailing spaces.
+LICENSE -text -whitespace
+docs/OWNER_UI_THIRD_PARTY_LICENSES.txt -text -whitespace

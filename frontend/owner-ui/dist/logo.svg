@@ -1,0 +1,73 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aBlue" x1="16" y1="76" x2="48" y2="18" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F2A77"/>
+      <stop offset="100%" stop-color="#1849B8"/>
+    </linearGradient>
+    <linearGradient id="sBlue" x1="52" y1="24" x2="82" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2797FF"/>
+      <stop offset="58%" stop-color="#176CFF"/>
+      <stop offset="100%" stop-color="#104DE3"/>
+    </linearGradient>
+    <filter id="logoGlow" x="6" y="10" width="84" height="76" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="6"/>
+      <feGaussianBlur stdDeviation="5"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0313725 0 0 0 0 0.113725 0 0 0 0 0.317647 0 0 0 0.22 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#logoGlow)">
+    <path
+      d="M18 74L34.8 29.2C36.1 25.6 38.8 23.8 42.1 23.8C45.4 23.8 48 25.5 49.9 28.7L62.1 49.8"
+      stroke="#FFFFFF"
+      stroke-opacity="0.14"
+      stroke-width="12.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M31.2 72L41.8 54.5H57.2"
+      stroke="#FFFFFF"
+      stroke-opacity="0.14"
+      stroke-width="12.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M55.6 28.6H78.6L73.1 37H62.9C58.7 37 56.3 39 56.3 42.4C56.3 45.8 58.8 47.8 62.9 47.8H69.6C76.9 47.8 81.4 52.1 81.4 58.9C81.4 66 76.2 70 68.8 70H49.9"
+      stroke="#FFFFFF"
+      stroke-opacity="0.14"
+      stroke-width="12.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M18 74L34.8 29.2C36.1 25.6 38.8 23.8 42.1 23.8C45.4 23.8 48 25.5 49.9 28.7L62.1 49.8"
+      stroke="url(#aBlue)"
+      stroke-width="9.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M31.2 72L41.8 54.5H57.2"
+      stroke="url(#aBlue)"
+      stroke-width="9.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M55.6 28.6H78.6L73.1 37H62.9C58.7 37 56.3 39 56.3 42.4C56.3 45.8 58.8 47.8 62.9 47.8H69.6C76.9 47.8 81.4 52.1 81.4 58.9C81.4 66 76.2 70 68.8 70H49.9"
+      stroke="url(#sBlue)"
+      stroke-width="9.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <circle cx="49.2" cy="54.5" r="5.8" fill="#27E6FF" stroke="#FFFFFF" stroke-width="2.7"/>
+  </g>
+</svg>

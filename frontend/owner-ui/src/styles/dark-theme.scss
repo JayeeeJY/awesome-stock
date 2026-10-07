@@ -1,0 +1,406 @@
+/**
+ * Awesome Stock dark theme
+ * A calmer finance-friendly dark system that keeps the product's
+ * light tech aesthetic instead of falling back to pure black.
+ */
+
+html.dark {
+  color-scheme: dark;
+
+  --el-color-primary: #7ba7ff;
+  --el-color-primary-light-3: #97b9ff;
+  --el-color-primary-light-5: #b6ccff;
+  --el-color-primary-light-7: #d5e2ff;
+  --el-color-primary-light-8: rgba(123, 167, 255, 0.22);
+  --el-color-primary-light-9: rgba(123, 167, 255, 0.12);
+
+  --el-bg-color-page: #0a1220;
+  --el-bg-color: #111a2b;
+  --el-bg-color-overlay: #162033;
+
+  --el-fill-color-blank: #152034;
+  --el-fill-color-light: rgba(140, 160, 190, 0.10);
+  --el-fill-color-lighter: rgba(140, 160, 190, 0.07);
+  --el-fill-color-extra-light: rgba(140, 160, 190, 0.05);
+
+  --el-text-color-primary: #eef4ff;
+  --el-text-color-regular: #c2cde0;
+  --el-text-color-secondary: #8fa0ba;
+  --el-text-color-placeholder: #6f809b;
+
+  --el-border-color: rgba(151, 170, 201, 0.20);
+  --el-border-color-light: rgba(151, 170, 201, 0.16);
+  --el-border-color-lighter: rgba(151, 170, 201, 0.12);
+  --el-border-color-extra-light: rgba(151, 170, 201, 0.08);
+
+  --el-mask-color: rgba(4, 10, 18, 0.72);
+
+  background:
+    radial-gradient(circle at top left, rgba(69, 119, 200, 0.18) 0%, transparent 28%),
+    radial-gradient(circle at top right, rgba(43, 154, 178, 0.12) 0%, transparent 26%),
+    linear-gradient(180deg, #0a1220 0%, #0d1626 46%, #0a1120 100%);
+}
+
+html.dark body,
+html.dark #app {
+  background: transparent;
+  color: var(--el-text-color-primary);
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark .page-title,
+html.dark .section-title,
+html.dark .card-title {
+  color: var(--el-text-color-primary) !important;
+}
+
+html.dark .basic-layout,
+html.dark .main-container,
+html.dark .main-content,
+html.dark .content-wrapper {
+  background: transparent;
+}
+
+html.dark .sidebar {
+  background:
+    linear-gradient(180deg, rgba(17, 27, 42, 0.98) 0%, rgba(12, 20, 32, 0.98) 100%);
+  border-right-color: rgba(148, 170, 204, 0.14);
+  box-shadow: 20px 0 40px rgba(0, 0, 0, 0.16);
+}
+
+html.dark .sidebar .sidebar-header,
+html.dark .sidebar .sidebar-footer {
+  border-color: rgba(148, 170, 204, 0.10);
+}
+
+html.dark .sidebar .sidebar-footer {
+  background: rgba(18, 29, 45, 0.84);
+}
+
+html.dark .sidebar .logo-text {
+  color: #f3f8ff;
+}
+
+html.dark .sidebar .logo-subtitle {
+  color: #93a5c1;
+}
+
+html.dark .sidebar-menu .menu-section-label {
+  color: #7085a6;
+}
+
+html.dark .sidebar-menu .el-menu-item {
+  color: #c1cee2 !important;
+}
+
+html.dark .sidebar-menu .el-menu-item .el-icon {
+  color: #7f94b4 !important;
+}
+
+html.dark .sidebar-menu .el-menu-item:hover {
+  background: rgba(123, 167, 255, 0.10) !important;
+  color: #eef4ff !important;
+}
+
+html.dark .sidebar-menu .el-menu-item.is-active {
+  background: linear-gradient(135deg, rgba(123, 167, 255, 0.18) 0%, rgba(78, 129, 215, 0.12) 100%) !important;
+  color: #8bb4ff !important;
+  box-shadow: inset 3px 0 0 #7ba7ff;
+}
+
+html.dark .sidebar-menu .el-menu-item.is-active .el-icon {
+  color: #8bb4ff !important;
+}
+
+html.dark .sidebar-menu .is-child::before {
+  background: rgba(123, 167, 255, 0.20);
+}
+
+html.dark .sidebar-menu .is-child.is-active::before {
+  background: rgba(123, 167, 255, 0.72);
+}
+
+html.dark .header {
+  background: rgba(11, 18, 30, 0.72);
+  border-bottom-color: rgba(151, 170, 201, 0.10);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+html.dark .footer {
+  border-top-color: rgba(151, 170, 201, 0.08);
+}
+
+html.dark .el-card,
+html.dark .el-dialog,
+html.dark .el-drawer,
+html.dark .el-popover.el-popper,
+html.dark .el-dropdown__popper .el-dropdown-menu {
+  border-color: var(--el-border-color-light);
+  background: linear-gradient(180deg, rgba(20, 30, 46, 0.94), rgba(16, 25, 40, 0.96));
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+}
+
+html.dark .el-card__header,
+html.dark .el-dialog__header,
+html.dark .el-drawer__header {
+  border-bottom-color: var(--el-border-color-lighter);
+}
+
+html.dark .el-card__body,
+html.dark .el-dialog__body,
+html.dark .el-drawer__body,
+html.dark .el-dropdown-menu__item,
+html.dark .el-form-item__label,
+html.dark .el-empty__description,
+html.dark .el-descriptions__label,
+html.dark .el-descriptions__content,
+html.dark .el-tabs__item,
+html.dark .el-collapse-item__content,
+html.dark .el-step__description,
+html.dark .el-result__subtitle {
+  color: var(--el-text-color-regular);
+}
+
+html.dark .el-breadcrumb__inner,
+html.dark .el-breadcrumb__separator {
+  color: #93a6c3;
+}
+
+html.dark .el-button--default,
+html.dark .el-button--text,
+html.dark .el-button.is-text.is-bg {
+  background: rgba(19, 29, 46, 0.82);
+  border-color: rgba(151, 170, 201, 0.16);
+  color: #d8e3f4;
+}
+
+html.dark .el-button--default:hover,
+html.dark .el-button--text:hover,
+html.dark .el-button.is-text.is-bg:hover {
+  background: rgba(29, 42, 63, 0.94);
+  border-color: rgba(123, 167, 255, 0.30);
+  color: #f3f8ff;
+}
+
+html.dark .el-button--primary {
+  background: linear-gradient(135deg, #73a4ff 0%, #4f82f4 100%);
+  border-color: rgba(123, 167, 255, 0.42);
+  box-shadow: 0 10px 18px rgba(53, 102, 189, 0.24);
+}
+
+html.dark .el-button--primary:hover {
+  background: linear-gradient(135deg, #82afff 0%, #5a8af8 100%);
+  border-color: rgba(141, 181, 255, 0.48);
+}
+
+html.dark .el-input__wrapper,
+html.dark .el-textarea__inner,
+html.dark .el-select .el-input__wrapper,
+html.dark .el-input-number__decrease,
+html.dark .el-input-number__increase {
+  background: rgba(15, 25, 39, 0.92);
+  box-shadow: 0 0 0 1px rgba(151, 170, 201, 0.16) inset;
+}
+
+html.dark .el-input__inner,
+html.dark .el-textarea__inner {
+  color: var(--el-text-color-primary);
+}
+
+html.dark .el-input__inner::placeholder,
+html.dark .el-textarea__inner::placeholder {
+  color: var(--el-text-color-placeholder);
+}
+
+html.dark .el-select-dropdown__item,
+html.dark .el-cascader-panel,
+html.dark .el-picker-panel {
+  color: var(--el-text-color-regular);
+  background: #162033;
+}
+
+html.dark .el-table {
+  --el-table-bg-color: transparent;
+  --el-table-tr-bg-color: transparent;
+  --el-table-header-bg-color: rgba(140, 160, 190, 0.08);
+  --el-table-text-color: var(--el-text-color-primary);
+  --el-table-header-text-color: #aebcd2;
+  --el-table-border-color: rgba(151, 170, 201, 0.10);
+}
+
+html.dark .el-table th.el-table__cell {
+  background: rgba(140, 160, 190, 0.08);
+}
+
+html.dark .el-table tr,
+html.dark .el-table td.el-table__cell {
+  background: transparent;
+}
+
+html.dark .el-table__row:hover > td.el-table__cell {
+  background: rgba(123, 167, 255, 0.06) !important;
+}
+
+html.dark .el-alert {
+  background: rgba(22, 32, 51, 0.86);
+  border: 1px solid rgba(151, 170, 201, 0.12);
+}
+
+html.dark .el-alert--warning {
+  background: rgba(73, 53, 21, 0.42);
+  border-color: rgba(242, 169, 59, 0.18);
+}
+
+html.dark .el-alert--info {
+  background: rgba(32, 46, 70, 0.56);
+  border-color: rgba(123, 167, 255, 0.14);
+}
+
+html.dark .el-message {
+  background: rgba(20, 31, 48, 0.96);
+  border-color: rgba(151, 170, 201, 0.12);
+  color: var(--el-text-color-primary);
+}
+
+html.dark .el-backtop {
+  background: rgba(20, 31, 48, 0.92);
+  color: #cfe0fb;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+}
+
+html.dark .dashboard-page {
+  --panel-bg: linear-gradient(180deg, rgba(17, 27, 42, 0.94) 0%, rgba(13, 22, 36, 0.98) 100%);
+  --line-soft: rgba(151, 170, 201, 0.10);
+  --text-soft: #8da0ba;
+}
+
+html.dark .dashboard-page .cockpit-hero {
+  color: #eef4ff;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(88, 131, 225, 0.24) 0%, transparent 30%),
+    radial-gradient(circle at 92% 12%, rgba(61, 170, 180, 0.18) 0%, transparent 24%),
+    linear-gradient(135deg, rgba(18, 28, 45, 0.98) 0%, rgba(16, 25, 40, 0.98) 54%, rgba(14, 30, 43, 0.98) 100%);
+  border-color: rgba(123, 167, 255, 0.18);
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+html.dark .dashboard-page .cockpit-hero::after {
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01) 44%, rgba(93, 198, 214, 0.03) 100%);
+}
+
+html.dark .dashboard-page .cockpit-hero::before {
+  background: radial-gradient(circle, rgba(67, 122, 214, 0.18) 0%, rgba(67, 122, 214, 0) 72%);
+}
+
+html.dark .dashboard-page .eyebrow {
+  background: rgba(123, 167, 255, 0.12);
+  border-color: rgba(123, 167, 255, 0.16);
+  color: #d7e6ff;
+  box-shadow: none;
+}
+
+html.dark .dashboard-page .hero-subtitle,
+html.dark .dashboard-page .hero-side-meta,
+html.dark .dashboard-page .hero-stat-label,
+html.dark .dashboard-page .hero-stat-sub,
+html.dark .dashboard-page .hero-focus-label,
+html.dark .dashboard-page .hero-focus-text,
+html.dark .dashboard-page .section-subtitle,
+html.dark .dashboard-page .card-subtitle,
+html.dark .dashboard-page .position-name,
+html.dark .dashboard-page .trade-meta,
+html.dark .dashboard-page .news-meta,
+html.dark .dashboard-page .news-side,
+html.dark .dashboard-page .priority-inline-detail,
+html.dark .dashboard-page .diagnosis-text,
+html.dark .dashboard-page .position-weight {
+  color: #8ea1bb;
+}
+
+html.dark .dashboard-page .hero-stat-card,
+html.dark .dashboard-page .hero-focus-card,
+html.dark .dashboard-page .diagnosis-summary-panel,
+html.dark .dashboard-page .diagnosis-priority-panel {
+  background: linear-gradient(180deg, rgba(24, 35, 53, 0.82), rgba(18, 28, 43, 0.70));
+  border-color: rgba(123, 167, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+html.dark .dashboard-page .hero-stat-value,
+html.dark .dashboard-page .hero-focus-title,
+html.dark .dashboard-page .section-title,
+html.dark .dashboard-page .card-title,
+html.dark .dashboard-page .position-ticker,
+html.dark .dashboard-page .position-value,
+html.dark .dashboard-page .trade-ticker,
+html.dark .dashboard-page .news-title,
+html.dark .dashboard-page .diagnosis-title,
+html.dark .dashboard-page .priority-inline-title {
+  color: #eef4ff;
+}
+
+html.dark .dashboard-page .position-row,
+html.dark .dashboard-page .trade-row,
+html.dark .dashboard-page .news-row,
+html.dark .dashboard-page .position-table-head,
+html.dark .dashboard-page .trade-table-head {
+  border-color: rgba(151, 170, 201, 0.10);
+}
+
+html.dark .dashboard-page .diagnosis-badge {
+  background: rgba(123, 167, 255, 0.12);
+}
+
+html.dark .dashboard-page .priority-inline-item {
+  background: rgba(18, 29, 45, 0.92);
+  border-color: rgba(151, 170, 201, 0.12);
+}
+
+html.dark .dashboard-page .priority-inline-item:hover {
+  background: rgba(24, 37, 57, 0.98);
+  border-color: rgba(123, 167, 255, 0.22);
+}
+
+html.dark .dashboard-page .priority-inline-item.is-critical {
+  background: linear-gradient(180deg, rgba(137, 54, 61, 0.16), rgba(18, 29, 45, 0.96));
+  border-color: rgba(234, 91, 99, 0.18);
+}
+
+html.dark .dashboard-page .priority-inline-item.is-watch {
+  background: linear-gradient(180deg, rgba(130, 93, 28, 0.18), rgba(18, 29, 45, 0.96));
+  border-color: rgba(242, 169, 59, 0.18);
+}
+
+html.dark .dashboard-page .priority-inline-ticker,
+html.dark .dashboard-page .priority-inline-action {
+  color: #8bb4ff;
+}
+
+html.dark .dashboard-page .alert-item {
+  color: #f2c679;
+}
+
+html.dark .dashboard-page .alert-dot {
+  background: #f2a93b;
+}
+
+html.dark .dashboard-page .chart-card .chart-body,
+html.dark .dashboard-page .bottom-card,
+html.dark .dashboard-page .cockpit-card {
+  backdrop-filter: blur(8px);
+}
+
+// Opaque underlay preserves the native gradient without text bleeding through.
+html.dark .el-dialog,
+html.dark .el-drawer,
+html.dark .el-message-box {
+  background-color: #101928;
+}

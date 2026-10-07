@@ -1,0 +1,2 @@
+# Test tooling only. Owner itself needs Python standard library only.
+pytest==9.1.1

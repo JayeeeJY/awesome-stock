@@ -1,0 +1,1798 @@
+{
+  "status": "native_only_first_release_container_distribution_deferred",
+  "inspected_on": "2026-09-20",
+  "image_id": "sha256:78367a26d44c0357dc12ebdedef1f19f870c7b52b5341f22ed3380bbe1d65858",
+  "architecture": "arm64",
+  "os": "linux",
+  "base_reference": "python:3.10-slim-trixie@sha256:31dd4d9529d02d7436659061cb7564cd4733fc90e5e152709a942d53382ec8d0",
+  "sbom": {
+    "tool": "Docker Scout 1.23.1",
+    "format": "SPDX-2.3",
+    "sha256": "4cf87746f56ba1b6161615edacabc8f8fad702036b9ea4ad1ca05bdea2be7c37",
+    "local_evidence": "qa/owner-p16-final.spdx.json",
+    "components": 123
+  },
+  "runtime": {
+    "python": "3.10.21",
+    "openssl": "OpenSSL 3.5.7 9 Jun 2026",
+    "sqlite": "3.46.1",
+    "uid": 10001,
+    "packages": 0,
+    "security": [
+      "CapEff:\t0000000000000000",
+      "NoNewPrivs:\t1"
+    ],
+    "systemd_homed": false,
+    "fstab": "# UNCONFIGURED FSTAB FOR BASE SYSTEM\n"
+  },
+  "components": [
+    {
+      "name": "acl",
+      "version": "2.3.2-2",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.0-or-later OR LGPL-2.1-only"
+    },
+    {
+      "name": "adduser",
+      "version": "3.152",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "apt",
+      "version": "3.0.3",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR curl"
+    },
+    {
+      "name": "attr",
+      "version": "1:2.5.2-3",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.0-or-later OR LGPL-2.1-only"
+    },
+    {
+      "name": "audit",
+      "version": "1:4.0.2-2+deb13u1",
+      "license_declared_by_scanner": "GPL-1.0-only OR GPL-2.0-only OR LGPL-2.1-only"
+    },
+    {
+      "name": "base-files",
+      "version": "13.8+deb13u7",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "base-passwd",
+      "version": "3.6.7",
+      "license_declared_by_scanner": "GPL-2.0-only"
+    },
+    {
+      "name": "bash",
+      "version": "5.2.37-2+b10",
+      "license_declared_by_scanner": "BSD-4-Clause-UC OR GFDL-1.3-only OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR Latex2e"
+    },
+    {
+      "name": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR BSD-4-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "bzip2",
+      "version": "1.0.8-6",
+      "license_declared_by_scanner": "GPL-2.0-only"
+    },
+    {
+      "name": "ca-certificates",
+      "version": "20250419",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR MPL-2.0"
+    },
+    {
+      "name": "cdebconf",
+      "version": "0.280",
+      "license_declared_by_scanner": "BSD-2-Clause OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "coreutils",
+      "version": "9.7-3",
+      "license_declared_by_scanner": "BSD-4-Clause-UC OR FSFULLR OR GFDL-1.3-only OR GPL-3.0-only OR GPL-3.0-or-later OR ISC"
+    },
+    {
+      "name": "dash",
+      "version": "0.5.12-12",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "db5.3",
+      "version": "5.3.28+dfsg2-9",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-3.0-only OR MS-PL OR Sleepycat OR X11 OR Zlib"
+    },
+    {
+      "name": "debconf",
+      "version": "1.5.91",
+      "license_declared_by_scanner": "BSD-2-Clause"
+    },
+    {
+      "name": "debian-archive-keyring",
+      "version": "2025.1",
+      "license_declared_by_scanner": "NOASSERTION"
+    },
+    {
+      "name": "debianutils",
+      "version": "5.23.2",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR SMAIL-GPL"
+    },
+    {
+      "name": "diffutils",
+      "version": "1:3.10-4",
+      "license_declared_by_scanner": "FSFAP OR FSFULLR OR GFDL-1.3-only OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later OR X11"
+    },
+    {
+      "name": "dpkg",
+      "version": "1.22.22",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "findutils",
+      "version": "4.10.0-3",
+      "license_declared_by_scanner": "BSD-3-Clause OR FSFAP OR FSFULLR OR GFDL-1.3-only OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later OR X11"
+    },
+    {
+      "name": "gcc-14-base",
+      "version": "14.2.0-19",
+      "license_declared_by_scanner": "GFDL-1.2-only OR GPL-3.0-only"
+    },
+    {
+      "name": "gcc-14",
+      "version": "14.2.0-19",
+      "license_declared_by_scanner": "GFDL-1.2-only OR GPL-3.0-only"
+    },
+    {
+      "name": "gdbm",
+      "version": "1.24-2",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later"
+    },
+    {
+      "name": "glibc",
+      "version": "2.41-12+deb13u4",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSL-1.0 OR FSFAP OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later OR SunPro OR Unicode-DFS-2016"
+    },
+    {
+      "name": "gmp",
+      "version": "2:6.3.0+dfsg-3",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "grep",
+      "version": "3.11-4+b1",
+      "license_declared_by_scanner": "GPL-3.0-only OR GPL-3.0-or-later"
+    },
+    {
+      "name": "gzip",
+      "version": "1.13-1+deb13u1",
+      "license_declared_by_scanner": "GPL-3.0-only OR GPL-3.0-or-later"
+    },
+    {
+      "name": "hostname",
+      "version": "3.25",
+      "license_declared_by_scanner": "GPL-2.0-only"
+    },
+    {
+      "name": "init-system-helpers",
+      "version": "1.69~deb13u1",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "libacl1",
+      "version": "2.3.2-2+b1",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.0-or-later OR LGPL-2.1-only"
+    },
+    {
+      "name": "libapt-pkg7.0",
+      "version": "3.0.3",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR curl"
+    },
+    {
+      "name": "libattr1",
+      "version": "1:2.5.2-3",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.0-or-later OR LGPL-2.1-only"
+    },
+    {
+      "name": "libaudit-common",
+      "version": "1:4.0.2-2+deb13u1",
+      "license_declared_by_scanner": "GPL-1.0-only OR GPL-2.0-only OR LGPL-2.1-only"
+    },
+    {
+      "name": "libaudit1",
+      "version": "1:4.0.2-2+deb13u1",
+      "license_declared_by_scanner": "GPL-1.0-only OR GPL-2.0-only OR LGPL-2.1-only"
+    },
+    {
+      "name": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR BSD-4-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "libbsd0",
+      "version": "0.12.2-2",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR Beerware OR ISC"
+    },
+    {
+      "name": "libbsd",
+      "version": "0.12.2-2",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR Beerware OR ISC"
+    },
+    {
+      "name": "libbz2-1.0",
+      "version": "1.0.8-6",
+      "license_declared_by_scanner": "GPL-2.0-only"
+    },
+    {
+      "name": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSL-1.0 OR FSFAP OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later OR SunPro OR Unicode-DFS-2016"
+    },
+    {
+      "name": "libc6",
+      "version": "2.41-12+deb13u4",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSL-1.0 OR FSFAP OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later OR SunPro OR Unicode-DFS-2016"
+    },
+    {
+      "name": "libcap-ng0",
+      "version": "0.8.5-4+b1",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "libcap-ng",
+      "version": "0.8.5-4",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "libcap2",
+      "version": "1:2.75-10+deb13u1+b3",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "libcrypt1",
+      "version": "1:4.4.38-1",
+      "license_declared_by_scanner": "NOASSERTION"
+    },
+    {
+      "name": "libdb5.3t64",
+      "version": "5.3.28+dfsg2-9",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-3.0-only OR MS-PL OR Sleepycat OR X11 OR Zlib"
+    },
+    {
+      "name": "libdebconfclient0",
+      "version": "0.280",
+      "license_declared_by_scanner": "BSD-2-Clause OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "libffi8",
+      "version": "3.4.8-2",
+      "license_declared_by_scanner": "GPL-2.0-or-later OR GPL-3.0-or-later OR MPL-1.1 OR X11"
+    },
+    {
+      "name": "libffi",
+      "version": "3.4.8-2",
+      "license_declared_by_scanner": "GPL-2.0-or-later OR GPL-3.0-or-later OR MPL-1.1 OR X11"
+    },
+    {
+      "name": "libgcc-s1",
+      "version": "14.2.0-19",
+      "license_declared_by_scanner": "GFDL-1.2-only OR GPL-3.0-only"
+    },
+    {
+      "name": "libgdbm6t64",
+      "version": "1.24-2",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later"
+    },
+    {
+      "name": "libgmp10",
+      "version": "2:6.3.0+dfsg-3",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "libhogweed6t64",
+      "version": "3.10.1-1",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-or-later OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR BSD-4-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "liblz4-1",
+      "version": "1.10.0-4",
+      "license_declared_by_scanner": "BSD-2-Clause OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "liblzma5",
+      "version": "5.8.1-1+deb13u1",
+      "license_declared_by_scanner": "0BSD OR FSFUL OR FSFULLR OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "libmd0",
+      "version": "1.1.0-2+b1",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR Beerware OR ISC"
+    },
+    {
+      "name": "libmd",
+      "version": "1.1.0-2",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR Beerware OR ISC"
+    },
+    {
+      "name": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR BSD-4-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "libncursesw6",
+      "version": "6.5+20250216-2",
+      "license_declared_by_scanner": "BSD-3-Clause OR X11"
+    },
+    {
+      "name": "libnettle8t64",
+      "version": "3.10.1-1",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-or-later OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "libpam-modules-bin",
+      "version": "1.7.0-5",
+      "license_declared_by_scanner": "BSD-3-Clause OR Beerware OR GPL-1.0-only OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR LGPL-2.0-only OR LGPL-2.0-or-later"
+    },
+    {
+      "name": "libpam-modules",
+      "version": "1.7.0-5",
+      "license_declared_by_scanner": "BSD-3-Clause OR Beerware OR GPL-1.0-only OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR LGPL-2.0-only OR LGPL-2.0-or-later"
+    },
+    {
+      "name": "libpam-runtime",
+      "version": "1.7.0-5",
+      "license_declared_by_scanner": "BSD-3-Clause OR Beerware OR GPL-1.0-only OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR LGPL-2.0-only OR LGPL-2.0-or-later"
+    },
+    {
+      "name": "libpam0g",
+      "version": "1.7.0-5",
+      "license_declared_by_scanner": "BSD-3-Clause OR Beerware OR GPL-1.0-only OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR LGPL-2.0-only OR LGPL-2.0-or-later"
+    },
+    {
+      "name": "libpcre2-8-0",
+      "version": "10.46-1~deb13u2",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR X11"
+    },
+    {
+      "name": "libreadline8t64",
+      "version": "8.2-6",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later"
+    },
+    {
+      "name": "libseccomp2",
+      "version": "2.6.0-2",
+      "license_declared_by_scanner": "LGPL-2.1-only"
+    },
+    {
+      "name": "libseccomp",
+      "version": "2.6.0-2",
+      "license_declared_by_scanner": "LGPL-2.1-only"
+    },
+    {
+      "name": "libselinux1",
+      "version": "3.8.1-1",
+      "license_declared_by_scanner": "GPL-2.0-only"
+    },
+    {
+      "name": "libselinux",
+      "version": "3.8.1-1",
+      "license_declared_by_scanner": "GPL-2.0-only"
+    },
+    {
+      "name": "libsemanage-common",
+      "version": "3.8.1-1",
+      "license_declared_by_scanner": "GPL-2.0-only OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "libsemanage2",
+      "version": "3.8.1-1",
+      "license_declared_by_scanner": "GPL-2.0-only OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "libsemanage",
+      "version": "3.8.1-1",
+      "license_declared_by_scanner": "GPL-2.0-only OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "libsepol2",
+      "version": "3.8.1-1",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR Zlib"
+    },
+    {
+      "name": "libsepol",
+      "version": "3.8.1-1",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR Zlib"
+    },
+    {
+      "name": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR BSD-4-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "license_declared_by_scanner": "Apache-2.0 OR GPL-1.0-only OR GPL-1.0-or-later"
+    },
+    {
+      "name": "libstdc++6",
+      "version": "14.2.0-19",
+      "license_declared_by_scanner": "GFDL-1.2-only OR GPL-3.0-only"
+    },
+    {
+      "name": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "license_declared_by_scanner": "CC0-1.0 OR GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "libtinfo6",
+      "version": "6.5+20250216-2",
+      "license_declared_by_scanner": "BSD-3-Clause OR X11"
+    },
+    {
+      "name": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "license_declared_by_scanner": "CC0-1.0 OR GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR BSD-4-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "libxcrypt",
+      "version": "1:4.4.38-1",
+      "license_declared_by_scanner": "NOASSERTION"
+    },
+    {
+      "name": "libxxhash0",
+      "version": "0.8.3-2",
+      "license_declared_by_scanner": "BSD-2-Clause OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "libzstd1",
+      "version": "1.5.7+dfsg-1",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-2.0-only OR Zlib"
+    },
+    {
+      "name": "libzstd",
+      "version": "1.5.7+dfsg-1",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-2.0-only OR Zlib"
+    },
+    {
+      "name": "login.defs",
+      "version": "1:4.17.4-2",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-1.0-only OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR BSD-4-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "lz4",
+      "version": "1.10.0-4",
+      "license_declared_by_scanner": "BSD-2-Clause OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "mawk",
+      "version": "1.3.4.20250131-1",
+      "license_declared_by_scanner": "CC-BY-3.0 OR GPL-2.0-only OR X11"
+    },
+    {
+      "name": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR BSD-4-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "ncurses-base",
+      "version": "6.5+20250216-2",
+      "license_declared_by_scanner": "BSD-3-Clause OR X11"
+    },
+    {
+      "name": "ncurses-bin",
+      "version": "6.5+20250216-2",
+      "license_declared_by_scanner": "BSD-3-Clause OR X11"
+    },
+    {
+      "name": "ncurses",
+      "version": "6.5+20250216-2",
+      "license_declared_by_scanner": "BSD-3-Clause OR X11"
+    },
+    {
+      "name": "netbase",
+      "version": "6.5",
+      "license_declared_by_scanner": "GPL-2.0-only"
+    },
+    {
+      "name": "nettle",
+      "version": "3.10.1-1",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-or-later OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "license_declared_by_scanner": "Apache-2.0 OR GPL-1.0-only OR GPL-1.0-or-later"
+    },
+    {
+      "name": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "license_declared_by_scanner": "Apache-2.0 OR GPL-1.0-only OR GPL-1.0-or-later"
+    },
+    {
+      "name": "pam",
+      "version": "1.7.0-5",
+      "license_declared_by_scanner": "BSD-3-Clause OR Beerware OR GPL-1.0-only OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR LGPL-2.0-only OR LGPL-2.0-or-later"
+    },
+    {
+      "name": "passwd",
+      "version": "1:4.17.4-2",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-1.0-only OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "pcre2",
+      "version": "10.46-1~deb13u2",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR X11"
+    },
+    {
+      "name": "perl-base",
+      "version": "5.40.1-6+deb13u1",
+      "license_declared_by_scanner": "Artistic-2.0 OR Artistic-dist OR BSD-3-Clause OR FSFAP OR GPL-1.0-only OR GPL-1.0-or-later OR GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.1-only OR Zlib"
+    },
+    {
+      "name": "perl",
+      "version": "5.40.1-6+deb13u1",
+      "license_declared_by_scanner": "Artistic-2.0 OR Artistic-dist OR BSD-3-Clause OR FSFAP OR GPL-1.0-only OR GPL-1.0-or-later OR GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.1-only OR Zlib"
+    },
+    {
+      "name": "readline-common",
+      "version": "8.2-6",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later"
+    },
+    {
+      "name": "readline",
+      "version": "8.2-6",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later"
+    },
+    {
+      "name": "rust-sequoia-sqv",
+      "version": "1.3.0-3",
+      "license_declared_by_scanner": "LGPL-2.0-only OR LGPL-2.0-or-later"
+    },
+    {
+      "name": "sed",
+      "version": "4.9-2+deb13u1",
+      "license_declared_by_scanner": "BSD-4-Clause-UC OR BSL-1.0 OR GFDL-1.3-only OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR X11"
+    },
+    {
+      "name": "shadow",
+      "version": "1:4.17.4-2",
+      "license_declared_by_scanner": "BSD-3-Clause OR GPL-1.0-only OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "sqlite3",
+      "version": "3.46.1-7+deb13u2",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "sqv",
+      "version": "1.3.0-3+b2",
+      "license_declared_by_scanner": "LGPL-2.0-only OR LGPL-2.0-or-later"
+    },
+    {
+      "name": "systemd",
+      "version": "257.13-1~deb13u1",
+      "license_declared_by_scanner": "CC0-1.0 OR GPL-2.0-only OR GPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "sysvinit-utils",
+      "version": "3.14-4",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "sysvinit",
+      "version": "3.14-4",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "tar",
+      "version": "1.35+dfsg-3.1",
+      "license_declared_by_scanner": "GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026c-0+deb13u1",
+      "license_declared_by_scanner": "NOASSERTION"
+    },
+    {
+      "name": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "license_declared_by_scanner": "BSD-2-Clause OR BSD-3-Clause OR BSD-4-Clause OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR GPL-3.0-or-later OR ISC OR LGPL-2.0-only OR LGPL-2.0-or-later OR LGPL-2.1-only OR LGPL-2.1-or-later OR LGPL-3.0-only OR LGPL-3.0-or-later"
+    },
+    {
+      "name": "xxhash",
+      "version": "0.8.3-2",
+      "license_declared_by_scanner": "BSD-2-Clause OR GPL-2.0-only OR GPL-2.0-or-later"
+    },
+    {
+      "name": "xz-utils",
+      "version": "5.8.1-1+deb13u1",
+      "license_declared_by_scanner": "0BSD OR FSFUL OR FSFULLR OR GPL-2.0-only OR GPL-2.0-or-later OR GPL-3.0-only OR LGPL-2.1-only OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "zlib1g",
+      "version": "1:1.3.dfsg+really1.3.1-1+b1",
+      "license_declared_by_scanner": "Zlib"
+    },
+    {
+      "name": "zlib",
+      "version": "1:1.3.dfsg+really1.3.1-1",
+      "license_declared_by_scanner": "Zlib"
+    },
+    {
+      "name": "python",
+      "version": "3.10.21",
+      "license_declared_by_scanner": "NOASSERTION"
+    }
+  ],
+  "vulnerability_scan": {
+    "tool": "Trivy 0.72.0",
+    "scanner_image": "aquasec/trivy@sha256:cffe3f5161a47a6823fbd23d985795b3ed72a4c806da4c4df16266c02accdd6f",
+    "local_evidence": "qa/owner-p16-final-trivy.json",
+    "sha256": "906bf393012dab8a0e21d33c722a7823d06fcc374a2d8fcd5817655f546441be",
+    "database_mode": "cached DB downloaded 2026-09-20; offline scan",
+    "package_cve_matches": 151,
+    "distinct_cves": 65,
+    "severity_counts": {
+      "LOW": 57,
+      "HIGH": 44,
+      "MEDIUM": 49,
+      "UNKNOWN": 1
+    },
+    "high_critical_with_listed_fix": 0,
+    "priority_review": {
+      "CVE-2026-76642": {
+        "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+        "packages": [
+          "bsdutils",
+          "libblkid1",
+          "liblastlog2-2",
+          "libmount1",
+          "libsmartcols1",
+          "libuuid1",
+          "login",
+          "mount",
+          "util-linux"
+        ],
+        "fixed_version_in_scanned_distribution": null,
+        "advisory": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+        "assessment": "Privileged mount/nsenter path is not called by Owner; empty fstab, UID10001, CapEff0, NoNewPrivs1. Inferred unavailable in documented deployment; not a system-wide immunity claim.",
+        "disposition": "reviewed_conditional_mitigation_not_suppressed",
+        "release_risk_accepted": false
+      },
+      "CVE-2026-78408": {
+        "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+        "packages": [
+          "bsdutils",
+          "libblkid1",
+          "liblastlog2-2",
+          "libmount1",
+          "libsmartcols1",
+          "libuuid1",
+          "login",
+          "mount",
+          "util-linux"
+        ],
+        "fixed_version_in_scanned_distribution": null,
+        "advisory": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+        "assessment": "Privileged mount/nsenter path is not called by Owner; empty fstab, UID10001, CapEff0, NoNewPrivs1. Inferred unavailable in documented deployment; not a system-wide immunity claim.",
+        "disposition": "reviewed_conditional_mitigation_not_suppressed",
+        "release_risk_accepted": false
+      },
+      "CVE-2026-78409": {
+        "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+        "packages": [
+          "bsdutils",
+          "libblkid1",
+          "liblastlog2-2",
+          "libmount1",
+          "libsmartcols1",
+          "libuuid1",
+          "login",
+          "mount",
+          "util-linux"
+        ],
+        "fixed_version_in_scanned_distribution": null,
+        "advisory": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+        "assessment": "Privileged mount/nsenter path is not called by Owner; empty fstab, UID10001, CapEff0, NoNewPrivs1. Inferred unavailable in documented deployment; not a system-wide immunity claim.",
+        "disposition": "reviewed_conditional_mitigation_not_suppressed",
+        "release_risk_accepted": false
+      },
+      "CVE-2026-78410": {
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "packages": [
+          "bsdutils",
+          "libblkid1",
+          "liblastlog2-2",
+          "libmount1",
+          "libsmartcols1",
+          "libuuid1",
+          "login",
+          "mount",
+          "util-linux"
+        ],
+        "fixed_version_in_scanned_distribution": null,
+        "advisory": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+        "assessment": "Privileged mount/nsenter path is not called by Owner; empty fstab, UID10001, CapEff0, NoNewPrivs1. Inferred unavailable in documented deployment; not a system-wide immunity claim.",
+        "disposition": "reviewed_conditional_mitigation_not_suppressed",
+        "release_risk_accepted": false
+      },
+      "CVE-2026-54369": {
+        "title": "acl: Symlink traversal privilege escalation via libacl functions",
+        "packages": [
+          "libacl1"
+        ],
+        "fixed_version_in_scanned_distribution": null,
+        "advisory": "https://security-tracker.debian.org/tracker/CVE-2026-54369",
+        "assessment": "Owner does not call pathname ACL APIs or execute privileged helpers; UID10001, CapEff0, NoNewPrivs1. Conditional reachability assessment only.",
+        "disposition": "reviewed_conditional_mitigation_not_suppressed",
+        "release_risk_accepted": false
+      },
+      "CVE-2025-69720": {
+        "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+        "packages": [
+          "libncursesw6",
+          "libtinfo6",
+          "ncurses-base",
+          "ncurses-bin"
+        ],
+        "fixed_version_in_scanned_distribution": null,
+        "advisory": "https://security-tracker.debian.org/tracker/CVE-2025-69720",
+        "assessment": "Affected infocmp CLI is not invoked by Owner; no subprocess/system/ctypes/eval/exec calls in Owner source scan. Package remains in base image.",
+        "disposition": "reviewed_conditional_mitigation_not_suppressed",
+        "release_risk_accepted": false
+      },
+      "CVE-2026-16742": {
+        "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+        "packages": [
+          "libsystemd0",
+          "libudev1"
+        ],
+        "fixed_version_in_scanned_distribution": null,
+        "advisory": "https://security-tracker.debian.org/tracker/CVE-2026-16742",
+        "assessment": "Affected systemd-homed executable absent in inspected image; libsystemd/libudev source-package matches retained in raw report.",
+        "disposition": "reviewed_conditional_mitigation_not_suppressed",
+        "release_risk_accepted": false
+      },
+      "CVE-2026-9538": {
+        "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
+        "packages": [
+          "perl-base"
+        ],
+        "fixed_version_in_scanned_distribution": null,
+        "advisory": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
+        "assessment": "Owner does not invoke Perl or Archive::Tar; application/source packaging uses Python APIs. Perl package remains in base image.",
+        "disposition": "reviewed_conditional_mitigation_not_suppressed",
+        "release_risk_accepted": false
+      }
+    }
+  },
+  "distribution": "source-only; no prebuilt image redistribution",
+  "legal_approved": false,
+  "public_release_approved": false,
+  "current_frontend": {
+    "status": "technical_inventory_collected_missing_notices_and_legal_review_pending",
+    "lockfile": "frontend/owner-ui/package-lock.json",
+    "runtime": "prebuilt Vue assets; Node only for build",
+    "previous_container_inventory_is_current": false,
+    "inventory": "docs/OWNER_UI_DEPENDENCIES.json",
+    "sbom": "docs/OWNER_UI_SBOM.cdx.json",
+    "notice_texts": "docs/OWNER_UI_THIRD_PARTY_LICENSES.txt",
+    "audit": {
+      "local_evidence": "../release-review/p226-first-release-verification-20261006/final-ui-npm-audit.json",
+      "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+      "lockfile_sha256": "4f2571fffb2d2841189fbff1f7d3d36382a013130eb63f0d3bfda1676bf8feb3",
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "scope": "npm advisory audit only; not source security or license approval"
+    },
+    "security_patch": {
+      "package": "source-map-js",
+      "from": "1.2.1",
+      "to": "1.2.2",
+      "advisory": "GHSA-68fv-2mgg-jv7q",
+      "compiled_assets_unchanged": true
+    }
+  },
+  "current_container": null,
+  "historical_container_scans": [
+    {
+      "image_id": "sha256:74d084e2c56741ad55724689586f9ff40ab7ee126213c9ee2f62b0209d951408",
+      "tag_at_scan": "awesome-stock-owner:p38-qa",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-09-26T18:13:24.418271002Z",
+      "sbom": {
+        "tool": "Docker Scout 1.23.1",
+        "format": "SPDX-2.3",
+        "package_records": 124,
+        "local_evidence": "qa/p41-container.spdx.json",
+        "sha256": "519da2b1de9ce08f2c6d2e74c491eb9c1c6cf1a95cbf39aa26f4d3d7e5b6a0d5"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p41-container-trivy.json",
+        "sha256": "2d80d1f4d7ad13e7aa21465776b0cddc5a8aa70237ee461c06de0e5ed66f8904",
+        "database": {
+          "Version": 2,
+          "NextUpdate": "2026-09-27T12:58:40.511581342Z",
+          "UpdatedAt": "2026-09-26T12:58:40.511581833Z",
+          "DownloadedAt": "2026-09-26T18:13:23.864142127Z"
+        },
+        "severity_package_matches": {
+          "LOW": 57,
+          "HIGH": 44,
+          "MEDIUM": 53,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 68,
+        "matches_with_reported_fix": 0,
+        "added_matches_since_p16": 5,
+        "removed_matches_since_p16": 0,
+        "new_matches_requiring_review": [
+          {
+            "VulnerabilityID": "CVE-2026-86805",
+            "PkgName": "libc-bin",
+            "Severity": "MEDIUM",
+            "InstalledVersion": "2.41-12+deb13u4",
+            "FixedVersion": null,
+            "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+            "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805"
+          },
+          {
+            "VulnerabilityID": "CVE-2026-95818",
+            "PkgName": "libc-bin",
+            "Severity": "MEDIUM",
+            "InstalledVersion": "2.41-12+deb13u4",
+            "FixedVersion": null,
+            "Title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
+            "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818"
+          },
+          {
+            "VulnerabilityID": "CVE-2026-86805",
+            "PkgName": "libc6",
+            "Severity": "MEDIUM",
+            "InstalledVersion": "2.41-12+deb13u4",
+            "FixedVersion": null,
+            "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+            "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805"
+          },
+          {
+            "VulnerabilityID": "CVE-2026-95818",
+            "PkgName": "libc6",
+            "Severity": "MEDIUM",
+            "InstalledVersion": "2.41-12+deb13u4",
+            "FixedVersion": null,
+            "Title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
+            "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818"
+          },
+          {
+            "VulnerabilityID": "CVE-2026-82560",
+            "PkgName": "perl-base",
+            "Severity": "UNKNOWN",
+            "InstalledVersion": "5.40.1-6+deb13u1",
+            "FixedVersion": null,
+            "Title": "Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhausti ...",
+            "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82560"
+          }
+        ]
+      },
+      "limitations": [
+        "Compiled Vue dependencies are not identified by this image scanner; separate npm inventory and audit required.",
+        "No reported fix is not proof that a vulnerability is harmless.",
+        "Historical reachability assessments have not been promoted to current risk approval."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false
+    },
+    {
+      "image_id": "sha256:60573124afff8aa641d755f18a4eea748d00cff6ed23b104b6e38b6f14737c87",
+      "image_config_digest": "sha256:1940296cee0c4bac71daf91a5c51b6d616bac74c41160bc55330ca5f4087586e",
+      "tag_at_scan": "awesome-stock-owner:awesome-owner-qa-b18909a0bd78",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-09-26T21:39:03.025670546Z",
+      "digest_binding": {
+        "image_index_digest": "sha256:60573124afff8aa641d755f18a4eea748d00cff6ed23b104b6e38b6f14737c87",
+        "image_config_digest": "sha256:1940296cee0c4bac71daf91a5c51b6d616bac74c41160bc55330ca5f4087586e",
+        "archive_sha256": "232138dc3df9019221d01d590c0f8f8191f076531a015120c96404eb7d1c10a1",
+        "trivy_sha256": "c458e9e3690d71b24d2fa3e565286db26687190b758e3243c653a3f74eb5c412",
+        "spdx_sha256": "57798b1ace76e013c89d47836206c05968d028661ecd8e62d257c214ef596201",
+        "digest_chain_verified": true
+      },
+      "sbom": {
+        "tool": [
+          "Organization: Docker, Inc",
+          "Tool: docker-scout-1.23.1"
+        ],
+        "format": "SPDX-2.3",
+        "package_records": 124,
+        "local_evidence": "qa/p97-container.spdx.json",
+        "sha256": "57798b1ace76e013c89d47836206c05968d028661ecd8e62d257c214ef596201"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p97-container-trivy.json",
+        "sha256": "c458e9e3690d71b24d2fa3e565286db26687190b758e3243c653a3f74eb5c412",
+        "database": {
+          "Version": 2,
+          "NextUpdate": "2026-09-27T12:58:40.511581342Z",
+          "UpdatedAt": "2026-09-26T12:58:40.511581833Z",
+          "DownloadedAt": "2026-09-26T18:13:23.864142127Z"
+        },
+        "severity_package_matches": {
+          "LOW": 57,
+          "HIGH": 44,
+          "MEDIUM": 53,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 68,
+        "matches_with_reported_fix": 0,
+        "added_matches_since_p41": 0,
+        "removed_matches_since_p41": 0
+      },
+      "limitations": [
+        "Compiled Vue dependencies are not identified by this image scanner; separate npm inventory and audit required.",
+        "No reported fix is not proof that a vulnerability is harmless.",
+        "Historical reachability assessments have not been promoted to current risk approval."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false
+    },
+    {
+      "stage": "P158",
+      "image_id": "sha256:d05d4ab46d50fc7d487a96a9c473c9da304f72d64be0a0d19f291d35c6e8f750",
+      "tag_at_scan": "awesome-stock-owner:awesome-owner-qa-5093bb0d02ed",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-10-02T02:48:51.852831383Z",
+      "base_reference": "python:3.10-slim-trixie@sha256:000d806b9dee7f9b12ed29ac3705ec5027bc696fdc8f3b2f60c64b3a1f09175a",
+      "debian_security_package": {
+        "name": "libpcre2-8-0",
+        "version": "10.46-1~deb13u3",
+        "sha256": "1a02b7129990690ea095fd35d7ace6853742923d158019e1fb4ef27efd2c51a7",
+        "build_fetch_checksum_verified": true
+      },
+      "sbom": {
+        "tool": "Trivy 0.72.0",
+        "format": "SPDX-2.3",
+        "package_records": 89,
+        "local_evidence": "qa/p157-validation/p158-container-fixed.spdx.json",
+        "sha256": "f525a1cf2c4f69770a1e72ed967259104401666ed6a90f7364318c828ae57987"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p157-validation/p158-container-fixed-trivy.json",
+        "sha256": "384e22bd2b89b9917c7371b7ce5d9f7a10d390ed611abcb9d9e799a5a6ecef73",
+        "severity_package_matches": {
+          "LOW": 60,
+          "HIGH": 44,
+          "MEDIUM": 57,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 72,
+        "matches_with_reported_fix": 0,
+        "remaining_matches": 163
+      },
+      "frontend_audit": {
+        "local_evidence": "qa/p157-validation/p158-npm-audit.json",
+        "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+        "advisories": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      "digest_binding": {
+        "image_id": "sha256:d05d4ab46d50fc7d487a96a9c473c9da304f72d64be0a0d19f291d35c6e8f750",
+        "scanner_image_id": "sha256:d05d4ab46d50fc7d487a96a9c473c9da304f72d64be0a0d19f291d35c6e8f750",
+        "matched": true
+      },
+      "limitations": [
+        "Compiled Vue dependencies require separate npm inventory and audit.",
+        "No reported fix does not prove a finding harmless.",
+        "Residual risk and rights review require human confirmation."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false
+    },
+    {
+      "image_id": "sha256:b215842ad7d48c1c424d0dc57817a3a6eb5fcd8a2051b97e3e03064a8d16503b",
+      "tag_at_scan": "awesome-stock-owner:p180-review",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-10-02T07:35:08.336515722Z",
+      "base_reference": "python:3.10-slim-trixie@sha256:000d806b9dee7f9b12ed29ac3705ec5027bc696fdc8f3b2f60c64b3a1f09175a",
+      "debian_security_package": {
+        "name": "libpcre2-8-0",
+        "version": "10.46-1~deb13u3",
+        "sha256": "1a02b7129990690ea095fd35d7ace6853742923d158019e1fb4ef27efd2c51a7",
+        "build_fetch_checksum_verified": true
+      },
+      "sbom": {
+        "tool": "Trivy 0.72.0",
+        "format": "SPDX-2.3",
+        "package_records": 89,
+        "local_evidence": "qa/p180-container.spdx.json",
+        "sha256": "d99d3ac9e0b502297e78d1c6008c4c7c4f47be5105723832ee93f37bded4fecb"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p180-container-trivy.json",
+        "sha256": "c847a63f59c026742fa66d02bae69c079f1fe54d13f2fbd33621ffe5cbb91414",
+        "severity_package_matches": {
+          "LOW": 60,
+          "HIGH": 44,
+          "MEDIUM": 57,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 72,
+        "matches_with_reported_fix": 0,
+        "remaining_matches": 163
+      },
+      "frontend_audit": {
+        "local_evidence": "qa/p180-npm-audit.json",
+        "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+        "advisories": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      "digest_binding": {
+        "image_id": "sha256:b215842ad7d48c1c424d0dc57817a3a6eb5fcd8a2051b97e3e03064a8d16503b",
+        "scanner_image_id": "sha256:b215842ad7d48c1c424d0dc57817a3a6eb5fcd8a2051b97e3e03064a8d16503b",
+        "matched": true
+      },
+      "limitations": [
+        "Compiled Vue dependencies require separate npm inventory and audit.",
+        "No reported fix does not prove a finding harmless.",
+        "Residual risk and rights review require human confirmation."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false,
+      "application_payload_audit": {
+        "local_evidence": "qa/p180-image-payload-audit.json",
+        "compared_files": 167,
+        "unexpected_files": 0,
+        "hash_mismatches": 0,
+        "python_cache_files": 0,
+        "passed": true
+      },
+      "container_smoke": {
+        "local_evidence": "qa/p180-container-smoke.json",
+        "sha256": "5373b02c83b8def13cb4ac816ceb1fa6b1db5515fa7cd9a0b1357e5037d1f643",
+        "isolated_restart": true,
+        "backup_restore": false,
+        "passed": true
+      }
+    },
+    {
+      "image_id": "sha256:c5b8dfc443fd3db57b820fe22760b2dfa8471588ac32dedcbeac80056c97b062",
+      "tag_at_scan": "awesome-stock-owner:p184-provisional",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-10-02T08:11:43.267901501Z",
+      "base_reference": "python:3.10-slim-trixie@sha256:000d806b9dee7f9b12ed29ac3705ec5027bc696fdc8f3b2f60c64b3a1f09175a",
+      "debian_security_package": {
+        "name": "libpcre2-8-0",
+        "version": "10.46-1~deb13u3",
+        "sha256": "1a02b7129990690ea095fd35d7ace6853742923d158019e1fb4ef27efd2c51a7",
+        "build_fetch_checksum_verified": true
+      },
+      "sbom": {
+        "tool": "Trivy 0.72.0",
+        "format": "SPDX-2.3",
+        "package_records": 89,
+        "local_evidence": "qa/p184-container.spdx.json",
+        "sha256": "65d5666e3926a444ea40d5bde503b8e9d5f3a4a99be6d5abcf91f6ba629322d7"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p184-container-trivy.json",
+        "sha256": "29b108f75dd301528251a263df2b76b06e2b97f209716656fe539776d09ebdcd",
+        "severity_package_matches": {
+          "LOW": 60,
+          "HIGH": 44,
+          "MEDIUM": 57,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 72,
+        "matches_with_reported_fix": 0,
+        "remaining_matches": 163
+      },
+      "frontend_audit": {
+        "local_evidence": "qa/p184-npm-audit.json",
+        "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+        "advisories": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      "digest_binding": {
+        "image_id": "sha256:c5b8dfc443fd3db57b820fe22760b2dfa8471588ac32dedcbeac80056c97b062",
+        "scanner_image_id": "sha256:c5b8dfc443fd3db57b820fe22760b2dfa8471588ac32dedcbeac80056c97b062",
+        "matched": true
+      },
+      "limitations": [
+        "Compiled Vue dependencies require separate npm inventory and audit.",
+        "No reported fix does not prove a finding harmless.",
+        "Residual risk and rights review require human confirmation."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false,
+      "application_payload_audit": {
+        "local_evidence": "qa/p184-image-payload-audit.json",
+        "source_archive_sha256": "d2fdf24e02398abf25d69e01891b959ca00eb9f537ec82c8e874cbcc75757f4d",
+        "compared_files": 167,
+        "unexpected_files": 0,
+        "hash_mismatches": 0,
+        "python_cache_files": 0,
+        "passed": true
+      },
+      "container_smoke": {
+        "local_evidence": "qa/p184-container-smoke.json",
+        "sha256": "09fd9dde765332f5140c4d94ebc69b1ed91947b88f1a8fd75b4a1bcb0ce4284c",
+        "isolated_restart": true,
+        "backup_restore": false,
+        "passed": true
+      },
+      "vulnerability_database": {
+        "updated_at_utc": "2026-10-02T01:05:41.350328417Z",
+        "cache_metadata_evidence": "qa/p184-trivy-db-metadata.json"
+      }
+    },
+    {
+      "image_id": "sha256:6783f7793dc4d4716179c4144956858479e75efc85e277e5973e362fb67f4417",
+      "tag_at_scan": "awesome-stock-owner:p188-review",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-10-02T08:35:31.487754926Z",
+      "base_reference": "python:3.10-slim-trixie@sha256:000d806b9dee7f9b12ed29ac3705ec5027bc696fdc8f3b2f60c64b3a1f09175a",
+      "debian_security_package": {
+        "name": "libpcre2-8-0",
+        "version": "10.46-1~deb13u3",
+        "sha256": "1a02b7129990690ea095fd35d7ace6853742923d158019e1fb4ef27efd2c51a7",
+        "build_fetch_checksum_verified": true
+      },
+      "sbom": {
+        "tool": "Trivy 0.72.0",
+        "format": "SPDX-2.3",
+        "package_records": 89,
+        "local_evidence": "qa/p188-container.spdx.json",
+        "sha256": "24566dcc6775cf836c24dd4efc4133207e5b3e8e04c8aa6f86f760e4242160a3"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p188-container-trivy.json",
+        "sha256": "aa96130bfc284d92e0fe7901d73fff5cc2ce3848da5cfe2bbc0547665fd44abc",
+        "severity_package_matches": {
+          "LOW": 60,
+          "HIGH": 44,
+          "MEDIUM": 57,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 72,
+        "matches_with_reported_fix": 0,
+        "remaining_matches": 163
+      },
+      "frontend_audit": {
+        "local_evidence": "qa/p188-npm-audit.json",
+        "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+        "advisories": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      "digest_binding": {
+        "image_id": "sha256:6783f7793dc4d4716179c4144956858479e75efc85e277e5973e362fb67f4417",
+        "scanner_image_id": "sha256:6783f7793dc4d4716179c4144956858479e75efc85e277e5973e362fb67f4417",
+        "matched": true
+      },
+      "limitations": [
+        "Compiled Vue dependencies require separate npm inventory and audit.",
+        "No reported fix does not prove a finding harmless.",
+        "Residual risk and rights review require human confirmation."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false,
+      "application_payload_audit": {
+        "local_evidence": "qa/p188-image-payload-audit.json",
+        "source_archive_sha256": "ae3fda81d2d5428a1be889b90cb2202c6e8849a4d9030d59405925f7024e87f1",
+        "compared_files": 167,
+        "unexpected_files": 0,
+        "hash_mismatches": 0,
+        "python_cache_files": 0,
+        "passed": true
+      },
+      "container_smoke": {
+        "local_evidence": "qa/p188-container-smoke.json",
+        "sha256": "48551781b220ff37f8d42a40def2267a3d2c99b630338cdf33d175a4084fc4a0",
+        "isolated_restart": true,
+        "backup_restore": true,
+        "restored_tables": [
+          "accounts",
+          "trades",
+          "documents",
+          "document_versions",
+          "trade_links"
+        ],
+        "passed": true
+      },
+      "vulnerability_database": {
+        "updated_at_utc": "2026-10-02T01:05:41.350328417Z",
+        "cache_metadata_evidence": "qa/p184-trivy-db-metadata.json"
+      }
+    },
+    {
+      "image_id": "sha256:51f4c0a5d97ca7d9e26652e87e919014fa36d2c78342401096ec0d50a8155160",
+      "tag_at_scan": "awesome-stock-owner:p195-review",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-10-02T10:02:20.73242642Z",
+      "base_reference": "python:3.10-slim-trixie@sha256:000d806b9dee7f9b12ed29ac3705ec5027bc696fdc8f3b2f60c64b3a1f09175a",
+      "debian_security_package": {
+        "name": "libpcre2-8-0",
+        "version": "10.46-1~deb13u3",
+        "sha256": "1a02b7129990690ea095fd35d7ace6853742923d158019e1fb4ef27efd2c51a7",
+        "build_fetch_checksum_verified": true
+      },
+      "sbom": {
+        "tool": "Trivy 0.72.0",
+        "format": "SPDX-2.3",
+        "package_records": 89,
+        "local_evidence": "qa/p195-container.spdx.json",
+        "sha256": "4d1ae148da20c7d570bd25aab284fb23b05ffff7a90a9d2fe9cbae7c279283d1"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p195-container-trivy.json",
+        "sha256": "777be74f577c1926be7b81244a96da5a820a2cbe0fb1ebfcf20cfe6acd887d89",
+        "severity_package_matches": {
+          "LOW": 60,
+          "HIGH": 44,
+          "MEDIUM": 57,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 72,
+        "matches_with_reported_fix": 0,
+        "remaining_matches": 163
+      },
+      "frontend_audit": {
+        "local_evidence": "qa/p195-npm-audit.json",
+        "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+        "advisories": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      "digest_binding": {
+        "image_id": "sha256:51f4c0a5d97ca7d9e26652e87e919014fa36d2c78342401096ec0d50a8155160",
+        "scanner_image_id": "sha256:51f4c0a5d97ca7d9e26652e87e919014fa36d2c78342401096ec0d50a8155160",
+        "matched": true
+      },
+      "limitations": [
+        "Compiled Vue dependencies require separate npm inventory and audit.",
+        "No reported fix does not prove a finding harmless.",
+        "Residual risk and rights review require human confirmation."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false,
+      "application_payload_audit": {
+        "local_evidence": "qa/p195-image-payload-audit.json",
+        "source_archive_sha256": "08aea1e45c59fa3a262f57cd74752ffb1f81fd95741ca20b1b89217c0f69a79f",
+        "compared_files": 167,
+        "unexpected_files": 0,
+        "hash_mismatches": 0,
+        "passed": true
+      },
+      "container_smoke": {
+        "local_evidence": "qa/p195-container-delivery.json",
+        "sha256": "2c129bc4fe548524ee827e6da562a3acb1de1c95b724da788ce82537b94bbe5b",
+        "isolated_restart": true,
+        "backup_restore": true,
+        "restored_tables": [
+          "accounts",
+          "trades",
+          "documents",
+          "document_versions",
+          "trade_links"
+        ],
+        "passed": true,
+        "separate_compose_image_id": "sha256:85875f40d7c8decca7bd2db644e1557220337e88f3f78db4d6561e14ec6cf34a",
+        "separate_compose_payload_audit": "qa/p195-compose-image-payload-audit.json"
+      },
+      "vulnerability_database": {
+        "updated_at_utc": "2026-10-02T01:05:41.350328417Z",
+        "cache_metadata_evidence": "qa/p184-trivy-db-metadata.json"
+      }
+    },
+    {
+      "image_id": "sha256:0250cb5658a4bca871bdf60f3111ad092f87fedf4ede8fb996aaa1b45be0648f",
+      "tag_at_scan": "awesome-stock-owner:p202-provisional",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-10-02T11:21:47.825732627Z",
+      "base_reference": "python:3.10-slim-trixie@sha256:000d806b9dee7f9b12ed29ac3705ec5027bc696fdc8f3b2f60c64b3a1f09175a",
+      "debian_security_package": {
+        "name": "libpcre2-8-0",
+        "version": "10.46-1~deb13u3",
+        "sha256": "1a02b7129990690ea095fd35d7ace6853742923d158019e1fb4ef27efd2c51a7",
+        "build_fetch_checksum_verified": true
+      },
+      "sbom": {
+        "tool": "Trivy 0.72.0",
+        "format": "SPDX-2.3",
+        "package_records": 89,
+        "local_evidence": "qa/p202-container-current.spdx.json",
+        "sha256": "ec7fbe2fec0a3aa8ebdee16ad38804fa1baf3785e6e01eff4fb500cbb6703af3"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p202-container-trivy-current.json",
+        "sha256": "b2fae27b4f37d0b398d2901978773badecf1eedba55d1b0603c8f2fd4a1f9570",
+        "severity_package_matches": {
+          "LOW": 60,
+          "HIGH": 44,
+          "MEDIUM": 57,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 72,
+        "matches_with_reported_fix": 0,
+        "remaining_matches": 163
+      },
+      "frontend_audit": {
+        "local_evidence": "qa/p195-npm-audit.json",
+        "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+        "advisories": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      "digest_binding": {
+        "image_id": "sha256:0250cb5658a4bca871bdf60f3111ad092f87fedf4ede8fb996aaa1b45be0648f",
+        "scanner_image_id": "sha256:0250cb5658a4bca871bdf60f3111ad092f87fedf4ede8fb996aaa1b45be0648f",
+        "matched": true
+      },
+      "limitations": [
+        "Compiled Vue dependencies require separate npm inventory and audit.",
+        "No reported fix does not prove a finding harmless.",
+        "Residual risk and rights review require human confirmation."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false,
+      "application_payload_audit": {
+        "local_evidence": "qa/p202-image-payload-audit.json",
+        "source_archive_sha256": "5acf997e0f3e220861fe95a51a97b85bfee317a73b49ede857344148dffa8937",
+        "compared_files": 167,
+        "unexpected_files": 0,
+        "hash_mismatches": 0,
+        "passed": true
+      },
+      "container_smoke": {
+        "local_evidence": "qa/p202-delivery.json",
+        "sha256": "3c23e6e128470c4a01165c0cac7f5a000251504114bcc2645ab52141d5082d36",
+        "isolated_restart": true,
+        "backup_restore": true,
+        "restored_tables": [
+          "accounts",
+          "trades",
+          "documents",
+          "document_versions",
+          "trade_links"
+        ],
+        "passed": true,
+        "separate_compose_image_id": "sha256:eb88bd4b0bf240deafa28967100776906179b900a4448b81857eaa60cc829cf2",
+        "separate_compose_payload_audit": "qa/p202-compose-image-payload-audit.json"
+      },
+      "vulnerability_database": {
+        "updated_at_utc": "2026-10-02T06:55:51.690179759Z",
+        "cache_metadata_evidence": "qa/p202-trivy-db-metadata.json"
+      }
+    },
+    {
+      "image_id": "sha256:ae50e615c333477593e62d250fe9b38aa7db8fdbfe9b95fe6bc88003980a9df6",
+      "tag_at_scan": "awesome-stock-owner:p203-provisional",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-10-02T11:54:42.169844763Z",
+      "base_reference": "python:3.10-slim-trixie@sha256:000d806b9dee7f9b12ed29ac3705ec5027bc696fdc8f3b2f60c64b3a1f09175a",
+      "debian_security_package": {
+        "name": "libpcre2-8-0",
+        "version": "10.46-1~deb13u3",
+        "sha256": "1a02b7129990690ea095fd35d7ace6853742923d158019e1fb4ef27efd2c51a7",
+        "build_fetch_checksum_verified": true
+      },
+      "sbom": {
+        "tool": "Trivy 0.72.0",
+        "format": "SPDX-2.3",
+        "package_records": 89,
+        "local_evidence": "qa/p203-container.spdx.json",
+        "sha256": "357c67a9ae3bbe69645ea935e5a74066ff1b286877154ef3c24b33fd8e5b08e2"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p203-container-trivy.json",
+        "sha256": "504227fa8f418394253d052bd2facf6480e6550fa323e0f7a9e40f459ab83bde",
+        "severity_package_matches": {
+          "LOW": 60,
+          "HIGH": 44,
+          "MEDIUM": 57,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 72,
+        "matches_with_reported_fix": 0,
+        "remaining_matches": 163
+      },
+      "frontend_audit": {
+        "local_evidence": "qa/p195-npm-audit.json",
+        "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+        "advisories": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      "digest_binding": {
+        "image_id": "sha256:ae50e615c333477593e62d250fe9b38aa7db8fdbfe9b95fe6bc88003980a9df6",
+        "scanner_image_id": "sha256:ae50e615c333477593e62d250fe9b38aa7db8fdbfe9b95fe6bc88003980a9df6",
+        "matched": true
+      },
+      "limitations": [
+        "Compiled Vue dependencies require separate npm inventory and audit.",
+        "No reported fix does not prove a finding harmless.",
+        "Residual risk and rights review require human confirmation."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false,
+      "application_payload_audit": {
+        "local_evidence": "qa/p203-image-payload-audit.json",
+        "source_archive_sha256": "d7055608fd7dad184a20d7972d5218d746101b68ce19abf79287088260662ef3",
+        "compared_files": 167,
+        "unexpected_files": 0,
+        "hash_mismatches": 0,
+        "passed": true
+      },
+      "container_smoke": {
+        "local_evidence": "qa/p203-delivery.json",
+        "sha256": "6952a968df00e3f5f3ed3da85fd33215cb4ab353d37a6acf3a9e5305a4062368",
+        "isolated_restart": true,
+        "backup_restore": true,
+        "restored_tables": [
+          "accounts",
+          "trades",
+          "documents",
+          "document_versions",
+          "trade_links"
+        ],
+        "passed": true,
+        "separate_compose_image_id": "sha256:408bb6e458298f885a8c7c2627c08f060692d5baf6671e6413632fee8810f18b",
+        "separate_compose_payload_audit": "qa/p203-compose-image-payload-audit.json"
+      },
+      "vulnerability_database": {
+        "updated_at_utc": "2026-10-02T06:55:51.690179759Z",
+        "cache_metadata_evidence": "qa/p203-trivy-db-metadata.json"
+      }
+    },
+    {
+      "image_id": "sha256:0d1294e7bd1b2b3f4903ab0ab88d6ce197cbbbab1bc85e3df7be2e05e61daa27",
+      "tag_at_scan": "awesome-stock-owner:p204-provisional",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-10-02T12:17:12.611419722Z",
+      "base_reference": "python:3.10-slim-trixie@sha256:000d806b9dee7f9b12ed29ac3705ec5027bc696fdc8f3b2f60c64b3a1f09175a",
+      "debian_security_package": {
+        "name": "libpcre2-8-0",
+        "version": "10.46-1~deb13u3",
+        "sha256": "1a02b7129990690ea095fd35d7ace6853742923d158019e1fb4ef27efd2c51a7",
+        "build_fetch_checksum_verified": true
+      },
+      "sbom": {
+        "tool": "Trivy 0.72.0",
+        "format": "SPDX-2.3",
+        "package_records": 89,
+        "local_evidence": "qa/p204-container.spdx.json",
+        "sha256": "57d58c3f438d172419550602d609c768c94030d1dd0121b9cfb4675af0943796"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p204-container-trivy.json",
+        "sha256": "c8aad12b7d4fc2247a3daa059573f583c26b747399023173dc1d98027a462641",
+        "severity_package_matches": {
+          "LOW": 60,
+          "HIGH": 44,
+          "MEDIUM": 57,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 72,
+        "matches_with_reported_fix": 0,
+        "remaining_matches": 163
+      },
+      "frontend_audit": {
+        "local_evidence": "qa/p195-npm-audit.json",
+        "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+        "advisories": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      "digest_binding": {
+        "image_id": "sha256:0d1294e7bd1b2b3f4903ab0ab88d6ce197cbbbab1bc85e3df7be2e05e61daa27",
+        "scanner_image_id": "sha256:0d1294e7bd1b2b3f4903ab0ab88d6ce197cbbbab1bc85e3df7be2e05e61daa27",
+        "matched": true
+      },
+      "limitations": [
+        "Compiled Vue dependencies require separate npm inventory and audit.",
+        "No reported fix does not prove a finding harmless.",
+        "Residual risk and rights review require human confirmation."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false,
+      "application_payload_audit": {
+        "local_evidence": "qa/p204-image-payload-audit.json",
+        "source_archive_sha256": "032025d95ce25bb0b68dd950a3df6a71c08c4ac09b851289e479bc8f4fbedfd3",
+        "compared_files": 167,
+        "unexpected_files": 0,
+        "hash_mismatches": 0,
+        "passed": true
+      },
+      "container_smoke": {
+        "local_evidence": "qa/p204-delivery.json",
+        "sha256": "faa73e0423eac138473fc84d5bf411a6a9a9fb78df660dc5524a631d09f782c9",
+        "isolated_restart": true,
+        "backup_restore": true,
+        "restored_tables": [
+          "accounts",
+          "trades",
+          "documents",
+          "document_versions",
+          "trade_links"
+        ],
+        "passed": true,
+        "separate_compose_image_id": "sha256:cf991f0939b4d4b9c5b195a34836a136104298ec58ac80c6e82befc88009eefe",
+        "separate_compose_payload_audit": "qa/p204-compose-image-audit.json"
+      },
+      "vulnerability_database": {
+        "updated_at_utc": "2026-10-02T06:55:51.690179759Z",
+        "cache_metadata_evidence": "qa/p204-trivy-db-metadata.json"
+      }
+    },
+    {
+      "image_id": "sha256:b7d39cab25a0272a338f3ab8cf5f77a3e9ef23976516efa1926093672c47b746",
+      "tag_at_scan": "awesome-stock-owner:awesome-owner-qa-c8f721046592",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-10-02T14:10:20.886912294Z",
+      "base_reference": "python:3.10-slim-trixie@sha256:000d806b9dee7f9b12ed29ac3705ec5027bc696fdc8f3b2f60c64b3a1f09175a",
+      "debian_security_package": {
+        "name": "libpcre2-8-0",
+        "version": "10.46-1~deb13u3",
+        "sha256": "1a02b7129990690ea095fd35d7ace6853742923d158019e1fb4ef27efd2c51a7",
+        "build_fetch_checksum_verified": true
+      },
+      "sbom": {
+        "tool": "Trivy 0.72.0",
+        "format": "SPDX-2.3",
+        "package_records": 89,
+        "local_evidence": "qa/p212-container.spdx.json",
+        "sha256": "f8306ef9e92c7d81bd20ad18fee99bad4ed111e08c032f0b5c844b5e835c5979"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "qa/p212-container-trivy.json",
+        "sha256": "f46777bc53d9bda59ab2560f1144b59a28216d9fcd171820b1b1978000277a75",
+        "severity_package_matches": {
+          "LOW": 60,
+          "HIGH": 44,
+          "MEDIUM": 57,
+          "UNKNOWN": 2
+        },
+        "unique_advisories": 72,
+        "matches_with_reported_fix": 0,
+        "remaining_matches": 163
+      },
+      "frontend_audit": {
+        "local_evidence": "qa/p211-frontend-npm-audit.json",
+        "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+        "advisories": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      "digest_binding": {
+        "image_id": "sha256:b7d39cab25a0272a338f3ab8cf5f77a3e9ef23976516efa1926093672c47b746",
+        "scanner_image_id": "sha256:b7d39cab25a0272a338f3ab8cf5f77a3e9ef23976516efa1926093672c47b746",
+        "matched": true
+      },
+      "limitations": [
+        "Compiled Vue dependencies require separate npm inventory and audit.",
+        "No reported fix does not prove a finding harmless.",
+        "Residual risk and rights review require human confirmation."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false,
+      "application_payload_audit": {
+        "local_evidence": "qa/p212-provisional-image-audit.json",
+        "source_archive_sha256": "fc73523f4fa9d03f21bb98e774d1be30e7a5c3eb161599e3d65b9bbe5626fe0f",
+        "compared_files": 167,
+        "unexpected_files": 0,
+        "hash_mismatches": 0,
+        "passed": true
+      },
+      "container_smoke": {
+        "local_evidence": "qa/p212-delivery.json",
+        "sha256": "22fbca0a59dd914594c4ffe2721ef3facc85b7d72e98428d23d53e6541d1271d",
+        "isolated_restart": true,
+        "backup_restore": true,
+        "restored_tables": [
+          "accounts",
+          "trades",
+          "documents",
+          "document_versions",
+          "trade_links"
+        ],
+        "passed": true,
+        "separate_compose_image_id": "sha256:b7d39cab25a0272a338f3ab8cf5f77a3e9ef23976516efa1926093672c47b746",
+        "separate_compose_payload_audit": "qa/p212-provisional-image-audit.json"
+      },
+      "vulnerability_database": {
+        "updated_at_utc": "2026-10-02T06:55:51.690179759Z",
+        "cache_metadata_evidence": "qa/p212-trivy-db-metadata.json"
+      },
+      "stage": "P212"
+    },
+    {
+      "image_id": "sha256:d62dc83f2262283a6450cc39c423ce6d16c32f7c9ad4b376cf297903685e579e",
+      "tag_at_scan": "awesome-stock-owner:awesome-owner-qa-79c62adbdef1",
+      "architecture": "arm64",
+      "scan_time_utc": "2026-10-06T13:43:42.552721303Z",
+      "base_reference": "python:3.10-slim-trixie@sha256:000d806b9dee7f9b12ed29ac3705ec5027bc696fdc8f3b2f60c64b3a1f09175a",
+      "debian_security_package": {
+        "name": "libpcre2-8-0",
+        "version": "10.46-1~deb13u3",
+        "sha256": "1a02b7129990690ea095fd35d7ace6853742923d158019e1fb4ef27efd2c51a7",
+        "build_fetch_checksum_verified": true
+      },
+      "sbom": {
+        "tool": "Trivy 0.72.0",
+        "format": "SPDX-2.3",
+        "package_records": 89,
+        "local_evidence": "../release-review/p226-first-release-verification-20261006/final-container.spdx.json",
+        "sha256": "a2a23de27ca2990330e431bc49d6a0d6593789e81caaa7072290fc096934ec27"
+      },
+      "vulnerabilities": {
+        "tool": "Trivy 0.72.0",
+        "local_evidence": "../release-review/p226-first-release-verification-20261006/final-container-trivy.json",
+        "sha256": "cdd89bc5866f9df0e5e9670dbb29a16d319c0807b0ac63424d6bf7f804bffde4",
+        "severity_package_matches": {
+          "LOW": 61,
+          "HIGH": 44,
+          "MEDIUM": 58,
+          "UNKNOWN": 2,
+          "CRITICAL": 0
+        },
+        "unique_advisories": 72,
+        "matches_with_reported_fix": 0,
+        "remaining_matches": 165
+      },
+      "frontend_audit": {
+        "local_evidence": "../release-review/p226-first-release-verification-20261006/final-ui-npm-audit.json",
+        "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
+        "advisories": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      "digest_binding": {
+        "image_index_digest": "sha256:d62dc83f2262283a6450cc39c423ce6d16c32f7c9ad4b376cf297903685e579e",
+        "platform_manifest_digest": "sha256:c457c49437a3c5cd40ab33780b4eecb30883365f9dcc2995b44a75542f50dd3e",
+        "image_config_digest": "sha256:b83e2448e7f8df3a762a789ce36655e1197696e712364a0e4e8909ae6161df5d",
+        "scanner_image_id": "sha256:b83e2448e7f8df3a762a789ce36655e1197696e712364a0e4e8909ae6161df5d",
+        "archive_sha256": "5d69e5d92d1024e85e40ca9bb36f920ba702578307e5f6fcdd2caade65ea4e9e",
+        "verified_descriptor_hashes": true,
+        "rootfs_diffids_match": true,
+        "digest_chain_verified": true
+      },
+      "limitations": [
+        "Compiled Vue dependencies require separate npm inventory and audit.",
+        "No reported fix does not prove a finding harmless.",
+        "Residual risk and rights review require human confirmation."
+      ],
+      "release_risk_accepted": false,
+      "public_release_approved": false,
+      "application_payload_audit": {
+        "local_evidence": "../release-review/p226-first-release-verification-20261006/final-image-audit.json",
+        "source_archive_sha256": "f2dc45d5a865abf31fffd7abf5353e903e38657d71ef7bbe9d8a43780fbd1df6",
+        "compared_files": 169,
+        "unexpected_files": 0,
+        "hash_mismatches": 0,
+        "passed": true,
+        "scope": "Tested archive; final documentation-only archive is bound separately in package-external evidence."
+      },
+      "container_smoke": {
+        "local_evidence": "../release-review/p226-first-release-verification-20261006/final-delivery.json",
+        "sha256": "6837fe2d6d7fdd9812c35422556db46d905fec5f348921392809061a92d8f374",
+        "isolated_restart": true,
+        "backup_restore": true,
+        "restored_tables": [
+          "accounts",
+          "trades",
+          "documents",
+          "document_versions",
+          "trade_links"
+        ],
+        "passed": true,
+        "separate_compose_image_id": "sha256:d62dc83f2262283a6450cc39c423ce6d16c32f7c9ad4b376cf297903685e579e",
+        "separate_compose_payload_audit": "../release-review/p226-first-release-verification-20261006/final-image-audit.json"
+      },
+      "vulnerability_database": {
+        "updated_at_utc": "2026-10-06T07:04:23.108323632Z",
+        "cache_metadata_evidence": "../release-review/p226-first-release-verification-20261006/trivy-cache/db/metadata.json"
+      },
+      "stage": "P226",
+      "excluded_from_first_release": true
+    }
+  ],
+  "current_scan_stage": "P227",
+  "legacy_top_level_record_is_current": false,
+  "first_release_distribution": {
+    "owner_decision": "A方案",
+    "supported_platforms": [
+      "macOS Apple Silicon (arm64)"
+    ],
+    "installation": "native-source-only",
+    "container_installation_included": false,
+    "prebuilt_container_image_distributed": false,
+    "container_risk_disposition": "Excluded from first release; historical findings not fixed or accepted.",
+    "native_dependency_boundary": "Python standard library and shipped Vue assets; no Linux base-image packages distributed."
+  }
+}

@@ -1,0 +1,58 @@
+// SCSS变量定义
+
+// 颜色变量
+$primary-color: #409EFF;
+$success-color: #67C23A;
+$warning-color: #E6A23C;
+$danger-color: #F56C6C;
+$info-color: #909399;
+
+// Awesome Stock Tech Sense Theme
+$as-bg-start: #07111f;
+$as-bg-end: #0c1830;
+$as-panel: rgba(9, 21, 42, 0.74);
+$as-panel-strong: rgba(11, 26, 52, 0.9);
+$as-panel-soft: rgba(244, 249, 255, 0.78);
+$as-border: rgba(112, 202, 255, 0.14);
+$as-border-strong: rgba(112, 202, 255, 0.28);
+$as-text-main: #e9f4ff;
+$as-text-soft: #95aac6;
+$as-text-muted: #627791;
+$as-accent: #55c2ff;
+$as-accent-strong: #2c8fff;
+$as-accent-violet: #7a7dff;
+$as-success: #33d69f;
+$as-danger: #ff6b7b;
+$as-warning: #ffb54d;
+
+// 间距变量
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// 字体大小
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+
+// 边框圆角
+$border-radius-sm: 4px;
+$border-radius-md: 6px;
+$border-radius-lg: 8px;
+$border-radius-xl: 12px;
+
+// 阴影
+$box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+$box-shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+// 断点
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1920px;

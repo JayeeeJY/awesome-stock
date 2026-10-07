@@ -1,0 +1,1 @@
+"""Local synthetic persistence candidate."""

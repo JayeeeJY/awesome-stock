@@ -1,0 +1,42 @@
+{
+  "name": "awesome-stock-owner-checks",
+  "version": "0.0.0-dev",
+  "private": true,
+  "type": "module",
+  "description": "Optional browser validation only; application has no Node runtime dependency",
+  "scripts": {
+    "test:ui": "node tests/owner/browser_shell.mjs",
+    "test:business": "node tests/owner/browser_business.mjs",
+    "test:vue": "node tests/owner/browser_vue.mjs",
+    "test:planning": "node tests/owner/browser_plan_batch.mjs && node tests/owner/browser_allocation_layers.mjs && node tests/owner/browser_plan_execution.mjs && node tests/owner/browser_plan_trade.mjs",
+    "test:diagnosis": "node tests/owner/browser_diagnosis.mjs",
+    "test:daily-ai": "node tests/owner/browser_daily_ai.mjs",
+    "test:batch-ai": "node tests/owner/browser_batch_ai.mjs",
+    "test:batch-ai-retry": "node tests/owner/browser_batch_ai_retry.mjs",
+    "test:batch-ai-pause": "node tests/owner/browser_batch_pause_long.mjs",
+    "test:market-history": "node tests/owner/browser_market_history.mjs",
+    "test:market-history-flat": "node tests/owner/browser_market_history_flat.mjs",
+    "test:company": "node tests/owner/browser_company.mjs",
+    "test:news": "node tests/owner/browser_news.mjs",
+    "test:market-history-full": "node tests/owner/browser_market_history_full.mjs",
+    "test:messages": "node tests/owner/browser_messages.mjs",
+    "test:portfolio-fx": "node tests/owner/browser_portfolio_fx.mjs",
+    "test:cockpit-fx": "node tests/owner/browser_cockpit_fx.mjs",
+    "test:snapshot-trend": "node tests/owner/browser_snapshot_trend.mjs",
+    "test:diagnosis-sources": "node tests/owner/browser_diagnosis_sources.mjs",
+    "test:diagnosis-portfolio": "node tests/owner/browser_diagnosis_portfolio.mjs",
+    "test:china-market": "node tests/owner/browser_china_market.mjs",
+    "test:hk-market": "node tests/owner/browser_hk_market.mjs",
+    "test:settings-appearance": "node tests/owner/browser_settings_appearance.mjs",
+    "test:connections": "node tests/owner/browser_connection_status.mjs && node tests/owner/browser_connection_test.mjs",
+    "test:public-market": "node tests/owner/browser_public_market.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "AGPL-3.0-only",
+  "author": "Evan"
+}

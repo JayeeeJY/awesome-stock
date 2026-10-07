@@ -1,0 +1,7 @@
+<template><section class="company-evidence" aria-label="公司资料来源"><h3>公司资料 · {{ source.company.name }}</h3><p>{{ source.symbol }} · {{ source.company.exchange||'交易所待补' }} · {{ source.currency }}</p><p>{{ source.company.sector||'板块待补' }} / {{ source.company.industry||'行业待补' }} · {{ source.company.country||'国家待补' }}</p><p>{{ source.company.description||'公司介绍待补' }}</p><p>{{ source.source }} · 获取时间 {{ source.retrieved_at }}</p><p>供应商最近财季：{{ source.company.latest_quarter||'未提供' }} · 供应商资料，未人工核验</p><dl><template v-for="field in fields" :key="field.key"><dt>{{ field.label }}</dt><dd>{{ source.company[field.key]??'待补' }}</dd></template></dl><p>{{ source.notice }}</p></section></template>
+<script setup lang="ts">
+import type {CompanySource} from '@/api/company'
+defineProps<{source:CompanySource}>()
+const fields:{key:keyof CompanySource['company'];label:string}[]=[{key:'pe',label:'P/E'},{key:'pb',label:'P/B'},{key:'market_cap_usd',label:'市值 USD'},{key:'roe_ttm_percent',label:'ROE TTM %'},{key:'quarterly_revenue_growth_yoy_percent',label:'季度营收同比 %'},{key:'quarterly_earnings_growth_yoy_percent',label:'季度盈利同比 %'}]
+</script>
+<style scoped>.company-evidence{padding:16px;border:1px solid var(--el-border-color);border-radius:12px;margin:12px 0}.company-evidence p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6}.company-evidence dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.company-evidence dd{margin:0;overflow-wrap:anywhere}</style>

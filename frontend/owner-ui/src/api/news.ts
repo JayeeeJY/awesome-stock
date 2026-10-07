@@ -1,0 +1,1 @@
+export type NewsSource={id?:string;revision?:number;symbol:string;source:string;retrieved_at:string;verification:string;notice:string;articles:{sentiment?:{label:string|null;score:string|null;normalized:string|null;verified:boolean};id:string;title:string;summary:string;url:string;published_at:string;publisher:string}[]}

@@ -1,0 +1,10 @@
+name: Product feedback / 产品反馈
+description: Describe the investing workflow you want to improve.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and desired outcome / 问题与目标
+      description: Do not include personal holdings, credentials or third-party code.
+    validations:
+      required: true

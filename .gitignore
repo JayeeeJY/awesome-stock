@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.local-state*/
+.owner-state*/
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+*.db
+__pycache__/
+.pytest_cache/
+.venv/
+node_modules/
+qa/
+.packages/
+.DS_Store

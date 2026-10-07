@@ -1,0 +1,23 @@
+'use strict';
+let cashEditing=null,cashDirty=false;
+function lockCashControls(){$('cash-account').disabled=!!cashEditing;}
+function resetCash(){cashEditing=null;cashDirty=false;pending.delete('cash');pending.delete('cash-id');$('cash-form').reset();$('cash-when').value=localTime();$('cash-heading').textContent='录入资金流水';$('cash-version').textContent='尚未保存';lockCashControls();}
+function editCash(flow){if(busy)return;if(cashDirty&&!confirm('放弃尚未保存的资金流水输入？'))return;resetCash();cashEditing=flow;$('cash-account').value=flow.account_id;$('cash-direction').value=flow.direction;$('cash-amount').value=flow.amount;$('cash-when').value=localTime(flow.occurred_at);$('cash-note').value=flow.note;$('cash-heading').textContent='更正资金流水';$('cash-version').textContent=`版本 ${flow.revision} · 首次顺序 ${flow.event_order}`;lockCashControls();$('cash-form').scrollIntoView({behavior:'smooth',block:'center'});}
+async function loadCash(){
+ const history=await request('/api/v1/owner/cash-flows');const selected=$('cash-account').value;$('cash-account').replaceChildren();$('cash-balances').replaceChildren();$('cash-list').replaceChildren();$('cash-history').replaceChildren();
+ if(!ledger.accounts.length){$('cash-balances').append(element('p','先在“账户与交易”建立资金账户，再录入出入金。'));}
+ const flows=[];for(const a of ledger.accounts){const o=element('option',`${a.name} · ${a.currency}`);o.value=a.id;$('cash-account').append(o);const card=element('div');card.className='account-card';card.append(element('h3',`${a.name} · ${a.currency}`),element('p',`期初 ${a.opening_cash} + 入金 ${a.deposits} − 出金 ${a.withdrawals} + 成交净变动 (${a.trade_cash_change}) = 当前现金 ${a.cash}`));$('cash-balances').append(card);flows.push(...a.cash_flows.map(f=>({...f,account_name:a.name,currency:a.currency})));}
+ if([...$('cash-account').options].some(o=>o.value===selected))$('cash-account').value=selected;
+ if(!$('cash-when').value)$('cash-when').value=localTime();
+ const t=table(['账户 / 币种','发生时间','方向','金额','备注','版本 / 首次顺序','操作'],[]),body=t.querySelector('tbody');
+ flows.sort((a,b)=>a.occurred_at.localeCompare(b.occurred_at)||a.event_order-b.event_order);
+ for(const f of flows){const row=element('tr');row.dataset.cashId=f.id;for(const value of [`${f.account_name} / ${f.currency}`,new Date(f.occurred_at).toLocaleString(),f.direction==='deposit'?'入金':'出金',f.amount,f.note,String(f.revision)+' / '+f.event_order])row.append(element('td',value));const actions=element('td'),edit=element('button','更正'),remove=element('button','删除');edit.className='secondary';edit.onclick=()=>editCash(f);remove.className='danger';remove.onclick=()=>{if(busy||!confirm('删除这笔资金流水并重算全部账目？历史仍保留；如造成任一时点透支，将拒绝删除。'))return;run(async()=>{await request('/api/v1/owner/cash-flows','DELETE',operation('cash-delete-'+f.id,{id:f.id,revision:f.revision}));pending.delete('cash-delete-'+f.id);if(cashEditing?.id===f.id)resetCash();await reload();message('资金流水已删除，账本已重算。');});};actions.append(edit,remove);row.append(actions);body.append(row);}
+ if(flows.length)$('cash-list').append(t);else $('cash-list').append(element('p','还没有出入金记录。'));
+ for(const v of history.versions){const a=ledger.accounts.find(a=>a.id===v.account_id),p=element('p',`${a?.name||'账户'} · ${a?.currency||''} · ${v.direction==='deposit'?'入金':'出金'} ${v.amount} · ${new Date(v.occurred_at).toLocaleString()} · v${v.revision}${v.deleted?' · 已删除':''} · ${v.note}`);p.className='hint';$('cash-history').append(p);}if(!history.versions.length)$('cash-history').append(element('p','尚无历史版本。'));
+ lockCashControls();
+}
+$('cash-form').oninput=()=>{cashDirty=true;};
+$('cash-form').onsubmit=e=>{e.preventDefault();run(async()=>{let id=cashEditing?.id||pending.get('cash-id');if(!id){id=crypto.randomUUID();pending.set('cash-id',id);}const values={id,revision:cashEditing?.revision||0,account_id:$('cash-account').value,direction:$('cash-direction').value,amount:$('cash-amount').value,occurred_at:cashEditing&&$('cash-when').value===localTime(cashEditing.occurred_at)?cashEditing.occurred_at:new Date($('cash-when').value).toISOString(),note:$('cash-note').value};await request('/api/v1/owner/cash-flows','POST',operation('cash',values));const selected=$('cash-account').value;resetCash();$('cash-account').value=selected;await reload();message('资金流水已保存，现金已核账。');});};
+$('new-cash').onclick=()=>{if(cashDirty&&!confirm('放弃尚未保存的资金流水输入？'))return;const account=$('cash-account').value;resetCash();$('cash-account').value=account;message('可录入新的资金流水。');};
+function clearCash(){resetCash();for(const id of ['cash-account','cash-balances','cash-list','cash-history'])$(id).replaceChildren();}
+window.addEventListener('beforeunload',e=>{if(cashDirty){e.preventDefault();e.returnValue='';}});
