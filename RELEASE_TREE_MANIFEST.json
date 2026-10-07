@@ -1303,7 +1303,7 @@
     },
     {
       "path": "tests/owner/browser_diagnosis.mjs",
-      "sha256": "6033efb89ca5897bb8068f979084327db08c47a0ce38afa6a59c389f62d202ae"
+      "sha256": "40caf3ea94d92cfd5d55c5cea9bf2b2169f6bba9d2363679c572daf06d5ec6fc"
     },
     {
       "path": "tests/owner/browser_diagnosis_portfolio.mjs",
