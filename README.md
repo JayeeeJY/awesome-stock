@@ -2,7 +2,7 @@
 
 个人投资工作台：从真实账本出发，把研究、判断、计划与复盘连接起来。每位使用者在自己的电脑运行，管理自己的数据和模型服务。
 
-**当前状态：发布前候选，尚未公开发行。** 项目许可已确定为 AGPL-3.0-only；最终版本号、第三方权利收口和发行批准仍待完成。截图只含合成验证数据。
+**当前状态：v1.0.0 正式稳定版发布准备，尚未公开发行。** 项目许可为 AGPL-3.0-only；第三方/行情来源收口与最终发行批准仍待完成。截图只含合成验证数据。
 
 [English](README.en.md) · [安装与恢复](OWNER_INSTALL.md) · [可选模型与行情](docs/OPTIONAL_PROVIDERS.md) · [隐私](docs/DATA_AND_PRIVACY.md) · [安全](SECURITY.md)
 
@@ -48,7 +48,7 @@ python3 start_owner.py --open-browser
 
 [验证说明](docs/VALIDATION.md) 区分自动化、合成浏览器、实际平台与用户服务账号验收。[开发检查](docs/DEVELOPMENT.md) 提供可复现命令。所有测试通过不代表真实连续使用、许可或发布批准。
 
-首发方向只接收 Issue 和产品反馈，暂不接收外部代码贡献。请勿提交交易明细、Key 或备份；安全问题遵循 [SECURITY.md](SECURITY.md)。当前没有已启用的公开支持或私密报告地址。
+首发只接收 [Issue 和产品反馈](https://github.com/JayeeeJY/awesome-stock/issues)，暂不接收外部代码贡献。请勿提交交易明细、Key 或备份；安全问题使用 GitHub 私密漏洞报告，见 [SECURITY.md](SECURITY.md)。仓库目前为私有准备状态，公开反馈入口将在转公开时启用并核验。
 
 ## 许可与发行
 

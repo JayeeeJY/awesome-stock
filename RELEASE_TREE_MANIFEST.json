@@ -63,15 +63,15 @@
     },
     {
       "path": "README.en.md",
-      "sha256": "44d87b1b0f057a9f43d0571060c306183bc5cc4ad8a95ef847872a96ec479f88"
+      "sha256": "d018ac7301c52d6d51bc866143eda4a168121ca4cc0ea45b939834d29444d045"
     },
     {
       "path": "README.md",
-      "sha256": "83f67abd33e277d5a6b0c5ca7717dbbe4b1bc8fd8c7f9f1cc01b131f90cfc65f"
+      "sha256": "ae71a65372e093fe8c5b4f12a50e9cda9afe23221b181b208a8248ae0083d51e"
     },
     {
       "path": "SECURITY.md",
-      "sha256": "b273973063f53090d26ab726b837efbbdda43c1d6249ae4127f9710a393793f3"
+      "sha256": "178a3b62685c27fb58133a92bc9eb74ba3c6aa586e1ea30f0ae73a0d67a5be40"
     },
     {
       "path": "backend/src/awesome_stock/__init__.py",
@@ -483,7 +483,7 @@
     },
     {
       "path": "docs/THIRD_PARTY_NOTICES_CANDIDATE.md",
-      "sha256": "f60fead3ff01c80c203de9ca9e8f427435247609f09c977f907a7a74bf5ef80d"
+      "sha256": "81b4ec797e81a897a2736058b797027b8b53aa0cab1a348756cdce780758eb9b"
     },
     {
       "path": "docs/TROUBLESHOOTING.md",

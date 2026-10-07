@@ -2,7 +2,7 @@
 
 A self-hosted personal investing workspace connecting your ledger, research, decisions, plans and reviews. Run it on your own computer, with your own data and optional model services.
 
-**Pre-release candidate. Not publicly released.** The project license is AGPL-3.0-only; the final version, third-party rights review and publication approval remain pending. Screenshots use synthetic test data only.
+**Preparing the v1.0.0 stable release. Not publicly released.** The project license is AGPL-3.0-only; third-party/data-source review and final publication approval remain pending. Screenshots use synthetic test data only.
 
 [中文](README.md) · [Installation and recovery](OWNER_INSTALL.md) · [Security](SECURITY.md)
 
@@ -42,6 +42,8 @@ Keys stay in server process memory and clear on logout, password change or resta
 Local SQLite data lives in `.owner-state` unless `--data-dir` is set. Backups are unencrypted and include credential hashes and business history. Recovery creates a new directory without replacing the original. Cross-currency summaries use recorded, valid user-supplied FX rates to convert to USD; unavailable prices or FX rates remain explicitly missing. Converted P&L excludes historical FX gains and losses.
 
 See [validation](docs/VALIDATION.md), [development checks](docs/DEVELOPMENT.md) and [contribution policy](CONTRIBUTING.md).
+
+The first release accepts [issues and product feedback](https://github.com/JayeeeJY/awesome-stock/issues), not external code contributions. Security reports use GitHub private vulnerability reporting; see [SECURITY.md](SECURITY.md). The repository is currently private staging. Public feedback channels will be activated and verified when it becomes public.
 
 ## License and release
 
