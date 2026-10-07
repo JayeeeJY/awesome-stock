@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.1 — 2026-10-07
+
+- Restored the Personal login starfield, connecting particles, brand lockup and glass card in Community. Local account creation/login is unchanged. Reduced motion shows a static background; particles are destroyed when leaving login.
+- Rewrote Chinese and English project introductions around product value and the research → decision → plan → trade → review workflow; refreshed synthetic screenshots and distinguished released Community, internal Personal experiments and future Cloud directions.
+- Pinned the same tsParticles 3.9.1 engine/slim graph used by the original visual design, bundled locally with refreshed dependency notices and SBOM. No external particle scripts or new runtime service are required.
+- Distribution remains native source for macOS Apple Silicon; no provider, pricing, account model or business scope change. v1.0.0 remains available unchanged.
+
 2026-10-07 发布准备补充：新增首次使用、模型/行情凭据获取与测试/保存/失败指引，连接页提供可展开步骤；携带所有者批准的两包MIT元数据与参考文本透明披露，不冒充恢复上游正文。实际发布日期以 GitHub Releases 为准。
 
 ## v1.0.0 — first-release scope; publication date in GitHub Releases
@@ -19,4 +26,4 @@
 - Expanded portfolio structure includes a third fixed-history chart of saved held-market values, linked to the underlying daily snapshots. Missing valuations break the line and failed history reads clear old points; the chart is explicitly distinguished from investment returns.
 - Reproducible source archive and isolated GitHub review tree, installation instructions, test workflow and supply-chain evidence. Historical container evidence is retained separately; container installation is excluded from this first release.
 
-Project-owned code: Copyright (c) 2026 Evan, AGPL-3.0-only, approved 2026-10-06. No separate commercial license is offered. Owner functional acceptance of T01–T21 is complete. This is not a published version; third-party rights, final residual risk and repository/publication approval remain pending. The owner-approved standard for this first stable release is completed owner functional acceptance plus final engineering verification; the former 10-trading-day and 10–20 invited-user prerequisites no longer apply to this release. No migration of private user databases or publication of private Git history occurred.
+Project-owned code: Copyright (c) 2026 Evan, AGPL-3.0-only, approved 2026-10-06. No separate commercial license is offered. Owner functional acceptance of T01–T21 is complete. v1.0.0 was publicly released on 2026-10-07 after owner authorization and final engineering verification; exact commits and downloads are recorded in GitHub Releases. Two absent upstream notice bodies retain the owner-approved transparent disclosure rather than invented upstream text. The owner-approved standard for this first stable release is completed owner functional acceptance plus final engineering verification; the former 10-trading-day and 10–20 invited-user prerequisites no longer apply to this release. No migration of private user databases or publication of private Git history occurred.

@@ -1,55 +1,126 @@
-# Awesome Stock · Community
+# Awesome Stock
 
-个人投资工作台：从真实账本出发，把研究、判断、计划与复盘连接起来。每位使用者在自己的电脑运行，管理自己的数据和模型服务。
+**你的个人投资进化系统。**
 
-**Community v1.0.0：正式稳定首发范围。** 实际发行版本和日期以 [GitHub Releases](https://github.com/JayeeeJY/awesome-stock/releases) 为准。项目许可为 AGPL-3.0-only；许可通知处置与行情范围已按所有者决定落实。截图只含合成验证数据。
+**Evolve Every Trade.**
 
-[English](README.en.md) · [第一次使用](docs/QUICKSTART.md) · [安装与恢复](OWNER_INSTALL.md) · [可选模型与行情](docs/OPTIONAL_PROVIDERS.md) · [隐私](docs/DATA_AND_PRIVACY.md) · [安全](SECURITY.md)
+投资不只有买入和卖出。还有你的研究依据、当时的判断、计划中的约束，以及事后值得留下的经验。Awesome Stock 把这些环节连接起来，帮助你看清资产、做出有依据的行动，并逐步形成更适合自己的投资方法。
 
-![系统设置，合成验证数据](docs/screenshots/settings.png)
+**Community 是 Awesome Stock 家族已经公开发布的本地工作台。** 在你自己的电脑上，把账本、研究、判断、计划和复盘组织成一套完整流程。AI 可以按需加入，基础业务不需要模型或行情 API。
 
-## 开始使用
+[下载 Community v1.0.1](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [第一次使用](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [模型与行情配置](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/OPTIONAL_PROVIDERS.md)
 
-本次首发支持 macOS Apple Silicon（arm64），需要 Python 3.10+。应用只使用 Python 标准库，无须 Node、数据库服务或模型即可启动：
+首发支持 macOS Apple Silicon，Python 3.10+。由 Evan 维护，项目自有代码采用 AGPL-3.0-only。
 
-```sh
-python3 start_owner.py --open-browser
-```
+![Community 驾驶舱：从资产事实与待办开始](docs/screenshots/cockpit.png)
 
-打开 `http://127.0.0.1:4322/ledger`，创建自己的本地账号，再建立资金账户。没有默认口令，不会预先放入演示持仓。
+*以下界面来自正式发布的 Community v1.0.1。账号、标的、交易、价格、研究和计划均为合成示例，用于展示使用流程，不代表真实投资组合或收益。*
 
-首发采用原生源码安装，不包含 Docker 安装入口或预构建镜像；Windows、Linux 和 Intel Mac 暂不列入正式支持范围。详细安装、更新和恢复步骤见 [安装说明](OWNER_INSTALL.md)。从第一次建账到备份的步骤见 **[第一次使用](docs/QUICKSTART.md)**；模型/行情的 Key 获取、配置、测试成功反馈与故障处理见 **[配置指南](docs/OPTIONAL_PROVIDERS.md)**，连接页也可展开使用步骤。
+## 把分散的投资记录，连接成可以回看的过程
 
-## 六个工作区
+你可能在一个地方看持仓，在另一个地方写研究，靠记忆保存买卖理由，事后却难以还原当时为什么做出决定。
 
-| 工作区 | 已接入的能力 |
-| --- | --- |
-| Cockpit 驾驶舱 | 账本概况、缺口、行动反馈、最近成交 |
-| Portfolio 资产 | 多账户、多币种分别展示，买卖成交、出入金、FIFO/加权平均成本核账、CSV 预览导入、手工价格快照 |
-| Research 研究 | 候选与证据、明确阈值筛选、比较、研究笔记及历史版本 |
-| Plan 计划 | 支持/反方证据、失效条件、固定版本判断引用、手工执行计划、只读配置与交易试算 |
-| Evolve 进化 | 对照当时依据复盘、过程与结果分别记录、手工规则管理、周期过程趋势 |
-| Academy 学院 | 原版知识文档与图示、搜索和分类 |
+Awesome Stock 帮你留下这条线：
 
-设置页提供账号、浅色/深色/跟随系统外观、桌面侧栏宽度、驾驶舱隐私模式、可选 AI/行情、备份与 JSON 导出、业务数据重置。外观和驾驶舱隐私偏好只保存在当前浏览器；桌面侧栏与手机工作区导航采用自用版的视觉结构，功能绑定于独立 Community 业务。
+**资产事实 → 研究证据 → 投资判断 → 执行计划 → 实际成交 → 决策复盘**
 
-![投资驾驶舱，合成验证数据](docs/screenshots/cockpit.png)
+- **看清自己的钱在哪里。** 账户、现金、持仓和成交有清楚的记录；缺少价格或汇率时，明确告诉你还缺什么。
+- **把判断的依据保存下来。** 支持证据、反方观点和失效条件与历史版本一起保留，方便以后回看。
+- **在行动前核对计划。** 先检查预算、现金和自己的风险约束，再自行决定是否执行。
+- **在事后复盘过程。** 回看当时的依据，区分是否遵守计划与结果如何，积累值得保留的经验。
 
-## 数据与服务边界
+## 在 Community 里，走完一次投资工作流程
 
-- 每位使用者自备 OpenAI / DeepSeek API Key 或自行安装 Ollama 模型；费用由使用者承担。项目不提供统一密钥或代付。云端模型 ID 由使用者按账号权限填写；连接适配测试不代替真实服务验收。
-- 首发暂不提供 Yahoo 免 Key 行情。可手工录入带来源的价格或导入 CSV 成交（不是行情导入）；自动查询需配置自己的 Alpha Vantage（USD/CNY）或 EODHD（HKD），连接默认关闭，先核对后保存，不自动换源。不是实时行情，详见[可选连接](docs/OPTIONAL_PROVIDERS.md)。
-- Key 仅保留在服务进程内存，退出、改密或重启后清除，不进入备份和导出。Ask Awesome 支持自由提问与追问，发送前核对问题、附加材料及本次对话历史；对话只留在当前页面内存，刷新清除。不自动下单或执行模型输出。
-- 没有行情/汇率时明确显示缺失，不把成本当市值，跨币种汇总仅使用已记录且有效的用户汇率折算 USD，缺汇率不合计。不支持空头、期权记账或券商同步。
-- 数据保存在 `.owner-state`，可用 `--data-dir` 指定位置。备份未加密，包含口令摘要和历史数据，请另行妥善保管。
-- 旧自用产品数据库不会自动迁入。当前支持 Owner schema 1/2/3/4 → 5；这不代表兼容其他数据库。
+### 1. 先了解资产，而不是从一条孤立的信息开始
 
-## 验证与反馈
+驾驶舱和持仓工作区把资金账户、持仓、估值与待核对事项放在一起。多账户、多币种保留各自的事实；手工价格带日期和来源，方便核账。
 
-[验证说明](docs/VALIDATION.md) 区分自动化、合成浏览器、实际平台与用户服务账号验收。[开发检查](docs/DEVELOPMENT.md) 提供可复现命令。所有测试通过不代表真实连续使用、许可或发布批准。
+![持仓总览：账户、成本与价格快照](docs/screenshots/portfolio.png)
 
-首发只接收 [Issue 和产品反馈](https://github.com/JayeeeJY/awesome-stock/issues)，暂不接收外部代码贡献。请勿提交交易明细、Key 或备份；安全问题使用 GitHub 私密漏洞报告，见 [SECURITY.md](SECURITY.md)。反馈入口随仓库公开提供。
+### 2. 把观点变成可以核对的研究
 
-## 许可与发行
+从保存的本地材料开始研究，记录事实与推断、支持与反方证据。研究笔记可以修订，已有版本引用保留当时的内容；判断不只是一句“看好”，还包括哪些证据可能让你改变主意。
 
-Copyright (c) 2026 Evan。项目自有代码采用 **AGPL-3.0-only**，见 [LICENSE](LICENSE) 和 [许可范围说明](LICENSING.md)。本次不提供独立商业许可，遵守 AGPL 的商业使用仍被允许。第三方代码保留其原有许可；[第三方输入清单](docs/THIRD_PARTY_NOTICES_CANDIDATE.md) 附有保留的上游正文，以及所有者批准的[两包缺失通知透明披露](docs/OWNER_UI_NOTICE_DISCLOSURES.txt)。源码许可不授予行情使用权；发行记录以 GitHub Releases 为准。当前不分发预构建容器镜像、模型权重或私有 Git 历史。
+![个股研究：本地材料、判断范围与证据缺口](docs/screenshots/research.png)
+
+<details>
+<summary>查看研究笔记与版本界面</summary>
+
+![研究笔记：保留论点与版本](docs/screenshots/notes.png)
+
+</details>
+
+### 3. 在实际行动前，把计划写清楚
+
+记录计划依据、触发条件、分步执行方式与停止条件。用资产配置、分批预算和交易前试算核对假设；自行执行之后，再把实际成交关联到计划。
+
+![投资计划：固定判断依据与执行步骤](docs/screenshots/plan.png)
+
+### 4. 复盘当时的决定，积累自己的经验
+
+用投资日记记录观察，在决策复盘中回看当时的研究与判断。记录过程是否遵守计划、结果是否已经出现，以及下一步需要核对什么。Community 的规则由用户手工维护。
+
+![进化工作区：投资日记与决策复盘](docs/screenshots/evolve-review.png)
+
+### 5. 需要时，让 AI 协助你理解材料
+
+Ask Awesome 支持自由提问和追问。可以只问一个问题，也可以主动附加当前页面的材料；发送前可以核对实际内容，再确认调用自己配置的云端或本地模型。
+
+![Ask Awesome：自由提问与可选材料](docs/screenshots/ask-awesome.png)
+
+AI 回复供你阅读、核对和整理。系统不会自动下单，也不会把模型输出直接变成已确认的判断或计划。
+
+<details>
+<summary>查看学院与手机宽度界面</summary>
+
+![学院：阅读投资知识与图示](docs/screenshots/academy.png)
+
+![手机宽度的持仓界面](docs/screenshots/portfolio-mobile.png)
+
+*手机宽度截图展示浏览器界面的响应式布局；首发安装支持仍为 macOS Apple Silicon，不代表独立手机应用已经发布。*
+
+</details>
+
+## 三种产品形式，一个持续进化的方向
+
+Awesome Stock 希望帮助使用者逐步形成自己的投资体系。三种形式面向不同的交付方式与迭代阶段。
+
+| 产品形式 | 面向谁、怎样使用 | 能力与状态 |
+| --- | --- | --- |
+| **Community · 社区版** | 公开分发；在自己的电脑上运行，管理自己的数据与可选服务 | **v1.0.1 已发布。** 账本、研究、判断、计划、复盘与可选 AI 助手组成完整手工工作流程；以 GitHub 实际发行范围为准。 |
+| **Personal · 自用版** | 创始人持续使用与验证新能力的内部产品线 | 在既有 Plan、Ask Awesome 和 Evolve 中探索个人策略共建、计划校准、持续观察和周期经验演进。相关增量已有内部工程验证，真实长期使用仍在继续；不代表这些能力均包含在 Community v1.0.1 中。 |
+| **Cloud · 未来在线版** | 规划中的托管产品，降低本地部署与服务配置门槛 | **尚未上线。** 方向包括更深入的 AI Native 协作、更多市场与资产类型（包括期权）的支持，以及个人策略生成与演进。具体范围、数据权限、上线时间与定价尚未公布。 |
+
+Community 本身可以完成一套有用的投资工作流程。Personal 用来持续验证更深入的能力，Cloud 是未来交付方向。后续进展将通过这个仓库公开说明；当前可下载的产品是 Community。
+
+## 不配 API，也可以先用起来
+
+先创建本地账号与资金账户，记录期初现金、成交和研究，再保存带来源的手工价格。CSV 用于成交导入，导入前有预览；不是行情历史导入。
+
+如果需要 AI 或自动行情查询，再配置自己的服务：
+
+- **模型：** DeepSeek、OpenAI 或自行安装的 Ollama；云端费用由你的供应商账号承担。
+- **日级行情：** 自有 Alpha Vantage（美股/A股）或 EODHD（港股）账号与权限；查询后核对，再明确保存。首发没有 Yahoo 免 Key 行情，不提供统一 Key 或代付。
+- **数据：** 默认保存在本机，可指定独立目录并创建备份。Key 只留在服务进程内存，不进入备份或导出；完整备份未加密，需要妥善保管。
+
+下载 [Release 中的命名源码包](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1)，解压进入 `awesome-stock-owner`，按[安装指南](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/OWNER_INSTALL.md)运行。包自带编译界面，无需 Node、数据库服务或模型即可启动。
+
+没有默认账号密码。Windows、Linux、Intel Mac、Docker 和独立移动客户端暂不在首发正式支持范围。Community v1.0.1 不支持券商同步、自动下单、空头或期权记账。
+
+## 一起让投资经验变得更有价值
+
+如果你愿意自己管理投资记录、认真保留判断依据，并从每次决策中积累经验，欢迎试用 Community。
+
+[下载稳定版](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [阅读使用指南](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [提出问题与产品反馈](https://github.com/JayeeeJY/awesome-stock/issues) · [关注版本进展](https://github.com/JayeeeJY/awesome-stock/releases)
+
+首发接收 Issue 与产品反馈，暂不接收外部代码贡献。请勿公开 API Key、真实持仓、交易明细或备份；安全问题请使用 [GitHub 私密漏洞报告](https://github.com/JayeeeJY/awesome-stock/security/advisories/new)。
+
+Copyright (c) 2026 Evan。项目自有代码采用 [AGPL-3.0-only](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/LICENSE)，第三方保留原许可；本次不提供独立商业许可。安装、隐私、安全与验证细节见仓库文档。
+
+## 登录界面
+
+![Community 登录页：星光与粒子连线](docs/screenshots/login.png)
+
+首次使用创建自己的本地账号；已有账号直接登录。界面沿用 Personal 的星空视觉，系统开启「减少动效」时保留静态星光。
+
+[English](README.en.md)

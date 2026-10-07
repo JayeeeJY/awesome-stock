@@ -2,13 +2,13 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:8d4e0e8e-1732-41e0-910e-49de0c3da63b",
+  "serialNumber": "urn:uuid:9b73c8aa-99c0-4bf4-9bda-c3c58883ddb0",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-10-06T13:42:20.481Z",
+    "timestamp": "2026-10-07T09:01:13.409Z",
     "lifecycles": [
       {
-        "phase": "pre-build"
+        "phase": "build"
       }
     ],
     "tools": [
@@ -49,12 +49,22 @@
       "name": "@babel/helper-string-parser",
       "version": "7.29.7",
       "scope": "required",
+      "author": "The Babel Team (https://babel.dev/team)",
+      "description": "A utility package to parse strings",
       "purl": "pkg:npm/%40babel/helper-string-parser@7.29.7",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.29.7.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/babel/babel.git"
+        },
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-helper-string-parser"
         }
       ],
       "hashes": [
@@ -77,12 +87,18 @@
       "name": "@babel/helper-validator-identifier",
       "version": "7.29.7",
       "scope": "required",
+      "author": "The Babel Team (https://babel.dev/team)",
+      "description": "Validate identifier/keywords name",
       "purl": "pkg:npm/%40babel/helper-validator-identifier@7.29.7",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.29.7.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/babel/babel.git"
         }
       ],
       "hashes": [
@@ -105,12 +121,22 @@
       "name": "@babel/parser",
       "version": "7.29.9",
       "scope": "required",
+      "author": "The Babel Team (https://babel.dev/team)",
+      "description": "A JavaScript parser",
       "purl": "pkg:npm/%40babel/parser@7.29.9",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@babel/parser/-/parser-7.29.9.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/babel/babel.git"
+        },
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-parser"
         }
       ],
       "hashes": [
@@ -133,12 +159,22 @@
       "name": "@babel/types",
       "version": "7.29.8",
       "scope": "required",
+      "author": "The Babel Team (https://babel.dev/team)",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
       "purl": "pkg:npm/%40babel/types@7.29.8",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@babel/types/-/types-7.29.8.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/babel/babel.git"
+        },
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-types"
         }
       ],
       "hashes": [
@@ -161,12 +197,18 @@
       "name": "@ctrl/tinycolor",
       "version": "4.2.1",
       "scope": "required",
+      "author": "Scott Cooper <scttcper@gmail.com>",
+      "description": "Fast, small color manipulation and conversion for JavaScript",
       "purl": "pkg:npm/%40ctrl/tinycolor@4.2.1",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@ctrl/tinycolor/-/tinycolor-4.2.1.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://tinycolor.vercel.app"
         }
       ],
       "hashes": [
@@ -189,12 +231,25 @@
       "name": "@element-plus/icons-vue",
       "version": "2.3.2",
       "scope": "required",
+      "description": "Vue components of Element Plus Icons collection.",
       "purl": "pkg:npm/%40element-plus/icons-vue@2.3.2",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@element-plus/icons-vue/-/icons-vue-2.3.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/element-plus/element-plus-icons.git"
+        },
+        {
+          "type": "website",
+          "url": "https://element-plus.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/element-plus/element-plus-icons/issues"
         }
       ],
       "hashes": [
@@ -217,12 +272,22 @@
       "name": "@floating-ui/core",
       "version": "1.8.0",
       "scope": "required",
+      "author": "atomiks",
+      "description": "Positioning library for floating elements: tooltips, popovers, dropdowns, and more",
       "purl": "pkg:npm/%40floating-ui/core@1.8.0",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@floating-ui/core/-/core-1.8.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/floating-ui/floating-ui.git"
+        },
+        {
+          "type": "website",
+          "url": "https://floating-ui.com"
         }
       ],
       "hashes": [
@@ -245,12 +310,22 @@
       "name": "@floating-ui/dom",
       "version": "1.8.0",
       "scope": "required",
+      "author": "atomiks",
+      "description": "Floating UI for the web",
       "purl": "pkg:npm/%40floating-ui/dom@1.8.0",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@floating-ui/dom/-/dom-1.8.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/floating-ui/floating-ui.git"
+        },
+        {
+          "type": "website",
+          "url": "https://floating-ui.com"
         }
       ],
       "hashes": [
@@ -273,12 +348,22 @@
       "name": "@floating-ui/utils",
       "version": "0.2.12",
       "scope": "required",
+      "author": "atomiks",
+      "description": "Utilities for Floating UI",
       "purl": "pkg:npm/%40floating-ui/utils@0.2.12",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.12.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/floating-ui/floating-ui.git"
+        },
+        {
+          "type": "website",
+          "url": "https://floating-ui.com"
         }
       ],
       "hashes": [
@@ -301,12 +386,22 @@
       "name": "@jridgewell/sourcemap-codec",
       "version": "1.6.0",
       "scope": "required",
+      "author": "Justin Ridgewell <justin@ridgewell.name>",
+      "description": "Encode/decode sourcemap mappings",
       "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.6.0",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.6.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jridgewell/sourcemaps.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/jridgewell/sourcemaps/tree/main/packages/sourcemap-codec"
         }
       ],
       "hashes": [
@@ -328,7 +423,9 @@
       "type": "library",
       "name": "@oxc-project/types",
       "version": "0.150.0",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Boshen and oxc contributors",
+      "description": "Types for Oxc AST nodes",
       "purl": "pkg:npm/%40oxc-project/types@0.150.0",
       "properties": [
         {
@@ -340,6 +437,14 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@oxc-project/types/-/types-0.150.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/oxc-project/oxc.git"
+        },
+        {
+          "type": "website",
+          "url": "https://oxc.rs"
         }
       ],
       "hashes": [
@@ -362,6 +467,7 @@
       "name": "@parcel/watcher",
       "version": "2.6.0",
       "scope": "optional",
+      "description": "A native C++ Node module for querying and subscribing to filesystem events. Used by Parcel 2.",
       "purl": "pkg:npm/%40parcel/watcher@2.6.0",
       "properties": [
         {
@@ -373,6 +479,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@parcel/watcher/-/watcher-2.6.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/parcel-bundler/watcher.git"
         }
       ],
       "hashes": [
@@ -390,44 +500,12 @@
       ]
     },
     {
-      "bom-ref": "@parcel/watcher-android-arm64@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-android-arm64",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-android-arm64@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-android-arm64/-/watcher-android-arm64-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "b6b8292d208a442fe1b858d75ff4a687ed2c59ee3e62d29f92d213a22325e7d821cfbcfeaa41fa90cbcd9d46cbc91b3d375d6df25e2cbd20acd7ee41deb38084"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
       "bom-ref": "@parcel/watcher-darwin-arm64@2.6.0",
       "type": "library",
       "name": "@parcel/watcher-darwin-arm64",
       "version": "2.6.0",
       "scope": "optional",
+      "description": "A native C++ Node module for querying and subscribing to filesystem events. Used by Parcel 2.",
       "purl": "pkg:npm/%40parcel/watcher-darwin-arm64@2.6.0",
       "properties": [
         {
@@ -439,6 +517,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@parcel/watcher-darwin-arm64/-/watcher-darwin-arm64-2.6.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/parcel-bundler/watcher.git"
         }
       ],
       "hashes": [
@@ -456,341 +538,13 @@
       ]
     },
     {
-      "bom-ref": "@parcel/watcher-darwin-x64@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-darwin-x64",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-darwin-x64@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-darwin-x64/-/watcher-darwin-x64-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "3a1bfa3a9ce151f2980fb05e6fc903bc6d236c8c4e442618d4945d667681b678e3909c600fb6552f49f0dac098774c9330a4efcf79e74e7385ddc0e27cafa4bf"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@parcel/watcher-freebsd-x64@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-freebsd-x64",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-freebsd-x64@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-freebsd-x64/-/watcher-freebsd-x64-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "e47997bc382cf152beef88c5f72f7fd85137fce9e570a99ce7ab63992ac4b998e94993862fe7ef02ef8728905d3ecf6ec283f6844e939525295d9fc2e6350599"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@parcel/watcher-linux-arm-glibc@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-linux-arm-glibc",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-linux-arm-glibc@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-linux-arm-glibc/-/watcher-linux-arm-glibc-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "3ecfe1ba2dc0faf31b8ddaa5a80a302b664bf3e04ef1d063c5e5978fa9e94c1b378f1e305a66cfa5a2eeab0ad0ad2a8854c0a7a56a36dfc6c9d54dfb1a140e62"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@parcel/watcher-linux-arm-musl@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-linux-arm-musl",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-linux-arm-musl@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-linux-arm-musl/-/watcher-linux-arm-musl-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "f5ce80507807a06f8863cf0c4481eea73b508909eb6ea1d842390cd9bb40f817ffc109d032e883d167e4d4456fdd394d4f7c78d6e53bd6b9fa138c61ffecef93"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@parcel/watcher-linux-arm64-glibc@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-linux-arm64-glibc",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-linux-arm64-glibc@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-linux-arm64-glibc/-/watcher-linux-arm64-glibc-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "c8746a4b6a301177ba1e273dcfa321d440ac09df8e0d5386bd90f2722a91776d7ebfea3e0e75cc3abc39d034a9206dac6fc18f11a3cf99f78201628f25dab8ea"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@parcel/watcher-linux-arm64-musl@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-linux-arm64-musl",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-linux-arm64-musl@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-linux-arm64-musl/-/watcher-linux-arm64-musl-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "5a10767bf57baea7471d666eb0148fbb2e448bc4ba952cfa144e5328a433e61ddad0ef82fa6858eefc54f5bfecb6abcc6fc6de2e73d8f3666b1532cab3e4ab28"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@parcel/watcher-linux-x64-glibc@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-linux-x64-glibc",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-linux-x64-glibc@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-linux-x64-glibc/-/watcher-linux-x64-glibc-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "ba5184eb1e8ecfa880c20ef94fc6104a882e0566ac9e221b5fe416a5a60f7029c33a97565f793ee316c460f6552f13aea0923eb2f2493c3dec123f06ee5ad0dc"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@parcel/watcher-linux-x64-musl@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-linux-x64-musl",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-linux-x64-musl@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-linux-x64-musl/-/watcher-linux-x64-musl-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "b640582aded842b8c82566039eda366203bc31192394c4d2368447cec5e29c1a9b2dd78e3372f7db03d926f219c6a68b31f4a54bfe2c5231ffe924d53ff5c32f"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@parcel/watcher-win32-arm64@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-win32-arm64",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-win32-arm64@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-win32-arm64/-/watcher-win32-arm64-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "8086403f6de36878c659ab18fd363ac8becd1c50a57f419aec537e88836f93e28df78ae19bde25619845b1b60535c034e3fa27bc60fd90a9a224b241d876cdc1"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@parcel/watcher-win32-x64@2.6.0",
-      "type": "library",
-      "name": "@parcel/watcher-win32-x64",
-      "version": "2.6.0",
-      "scope": "optional",
-      "purl": "pkg:npm/%40parcel/watcher-win32-x64@2.6.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@parcel/watcher-win32-x64/-/watcher-win32-x64-2.6.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "700fbfa575766247f1948717390e5f496a80cf33f20fbf3fc79a9b2bf234bd492b9581c0f13233f8c5e301b1a8ba0b8a5522386ce9a44d2275fe9a154ac82df8"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
       "bom-ref": "@sxzz/popperjs-es@2.11.8",
       "type": "library",
       "name": "@popperjs/core",
       "version": "2.11.8",
       "scope": "required",
+      "author": "Federico Zivolo <federico.zivolo@gmail.com>",
+      "description": "Tooltip and Popover Positioning Engine",
       "purl": "pkg:npm/%40sxzz/popperjs-es@2.11.8",
       "properties": [],
       "externalReferences": [
@@ -814,77 +568,12 @@
       ]
     },
     {
-      "bom-ref": "@rolldown/binding-android-arm-eabi@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-android-arm-eabi",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-android-arm-eabi@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-android-arm-eabi/-/binding-android-arm-eabi-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "b4d21269ed5011ffef91bdf19117235794847733c4f7b59ee4855a6b667c8d2b3340f67c53ad01fd8098a70e1023b562758b01b4a6af7335dff83c83b3d586c7"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-android-arm64@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-android-arm64",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-android-arm64@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-android-arm64/-/binding-android-arm64-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "602f18b08df4a3ad3a193662d15cb3625b032853fc5bad62fd0cdac870e42db344cff21286a0264dafa1b09463d77c531c0d07fba7e4e1bd949869fe43f70c96"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
       "bom-ref": "@rolldown/binding-darwin-arm64@1.2.9",
       "type": "library",
       "name": "@rolldown/binding-darwin-arm64",
       "version": "1.2.9",
       "scope": "optional",
+      "description": "Fast JavaScript/TypeScript bundler in Rust with Rollup-compatible API.",
       "purl": "pkg:npm/%40rolldown/binding-darwin-arm64@1.2.9",
       "properties": [
         {
@@ -896,6 +585,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@rolldown/binding-darwin-arm64/-/binding-darwin-arm64-1.2.9.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/rolldown/rolldown.git"
+        },
+        {
+          "type": "website",
+          "url": "https://rolldown.rs/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/rolldown/rolldown/issues"
         }
       ],
       "hashes": [
@@ -913,407 +614,12 @@
       ]
     },
     {
-      "bom-ref": "@rolldown/binding-darwin-x64@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-darwin-x64",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-darwin-x64@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-darwin-x64/-/binding-darwin-x64-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "5f1a497d5cc587e8e2951c485d4a9c7d801872e9c873f5c4cc88b3b0e2f57dc25e7b949fec7de61fc5a52e67c77e5bb3e5a9aa47cf10428f62ccab663256af03"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-freebsd-x64@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-freebsd-x64",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-freebsd-x64@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-freebsd-x64/-/binding-freebsd-x64-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "9127ef86681e5b27e46d3de9ff5b39bd281ba288286a1db3926f5f5f6ce3836847c5257b4f82a131645451a464e0e5cdaa80f740051e46a2dcb3569938ae14d6"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-linux-arm-gnueabihf@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-linux-arm-gnueabihf",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-linux-arm-gnueabihf@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-linux-arm-gnueabihf/-/binding-linux-arm-gnueabihf-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "d515731b5ee9c6a6d37d82c2df9d8994bb7a90a2c6fba1ebdf49fc0e5209aac9d5e65b940ddd90771f40cb0d4269b7f26f52bd9348d7119edebf1911a13fae8b"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-linux-arm64-gnu@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-linux-arm64-gnu",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-linux-arm64-gnu@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-linux-arm64-gnu/-/binding-linux-arm64-gnu-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "057a8fbd9d9daea543fbf67c5292b072ce0ca7b82b33e786164bb808010aac4b5c6c0b14a73444a612b5b288024591ab7953e23248a206dc349f74cfb5ebaabf"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-linux-arm64-musl@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-linux-arm64-musl",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-linux-arm64-musl@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-linux-arm64-musl/-/binding-linux-arm64-musl-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "d75bd6be8f180f02f3ba4b76ec9dda603594fa08363fb27e64e9a22748641790576435bba55c9aeebe343170f2eb26b48bd29a9a810d495288ba0bc936015720"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-linux-ppc64-gnu@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-linux-ppc64-gnu",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-linux-ppc64-gnu@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-linux-ppc64-gnu/-/binding-linux-ppc64-gnu-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "6b5b628cc91dc2c20046d734177f40a544513a47f7370aa29c8e933a24925824d1edd4fde9d7df36f314b431e7abae3028d4c864e225ccaac5bef154ce7262cb"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-linux-s390x-gnu@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-linux-s390x-gnu",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-linux-s390x-gnu@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-linux-s390x-gnu/-/binding-linux-s390x-gnu-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "c7a49035d02fbf8737856a9331a5ae6b0ccc5fd9b2682b3fc849a51acc49ce47429671d6ec56eb8d0b928910e1b92633118a04321b1a272f6a1c6fd735e9893d"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-linux-x64-gnu@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-linux-x64-gnu",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-linux-x64-gnu@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "f6cd0067c0452b9fe7ec1fd30686b6c89137808dca511adb5dc3c196c02cbe353855e24a804f74cb562d371c845087073d0920ebfc9f177aa2854adc33f29fd1"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-linux-x64-musl@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-linux-x64-musl",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-linux-x64-musl@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "3fb55602657e59d265b87ee8be7446a22bf68bc4e8ec6019fa41b37c6ba9eb7e5cc8bed2c9897795251a0371a9e531dfd27fc2a3913212a6f6cdbaaafa730e1d"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-openharmony-arm64@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-openharmony-arm64",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-openharmony-arm64@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-openharmony-arm64/-/binding-openharmony-arm64-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "d6a8b1b6c13804af21fb24b705f999d3d52103b3bf3782000af6ba601afb101bc226b681c93b917203936a203ad939b4bdecb751c2972ce6a8187b5898d18456"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-win32-arm64-msvc@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-win32-arm64-msvc",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-win32-arm64-msvc@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-win32-arm64-msvc/-/binding-win32-arm64-msvc-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "a24f084237043ecd402997ee114ce7541ac9c3e80ae2ca2af9bc7c6f55f65e832a54295aadcd6ae490e656d597635c5fafa66e1d302c3d71d3813aea29365ec3"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "@rolldown/binding-win32-x64-msvc@1.2.9",
-      "type": "library",
-      "name": "@rolldown/binding-win32-x64-msvc",
-      "version": "1.2.9",
-      "scope": "optional",
-      "purl": "pkg:npm/%40rolldown/binding-win32-x64-msvc@1.2.9",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/@rolldown/binding-win32-x64-msvc/-/binding-win32-x64-msvc-1.2.9.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "229da65e853484cd1ba2add17fe7a4b93eb9dce44e4a8e9a49870f4f5547138ab9d8abf2c60164420ae06ff204b313aebd0d9f6596ecf248490320843ccdb8fe"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
       "bom-ref": "@rolldown/pluginutils@1.0.1",
       "type": "library",
       "name": "@rolldown/pluginutils",
       "version": "1.0.1",
-      "scope": "optional",
+      "scope": "required",
+      "description": "Plugin utilities for Rolldown",
       "purl": "pkg:npm/%40rolldown/pluginutils@1.0.1",
       "properties": [
         {
@@ -1325,6 +631,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/rolldown/plugins.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/rolldown/plugins/tree/main/packages/pluginutils#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/rolldown/plugins/issues"
         }
       ],
       "hashes": [
@@ -1342,17 +660,1538 @@
       ]
     },
     {
+      "bom-ref": "@tsparticles/basic@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/basic",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "Easily create highly customizable particle animations and use them as animated backgrounds for your website. Ready to use components available also for React, Vue.js (2.x and 3.x), Angular, Svelte, jQuery, Preact, Riot.js, Inferno.",
+      "purl": "pkg:npm/%40tsparticles/basic@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/basic/-/basic-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8a3af6747331d08407aa1296dea03cb5fc2b4765d86db59875a24c42e068d8293005522167be94f87db4638f768ff357a5dd45527b76682d25e0211519519d79"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/engine@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/engine",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "Easily create highly customizable particle, confetti and fireworks animations and use them as animated backgrounds for your website. Ready to use components available also for React, Vue.js (2.x and 3.x), Angular, Svelte, jQuery, Preact, Riot.js, Inferno.",
+      "purl": "pkg:npm/%40tsparticles/engine@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/engine/-/engine-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0e976002158c677121da0cb18a4f055d2e81299f2fc9e6be12ee410b87a9b1a86a4c663d5772461897170ba951271e9c3cc031d40d056900288cf177bfaae499"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-external-attract@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-external-attract",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles attract external interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-external-attract@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-external-attract/-/interaction-external-attract-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e402469a1cccf68e00545576e161f9bd2a8c07339710ecc87462c8afe4097f87d187d64aeb6b27b2eb2ffe8cca82cd8ab5e458431f8bedce55dd3a9c0f2daea6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-external-bounce@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-external-bounce",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles bounce external interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-external-bounce@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-external-bounce/-/interaction-external-bounce-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6efd39fa1ef45081ce4d6793b1323501e0265fa477b3c9e763be046baa7a01b423111ccf6086b45d8d7d9eafe103bf8dae0f848acb0fe73828618792a61afce4"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-external-bubble@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-external-bubble",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles bubble external interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-external-bubble@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-external-bubble/-/interaction-external-bubble-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b5b77ca31ff518f97ecebf8ac874155756d6f3c184ece33a8b8cea97cd356089420eb97dc204c3743146232f57eff7304ef4eb09e3e1adfbdd9146a65c8ae26d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-external-connect@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-external-connect",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles connect external interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-external-connect@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-external-connect/-/interaction-external-connect-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b2af187d436c20e4635c7cf35bbfc0250b5f8bfa83a8b9d81b6a8e484d563aca20dfd303df44739a23a5a1e8ce91f35e51d70651c7ec0e0a54b8bdd487315438"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-external-grab@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-external-grab",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles grab external interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-external-grab@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-external-grab/-/interaction-external-grab-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4305f36beb0c3160da32217177ccb6b49c142ba73e9cdc39e78fbff7eb4465e4d39367c26c1d0827ba7f4c7e991960cbd2fa369ae2b9e0d8efd9f11ecb5f75a3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-external-pause@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-external-pause",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles pause external interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-external-pause@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-external-pause/-/interaction-external-pause-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1b3bf8fc578d8abd14fed54cf73402a95d64f880206858c35374f7d0cd40780b0d1a1feb0884d5db09d3ed33861646dc95adbb9b86316be16e69bf3ef29ce6fa"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-external-push@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-external-push",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles push external interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-external-push@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-external-push/-/interaction-external-push-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1af9d617d432e18919771f9624bda2cbd21c80bbf3388bb72bb68b60916c40f6b14fc77d4c5f16969a0c9562a72480fa1f9ab826a42e311291c961fc6802b243"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-external-remove@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-external-remove",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles remove external interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-external-remove@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-external-remove/-/interaction-external-remove-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c8f4e19b850359e8c33965b941cf0a9e74b611f4a8e5515c25440359cd7e59c8f5ef17bbbdd4a88b0c0e3913343e6341cdd0e948a42bb5efe0527a2a69433038"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-external-repulse@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-external-repulse",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles repulse external interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-external-repulse@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-external-repulse/-/interaction-external-repulse-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "fcb069a5792b31dbcb1e510a582ec8ca4161cebcfef6779b4f67f04921572b8a65101c43948c27903c5ddc56d53806e706fc78f8bf3e7dbac4c7e46f0bc76203"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-external-slow@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-external-slow",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles slow external interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-external-slow@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-external-slow/-/interaction-external-slow-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d5960847fb9d07003d31d4827e0003b1b0d7292152d05316b8f5b3edb9bbf60dec531718922867fbf84385ce865ef34d478e95d687098eb8f4bbaa40ca74b529"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-particles-attract@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-particles-attract",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles attract particles interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-particles-attract@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-particles-attract/-/interaction-particles-attract-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "098618a3026e1b044b522c5071253fe3c3d328cf1f09461385ed215f043ec9130b027d39dd51f32fb34d6732aa108784cade68268cbd29cbee6e32966f33012d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-particles-collisions@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-particles-collisions",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles collisions particles interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-particles-collisions@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-particles-collisions/-/interaction-particles-collisions-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8201b28d6ff7bf5cb1bd85b5205d44313d7933ac37d72e737cd3543e4a9dfc85d134f62f9b46746b2869f852a6cfbd0ce69d14c713c84074ef02ff49aa7ba3f3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/interaction-particles-links@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/interaction-particles-links",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles links particles interaction",
+      "purl": "pkg:npm/%40tsparticles/interaction-particles-links@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/interaction-particles-links/-/interaction-particles-links-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "32c2db323cb5bd8e4ce7f86efe86b9392459014cf8f47dfef4404c4c83938625fe6bebe9977b3173d02a35df6032c3db33858996e6fc4fa54165dcafcdecf556"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/move-base@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/move-base",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles Base movement",
+      "purl": "pkg:npm/%40tsparticles/move-base@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/move-base/-/move-base-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5f886e052dbb77cb2ba71c0ec658963d4b7e36d0b063ef2afdcc750ef431caa99303c545086a5c1cdc2daa237ef4989c8333af4ae68e455a9483096c73b878a5"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/move-parallax@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/move-parallax",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles Parallax movement",
+      "purl": "pkg:npm/%40tsparticles/move-parallax@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/move-parallax/-/move-parallax-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c2194e4746d57b287a27f86fc5ffd03370eabcd9c84cc88043492ba3ab1aa920c8b4056a838a58c417c4b1238aabb1218f136f7e186a47ea45321a74eb3a0254"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/plugin-easing-quad@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/plugin-easing-quad",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles easing quad plugin",
+      "purl": "pkg:npm/%40tsparticles/plugin-easing-quad@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/plugin-easing-quad/-/plugin-easing-quad-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0b650939c6b93130d72944c15e3df42a2aabe54c880fec6b63f2f189c5565993dccd05b66c1c5b21b7eaf542efcc60f0053c44dab76f201f1814a98360ee39ab"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/plugin-hex-color@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/plugin-hex-color",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles hex color plugin",
+      "purl": "pkg:npm/%40tsparticles/plugin-hex-color@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/plugin-hex-color/-/plugin-hex-color-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "bd9819d76023522709be4ec05f82b678098a1105ff0f55448c43c58728db808ec0eb9797ef6338eb9bd528880d03a400acb6750cbb3b67bf3b2ce13a18e056b2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/plugin-hsl-color@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/plugin-hsl-color",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles HSL color plugin",
+      "purl": "pkg:npm/%40tsparticles/plugin-hsl-color@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/plugin-hsl-color/-/plugin-hsl-color-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8c9775886811c17e9e78d8dcd735178898af6aa0b9504f920b6037fcdb47c30a10ae47f11969911ceb15c8b9ce0517023e0069fc5a5d0dee832038c230eef5e7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/plugin-rgb-color@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/plugin-rgb-color",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles RGB color plugin",
+      "purl": "pkg:npm/%40tsparticles/plugin-rgb-color@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/plugin-rgb-color/-/plugin-rgb-color-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "481c64edfd4a05f5de4e79e495b1361f1e2306087a23a1ceb716fe3acd604e9d286a08593a459c083d9d3f841b52eedf54d08c39c0293e830d0bc45315ccbdc1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/shape-circle@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/shape-circle",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles circle shape",
+      "purl": "pkg:npm/%40tsparticles/shape-circle@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/shape-circle/-/shape-circle-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0ea6452e36ee8559fdf5627e03d6a3cfd60e37bd91b4272fb9bceaeaa7e3166b7000aedfaef41e6fa8834e9e997bd1548a996ec556565511b8bd64f18b607efe"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/shape-emoji@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/shape-emoji",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles emoji shape",
+      "purl": "pkg:npm/%40tsparticles/shape-emoji@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/shape-emoji/-/shape-emoji-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "89fbd8eb7bacb93fa18a98151dbf207a504749e17aaf23e7331000102d511878615dfa5245632d13ac9bafea52b18539d8cdc6f7e4c5f38bfdd694b036b6fd65"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/shape-image@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/shape-image",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles image shape",
+      "purl": "pkg:npm/%40tsparticles/shape-image@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/shape-image/-/shape-image-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7c20397a67bc545de85fcc8d55403497648b0caba264e6e48a36f4cf72b2d2a8f51d4115940b8432184d0cd07d1368842d3ad6122c7dcfb04531e3e9d820bb00"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/shape-line@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/shape-line",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles line shape",
+      "purl": "pkg:npm/%40tsparticles/shape-line@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/shape-line/-/shape-line-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c13f0d4a9d0df47511c95d397f7ef570729c35336aaf4fdcc14bba5a10736ec864606cb529950ff42a51221e450ab0694debf7e261107ce5c3c9c81f1b42a22d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/shape-polygon@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/shape-polygon",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles polygon shape",
+      "purl": "pkg:npm/%40tsparticles/shape-polygon@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/shape-polygon/-/shape-polygon-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "740efb3e065da0bc319e5887e9740cff3174af88e14f4d69c39cbb5d3793ab0b3efa1838ad32d5f76e7993a47a794a8aab414f496d7f581b01225eeafcc9aba9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/shape-square@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/shape-square",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles square shape",
+      "purl": "pkg:npm/%40tsparticles/shape-square@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/shape-square/-/shape-square-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0ca1a40e747266b026ed3da2a6a35ecc96a1496b3ac5df4ee4b40b7b9be3ad89b5a86c2b17126241a01d95bd3450dadec73d7f480edb128220e1729a15aeea85"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/shape-star@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/shape-star",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles star shape",
+      "purl": "pkg:npm/%40tsparticles/shape-star@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/shape-star/-/shape-star-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "91d309a62f1c75e6fabc6ad9552c531b42488c2c087a7820aa4d0461e280c2d3866450602fb787845d85eaebb5a2af1c2406d73ee8c4a1a6e72eccfa996f1768"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/slim@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/slim",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "Easily create highly customizable particle animations and use them as animated backgrounds for your website. Ready to use components available also for React, Vue.js (2.x and 3.x), Angular, Svelte, jQuery, Preact, Riot.js, Inferno.",
+      "purl": "pkg:npm/%40tsparticles/slim@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/slim/-/slim-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "08be5c0e600353bb038d1962d12a3e858eb554c6ddae8a9b02b991f40bfe735162b1ae72b6be900fb26feb68b05364baaef8227047bd3b24664b2e4621e7f067"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/updater-color@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/updater-color",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles particles color updater",
+      "purl": "pkg:npm/%40tsparticles/updater-color@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/updater-color/-/updater-color-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5c659db1cae010c03c2f913b7b1b04d1ff3fdb31ca22a9d3ad9ca6732b85070d83081e81215fb9cfaa9a352b69c6b86adc36c8c7186aa9cc9ba9e3a8efe025a6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/updater-life@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/updater-life",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles particles life updater",
+      "purl": "pkg:npm/%40tsparticles/updater-life@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/updater-life/-/updater-life-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3a2f1a176448c0c32c8ecb1490207ab773d1a443478dd65fe9c5fdd9635f02ea97b50a61af738c0246052455a4bf23c52b6d80572de9fdc16de8a139cd7c7000"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/updater-opacity@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/updater-opacity",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles particles opacity updater",
+      "purl": "pkg:npm/%40tsparticles/updater-opacity@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/updater-opacity/-/updater-opacity-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c3befc2d0b91649f88a16cde45dac6ca43d84926937967c1bcb6765f0604921fd2b3deb52273b164a229712ea2e4aa7f65fc347d2d5902ea9e1f0ba3ffffceb3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/updater-out-modes@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/updater-out-modes",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles particles out modes updater",
+      "purl": "pkg:npm/%40tsparticles/updater-out-modes@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/updater-out-modes/-/updater-out-modes-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "70a404900c1baeefa184a17e193b1f6cebee05bc760d2076e42c4e761b56db046f0c1a029e780d74bc3dd6bb3ed027b1e2d8047a26e479bac82850c313a9042e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/updater-rotate@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/updater-rotate",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles particles rotate updater",
+      "purl": "pkg:npm/%40tsparticles/updater-rotate@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/updater-rotate/-/updater-rotate-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f417ca6867e9dbc24df36305daab3a01efe526bf440a894c7cc4c7a922a58db9706e95431ed7b8ba6bb02a5dd58db46df3b583f4c1ad95aeba35351897e5b1b9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/updater-size@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/updater-size",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles particles size updater",
+      "purl": "pkg:npm/%40tsparticles/updater-size@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/updater-size/-/updater-size-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "dcd495b343b602934a6577ddfb2ff33614d7485786d4fc38a5e23c7bacffab9f972db9ae7bda22130a0fcbfb502da6ab937a0d8f7254ed0f74dd98a33f25d2cf"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@tsparticles/updater-stroke-color@3.9.1",
+      "type": "library",
+      "name": "@tsparticles/updater-stroke-color",
+      "version": "3.9.1",
+      "scope": "required",
+      "author": "Matteo Bruni <matteo.bruni@me.com>",
+      "description": "tsParticles particles stroke color updater",
+      "purl": "pkg:npm/%40tsparticles/updater-stroke-color@3.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@tsparticles/updater-stroke-color/-/updater-stroke-color-3.9.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tsparticles/tsparticles.git"
+        },
+        {
+          "type": "website",
+          "url": "https://particles.js.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tsparticles/tsparticles/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "df1d78f82da2b3da5961383d4f64e203f68cd5832ae302dd61a6437079b7a8edf40d9bb9a1e42ad2b9bfeb0f903862986356771ed83dae54946648531e7ede0c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "@types/lodash@4.17.25",
       "type": "library",
       "name": "@types/lodash",
       "version": "4.17.25",
       "scope": "required",
+      "description": "TypeScript definitions for lodash",
       "purl": "pkg:npm/%40types/lodash@4.17.25",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@types/lodash/-/lodash-4.17.25.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/lodash"
         }
       ],
       "hashes": [
@@ -1375,12 +2214,21 @@
       "name": "@types/lodash-es",
       "version": "4.17.12",
       "scope": "required",
+      "description": "TypeScript definitions for lodash-es",
       "purl": "pkg:npm/%40types/lodash-es@4.17.12",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@types/lodash-es/-/lodash-es-4.17.12.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/lodash-es"
         }
       ],
       "hashes": [
@@ -1402,7 +2250,8 @@
       "type": "library",
       "name": "@types/node",
       "version": "20.19.43",
-      "scope": "optional",
+      "scope": "required",
+      "description": "TypeScript definitions for node",
       "purl": "pkg:npm/%40types/node@20.19.43",
       "properties": [
         {
@@ -1414,6 +2263,14 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@types/node/-/node-20.19.43.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node"
         }
       ],
       "hashes": [
@@ -1436,12 +2293,21 @@
       "name": "@types/web-bluetooth",
       "version": "0.0.21",
       "scope": "required",
+      "description": "TypeScript definitions for web-bluetooth",
       "purl": "pkg:npm/%40types/web-bluetooth@0.0.21",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@types/web-bluetooth/-/web-bluetooth-0.0.21.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/web-bluetooth"
         }
       ],
       "hashes": [
@@ -1463,7 +2329,9 @@
       "type": "library",
       "name": "@vitejs/plugin-vue",
       "version": "6.0.8",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Evan You",
+      "description": "The official plugin for Vue SFC support in Vite.",
       "purl": "pkg:npm/%40vitejs/plugin-vue@6.0.8",
       "properties": [
         {
@@ -1475,6 +2343,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vitejs/plugin-vue/-/plugin-vue-6.0.8.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vitejs/vite-plugin-vue.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vitejs/vite-plugin-vue/issues"
         }
       ],
       "hashes": [
@@ -1496,7 +2376,7 @@
       "type": "library",
       "name": "@volar/language-core",
       "version": "2.4.28",
-      "scope": "optional",
+      "scope": "required",
       "purl": "pkg:npm/%40volar/language-core@2.4.28",
       "properties": [
         {
@@ -1508,6 +2388,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@volar/language-core/-/language-core-2.4.28.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/volarjs/volar.js.git"
         }
       ],
       "hashes": [
@@ -1529,7 +2413,7 @@
       "type": "library",
       "name": "@volar/source-map",
       "version": "2.4.28",
-      "scope": "optional",
+      "scope": "required",
       "purl": "pkg:npm/%40volar/source-map@2.4.28",
       "properties": [
         {
@@ -1541,6 +2425,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@volar/source-map/-/source-map-2.4.28.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/volarjs/volar.js.git"
         }
       ],
       "hashes": [
@@ -1562,7 +2450,7 @@
       "type": "library",
       "name": "@volar/typescript",
       "version": "2.4.28",
-      "scope": "optional",
+      "scope": "required",
       "purl": "pkg:npm/%40volar/typescript@2.4.28",
       "properties": [
         {
@@ -1574,6 +2462,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@volar/typescript/-/typescript-2.4.28.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/volarjs/volar.js.git"
         }
       ],
       "hashes": [
@@ -1596,12 +2488,26 @@
       "name": "@vue/compiler-core",
       "version": "3.5.42",
       "scope": "required",
+      "author": "Evan You",
+      "description": "@vue/compiler-core",
       "purl": "pkg:npm/%40vue/compiler-core@3.5.42",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/compiler-core/-/compiler-core-3.5.42.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/core/tree/main/packages/compiler-core#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/core/issues"
         }
       ],
       "hashes": [
@@ -1624,12 +2530,26 @@
       "name": "@vue/compiler-dom",
       "version": "3.5.42",
       "scope": "required",
+      "author": "Evan You",
+      "description": "@vue/compiler-dom",
       "purl": "pkg:npm/%40vue/compiler-dom@3.5.42",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.5.42.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/core/tree/main/packages/compiler-dom#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/core/issues"
         }
       ],
       "hashes": [
@@ -1652,12 +2572,26 @@
       "name": "@vue/compiler-sfc",
       "version": "3.5.42",
       "scope": "required",
+      "author": "Evan You",
+      "description": "@vue/compiler-sfc",
       "purl": "pkg:npm/%40vue/compiler-sfc@3.5.42",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-3.5.42.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/core/tree/main/packages/compiler-sfc#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/core/issues"
         }
       ],
       "hashes": [
@@ -1680,12 +2614,26 @@
       "name": "@vue/compiler-ssr",
       "version": "3.5.42",
       "scope": "required",
+      "author": "Evan You",
+      "description": "@vue/compiler-ssr",
       "purl": "pkg:npm/%40vue/compiler-ssr@3.5.42",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/compiler-ssr/-/compiler-ssr-3.5.42.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/core/tree/main/packages/compiler-ssr#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/core/issues"
         }
       ],
       "hashes": [
@@ -1707,7 +2655,9 @@
       "type": "library",
       "name": "@vue/compiler-vue2",
       "version": "2.7.16",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Evan You",
+      "description": "template compiler for Vue 2.x",
       "purl": "pkg:npm/%40vue/compiler-vue2@2.7.16",
       "properties": [
         {
@@ -1719,6 +2669,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/compiler-vue2/-/compiler-vue2-2.7.16.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/vue.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/vue/tree/dev/packages/vue-template-compiler#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/vue/issues"
         }
       ],
       "hashes": [
@@ -1741,12 +2703,18 @@
       "name": "@vue/devtools-api",
       "version": "6.6.4",
       "scope": "required",
+      "author": "Guillaume Chau",
+      "description": "Interact with the Vue devtools from the page",
       "purl": "pkg:npm/%40vue/devtools-api@6.6.4",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.6.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/vuejs/vue-devtools.git"
         }
       ],
       "hashes": [
@@ -1768,7 +2736,7 @@
       "type": "library",
       "name": "@vue/language-core",
       "version": "2.0.29",
-      "scope": "optional",
+      "scope": "required",
       "purl": "pkg:npm/%40vue/language-core@2.0.29",
       "properties": [
         {
@@ -1780,6 +2748,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/language-core/-/language-core-2.0.29.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/vuejs/language-tools.git"
         }
       ],
       "hashes": [
@@ -1802,12 +2774,26 @@
       "name": "@vue/reactivity",
       "version": "3.5.42",
       "scope": "required",
+      "author": "Evan You",
+      "description": "@vue/reactivity",
       "purl": "pkg:npm/%40vue/reactivity@3.5.42",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.5.42.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/core/tree/main/packages/reactivity#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/core/issues"
         }
       ],
       "hashes": [
@@ -1830,12 +2816,26 @@
       "name": "@vue/runtime-core",
       "version": "3.5.42",
       "scope": "required",
+      "author": "Evan You",
+      "description": "@vue/runtime-core",
       "purl": "pkg:npm/%40vue/runtime-core@3.5.42",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/runtime-core/-/runtime-core-3.5.42.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/core/tree/main/packages/runtime-core#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/core/issues"
         }
       ],
       "hashes": [
@@ -1858,12 +2858,26 @@
       "name": "@vue/runtime-dom",
       "version": "3.5.42",
       "scope": "required",
+      "author": "Evan You",
+      "description": "@vue/runtime-dom",
       "purl": "pkg:npm/%40vue/runtime-dom@3.5.42",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/runtime-dom/-/runtime-dom-3.5.42.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/core/tree/main/packages/runtime-dom#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/core/issues"
         }
       ],
       "hashes": [
@@ -1886,12 +2900,26 @@
       "name": "@vue/server-renderer",
       "version": "3.5.42",
       "scope": "required",
+      "author": "Evan You",
+      "description": "@vue/server-renderer",
       "purl": "pkg:npm/%40vue/server-renderer@3.5.42",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/server-renderer/-/server-renderer-3.5.42.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/core/tree/main/packages/server-renderer#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/core/issues"
         }
       ],
       "hashes": [
@@ -1914,12 +2942,26 @@
       "name": "@vue/shared",
       "version": "3.5.42",
       "scope": "required",
+      "author": "Evan You",
+      "description": "internal utils shared across @vue packages",
       "purl": "pkg:npm/%40vue/shared@3.5.42",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vue/shared/-/shared-3.5.42.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/core/tree/main/packages/shared#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/core/issues"
         }
       ],
       "hashes": [
@@ -1942,12 +2984,26 @@
       "name": "@vueuse/core",
       "version": "14.4.0",
       "scope": "required",
+      "author": "Anthony Fu <https://github.com/antfu>",
+      "description": "Collection of essential Vue Composition Utilities",
       "purl": "pkg:npm/%40vueuse/core@14.4.0",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vueuse/core/-/core-14.4.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vueuse/vueuse.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vueuse/vueuse#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vueuse/vueuse/issues"
         }
       ],
       "hashes": [
@@ -1970,12 +3026,26 @@
       "name": "@vueuse/metadata",
       "version": "14.4.0",
       "scope": "required",
+      "author": "Anthony Fu <https://github.com/antfu>",
+      "description": "Metadata for VueUse functions",
       "purl": "pkg:npm/%40vueuse/metadata@14.4.0",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vueuse/metadata/-/metadata-14.4.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vueuse/vueuse.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vueuse/vueuse/tree/main/packages/metadata#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vueuse/vueuse/issues"
         }
       ],
       "hashes": [
@@ -1998,12 +3068,25 @@
       "name": "@vueuse/shared",
       "version": "14.4.0",
       "scope": "required",
+      "author": "Anthony Fu <https://github.com/antfu>",
       "purl": "pkg:npm/%40vueuse/shared@14.4.0",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/@vueuse/shared/-/shared-14.4.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vueuse/vueuse.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vueuse/vueuse/tree/main/packages/shared#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vueuse/vueuse/issues"
         }
       ],
       "hashes": [
@@ -2026,12 +3109,25 @@
       "name": "async-validator",
       "version": "4.2.5",
       "scope": "required",
+      "description": "validate form asynchronous",
       "purl": "pkg:npm/async-validator@4.2.5",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/async-validator/-/async-validator-4.2.5.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:yiminghe/async-validator.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/yiminghe/async-validator"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/yiminghe/async-validator/issues"
         }
       ],
       "hashes": [
@@ -2053,7 +3149,9 @@
       "type": "library",
       "name": "balanced-match",
       "version": "1.0.2",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Julian Gruber",
+      "description": "Match balanced character pairs, like \"{\" and \"}\"",
       "purl": "pkg:npm/balanced-match@1.0.2",
       "properties": [
         {
@@ -2065,6 +3163,14 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/juliangruber/balanced-match.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/juliangruber/balanced-match"
         }
       ],
       "hashes": [
@@ -2086,7 +3192,9 @@
       "type": "library",
       "name": "brace-expansion",
       "version": "2.1.7",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Julian Gruber",
+      "description": "Brace expansion as known from sh/bash",
       "purl": "pkg:npm/brace-expansion@2.1.7",
       "properties": [
         {
@@ -2098,6 +3206,14 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.1.7.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/juliangruber/brace-expansion.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/juliangruber/brace-expansion"
         }
       ],
       "hashes": [
@@ -2119,7 +3235,9 @@
       "type": "library",
       "name": "chokidar",
       "version": "5.0.0",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Paul Miller (https://paulmillr.com)",
+      "description": "Minimal and efficient cross-platform file watching library",
       "purl": "pkg:npm/chokidar@5.0.0",
       "properties": [
         {
@@ -2131,6 +3249,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/chokidar/-/chokidar-5.0.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/paulmillr/chokidar.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/paulmillr/chokidar"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/paulmillr/chokidar/issues"
         }
       ],
       "hashes": [
@@ -2152,7 +3282,7 @@
       "type": "library",
       "name": "computeds",
       "version": "0.0.1",
-      "scope": "optional",
+      "scope": "required",
       "purl": "pkg:npm/computeds@0.0.1",
       "properties": [
         {
@@ -2164,6 +3294,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/computeds/-/computeds-0.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/johnsoncodehk/computeds.git"
         }
       ],
       "hashes": [
@@ -2186,6 +3320,8 @@
       "name": "csstype",
       "version": "3.2.3",
       "scope": "required",
+      "author": "Fredrik Nicol <fredrik.nicol@gmail.com>",
+      "description": "Strict TypeScript and Flow types for style based on MDN data",
       "purl": "pkg:npm/csstype@3.2.3",
       "properties": [],
       "externalReferences": [
@@ -2214,12 +3350,22 @@
       "name": "dayjs",
       "version": "1.11.23",
       "scope": "required",
+      "author": "iamkun",
+      "description": "2KB immutable date time library alternative to Moment.js with the same modern API ",
       "purl": "pkg:npm/dayjs@1.11.23",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/dayjs/-/dayjs-1.11.23.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/iamkun/dayjs.git"
+        },
+        {
+          "type": "website",
+          "url": "https://day.js.org"
         }
       ],
       "hashes": [
@@ -2241,7 +3387,9 @@
       "type": "library",
       "name": "de-indent",
       "version": "1.0.2",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Evan You",
+      "description": "remove extra indent from a block of code",
       "purl": "pkg:npm/de-indent@1.0.2",
       "properties": [
         {
@@ -2253,6 +3401,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/de-indent/-/de-indent-1.0.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/yyx990803/de-indent.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/yyx990803/de-indent#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/yyx990803/de-indent/issues"
         }
       ],
       "hashes": [
@@ -2274,7 +3434,9 @@
       "type": "library",
       "name": "detect-libc",
       "version": "2.1.2",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Lovell Fuller <npm@lovell.info>",
+      "description": "Node.js module to detect the C standard library (libc) implementation family and version",
       "purl": "pkg:npm/detect-libc@2.1.2",
       "properties": [
         {
@@ -2286,6 +3448,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/lovell/detect-libc.git"
         }
       ],
       "hashes": [
@@ -2308,12 +3474,25 @@
       "name": "element-plus",
       "version": "2.14.5",
       "scope": "required",
+      "description": "A Component Library for Vue 3",
       "purl": "pkg:npm/element-plus@2.14.5",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/element-plus/-/element-plus-2.14.5.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/element-plus/element-plus.git"
+        },
+        {
+          "type": "website",
+          "url": "https://element-plus.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/element-plus/element-plus/issues"
         }
       ],
       "hashes": [
@@ -2336,12 +3515,18 @@
       "name": "entities",
       "version": "7.0.1",
       "scope": "required",
+      "author": "Felix Boehm <me@feedic.com>",
+      "description": "Encode & decode XML and HTML entities with ease & speed",
       "purl": "pkg:npm/entities@7.0.1",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/entities/-/entities-7.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/fb55/entities.git"
         }
       ],
       "hashes": [
@@ -2364,12 +3549,18 @@
       "name": "estree-walker",
       "version": "2.0.2",
       "scope": "required",
+      "author": "Rich Harris",
+      "description": "Traverse an ESTree-compliant AST",
       "purl": "pkg:npm/estree-walker@2.0.2",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/estree-walker/-/estree-walker-2.0.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/Rich-Harris/estree-walker"
         }
       ],
       "hashes": [
@@ -2391,7 +3582,9 @@
       "type": "library",
       "name": "fdir",
       "version": "6.5.0",
-      "scope": "optional",
+      "scope": "required",
+      "author": "thecodrr <thecodrr@protonmail.com>",
+      "description": "The fastest directory crawler & globbing alternative to glob, fast-glob, & tiny-glob. Crawls 1m files in < 1s",
       "purl": "pkg:npm/fdir@6.5.0",
       "properties": [
         {
@@ -2403,6 +3596,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/thecodrr/fdir.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/thecodrr/fdir#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/thecodrr/fdir/issues"
         }
       ],
       "hashes": [
@@ -2425,6 +3630,7 @@
       "name": "fsevents",
       "version": "2.3.3",
       "scope": "optional",
+      "description": "Native Access to MacOS FSEvents",
       "purl": "pkg:npm/fsevents@2.3.3",
       "properties": [
         {
@@ -2436,6 +3642,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/fsevents/fsevents.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/fsevents/fsevents"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/fsevents/fsevents/issues"
         }
       ],
       "hashes": [
@@ -2457,7 +3675,9 @@
       "type": "library",
       "name": "he",
       "version": "1.2.0",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Mathias Bynens",
+      "description": "A robust HTML entities encoder/decoder with full Unicode support.",
       "purl": "pkg:npm/he@1.2.0",
       "properties": [
         {
@@ -2469,6 +3689,14 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/he/-/he-1.2.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/mathiasbynens/he.git"
+        },
+        {
+          "type": "website",
+          "url": "https://mths.be/he"
         }
       ],
       "hashes": [
@@ -2490,7 +3718,9 @@
       "type": "library",
       "name": "immutable",
       "version": "5.1.9",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Lee Byron",
+      "description": "Immutable Data Collections",
       "purl": "pkg:npm/immutable@5.1.9",
       "properties": [
         {
@@ -2502,6 +3732,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/immutable/-/immutable-5.1.9.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/immutable-js/immutable-js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://immutable-js.com"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/immutable-js/immutable-js/issues"
         }
       ],
       "hashes": [
@@ -2524,6 +3766,8 @@
       "name": "is-extglob",
       "version": "2.1.1",
       "scope": "optional",
+      "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+      "description": "Returns true if a string has an extglob.",
       "purl": "pkg:npm/is-extglob@2.1.1",
       "properties": [
         {
@@ -2535,6 +3779,14 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/jonschlinkert/is-extglob"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/jonschlinkert/is-extglob/issues"
         }
       ],
       "hashes": [
@@ -2557,6 +3809,8 @@
       "name": "is-glob",
       "version": "4.0.3",
       "scope": "optional",
+      "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+      "description": "Returns `true` if the given string looks like a glob pattern or an extglob pattern. This makes it easy to create code that only uses external modules like node-glob when necessary, resulting in much faster code execution and initialization time, and a better user experience.",
       "purl": "pkg:npm/is-glob@4.0.3",
       "properties": [
         {
@@ -2568,6 +3822,14 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/micromatch/is-glob"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/micromatch/is-glob/issues"
         }
       ],
       "hashes": [
@@ -2589,7 +3851,8 @@
       "type": "library",
       "name": "lightningcss",
       "version": "1.33.0",
-      "scope": "optional",
+      "scope": "required",
+      "description": "A CSS parser, transformer, and minifier written in Rust",
       "purl": "pkg:npm/lightningcss@1.33.0",
       "properties": [
         {
@@ -2601,6 +3864,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/lightningcss/-/lightningcss-1.33.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/parcel-bundler/lightningcss.git"
         }
       ],
       "hashes": [
@@ -2618,44 +3885,12 @@
       ]
     },
     {
-      "bom-ref": "lightningcss-android-arm64@1.33.0",
-      "type": "library",
-      "name": "lightningcss-android-arm64",
-      "version": "1.33.0",
-      "scope": "optional",
-      "purl": "pkg:npm/lightningcss-android-arm64@1.33.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lightningcss-android-arm64/-/lightningcss-android-arm64-1.33.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "804a514da94a768b29e016fca96b5cda23a013949e2079694b5ba9f5b16adb003262197551d4ce6d88877bdf3310cf5242f4a8a906752100f424da60dcc979a6"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MPL-2.0"
-          }
-        }
-      ]
-    },
-    {
       "bom-ref": "lightningcss-darwin-arm64@1.33.0",
       "type": "library",
       "name": "lightningcss-darwin-arm64",
       "version": "1.33.0",
       "scope": "optional",
+      "description": "A CSS parser, transformer, and minifier written in Rust",
       "purl": "pkg:npm/lightningcss-darwin-arm64@1.33.0",
       "properties": [
         {
@@ -2667,6 +3902,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.33.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/parcel-bundler/lightningcss.git"
         }
       ],
       "hashes": [
@@ -2684,314 +3923,23 @@
       ]
     },
     {
-      "bom-ref": "lightningcss-darwin-x64@1.33.0",
-      "type": "library",
-      "name": "lightningcss-darwin-x64",
-      "version": "1.33.0",
-      "scope": "optional",
-      "purl": "pkg:npm/lightningcss-darwin-x64@1.33.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.33.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "67950f031ceb8e558d3721b2ea2eb9709cf3be02790f74fac0cbecfa05a963d77ba9184036bc6a029e8b871220661584c35f117c94c6711c63b8b201afe9bc5d"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MPL-2.0"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "lightningcss-freebsd-x64@1.33.0",
-      "type": "library",
-      "name": "lightningcss-freebsd-x64",
-      "version": "1.33.0",
-      "scope": "optional",
-      "purl": "pkg:npm/lightningcss-freebsd-x64@1.33.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.33.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "41033f4e2fe141a8c9c0263e4625ae099f6c76d23f5d093b9c32b9bc2f2491dc22c5ecce94382f0f1efe453f908cae857054f8329b2ea019c7228fcedd2b5146"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MPL-2.0"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "lightningcss-linux-arm-gnueabihf@1.33.0",
-      "type": "library",
-      "name": "lightningcss-linux-arm-gnueabihf",
-      "version": "1.33.0",
-      "scope": "optional",
-      "purl": "pkg:npm/lightningcss-linux-arm-gnueabihf@1.33.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.33.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "37b15505eea24b6e0c94ce91ff84414f11a14217991aceed890f54df652d17be4dccfe50ef158f46a2c108ac65450464deb6358c220f2f3c7b5b33a1b942112d"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MPL-2.0"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "lightningcss-linux-arm64-gnu@1.33.0",
-      "type": "library",
-      "name": "lightningcss-linux-arm64-gnu",
-      "version": "1.33.0",
-      "scope": "optional",
-      "purl": "pkg:npm/lightningcss-linux-arm64-gnu@1.33.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.33.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "8f6bff8ad9b2e0794dc6573abe829762006a362d0d8362d2860e33ec6b9fa4482cd393fedacb815728bd23a607ab9ba8545c7d1138a7dde08484b5725c64272a"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MPL-2.0"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "lightningcss-linux-arm64-musl@1.33.0",
-      "type": "library",
-      "name": "lightningcss-linux-arm64-musl",
-      "version": "1.33.0",
-      "scope": "optional",
-      "purl": "pkg:npm/lightningcss-linux-arm64-musl@1.33.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.33.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "ca23b944e32e6108176c2eb4ca3654e4261215918a5cbd071404d7b7d987267d7ecd6e79a02b4c23d35f7158582cc1432fb815ee804fa27fc498c3068363afb5"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MPL-2.0"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "lightningcss-linux-x64-gnu@1.33.0",
-      "type": "library",
-      "name": "lightningcss-linux-x64-gnu",
-      "version": "1.33.0",
-      "scope": "optional",
-      "purl": "pkg:npm/lightningcss-linux-x64-gnu@1.33.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.33.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "6abf89bbb2e670dd09a381692f88691726f0346f7fdc0fc1af9296da7da3c8e0e0dcc1195da0d800375e9a8352f810cd7cc80abf29492e3e12e6dc9101cb6e02"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MPL-2.0"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "lightningcss-linux-x64-musl@1.33.0",
-      "type": "library",
-      "name": "lightningcss-linux-x64-musl",
-      "version": "1.33.0",
-      "scope": "optional",
-      "purl": "pkg:npm/lightningcss-linux-x64-musl@1.33.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.33.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "4588986e4a24c34b6b7caaaacdf179e658229f010fac3dce2437d3b89cc5b3530aea21670de9dacf57ea2cbb57e084c6dce92d2505ce7936b0d5ac2b0409593f"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MPL-2.0"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "lightningcss-win32-arm64-msvc@1.33.0",
-      "type": "library",
-      "name": "lightningcss-win32-arm64-msvc",
-      "version": "1.33.0",
-      "scope": "optional",
-      "purl": "pkg:npm/lightningcss-win32-arm64-msvc@1.33.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lightningcss-win32-arm64-msvc/-/lightningcss-win32-arm64-msvc-1.33.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "d4af8c3df2d2155a69873a5d6df92195693ac01ad339b0734b64fa75bd743cd399811f46a15b005b3c0dcae8546186d3a76de3fb846b9dc7ee8d9e2e0335efc0"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MPL-2.0"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "lightningcss-win32-x64-msvc@1.33.0",
-      "type": "library",
-      "name": "lightningcss-win32-x64-msvc",
-      "version": "1.33.0",
-      "scope": "optional",
-      "purl": "pkg:npm/lightningcss-win32-x64-msvc@1.33.0",
-      "properties": [
-        {
-          "name": "cdx:npm:package:development",
-          "value": "true"
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.33.0.tgz"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "3a5108083c7f5e5d05a92a786ebcbccc59c2bc6a628371a5e200aabaf6301eea892840b5fa7f4d8039e216fa871a632fd5992a0c9ac3a8a292ca44c35fe7a1b8"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MPL-2.0"
-          }
-        }
-      ]
-    },
-    {
       "bom-ref": "lodash@4.18.1",
       "type": "library",
       "name": "lodash",
       "version": "4.18.1",
       "scope": "required",
+      "author": "John-David Dalton <john.david.dalton@gmail.com>",
+      "description": "Lodash modular utilities.",
       "purl": "pkg:npm/lodash@4.18.1",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/lodash/-/lodash-4.18.1.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://lodash.com/"
         }
       ],
       "hashes": [
@@ -3014,12 +3962,18 @@
       "name": "lodash-es",
       "version": "4.18.1",
       "scope": "required",
+      "author": "John-David Dalton <john.david.dalton@gmail.com>",
+      "description": "Lodash exported as ES modules.",
       "purl": "pkg:npm/lodash-es@4.18.1",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.18.1.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://lodash.com/custom-builds"
         }
       ],
       "hashes": [
@@ -3042,6 +3996,8 @@
       "name": "lodash-unified",
       "version": "1.0.3",
       "scope": "required",
+      "author": "Jack Works",
+      "description": "A union entrypoint of lodash for both ESModule and Commonjs.",
       "purl": "pkg:npm/lodash-unified@1.0.3",
       "properties": [],
       "externalReferences": [
@@ -3070,12 +4026,18 @@
       "name": "magic-string",
       "version": "0.30.21",
       "scope": "required",
+      "author": "Rich Harris",
+      "description": "Modify strings, generate sourcemaps",
       "purl": "pkg:npm/magic-string@0.30.21",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/magic-string/-/magic-string-0.30.21.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/Rich-Harris/magic-string.git"
         }
       ],
       "hashes": [
@@ -3098,12 +4060,18 @@
       "name": "memoize-one",
       "version": "6.0.0",
       "scope": "required",
+      "author": "Alex Reardon <alexreardon@gmail.com>",
+      "description": "A memoization library which only remembers the latest invocation",
       "purl": "pkg:npm/memoize-one@6.0.0",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/memoize-one/-/memoize-one-6.0.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/alexreardon/memoize-one.git"
         }
       ],
       "hashes": [
@@ -3125,7 +4093,9 @@
       "type": "library",
       "name": "minimatch",
       "version": "9.0.9",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
+      "description": "a glob matcher in javascript",
       "purl": "pkg:npm/minimatch@9.0.9",
       "properties": [
         {
@@ -3137,6 +4107,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.9.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/isaacs/minimatch.git"
         }
       ],
       "hashes": [
@@ -3158,7 +4132,7 @@
       "type": "library",
       "name": "muggle-string",
       "version": "0.4.1",
-      "scope": "optional",
+      "scope": "required",
       "purl": "pkg:npm/muggle-string@0.4.1",
       "properties": [
         {
@@ -3170,6 +4144,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/muggle-string/-/muggle-string-0.4.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/johnsoncodehk/muggle-string.git"
         }
       ],
       "hashes": [
@@ -3192,6 +4170,8 @@
       "name": "nanoid",
       "version": "3.3.19",
       "scope": "required",
+      "author": "Andrey Sitnik <andrey@sitnik.ru>",
+      "description": "A tiny (116 bytes), secure URL-friendly unique string ID generator",
       "purl": "pkg:npm/nanoid@3.3.19",
       "properties": [],
       "externalReferences": [
@@ -3220,6 +4200,7 @@
       "name": "node-addon-api",
       "version": "7.1.1",
       "scope": "optional",
+      "description": "Node.js API (Node-API)",
       "purl": "pkg:npm/node-addon-api@7.1.1",
       "properties": [
         {
@@ -3231,6 +4212,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-7.1.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/nodejs/node-addon-api.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/nodejs/node-addon-api"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/nodejs/node-addon-api/issues"
         }
       ],
       "hashes": [
@@ -3253,12 +4246,26 @@
       "name": "normalize-wheel-es",
       "version": "1.2.0",
       "scope": "required",
+      "author": "Bas Stottelaar",
+      "description": "Mouse wheel normalization across multiple multiple browsers.",
       "purl": "pkg:npm/normalize-wheel-es@1.2.0",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/normalize-wheel-es/-/normalize-wheel-es-1.2.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/sxzz/normalize-wheel-es.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/sxzz/normalize-wheel-es#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/sxzz/normalize-wheel-es/issues"
         }
       ],
       "hashes": [
@@ -3280,7 +4287,9 @@
       "type": "library",
       "name": "path-browserify",
       "version": "1.0.1",
-      "scope": "optional",
+      "scope": "required",
+      "author": "James Halliday",
+      "description": "the path module from node core for browsers",
       "purl": "pkg:npm/path-browserify@1.0.1",
       "properties": [
         {
@@ -3292,6 +4301,14 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/path-browserify/-/path-browserify-1.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/browserify/path-browserify.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/browserify/path-browserify"
         }
       ],
       "hashes": [
@@ -3314,6 +4331,8 @@
       "name": "picocolors",
       "version": "1.1.1",
       "scope": "required",
+      "author": "Alexey Raspopov",
+      "description": "The tiniest and the fastest library for terminal output formatting with ANSI colors",
       "purl": "pkg:npm/picocolors@1.1.1",
       "properties": [],
       "externalReferences": [
@@ -3341,7 +4360,9 @@
       "type": "library",
       "name": "picomatch",
       "version": "4.0.7",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+      "description": "Blazing fast and accurate glob matcher written in JavaScript, with no dependencies and full support for standard and extended Bash glob features, including braces, extglobs, POSIX brackets, and regular expressions.",
       "purl": "pkg:npm/picomatch@4.0.7",
       "properties": [
         {
@@ -3353,6 +4374,14 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.7.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/micromatch/picomatch"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/micromatch/picomatch/issues"
         }
       ],
       "hashes": [
@@ -3375,12 +4404,26 @@
       "name": "pinia",
       "version": "2.3.1",
       "scope": "required",
+      "author": "Eduardo San Martin Morote",
+      "description": "Intuitive, type safe and flexible Store for Vue",
       "purl": "pkg:npm/pinia@2.3.1",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/pinia/-/pinia-2.3.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/pinia.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/vuejs/pinia#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/pinia/issues"
         }
       ],
       "hashes": [
@@ -3403,6 +4446,7 @@
       "name": "vue-demi",
       "version": "0.14.10",
       "scope": "required",
+      "author": "Anthony Fu <anthonyfu117@hotmail.com>",
       "purl": "pkg:npm/vue-demi@0.14.10",
       "properties": [],
       "externalReferences": [
@@ -3431,12 +4475,22 @@
       "name": "postcss",
       "version": "8.5.28",
       "scope": "required",
+      "author": "Andrey Sitnik <andrey@sitnik.es>",
+      "description": "Tool for transforming styles with JS plugins",
       "purl": "pkg:npm/postcss@8.5.28",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/postcss/-/postcss-8.5.28.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://postcss.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/postcss/postcss/issues"
         }
       ],
       "hashes": [
@@ -3458,7 +4512,9 @@
       "type": "library",
       "name": "readdirp",
       "version": "5.1.1",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
+      "description": "Recursive version of fs.readdir with small RAM & CPU footprint",
       "purl": "pkg:npm/readdirp@5.1.1",
       "properties": [
         {
@@ -3470,6 +4526,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/readdirp/-/readdirp-5.1.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/paulmillr/readdirp.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/paulmillr/readdirp"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/paulmillr/readdirp/issues"
         }
       ],
       "hashes": [
@@ -3491,7 +4559,8 @@
       "type": "library",
       "name": "rolldown",
       "version": "1.2.9",
-      "scope": "optional",
+      "scope": "required",
+      "description": "Fast JavaScript/TypeScript bundler in Rust with Rollup-compatible API.",
       "purl": "pkg:npm/rolldown@1.2.9",
       "properties": [
         {
@@ -3503,6 +4572,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/rolldown/-/rolldown-1.2.9.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/rolldown/rolldown.git"
+        },
+        {
+          "type": "website",
+          "url": "https://rolldown.rs/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/rolldown/rolldown/issues"
         }
       ],
       "hashes": [
@@ -3524,7 +4605,9 @@
       "type": "library",
       "name": "sass",
       "version": "1.104.0",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Natalie Weizenbaum",
+      "description": "A pure JavaScript implementation of Sass.",
       "purl": "pkg:npm/sass@1.104.0",
       "properties": [
         {
@@ -3536,6 +4619,14 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/sass/-/sass-1.104.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/sass/dart-sass"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/sass/dart-sass"
         }
       ],
       "hashes": [
@@ -3557,7 +4648,9 @@
       "type": "library",
       "name": "semver",
       "version": "7.8.5",
-      "scope": "optional",
+      "scope": "required",
+      "author": "GitHub Inc.",
+      "description": "The semantic version parser used by npm.",
       "purl": "pkg:npm/semver@7.8.5",
       "properties": [
         {
@@ -3569,6 +4662,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/semver/-/semver-7.8.5.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/npm/node-semver.git"
         }
       ],
       "hashes": [
@@ -3591,12 +4688,18 @@
       "name": "source-map-js",
       "version": "1.2.2",
       "scope": "required",
+      "author": "Valentin 7rulnik Semirulnik <v7rulnik@gmail.com>",
+      "description": "Generates and consumes source maps",
       "purl": "pkg:npm/source-map-js@1.2.2",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.2.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/7rulnik/source-map-js"
         }
       ],
       "hashes": [
@@ -3618,7 +4721,9 @@
       "type": "library",
       "name": "tinyglobby",
       "version": "0.2.17",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Superchupu",
+      "description": "A fast and minimal alternative to globby and fast-glob",
       "purl": "pkg:npm/tinyglobby@0.2.17",
       "properties": [
         {
@@ -3630,6 +4735,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/SuperchupuDev/tinyglobby.git"
+        },
+        {
+          "type": "website",
+          "url": "https://superchupu.dev/tinyglobby"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/SuperchupuDev/tinyglobby/issues"
         }
       ],
       "hashes": [
@@ -3652,12 +4769,26 @@
       "name": "typescript",
       "version": "5.3.3",
       "scope": "optional",
+      "author": "Microsoft Corp.",
+      "description": "TypeScript is a language for application scale JavaScript development",
       "purl": "pkg:npm/typescript@5.3.3",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/typescript/-/typescript-5.3.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/Microsoft/TypeScript.git"
+        },
+        {
+          "type": "website",
+          "url": "https://www.typescriptlang.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/Microsoft/TypeScript/issues"
         }
       ],
       "hashes": [
@@ -3679,7 +4810,8 @@
       "type": "library",
       "name": "undici-types",
       "version": "6.21.0",
-      "scope": "optional",
+      "scope": "required",
+      "description": "A stand-alone types package for Undici",
       "purl": "pkg:npm/undici-types@6.21.0",
       "properties": [
         {
@@ -3691,6 +4823,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/nodejs/undici.git"
+        },
+        {
+          "type": "website",
+          "url": "https://undici.nodejs.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/nodejs/undici/issues"
         }
       ],
       "hashes": [
@@ -3712,7 +4856,9 @@
       "type": "library",
       "name": "vite",
       "version": "8.2.2",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Evan You",
+      "description": "Native-ESM powered web dev build tool",
       "purl": "pkg:npm/vite@8.2.2",
       "properties": [
         {
@@ -3724,6 +4870,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/vite/-/vite-8.2.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vitejs/vite.git"
+        },
+        {
+          "type": "website",
+          "url": "https://vite.dev"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vitejs/vite/issues"
         }
       ],
       "hashes": [
@@ -3745,7 +4903,9 @@
       "type": "library",
       "name": "vscode-uri",
       "version": "3.2.0",
-      "scope": "optional",
+      "scope": "required",
+      "author": "Microsoft",
+      "description": "The URI implementation that is used by VS Code and its extensions",
       "purl": "pkg:npm/vscode-uri@3.2.0",
       "properties": [
         {
@@ -3757,6 +4917,18 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/vscode-uri/-/vscode-uri-3.2.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/microsoft/vscode-uri.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/microsoft/vscode-uri#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/microsoft/vscode-uri/issues"
         }
       ],
       "hashes": [
@@ -3779,12 +4951,26 @@
       "name": "vue",
       "version": "3.5.42",
       "scope": "required",
+      "author": "Evan You",
+      "description": "The progressive JavaScript framework for building modern web UI.",
       "purl": "pkg:npm/vue@3.5.42",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/vue/-/vue-3.5.42.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://vuejs.org/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/core/issues"
         }
       ],
       "hashes": [
@@ -3813,6 +4999,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/vue-component-type-helpers/-/vue-component-type-helpers-3.3.11.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/vuejs/language-tools.git"
         }
       ],
       "hashes": [
@@ -3835,12 +5025,25 @@
       "name": "vue-router",
       "version": "4.6.4",
       "scope": "required",
+      "author": "Eduardo San Martin Morote",
       "purl": "pkg:npm/vue-router@4.6.4",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/vue-router/-/vue-router-4.6.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vuejs/router.git"
+        },
+        {
+          "type": "website",
+          "url": "https://router.vuejs.org"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/vuejs/router/issues"
         }
       ],
       "hashes": [
@@ -3862,7 +5065,7 @@
       "type": "library",
       "name": "vue-tsc",
       "version": "2.0.29",
-      "scope": "optional",
+      "scope": "required",
       "purl": "pkg:npm/vue-tsc@2.0.29",
       "properties": [
         {
@@ -3874,6 +5077,10 @@
         {
           "type": "distribution",
           "url": "https://registry.npmjs.org/vue-tsc/-/vue-tsc-2.0.29.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/vuejs/language-tools.git"
         }
       ],
       "hashes": [
@@ -3895,17 +5102,19 @@
     {
       "ref": "awesome-stock-owner-ui@0.0.0",
       "dependsOn": [
+        "@element-plus/icons-vue@2.3.2",
+        "@tsparticles/engine@3.9.1",
+        "@tsparticles/slim@3.9.1",
+        "element-plus@2.14.5",
+        "pinia@2.3.1",
         "vue@3.5.42",
         "vue-router@4.6.4",
-        "pinia@2.3.1",
-        "element-plus@2.14.5",
-        "@element-plus/icons-vue@2.3.2",
-        "vite@8.2.2",
+        "@types/node@20.19.43",
         "@vitejs/plugin-vue@6.0.8",
         "sass@1.104.0",
         "typescript@5.3.3",
-        "vue-tsc@2.0.29",
-        "@types/node@20.19.43"
+        "vite@8.2.2",
+        "vue-tsc@2.0.29"
       ]
     },
     {
@@ -3971,66 +5180,11 @@
         "is-glob@4.0.3",
         "node-addon-api@7.1.1",
         "picomatch@4.0.7",
-        "@parcel/watcher-android-arm64@2.6.0",
-        "@parcel/watcher-darwin-arm64@2.6.0",
-        "@parcel/watcher-darwin-x64@2.6.0",
-        "@parcel/watcher-freebsd-x64@2.6.0",
-        "@parcel/watcher-linux-arm-glibc@2.6.0",
-        "@parcel/watcher-linux-arm-musl@2.6.0",
-        "@parcel/watcher-linux-arm64-glibc@2.6.0",
-        "@parcel/watcher-linux-arm64-musl@2.6.0",
-        "@parcel/watcher-linux-x64-glibc@2.6.0",
-        "@parcel/watcher-linux-x64-musl@2.6.0",
-        "@parcel/watcher-win32-arm64@2.6.0",
-        "@parcel/watcher-win32-x64@2.6.0"
+        "@parcel/watcher-darwin-arm64@2.6.0"
       ]
     },
     {
-      "ref": "@parcel/watcher-android-arm64@2.6.0",
-      "dependsOn": []
-    },
-    {
       "ref": "@parcel/watcher-darwin-arm64@2.6.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "@parcel/watcher-darwin-x64@2.6.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "@parcel/watcher-freebsd-x64@2.6.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "@parcel/watcher-linux-arm-glibc@2.6.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "@parcel/watcher-linux-arm-musl@2.6.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "@parcel/watcher-linux-arm64-glibc@2.6.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "@parcel/watcher-linux-arm64-musl@2.6.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "@parcel/watcher-linux-x64-glibc@2.6.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "@parcel/watcher-linux-x64-musl@2.6.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "@parcel/watcher-win32-arm64@2.6.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "@parcel/watcher-win32-x64@2.6.0",
       "dependsOn": []
     },
     {
@@ -4038,68 +5192,260 @@
       "dependsOn": []
     },
     {
-      "ref": "@rolldown/binding-android-arm-eabi@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-android-arm64@1.2.9",
-      "dependsOn": []
-    },
-    {
       "ref": "@rolldown/binding-darwin-arm64@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-darwin-x64@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-freebsd-x64@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-linux-arm-gnueabihf@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-linux-arm64-gnu@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-linux-arm64-musl@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-linux-ppc64-gnu@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-linux-s390x-gnu@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-linux-x64-gnu@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-linux-x64-musl@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-openharmony-arm64@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-win32-arm64-msvc@1.2.9",
-      "dependsOn": []
-    },
-    {
-      "ref": "@rolldown/binding-win32-x64-msvc@1.2.9",
       "dependsOn": []
     },
     {
       "ref": "@rolldown/pluginutils@1.0.1",
       "dependsOn": []
+    },
+    {
+      "ref": "@tsparticles/basic@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1",
+        "@tsparticles/move-base@3.9.1",
+        "@tsparticles/plugin-hex-color@3.9.1",
+        "@tsparticles/plugin-hsl-color@3.9.1",
+        "@tsparticles/plugin-rgb-color@3.9.1",
+        "@tsparticles/shape-circle@3.9.1",
+        "@tsparticles/updater-color@3.9.1",
+        "@tsparticles/updater-opacity@3.9.1",
+        "@tsparticles/updater-out-modes@3.9.1",
+        "@tsparticles/updater-size@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/engine@3.9.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "@tsparticles/interaction-external-attract@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-external-bounce@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-external-bubble@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-external-connect@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-external-grab@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-external-pause@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-external-push@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-external-remove@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-external-repulse@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-external-slow@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-particles-attract@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-particles-collisions@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/interaction-particles-links@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/move-base@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/move-parallax@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/plugin-easing-quad@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/plugin-hex-color@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/plugin-hsl-color@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/plugin-rgb-color@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/shape-circle@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/shape-emoji@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/shape-image@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/shape-line@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/shape-polygon@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/shape-square@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/shape-star@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/slim@3.9.1",
+      "dependsOn": [
+        "@tsparticles/basic@3.9.1",
+        "@tsparticles/engine@3.9.1",
+        "@tsparticles/interaction-external-attract@3.9.1",
+        "@tsparticles/interaction-external-bounce@3.9.1",
+        "@tsparticles/interaction-external-bubble@3.9.1",
+        "@tsparticles/interaction-external-connect@3.9.1",
+        "@tsparticles/interaction-external-grab@3.9.1",
+        "@tsparticles/interaction-external-pause@3.9.1",
+        "@tsparticles/interaction-external-push@3.9.1",
+        "@tsparticles/interaction-external-remove@3.9.1",
+        "@tsparticles/interaction-external-repulse@3.9.1",
+        "@tsparticles/interaction-external-slow@3.9.1",
+        "@tsparticles/interaction-particles-attract@3.9.1",
+        "@tsparticles/interaction-particles-collisions@3.9.1",
+        "@tsparticles/interaction-particles-links@3.9.1",
+        "@tsparticles/move-parallax@3.9.1",
+        "@tsparticles/plugin-easing-quad@3.9.1",
+        "@tsparticles/shape-emoji@3.9.1",
+        "@tsparticles/shape-image@3.9.1",
+        "@tsparticles/shape-line@3.9.1",
+        "@tsparticles/shape-polygon@3.9.1",
+        "@tsparticles/shape-square@3.9.1",
+        "@tsparticles/shape-star@3.9.1",
+        "@tsparticles/updater-life@3.9.1",
+        "@tsparticles/updater-rotate@3.9.1",
+        "@tsparticles/updater-stroke-color@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/updater-color@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/updater-life@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/updater-opacity@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/updater-out-modes@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/updater-rotate@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/updater-size@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
+    },
+    {
+      "ref": "@tsparticles/updater-stroke-color@3.9.1",
+      "dependsOn": [
+        "@tsparticles/engine@3.9.1"
+      ]
     },
     {
       "ref": "@types/lodash@4.17.25",
@@ -4151,38 +5497,38 @@
       "ref": "@vue/compiler-core@3.5.42",
       "dependsOn": [
         "@babel/parser@7.29.9",
-        "@vue/shared@3.5.42",
         "entities@7.0.1",
         "estree-walker@2.0.2",
-        "source-map-js@1.2.2"
+        "source-map-js@1.2.2",
+        "@vue/shared@3.5.42"
       ]
     },
     {
       "ref": "@vue/compiler-dom@3.5.42",
       "dependsOn": [
-        "@vue/compiler-core@3.5.42",
-        "@vue/shared@3.5.42"
+        "@vue/shared@3.5.42",
+        "@vue/compiler-core@3.5.42"
       ]
     },
     {
       "ref": "@vue/compiler-sfc@3.5.42",
       "dependsOn": [
         "@babel/parser@7.29.9",
-        "@vue/compiler-core@3.5.42",
-        "@vue/compiler-dom@3.5.42",
-        "@vue/compiler-ssr@3.5.42",
-        "@vue/shared@3.5.42",
         "estree-walker@2.0.2",
         "magic-string@0.30.21",
         "postcss@8.5.28",
-        "source-map-js@1.2.2"
+        "source-map-js@1.2.2",
+        "@vue/compiler-core@3.5.42",
+        "@vue/compiler-dom@3.5.42",
+        "@vue/compiler-ssr@3.5.42",
+        "@vue/shared@3.5.42"
       ]
     },
     {
       "ref": "@vue/compiler-ssr@3.5.42",
       "dependsOn": [
-        "@vue/compiler-dom@3.5.42",
-        "@vue/shared@3.5.42"
+        "@vue/shared@3.5.42",
+        "@vue/compiler-dom@3.5.42"
       ]
     },
     {
@@ -4219,25 +5565,25 @@
     {
       "ref": "@vue/runtime-core@3.5.42",
       "dependsOn": [
-        "@vue/reactivity@3.5.42",
-        "@vue/shared@3.5.42"
+        "@vue/shared@3.5.42",
+        "@vue/reactivity@3.5.42"
       ]
     },
     {
       "ref": "@vue/runtime-dom@3.5.42",
       "dependsOn": [
-        "@vue/reactivity@3.5.42",
-        "@vue/runtime-core@3.5.42",
+        "csstype@3.2.3",
         "@vue/shared@3.5.42",
-        "csstype@3.2.3"
+        "@vue/runtime-core@3.5.42",
+        "@vue/reactivity@3.5.42"
       ]
     },
     {
       "ref": "@vue/server-renderer@3.5.42",
       "dependsOn": [
+        "@vue/shared@3.5.42",
         "@vue/compiler-ssr@3.5.42",
-        "@vue/runtime-dom@3.5.42",
-        "@vue/shared@3.5.42"
+        "@vue/runtime-dom@3.5.42"
       ]
     },
     {
@@ -4364,61 +5710,11 @@
       "ref": "lightningcss@1.33.0",
       "dependsOn": [
         "detect-libc@2.1.2",
-        "lightningcss-android-arm64@1.33.0",
-        "lightningcss-darwin-arm64@1.33.0",
-        "lightningcss-darwin-x64@1.33.0",
-        "lightningcss-freebsd-x64@1.33.0",
-        "lightningcss-linux-arm-gnueabihf@1.33.0",
-        "lightningcss-linux-arm64-gnu@1.33.0",
-        "lightningcss-linux-arm64-musl@1.33.0",
-        "lightningcss-linux-x64-gnu@1.33.0",
-        "lightningcss-linux-x64-musl@1.33.0",
-        "lightningcss-win32-arm64-msvc@1.33.0",
-        "lightningcss-win32-x64-msvc@1.33.0"
+        "lightningcss-darwin-arm64@1.33.0"
       ]
     },
     {
-      "ref": "lightningcss-android-arm64@1.33.0",
-      "dependsOn": []
-    },
-    {
       "ref": "lightningcss-darwin-arm64@1.33.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "lightningcss-darwin-x64@1.33.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "lightningcss-freebsd-x64@1.33.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "lightningcss-linux-arm-gnueabihf@1.33.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "lightningcss-linux-arm64-gnu@1.33.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "lightningcss-linux-arm64-musl@1.33.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "lightningcss-linux-x64-gnu@1.33.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "lightningcss-linux-x64-musl@1.33.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "lightningcss-win32-arm64-msvc@1.33.0",
-      "dependsOn": []
-    },
-    {
-      "ref": "lightningcss-win32-x64-msvc@1.33.0",
       "dependsOn": []
     },
     {
@@ -4432,9 +5728,9 @@
     {
       "ref": "lodash-unified@1.0.3",
       "dependsOn": [
-        "@types/lodash-es@4.17.12",
         "lodash@4.18.1",
-        "lodash-es@4.18.1"
+        "lodash-es@4.18.1",
+        "@types/lodash-es@4.17.12"
       ]
     },
     {
@@ -4513,21 +5809,7 @@
       "dependsOn": [
         "@oxc-project/types@0.150.0",
         "@rolldown/pluginutils@1.0.1",
-        "@rolldown/binding-android-arm-eabi@1.2.9",
-        "@rolldown/binding-android-arm64@1.2.9",
-        "@rolldown/binding-darwin-arm64@1.2.9",
-        "@rolldown/binding-darwin-x64@1.2.9",
-        "@rolldown/binding-freebsd-x64@1.2.9",
-        "@rolldown/binding-linux-arm-gnueabihf@1.2.9",
-        "@rolldown/binding-linux-arm64-gnu@1.2.9",
-        "@rolldown/binding-linux-arm64-musl@1.2.9",
-        "@rolldown/binding-linux-ppc64-gnu@1.2.9",
-        "@rolldown/binding-linux-s390x-gnu@1.2.9",
-        "@rolldown/binding-linux-x64-gnu@1.2.9",
-        "@rolldown/binding-linux-x64-musl@1.2.9",
-        "@rolldown/binding-openharmony-arm64@1.2.9",
-        "@rolldown/binding-win32-arm64-msvc@1.2.9",
-        "@rolldown/binding-win32-x64-msvc@1.2.9"
+        "@rolldown/binding-darwin-arm64@1.2.9"
       ]
     },
     {
@@ -4583,11 +5865,11 @@
       "ref": "vue@3.5.42",
       "dependsOn": [
         "typescript@5.3.3",
-        "@vue/compiler-dom@3.5.42",
-        "@vue/compiler-sfc@3.5.42",
+        "@vue/shared@3.5.42",
         "@vue/runtime-dom@3.5.42",
-        "@vue/server-renderer@3.5.42",
-        "@vue/shared@3.5.42"
+        "@vue/compiler-sfc@3.5.42",
+        "@vue/compiler-dom@3.5.42",
+        "@vue/server-renderer@3.5.42"
       ]
     },
     {

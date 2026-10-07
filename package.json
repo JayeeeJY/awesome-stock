@@ -29,7 +29,8 @@
     "test:hk-market": "node tests/owner/browser_hk_market.mjs",
     "test:settings-appearance": "node tests/owner/browser_settings_appearance.mjs",
     "test:connections": "node tests/owner/browser_connection_status.mjs && node tests/owner/browser_connection_test.mjs",
-    "test:public-market": "node tests/owner/browser_public_market.mjs"
+    "test:public-market": "node tests/owner/browser_public_market.mjs",
+    "test:login": "node tests/owner/browser_login_particles.mjs"
   },
   "devDependencies": {
     "playwright": "1.63.0"

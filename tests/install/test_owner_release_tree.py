@@ -17,7 +17,7 @@ def test_review_tree_manifest_and_no_private_state(tmp_path):
     assert result['files']==data['count']+1
     assert not (target/'.git').exists()
     assert data['installation']=='native-source-only'
-    assert data['product_version']=='1.0.0'
+    assert data['product_version']=='1.0.1'
     assert data['supported_platforms']==['macOS Apple Silicon (arm64)']
     assert not data['container_installation_included']
     assert not (target/'deploy').exists()

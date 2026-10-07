@@ -28,7 +28,7 @@ def test_reproducible_archive_and_manifest(tmp_path):
         assert all(not any(bad in n for bad in ['.owner-state','.env','qa/','.sqlite','.git/']) for n in names)
         assert 'awesome-stock-owner/start_owner.py' in names
         assert manifest['installation']=='native-source-only'
-        assert manifest['product_version']=='1.0.0'
+        assert manifest['product_version']=='1.0.1'
         assert manifest['supported_platforms']==['macOS Apple Silicon (arm64)']
         assert not manifest['container_installation_included']
         assert not any('/deploy/' in n or n.endswith('/start_owner_container.py') or n.endswith('/audit_owner_image.py') for n in names)

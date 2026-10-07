@@ -34,6 +34,8 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm audit --audit-level=high
       - run: npx playwright install --with-deps chromium
+      - name: Login stars, reduced motion and local account flow
+        run: npm run test:login
       - name: Shipped Vue interface acceptance
         run: npm run test:vue
       - name: Planning and allocation acceptance

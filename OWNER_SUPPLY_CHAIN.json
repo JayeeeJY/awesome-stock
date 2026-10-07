@@ -788,7 +788,7 @@
   "legal_approved": false,
   "public_release_approved": false,
   "current_frontend": {
-    "status": "technical_inventory_collected_missing_notices_and_legal_review_pending",
+    "status": "locked_inventory_with_upstream_notices_and_owner_approved_disclosures",
     "lockfile": "frontend/owner-ui/package-lock.json",
     "runtime": "prebuilt Vue assets; Node only for build",
     "previous_container_inventory_is_current": false,
@@ -796,9 +796,9 @@
     "sbom": "docs/OWNER_UI_SBOM.cdx.json",
     "notice_texts": "docs/OWNER_UI_THIRD_PARTY_LICENSES.txt",
     "audit": {
-      "local_evidence": "../release-review/p226-first-release-verification-20261006/final-ui-npm-audit.json",
-      "sha256": "ed0a3928f7563e7c96685d918b6c524c8fcb806fcd5d9cca0c3dd4dc493c6da2",
-      "lockfile_sha256": "4f2571fffb2d2841189fbff1f7d3d36382a013130eb63f0d3bfda1676bf8feb3",
+      "local_evidence": "../release-review/p234-community-v1.0.1-20261007/ui-npm-audit.json",
+      "sha256": "b99072dfdb9e0f29727e87974dd604b80d43736063e4c9f8784ee844e0824c5f",
+      "lockfile_sha256": "0aecf48999954ea0d451bc6ff70f4d26bc9384f5b2275761af73142e09d2e274",
       "vulnerabilities": {
         "info": 0,
         "low": 0,
@@ -815,6 +815,12 @@
       "to": "1.2.2",
       "advisory": "GHSA-68fv-2mgg-jv7q",
       "compiled_assets_unchanged": true
+    },
+    "login_particles": {
+      "versions": "@tsparticles/engine and slim 3.9.1, matching Personal; exact transitive lock",
+      "deprecated_upstream": true,
+      "delivery": "locally bundled; no CDN scripts",
+      "notices_recorded": true
     }
   },
   "current_container": null,
