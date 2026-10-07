@@ -39,7 +39,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "6b3f77b0b1bb1cf3365b45d55c43de3171db237d75007b61d713b2f97d37ff36"
+      "sha256": "d839c2885d1f13f35f9c9ad88474dd9846be8da83a93265e14c7dd9ca1aa0c20"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -51,11 +51,11 @@
     },
     {
       "path": "LICENSING.md",
-      "sha256": "8550313a436cb88bf23339937ae2eac377606f6c6ea999bdf117f1849692a0b1"
+      "sha256": "2063af55152874f7e11db76ce2dad7a8ab1aee20d230ffe96dd7ce5e464c72b8"
     },
     {
       "path": "OWNER_INSTALL.md",
-      "sha256": "9344a17f9fc42bc693bc9f2245d1d0c1f5299485516eb1908e50aea76ffbbe38"
+      "sha256": "9425237d292a31c1bc7dcef7f00148863670a1a19e686446ec63a0cec7a21b6a"
     },
     {
       "path": "OWNER_SUPPLY_CHAIN.json",
@@ -63,15 +63,15 @@
     },
     {
       "path": "README.en.md",
-      "sha256": "4dbae76ede0ce3c725ad63c9bb048570ab196a5e8f1e8df23ab8cffe6decb584"
+      "sha256": "7922ec3921d613df543a68ed669a208155ef9748a6e9a3666ce840d822ab23cb"
     },
     {
       "path": "README.md",
-      "sha256": "9b80e1ac9cb50e8393f90835b24fd189e057f3dfd22a8bbfa20924bc7e439bfb"
+      "sha256": "66ffb5ebed8c1255c1af4a8285af86f1b2b2506f06a5e7a5b82b93a0c7eeab19"
     },
     {
       "path": "SECURITY.md",
-      "sha256": "947d43b41fe586330e7f343e85fb0d00d8691b7fde6bc26746a35391dc644b81"
+      "sha256": "f7af9f7bdce24530216b1ff635c5f0af8f798af5df1b5bdd4f76a678bd17cb55"
     },
     {
       "path": "backend/src/awesome_stock/__init__.py",
@@ -479,7 +479,7 @@
     },
     {
       "path": "docs/RELEASE_SECURITY_REVIEW.md",
-      "sha256": "4265173601a7124cc795a8c42ac49cd3324676597fbb70b04590c49e2a574524"
+      "sha256": "9a95d8971e0362bb04ea617d4f45b9aad4a0db69da66c77f0c5ae575506a18ab"
     },
     {
       "path": "docs/THIRD_PARTY_NOTICES_CANDIDATE.md",
@@ -487,11 +487,11 @@
     },
     {
       "path": "docs/TROUBLESHOOTING.md",
-      "sha256": "99beb7d61fd6be2dc81aefaacfe9dd27ef49a3a0e8951979c46ed0713f20e17a"
+      "sha256": "78de62bbc1fd29336ab39510afd82e668e1419e3d975dacd4cb9f1c069c25e59"
     },
     {
       "path": "docs/VALIDATION.md",
-      "sha256": "ade451f80d7dbb956e385a8e6f1246aa8f395b47f4ceab8c2821aab3a91f6781"
+      "sha256": "bbfa6e75d7dd275cfb38ecce0be7075b5272b24dfe1163fc0993f1f221e2c2e8"
     },
     {
       "path": "docs/screenshots/cockpit.png",

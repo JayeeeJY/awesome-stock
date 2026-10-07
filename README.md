@@ -2,7 +2,7 @@
 
 个人投资工作台：从真实账本出发，把研究、判断、计划与复盘连接起来。每位使用者在自己的电脑运行，管理自己的数据和模型服务。
 
-**当前状态：v1.0.0 正式稳定版发布准备，尚未公开发行。** 项目许可为 AGPL-3.0-only；许可通知处置与行情范围已按所有者决定落实，最终工程核验与发行批准按当前记录执行。截图只含合成验证数据。
+**Community v1.0.0：正式稳定首发范围。** 实际发行版本和日期以 [GitHub Releases](https://github.com/JayeeeJY/awesome-stock/releases) 为准。项目许可为 AGPL-3.0-only；许可通知处置与行情范围已按所有者决定落实。截图只含合成验证数据。
 
 [English](README.en.md) · [第一次使用](docs/QUICKSTART.md) · [安装与恢复](OWNER_INSTALL.md) · [可选模型与行情](docs/OPTIONAL_PROVIDERS.md) · [隐私](docs/DATA_AND_PRIVACY.md) · [安全](SECURITY.md)
 
@@ -48,8 +48,8 @@ python3 start_owner.py --open-browser
 
 [验证说明](docs/VALIDATION.md) 区分自动化、合成浏览器、实际平台与用户服务账号验收。[开发检查](docs/DEVELOPMENT.md) 提供可复现命令。所有测试通过不代表真实连续使用、许可或发布批准。
 
-首发只接收 [Issue 和产品反馈](https://github.com/JayeeeJY/awesome-stock/issues)，暂不接收外部代码贡献。请勿提交交易明细、Key 或备份；安全问题使用 GitHub 私密漏洞报告，见 [SECURITY.md](SECURITY.md)。仓库目前为私有准备状态，公开反馈入口将在转公开时启用并核验。
+首发只接收 [Issue 和产品反馈](https://github.com/JayeeeJY/awesome-stock/issues)，暂不接收外部代码贡献。请勿提交交易明细、Key 或备份；安全问题使用 GitHub 私密漏洞报告，见 [SECURITY.md](SECURITY.md)。反馈入口随仓库公开提供。
 
 ## 许可与发行
 
-Copyright (c) 2026 Evan。项目自有代码采用 **AGPL-3.0-only**，见 [LICENSE](LICENSE) 和 [许可范围说明](LICENSING.md)。本次不提供独立商业许可，遵守 AGPL 的商业使用仍被允许。第三方代码保留其原有许可；[第三方输入清单](docs/THIRD_PARTY_NOTICES_CANDIDATE.md) 附有保留的上游正文，以及所有者批准的[两包缺失通知透明披露](docs/OWNER_UI_NOTICE_DISCLOSURES.txt)。源码许可不授予行情使用权；公开发行尚未执行。当前不分发预构建容器镜像、模型权重或私有 Git 历史。
+Copyright (c) 2026 Evan。项目自有代码采用 **AGPL-3.0-only**，见 [LICENSE](LICENSE) 和 [许可范围说明](LICENSING.md)。本次不提供独立商业许可，遵守 AGPL 的商业使用仍被允许。第三方代码保留其原有许可；[第三方输入清单](docs/THIRD_PARTY_NOTICES_CANDIDATE.md) 附有保留的上游正文，以及所有者批准的[两包缺失通知透明披露](docs/OWNER_UI_NOTICE_DISCLOSURES.txt)。源码许可不授予行情使用权；发行记录以 GitHub Releases 为准。当前不分发预构建容器镜像、模型权重或私有 Git 历史。

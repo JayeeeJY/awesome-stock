@@ -24,7 +24,7 @@ not prohibit commercial use that complies with AGPL-3.0-only.
 The source-code license does not grant access to, or redistribution rights for,
 market data, news, model services, credentials or user records. Provider and data
 terms apply separately. Source licensing approval is not approval to publish a
-repository or release; this candidate is not yet publicly released.
+repository or release; actual publication is recorded in GitHub Releases.
 
 ---
 
@@ -34,4 +34,4 @@ repository or release; this candidate is not yet publicly released.
 透明披露处理，见 docs/OWNER_UI_NOTICE_DISCLOSURES.txt；不冒充已恢复上游正文。
 
 本次不提供独立商业许可；遵守 AGPL 的商业使用仍被允许。行情、新闻、模型服务、
-密钥及用户数据的权限独立于源码许可。许可选择已批准，公开发行尚未执行。
+密钥及用户数据的权限独立于源码许可。许可选择已批准；实际发行记录以 GitHub Releases 为准。

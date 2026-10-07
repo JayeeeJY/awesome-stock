@@ -1,6 +1,6 @@
 # Awesome Stock Community · 原生源码安装
 
-本次正式首发支持 **macOS Apple Silicon（arm64）**，需要Python 3.10+。发行包自带已编译界面，应用运行只使用Python标准库，无需Node、数据库服务或Docker。当前仍为待公开发行的本地候选；Docker安装暂缓，Windows、Linux和Intel Mac不列入首发正式支持范围。
+本次正式首发支持 **macOS Apple Silicon（arm64）**，需要Python 3.10+。发行包自带已编译界面，应用运行只使用Python标准库，无需Node、数据库服务或Docker。实际发行记录见仓库的 GitHub Releases；Docker安装暂缓，Windows、Linux和Intel Mac不列入首发正式支持范围。
 
 没有默认账号、统一模型Key或代付服务；首次使用创建自己的账号。不配置模型或行情服务也可记账和手工研究。
 

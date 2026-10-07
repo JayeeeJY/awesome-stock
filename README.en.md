@@ -2,7 +2,7 @@
 
 A self-hosted personal investing workspace connecting your ledger, research, decisions, plans and reviews. Run it on your own computer, with your own data and optional model services.
 
-**Preparing the v1.0.0 stable release. Not publicly released.** The project license is AGPL-3.0-only; notice treatment and market-data scope follow the owner decisions; final engineering verification and publication approval are recorded separately. Screenshots use synthetic test data only.
+**Community v1.0.0 stable first-release scope.** See [GitHub Releases](https://github.com/JayeeeJY/awesome-stock/releases) for actual released versions and dates. The project license is AGPL-3.0-only; notice treatment and market-data scope follow the owner decisions. Screenshots use synthetic test data only.
 
 [中文](README.md) · [Installation and recovery](OWNER_INSTALL.md) · [Security](SECURITY.md)
 
@@ -33,7 +33,7 @@ Settings include account and data controls, optional connections, import/export,
 
 ## Your services, your costs
 
-OpenAI, DeepSeek, user-installed Ollama, Alpha Vantage and EODHD are optional, disabled by default and called only after explicit actions. Yahoo key-free data is deferred from this first release. Manual price snapshots and CSV import work without a market connection; automated queries require the user's own API. There is no startup query or automatic provider fallback. Each user supplies their own access and pays their provider for configured services. No shared project key or subsidy is provided. Cloud model IDs are supplied by each user. Alpha Vantage provides optional US/USD and Shanghai-Shenzhen A-share/CNY daily prices and history; the independent EODHD connection provides Hong Kong/HKD daily data. Company and news connections currently cover US securities only. See [provider boundaries](docs/OPTIONAL_PROVIDERS.md).
+OpenAI, DeepSeek, user-installed Ollama, Alpha Vantage and EODHD are optional, disabled by default and called only after explicit actions. Yahoo key-free data is deferred from this first release. Manual price snapshots and trade CSV import work without a market connection; automated queries require the user's own API. There is no startup query or automatic provider fallback. Each user supplies their own access and pays their provider for configured services. No shared project key or subsidy is provided. Cloud model IDs are supplied by each user. Alpha Vantage provides optional US/USD and Shanghai-Shenzhen A-share/CNY daily prices and history; the independent EODHD connection provides Hong Kong/HKD daily data. Company and news connections currently cover US securities only. See [provider boundaries](docs/OPTIONAL_PROVIDERS.md).
 
 Keys stay in server process memory and clear on logout, password change or restart. Ask Awesome supports free questions and follow-ups; each message, attached material and session history is reviewed before sending. Conversation history stays in page memory and clears on refresh; responses cannot execute trades. No broker synchronization, real-time pricing or automatic migration from the private product is provided.
 
@@ -47,7 +47,7 @@ The first release accepts [issues and product feedback](https://github.com/Jayee
 
 ## License and release
 
-Copyright (c) 2026 Evan. Project-owned code is licensed under **AGPL-3.0-only**; see [LICENSE](LICENSE) and [licensing scope](LICENSING.md). No separate commercial license is offered for this release; commercial use complying with AGPL remains permitted. Third-party inputs retain their own licenses. Outstanding notice/provenance reviews, market-data terms and publication approval remain separate conditions. No prebuilt image, model weights or private repository history is distributed.
+Copyright (c) 2026 Evan. Project-owned code is licensed under **AGPL-3.0-only**; see [LICENSE](LICENSE) and [licensing scope](LICENSING.md). No separate commercial license is offered for this release; commercial use complying with AGPL remains permitted. Third-party inputs retain their own licenses. The [owner-approved disclosure](docs/OWNER_UI_NOTICE_DISCLOSURES.txt) transparently records two absent package-specific notices. Source licensing does not grant market-data permissions; actual publication is recorded in GitHub Releases. No prebuilt image, model weights or private repository history is distributed.
 
 ## First-use and connection checklist
 
