@@ -22,6 +22,7 @@ def test_review_tree_manifest_and_no_private_state(tmp_path):
     assert not data['container_installation_included']
     assert not (target/'deploy').exists()
     assert not (target/'start_owner_container.py').exists()
+    assert not (target/'backend/src/awesome_stock/runtime/owner_public_market.py').exists()
     assert not (target/'tools/audit_owner_image.py').exists()
     assert not (target/'tests/install/browser_owner_container.mjs').exists()
     assert (target/'LICENSE').read_bytes()==(ROOT/'LICENSE').read_bytes()

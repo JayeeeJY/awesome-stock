@@ -10,7 +10,7 @@ from awesome_stock.security.sessions import SessionError
 
 
 PUBLIC_MESSAGES = {
-    'public_market_unavailable': '公共行情暂不可用、缺少完整日线或标的身份不符。未保存；可以稍后主动查询，或切换到你自己的行情 API。',
+    'public_market_deferred': '本次首发暂不提供 Yahoo 公共行情。未发起查询、未保存；请手工录入价格、导入 CSV，或配置自己的行情 API。',
     'provider_auth_failed': '服务商拒绝 API Key，请检查 Key 是否有效。',
     'provider_permission_denied': '服务商拒绝访问，请检查账号、模型权限和服务可用区域。',
     'provider_model_unavailable': '服务商未找到模型或接口，请检查实际模型 ID。',

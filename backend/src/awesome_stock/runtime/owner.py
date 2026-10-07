@@ -235,7 +235,7 @@ def application(*,port,data_dir,ui_dist=None):
                 return respond(start,ApiResponse(200,data=store.backup()))
             return respond(start,error(404,'capability_unsupported'))
         except ConnectionFailure as ex:
-            safe_codes={'provider_auth_failed','provider_permission_denied','provider_model_unavailable','provider_rate_limited','connection_failed','invalid_model_output','model_output_truncated','public_market_unavailable'}
+            safe_codes={'provider_auth_failed','provider_permission_denied','provider_model_unavailable','provider_rate_limited','connection_failed','invalid_model_output','model_output_truncated','public_market_deferred'}
             return respond(start,error(503,str(ex) if str(ex) in safe_codes else 'connection_unavailable'))
         except RateLimitError as ex:
             resp=error(429,'too_many_attempts')

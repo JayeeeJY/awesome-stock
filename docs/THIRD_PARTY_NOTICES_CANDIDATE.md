@@ -35,4 +35,4 @@ Project-owned code uses AGPL-3.0-only, with attribution to Evan, as approved on 
 
 The owner has declared that the original work was formed by the owner with ChatGPT and Codex, without other participants, external project/tutorial/company-code references, or employer/client/partner assets. Formation records and historical technical clues remain privately preserved, not copied into this public candidate.
 
-Optional provider accounts and market-data permissions remain separate from source-code licenses. The Yahoo public chart endpoint's ability to return data is not an authorization to integrate, store or redistribute it; its source disposition is still pending. No live provider data is bundled in the release.
+Optional provider accounts and market-data permissions remain separate from source-code licenses. The owner deferred Yahoo public chart integration from the first release on 2026-10-07; its adapter is excluded and legacy query endpoints reject without network access or writes. Previously saved source records remain unchanged. Reintroducing it requires a separately reviewed source disposition. No live provider data is bundled in the release.

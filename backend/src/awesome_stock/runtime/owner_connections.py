@@ -18,17 +18,12 @@ class ConnectionFailure(Exception):pass
 
 # Fixed destinations prevent arbitrary URL, proxy, redirect, and cross-provider secret forwarding.
 def transport(host,path,body,key='',local=False,local_host='127.0.0.1'):
-    if host=='query1.finance.yahoo.com':
-        if key or body is not None or local:raise ValueError('public request has no credential or body')
-        from .owner_public_market import public_transport
-        try:return public_transport(path)
-        except ValueError:raise ConnectionFailure('public_market_unavailable') from None
+    if host=='query1.finance.yahoo.com':raise ConnectionFailure('public_market_deferred')
     if local_host not in {'127.0.0.1','host.docker.internal'}:raise ValueError('unsupported local model host')
     conn=(http.client.HTTPConnection(local_host,11434,timeout=30) if local else http.client.HTTPSConnection(host,443,timeout=30,context=ssl.create_default_context()))
     query=parse_qs(urlsplit(path).query)
     limit=4*1024*1024 if host=='www.alphavantage.co' and body is None and query.get('function')==['TIME_SERIES_DAILY'] and query.get('outputsize')==['full'] else 262144
     headers={'Accept':'application/json','Content-Type':'application/json'}
-    if host=='query1.finance.yahoo.com':headers['User-Agent']='AwesomeStock/1.0'
     if key:headers['Authorization']='Bearer '+key
     try:
         conn.request('GET' if body is None else 'POST',path,body=None if body is None else json.dumps(body).encode(),headers=headers)
@@ -38,7 +33,7 @@ def transport(host,path,body,key='',local=False,local_host='127.0.0.1'):
         raw=response.read(limit+1)
         if len(raw)>limit:raise ConnectionFailure('response_too_large')
         eod=host=='eodhd.com' and (path.startswith('/api/eod/') or path.startswith('/api/exchange-symbol-list/HK?'))
-        data=json.loads(raw,parse_float=Decimal) if eod or host=='query1.finance.yahoo.com' else json.loads(raw)
+        data=json.loads(raw,parse_float=Decimal) if eod else json.loads(raw)
         if not isinstance(data,dict) and not (eod and isinstance(data,list)):raise ConnectionFailure('invalid_response')
         return data
     except (OSError,ValueError,http.client.HTTPException) as exc:raise ConnectionFailure('connection_failed') from None
@@ -48,9 +43,9 @@ class Connections:
     def __init__(self,send=None):
         self.send=send or transport;self.ollama_location='本机 Ollama（127.0.0.1:11434）';self.clear()
     def clear(self):
-        self.public_tested=False;self.config={};self.previews={};self.receipts={};self.histories={};self.companies={};self.news={};self.last_call={}
+        self.config={};self.previews={};self.receipts={};self.histories={};self.companies={};self.news={};self.last_call={}
     def status(self):
-        return {'data_public':{'enabled':True,'provider':'yahoo_public','model':None,'tested':self.public_tested},'ai':self._public('ai'),'data':self._public('data'),'data_hk':self._public('data_hk'),'secrets_persisted':False,'restart_disables':True,'ollama_location':self.ollama_location}
+        return {'data_public':{'enabled':False,'provider':None,'model':None,'tested':False,'deferred':True},'ai':self._public('ai'),'data':self._public('data'),'data_hk':self._public('data_hk'),'secrets_persisted':False,'restart_disables':True,'ollama_location':self.ollama_location}
     def _public(self,kind):
         c=self.config.get(kind)
         return {'enabled':bool(c),'provider':c['provider'] if c else None,'model':c.get('model') if c else None,'tested':c.get('tested',False) if c else False}
@@ -89,22 +84,8 @@ class Connections:
         c['tested']=True
         return packet
     def public_market(self,body,history=False):
-        if not isinstance(body,dict) or set(body) not in ({'symbol','market'},{'symbol','market','outputsize'}):raise ValueError('invalid public query')
-        mode=body.get('outputsize','compact')
-        if mode not in {'compact','full'} or (not history and 'outputsize' in body):raise ValueError('invalid range')
-        self._rate('data_public')
-        from .owner_public_market import fetch
-        try:packet=fetch(self.send,body['symbol'],body['market'],260 if history and mode=='full' else 100 if history else 2)
-        except (ValueError,ConnectionFailure):raise ConnectionFailure('public_market_unavailable') from None
-        self.public_tested=True
-        if not history:
-            rows=packet.pop('candles')
-            return packet|{'price':rows[-1]['close'],'previous_close':rows[-2]['close'] if len(rows)>1 else None,'stored':False}
-        packet['from']=packet.pop('from_date');packet.update(retained_points=len(packet['candles']),retention_limit=260)
-        now=time.monotonic();self.histories={k:v for k,v in self.histories.items() if now-v[0]<=300}
-        if len(self.histories)>=10:self.histories.pop(next(iter(self.histories)))
-        token=secrets.token_urlsafe(32);self.histories[token]=(now,packet)
-        return {'token':token,'packet':packet,'stored':False,'expires_in_seconds':300}
+        # Reject legacy clients before credentials, rate limits, network or storage.
+        raise ConnectionFailure('public_market_deferred')
     def quote(self,body):
         if not isinstance(body,dict) or set(body) not in ({'symbol'},{'symbol','market'}):raise ValueError('invalid quote request')
         if body.get('market')=='HK':

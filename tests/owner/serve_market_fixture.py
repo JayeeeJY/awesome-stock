@@ -13,10 +13,6 @@ calls=[]
 def send(host,path,body,**kwargs):
     q=parse_qs(urlsplit(path).query);calls.append({'host':host,'function':q.get('function'),'symbol':q.get('symbol')})
     (args.data_dir.parent/'calls.json').write_text(json.dumps(calls))
-    if host=='query1.finance.yahoo.com':
-        sy=urlsplit(path).path.rsplit('/',1)[1];currency='HKD' if sy.endswith('.HK') else 'CNY' if sy.endswith(('.SS','.SZ')) else 'USD'
-        end=datetime.now(timezone.utc)-timedelta(days=1)
-        return {'chart':{'error':None,'result':[{'meta':{'symbol':sy,'currency':currency,'instrumentType':'EQUITY','currentTradingPeriod':{'regular':{'end':int(end.timestamp())}}},'timestamp':[int((end-timedelta(days=89-i)).timestamp()) for i in range(90)],'indicators':{'quote':[{key:[100+i+offset for i in range(90)] for key,offset in [('open',0),('high',2),('low',-2),('close',1),('volume',10000)]}]}}]}}
     if host=='eodhd.com':
         if '/exchange-symbol-list/' in path:
             return [{'Code':q['symbols'][0],'Name':'Synthetic HK Company','Currency':'HKD','Exchange':'HK','Type':'Common Stock'}]
