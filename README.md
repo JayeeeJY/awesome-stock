@@ -125,7 +125,7 @@ Awesome Stock 是 Atom Awareness 工作室的个人投资产品，由 Evan 创�
 | 渠道 | 联系方式 |
 | --- | --- |
 | WhatsApp 用户名 | `Jiayong987` |
-| 微信号 | `ChuanL007` |
+| 微信号 | `ChuanLin007` |
 | 邮箱 | [316600025@qq.com](mailto:316600025@qq.com) |
 
 首发接收 Issue 与产品反馈，暂不接收外部代码贡献。请勿公开 API Key、真实持仓、交易明细或备份；安全问题请使用 [GitHub 私密漏洞报告](https://github.com/JayeeeJY/awesome-stock/security/advisories/new)。

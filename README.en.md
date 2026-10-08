@@ -125,7 +125,7 @@ You can reach me through:
 | Channel | Contact |
 | --- | --- |
 | WhatsApp username | `Jiayong987` |
-| WeChat ID | `ChuanL007` |
+| WeChat ID | `ChuanLin007` |
 | Email | [316600025@qq.com](mailto:316600025@qq.com) |
 
 The first release accepts issues and product feedback, not external code contributions. Do not publish API keys, real holdings, transaction details or backups. Security issues should use [GitHub private vulnerability reporting](https://github.com/JayeeeJY/awesome-stock/security/advisories/new).
