@@ -6,7 +6,7 @@
 
 所有者已完成T01–T21及前序研究/计划功能签收。正式标准为「本人已完成的全功能验收＋最终工程验证」；不要求重复签收，不宣称做过长期交易日或受邀多人试用。
 
-首发只支持macOS Apple Silicon（arm64）原生源码安装。Docker、预构建镜像及Windows/Linux/IntelMac正式支持暂缓；Yahoo免Key接口按所有者决定暂缓，保留手工价格、成交CSV和用户自有API。详见[支持范围](../OWNER_INSTALL.md)和[安全范围](RELEASE_SECURITY_REVIEW.md)。
+原生安装目前在 macOS Apple Silicon（arm64）上验证。仓库提供实验性 Docker 镜像（见 README），v1.0.0 / v1.0.1 的源码包仍不包含它，也不把 Windows、Linux 或 Intel Mac 的原生安装标成正式支持。Yahoo 免 Key 接口按所有者决定暂缓，保留手工价格、成交 CSV 和用户自有 API。详见[支持范围](../OWNER_INSTALL.md)和[安全范围](RELEASE_SECURITY_REVIEW.md)。
 
 ## 工程证据
 

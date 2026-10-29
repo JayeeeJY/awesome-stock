@@ -1,10 +1,24 @@
-name: Product feedback / 产品反馈
-description: Describe the investing workflow you want to improve.
+name: Feature request / 功能建议
+description: Describe the workflow you want to improve. 说说你想改进的投资记录流程。
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Open-ended questions fit [Discussions](https://github.com/JayeeeJY/awesome-stock/discussions) better than an issue.
+        还没想清楚的问题，更适合发到 Discussions。
+        Do not include personal holdings, credentials or third-party source you cannot contribute.
+        不要写入个人持仓、密钥，或你无权贡献的第三方代码。
   - type: textarea
     id: problem
     attributes:
-      label: Problem and desired outcome / 问题与目标
-      description: Do not include personal holdings, credentials or third-party code.
+      label: Problem / 现在哪里不顺手
+      description: What are you trying to record or review, and where does the app get in the way?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome / 做成什么样算有用
+      description: A short description is enough. A pull request can wait until this issue is discussed.
     validations:
       required: true

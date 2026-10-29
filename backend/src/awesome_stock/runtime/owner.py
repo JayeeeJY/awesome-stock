@@ -255,18 +255,24 @@ def application(*,port,data_dir,ui_dist=None):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port',type=int,default=4322)
+    parser.add_argument('--host',default='127.0.0.1',help='Bind address. Stays on loopback unless set to 0.0.0.0 for a container port publish.')
     parser.add_argument('--data-dir',type=Path,default=Path(__file__).resolve().parents[4]/'.owner-state')
     parser.add_argument('--restore-from',type=Path)
     parser.add_argument('--ui-build',type=Path,default=Path(__file__).resolve().parents[4]/'frontend/owner-ui/dist',help='Verified Vue dist directory (defaults to the bundled UI)')
     parser.add_argument('--open-browser',action='store_true')
     args=parser.parse_args()
+    if args.host not in {'127.0.0.1','localhost','0.0.0.0'}:
+        parser.error('host must be 127.0.0.1, localhost, or 0.0.0.0')
     if args.restore_from:
         restore_owner(args.restore_from,args.data_dir)
         print('已恢复到新目录；使用备份时的本地账号口令登录，原目录未覆盖。');return
     app=application(port=args.port,data_dir=args.data_dir,ui_dist=args.ui_build)
-    with make_server('127.0.0.1',args.port,app,server_class=ScheduledOwnerServer,handler_class=QuietRequestHandler) as server:
-        print(f'Community 本地账本：http://127.0.0.1:{args.port}/',flush=True)
+    with make_server(args.host,args.port,app,server_class=ScheduledOwnerServer,handler_class=QuietRequestHandler) as server:
+        visible='127.0.0.1' if args.host=='0.0.0.0' else args.host
+        print(f'Community 本地账本：http://{visible}:{args.port}/',flush=True)
         print('首次使用请在浏览器创建本地账号。无默认口令，不连接券商或旧数据库。',flush=True)
+        if args.host=='0.0.0.0':
+            print('正在监听 0.0.0.0，供容器端口转发使用。请只把端口发布到本机，不要暴露到公网。',flush=True)
         if args.open_browser:
             import webbrowser
             from threading import Timer

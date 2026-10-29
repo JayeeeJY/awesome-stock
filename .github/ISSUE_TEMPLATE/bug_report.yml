@@ -1,25 +1,33 @@
 name: Bug report / 问题反馈
-description: Reproduce with synthetic data. 不要上传密钥、账本或备份。
+description: Something failed. Reproduce it with synthetic data. 用合成数据说明哪里坏了。
 body:
   - type: markdown
     attributes:
-      value: "For security issues follow SECURITY.md; do not post exploits or secrets here. 外部代码贡献暂不开放。"
+      value: |
+        Questions about how to use the app belong in [Discussions](https://github.com/JayeeeJY/awesome-stock/discussions).
+        使用问题请发到 Discussions，不要开在这里。
+        Security reports follow SECURITY.md. Do not post exploits, API keys, holdings or backups.
+        安全问题请走 SECURITY.md，不要在这里贴密钥、持仓或备份。
   - type: input
     id: version
     attributes:
-      label: Candidate or release identifier / 版本
+      label: Version / 版本
+      description: Release tag, commit, or `docker image` id. 发行标签、提交号，或镜像 ID。
+      placeholder: v1.0.1
     validations:
       required: true
   - type: input
     id: environment
     attributes:
-      label: OS, browser, source or Docker / 环境
+      label: Environment / 环境
+      description: OS, browser, and whether this was `python3 start_owner.py` or Docker.
+      placeholder: macOS 15, Safari, native install
     validations:
       required: true
   - type: textarea
     id: reproduction
     attributes:
       label: Steps, expected result, actual result / 步骤与结果
-      description: Use synthetic account and instrument names only.
+      description: Use synthetic account and instrument names only. 只用合成的账户名和代码。
     validations:
       required: true
