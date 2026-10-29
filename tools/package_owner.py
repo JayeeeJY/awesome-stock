@@ -12,7 +12,7 @@ STATIC=['LICENSE','LICENSING.md','CHANGELOG.md','README.md','README.en.md','CONT
 
 UI_CONFIG={'package.json','package-lock.json','vite.config.ts','tsconfig.json','index.html','write-build-manifest.mjs'}
 
-FIRST_RELEASE_SCOPE = {'product_version': '1.0.1', 'installation': 'native-source-only', 'supported_platforms': ['macOS Apple Silicon (arm64)'], 'container_installation_included': False, 'prebuilt_container_image_distributed': False}
+FIRST_RELEASE_SCOPE = {'product_version': '1.1.0', 'installation': 'native-source-only', 'supported_platforms': ['macOS Apple Silicon (arm64)'], 'container_installation_included': False, 'prebuilt_container_image_distributed': False}
 
 PROJECT_LICENSE = 'AGPL-3.0-only'
 OFFICIAL_LICENSE_SHA256 = '0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0'

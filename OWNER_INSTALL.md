@@ -1,6 +1,6 @@
 # Awesome Stock Community · 原生源码安装
 
-原生安装目前在 **macOS Apple Silicon（arm64）** 上验证，需要 Python 3.10+。发行包自带已编译界面，应用运行只使用 Python 标准库，无需 Node 或数据库服务。仓库另有实验性 Docker 入口，见 [README](README.md) 的 Docker 一节；v1.0.0 / v1.0.1 的源码包仍不包含 Dockerfile。Windows、Linux 和 Intel Mac 的原生安装还不在正式支持范围。实际发行记录见仓库的 GitHub Releases。
+原生安装目前在 **macOS Apple Silicon（arm64）** 上验证，需要 Python 3.10+。发行包自带已编译界面，应用运行只使用 Python 标准库，无需 Node 或数据库服务。仓库另有实验性 Docker 入口，见 [README](README.md) 的 Docker 一节。v1.0.0、v1.0.1 和 v1.1.0 的源码包都不包含 Dockerfile；v1.1.0 的镜像在 GHCR，不在这个 tar 包里。Windows、Linux 和 Intel Mac 的原生安装还不在正式支持范围。实际发行记录见仓库的 GitHub Releases。
 
 没有默认账号、统一模型Key或代付服务；首次使用创建自己的账号。不配置模型或行情服务也可记账和手工研究。
 
