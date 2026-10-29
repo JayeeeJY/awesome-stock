@@ -46,11 +46,11 @@ python3 start_owner.py --data-dir "$HOME/Awesome-Stock-Data" --open-browser
 
 ## Docker（Linux、Windows、macOS）
 
-容器里的服务监听 `0.0.0.0:4322`，账本写在 `/data`。镜像名是 `ghcr.io/jayeeejy/awesome-stock`。推送 `v*` 标签后，GitHub Actions 会用 `GITHUB_TOKEN` 构建并发布。v1.0.0 和 v1.0.1 还没有这张镜像；下一个版本标签出来之前，请自己构建。
+容器里的服务监听 `0.0.0.0:4322`，账本写在 `/data`。镜像名是 `ghcr.io/jayeeejy/awesome-stock`。推送 `v*` 标签后，GitHub Actions 会用 `GITHUB_TOKEN` 构建并发布 `:v1.1.0`、`:1.1.0` 和 `:latest`。v1.0.0 和 v1.0.1 没有这张镜像。发行源码包仍然不含 Dockerfile。
 
 ```sh
-# 已发布镜像（下一个 v* 标签发布之后；在此之前这张镜像还不存在）
-docker run -p 4322:4322 -v "$HOME/Awesome-Stock-Data:/data" ghcr.io/jayeeejy/awesome-stock
+# 已发布镜像（v1.1.0 起；:1.1.0 和 :latest 是同一张）
+docker run -p 4322:4322 -v "$HOME/Awesome-Stock-Data:/data" ghcr.io/jayeeejy/awesome-stock:v1.1.0
 
 # 自己构建。需要克隆本仓库，发行包里没有 Dockerfile。
 git clone https://github.com/JayeeeJY/awesome-stock.git
@@ -141,7 +141,7 @@ AI 原生在 Community 中的具体体验，是让模型帮助理解和核对材
 - **日级行情：** 自有 Alpha Vantage（美股/A股）或 EODHD（港股）账号与权限；查询后核对，再明确保存。首发没有 Yahoo 免 Key 行情，不提供统一 Key 或代付。
 - **数据：** 默认保存在本机，可指定独立目录并创建备份。Key 只留在服务进程内存，不进入备份或导出；完整备份未加密，需要妥善保管。
 
-下载 [Release 中的命名源码包](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1)，解压进入 `awesome-stock-owner`，按[安装指南](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/OWNER_INSTALL.md)运行。包自带编译界面，无需 Node、数据库服务或模型即可启动。
+下载 [Release 中的命名源码包](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.1.0)，解压进入 `awesome-stock-owner`，按[安装指南](https://github.com/JayeeeJY/awesome-stock/blob/v1.1.0/OWNER_INSTALL.md)运行。包自带编译界面，无需 Node、数据库服务或模型即可启动。
 
 没有默认账号密码。原生安装目前在 macOS Apple Silicon 上验证。Docker 可以在 Linux、Windows 和 macOS 上跑同一套本地服务，见上文，仍是实验支持。Intel Mac 原生安装和独立移动客户端还不在正式支持范围。当前版本不支持券商同步、自动下单、空头或期权记账。
 
@@ -149,7 +149,7 @@ AI 原生在 Community 中的具体体验，是让模型帮助理解和核对材
 
 如果你愿意自己管理投资记录、认真保留判断依据，并从每次决策中积累经验，欢迎试用 Community。
 
-[下载稳定版](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [阅读使用指南](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [提出问题与产品反馈](https://github.com/JayeeeJY/awesome-stock/issues) · [关注版本进展](https://github.com/JayeeeJY/awesome-stock/releases)
+[下载稳定版](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.1.0) · [阅读使用指南](https://github.com/JayeeeJY/awesome-stock/blob/v1.1.0/docs/QUICKSTART.md) · [提出问题与产品反馈](https://github.com/JayeeeJY/awesome-stock/issues) · [关注版本进展](https://github.com/JayeeeJY/awesome-stock/releases)
 
 ### 由真实使用驱动，持续迭代
 
@@ -159,7 +159,7 @@ Awesome Stock 是 Atom Awareness 工作室的个人投资产品，由 Evan 创�
 
 Issue 和讨论都欢迎。请勿公开 API Key、真实持仓、交易明细或备份；安全问题请使用 [GitHub 私密漏洞报告](https://github.com/JayeeeJY/awesome-stock/security/advisories/new)。
 
-Copyright (c) 2026 Evan。项目自有代码采用 [AGPL-3.0-only](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/LICENSE)，第三方保留原许可；本次不提供独立商业许可。安装、隐私、安全与验证细节见仓库文档。
+Copyright (c) 2026 Evan。项目自有代码采用 [AGPL-3.0-only](https://github.com/JayeeeJY/awesome-stock/blob/v1.1.0/LICENSE)，第三方保留原许可；本次不提供独立商业许可。安装、隐私、安全与验证细节见仓库文档。
 
 ## 登录界面
 

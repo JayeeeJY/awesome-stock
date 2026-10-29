@@ -14,7 +14,11 @@ The locked UI/build and checks dependency audits report zero npm advisories afte
 
 Historical P226 container findings (outside the P227 release scope): Trivy 0.72.0 scanned the exact Linux arm64 test image with a database updated at 2026-10-06T07:04:23Z: **0 CRITICAL, 44 HIGH, 58 MEDIUM, 61 LOW, 2 UNKNOWN** package/advisory matches. The 44 HIGH matches concern 17 binary packages and 8 CVEs: CVE-2026-76642, CVE-2026-78408, CVE-2026-78409, CVE-2026-78410, CVE-2026-54369, CVE-2025-69720, CVE-2026-16742 and CVE-2026-9538. No fixed version is listed in the scan; this does not mean harmless. Current descriptor/hash binding, SBOM and scan metadata are recorded in `historical_container_scans` in OWNER_SUPPLY_CHAIN.json; older top-level fields are historical.
 
-The deferred historical Compose configuration uses a non-root user, read-only root filesystem, loopback host binding, all capabilities dropped and no-new-privileges. These controls were checked but do not patch the findings or prove per-CVE unreachability. Source-only distribution avoids shipping a prebuilt image; user-built containers still inherit base-image risk. No container image has been published.
+The deferred historical Compose configuration uses a non-root user, read-only root filesystem, loopback host binding, all capabilities dropped and no-new-privileges. These controls were checked but do not patch the findings or prove per-CVE unreachability. Source-only distribution avoids shipping a prebuilt image inside the source archive; user-built containers still inherit base-image risk. No container image was published with v1.0.0 or v1.0.1.
+
+## v1.1.0 experimental image
+
+2026-10-29. Tag `v1.1.0` publishes `ghcr.io/jayeeejy/awesome-stock` (`v1.1.0`, `1.1.0` and `latest`) from the repository Dockerfile. The native source archive still sets `container_installation_included` and `prebuilt_container_image_distributed` to false, and the Dockerfile is not in that archive. This note is not a new Trivy or SBOM scan. The historical HIGH findings above are not marked fixed, harmless or accepted. The image process binds `0.0.0.0` so a published port can reach it, and it runs as root so it can set `/data` to mode 700. Do not expose that port on a public network. `current_container` in OWNER_SUPPLY_CHAIN.json stays null because this release does not attach a new image scan.
 
 ## Owner decision / D4 已处置
 

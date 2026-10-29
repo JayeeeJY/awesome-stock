@@ -46,11 +46,11 @@ python3 start_owner.py --data-dir "$HOME/Awesome-Stock-Data" --open-browser
 
 ## Docker (Linux, Windows, macOS)
 
-Inside the container the server listens on `0.0.0.0:4322` and stores the ledger in `/data`. The image name is `ghcr.io/jayeeejy/awesome-stock`. GitHub Actions publishes it with `GITHUB_TOKEN` when a `v*` tag is pushed. The v1.0.0 and v1.0.1 releases do not include this image. Until the next version tag, build it yourself.
+Inside the container the server listens on `0.0.0.0:4322` and stores the ledger in `/data`. The image name is `ghcr.io/jayeeejy/awesome-stock`. GitHub Actions publishes `:v1.1.0`, `:1.1.0` and `:latest` with `GITHUB_TOKEN` when a `v*` tag is pushed. The v1.0.0 and v1.0.1 releases do not include this image. The source archive still has no Dockerfile.
 
 ```sh
-# Published image (after the next v* tag; it does not exist for v1.0.0 or v1.0.1)
-docker run -p 4322:4322 -v "$HOME/Awesome-Stock-Data:/data" ghcr.io/jayeeejy/awesome-stock
+# Published image (from v1.1.0; :1.1.0 and :latest are the same image)
+docker run -p 4322:4322 -v "$HOME/Awesome-Stock-Data:/data" ghcr.io/jayeeejy/awesome-stock:v1.1.0
 
 # Build it yourself. Clone the repository; the release archive has no Dockerfile.
 git clone https://github.com/JayeeeJY/awesome-stock.git
@@ -141,7 +141,7 @@ Add optional services when you need them:
 - **Daily market data:** your own Alpha Vantage access for US/A-share data, or EODHD access for Hong Kong. Inspect the query result before explicitly saving it. Yahoo key-free data is deferred; no shared project key or subsidy is provided.
 - **Data:** local by default, with a configurable directory and backups. Keys stay in server process memory and are excluded from backups and exports. Full backups are unencrypted and need safe storage.
 
-Download the named source archive from [Releases](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1), extract it, enter `awesome-stock-owner`, and follow the [installation guide](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/OWNER_INSTALL.md). It includes the compiled interface and needs no Node runtime, database service or model to start.
+Download the named source archive from [Releases](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.1.0), extract it, enter `awesome-stock-owner`, and follow the [installation guide](https://github.com/JayeeeJY/awesome-stock/blob/v1.1.0/OWNER_INSTALL.md). It includes the compiled interface and needs no Node runtime, database service or model to start.
 
 There are no default credentials. The native install is checked on macOS Apple Silicon. Docker can run the same local service on Linux, Windows and macOS; that path is experimental and described above. A native Intel Mac install and a standalone mobile app are not supported. This version has no broker sync, automated trading, short positions or options accounting.
 
@@ -149,7 +149,7 @@ There are no default credentials. The native install is checked on macOS Apple S
 
 If you want to manage your own investing records, preserve the basis for your decisions and learn from each review, try Community.
 
-[Download](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [Read the guide](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [Share feedback](https://github.com/JayeeeJY/awesome-stock/issues) · [Follow releases](https://github.com/JayeeeJY/awesome-stock/releases)
+[Download](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.1.0) · [Read the guide](https://github.com/JayeeeJY/awesome-stock/blob/v1.1.0/docs/QUICKSTART.md) · [Share feedback](https://github.com/JayeeeJY/awesome-stock/issues) · [Follow releases](https://github.com/JayeeeJY/awesome-stock/releases)
 
 ### Built through everyday use, continually improved
 
@@ -159,7 +159,7 @@ Questions belong in [GitHub Discussions](https://github.com/JayeeeJY/awesome-sto
 
 Issues and discussions are welcome. Do not publish API keys, real holdings, transaction details or backups. Security issues should use [GitHub private vulnerability reporting](https://github.com/JayeeeJY/awesome-stock/security/advisories/new).
 
-Copyright (c) 2026 Evan. Project-owned code is [AGPL-3.0-only](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/LICENSE); third-party inputs retain their licenses. No separate commercial license is offered for this release. See repository documentation for installation, privacy, security and validation details.
+Copyright (c) 2026 Evan. Project-owned code is [AGPL-3.0-only](https://github.com/JayeeeJY/awesome-stock/blob/v1.1.0/LICENSE); third-party inputs retain their licenses. No separate commercial license is offered for this release. See repository documentation for installation, privacy, security and validation details.
 
 ## Sign in
 

@@ -1,6 +1,6 @@
 # 第一次使用 Awesome Stock Community
 
-适用：v1.0.0，macOS Apple Silicon（arm64），Python 3.10+。本程序在你自己的电脑运行，每个数据目录管理一个本地账号。没有默认账号密码，也没有统一模型或行情 Key。
+适用：v1.1.0 源码包，macOS Apple Silicon（arm64），Python 3.10+。步骤与 v1.0.x 相同。本程序在你自己的电脑运行，每个数据目录管理一个本地账号。没有默认账号密码，也没有统一模型或行情 Key。实验性 Docker 见仓库 README，数据目录是容器内的 `/data`。
 
 ## 1. 安装、创建本地账号
 

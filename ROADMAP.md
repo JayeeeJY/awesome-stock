@@ -7,7 +7,7 @@
 - 本地账本：账户、成交、研究、判断、计划和复盘。数据在你自己的目录里，不配模型也能用。
 - macOS Apple Silicon 上用 `python3 start_owner.py` 启动（Python 3.10+）。这是目前验证过的原生安装。
 - 可选 DeepSeek、OpenAI，或本机 Ollama（`127.0.0.1:11434`）。
-- 实验性 Docker：仓库根目录有 Dockerfile。容器内监听 `0.0.0.0:4322`，数据在 `/data`。推送 `v*` 标签后，GitHub Actions 会把镜像发布到 `ghcr.io/jayeeejy/awesome-stock`。v1.0.0 和 v1.0.1 没有这张镜像。
+- 实验性 Docker：仓库根目录有 Dockerfile。容器内监听 `0.0.0.0:4322`，数据在 `/data`。v1.1.0 起，`v*` 标签会把镜像发布到 `ghcr.io/jayeeejy/awesome-stock`（`:v1.1.0`、`:1.1.0`、`:latest`）。v1.0.0 和 v1.0.1 没有这张镜像。发行源码包仍然不含 Dockerfile。
 
 ## 还没做
 
@@ -32,7 +32,7 @@ No dates. This is what the repository can already do, and what is realistic but 
 - A local journal for accounts, trades, research, decisions, plans and reviews. It runs without a model.
 - `python3 start_owner.py` on macOS Apple Silicon (Python 3.10+). That is the native install that has been checked.
 - Optional DeepSeek, OpenAI, or Ollama on `127.0.0.1:11434`.
-- Experimental Docker from the Dockerfile in the repository root. Inside the container the server listens on `0.0.0.0:4322` and stores data in `/data`. A `v*` tag publishes `ghcr.io/jayeeejy/awesome-stock`. The v1.0.0 and v1.0.1 releases do not include that image.
+- Experimental Docker from the Dockerfile in the repository root. Inside the container the server listens on `0.0.0.0:4322` and stores data in `/data`. From v1.1.0, a `v*` tag publishes `ghcr.io/jayeeejy/awesome-stock` (`:v1.1.0`, `:1.1.0`, `:latest`). The v1.0.0 and v1.0.1 releases do not include that image. The source archive still has no Dockerfile.
 
 ## Not done yet
 

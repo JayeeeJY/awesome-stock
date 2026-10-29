@@ -4,7 +4,7 @@
   "project_license_choice_approved": true,
   "third_party_rights_review_complete": false,
   "separate_commercial_license_offered": false,
-  "product_version": "1.0.1",
+  "product_version": "1.1.0",
   "installation": "native-source-only",
   "supported_platforms": [
     "macOS Apple Silicon (arm64)"
@@ -19,19 +19,19 @@
     },
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
-      "sha256": "4c2e5791cc202ea462dea0fb21a57e8f09835fa4abdf654505ead327f070b52c"
+      "sha256": "5123bebdb42bd0ba0b0c3945acfd009882870cd88e380dff00ca28a37a042242"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/config.yml",
-      "sha256": "1f103c6a9dd07cd13a9a6f17ace6b813f47747eb9cb7e00488cb2073caaf91bb"
+      "sha256": "03e94bf863e9c6e4a530a2391bfdb183708b1957188b0e717890749ff5febbfe"
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
-      "sha256": "503c8c7521b551408f18db52956302d5503f9b75d7e31d34ec46d15fd3e3aefb"
+      "sha256": "554be5554e2b0418d26cadccc1d835bbd3c6f9f8dd00cc9c222b6a5678942215"
     },
     {
       "path": ".github/workflows/checks.yml",
-      "sha256": "7667947cf95bf032353326725dc0f3fc4c70154d616c6d763c93f70add4035ca"
+      "sha256": "957c33435155ee051a42cd31348056c42b98b805fae92e348d4e7f6c944a204f"
     },
     {
       "path": ".gitignore",
@@ -39,11 +39,11 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "03dbfe9f1abbfe3fe542b414a9c9a665c09f148334ca19130c898dd4b3dffa63"
+      "sha256": "1d5f3e795622819f2afb2eff1260113ab475c976d23308099d6408f993181b20"
     },
     {
       "path": "CONTRIBUTING.md",
-      "sha256": "1fcbf6540c11bbfec1a05b31e93cebdac31b01ef602c7b97afd73f344ff3884a"
+      "sha256": "6d5995d2163b6f7940e0f4f3e642666d19c2b679d3d0a6903537349f2d97b148"
     },
     {
       "path": "LICENSE",
@@ -55,7 +55,7 @@
     },
     {
       "path": "OWNER_INSTALL.md",
-      "sha256": "9425237d292a31c1bc7dcef7f00148863670a1a19e686446ec63a0cec7a21b6a"
+      "sha256": "b6634bdc23953af3fa33b79114559d524a18cb8512d24fba664a81ef796cff44"
     },
     {
       "path": "OWNER_SUPPLY_CHAIN.json",
@@ -63,15 +63,15 @@
     },
     {
       "path": "README.en.md",
-      "sha256": "bff24004b1b3ca6747dfa7ad9cc7d2be724766e053e2384869c08e6b53159085"
+      "sha256": "3ebe7eee2c37e0e3da7fbd3a62999897f9d75dd997e8cb88a9159ce3768be354"
     },
     {
       "path": "README.md",
-      "sha256": "ea6afd5af0e3a49f27f90a24d9d2a20b55d8fdc836124952520def41abc8b3f4"
+      "sha256": "6c59bc8111347cc9ead24bce804f0ecf9f1e2716d69eed48a3a9498cca0b6876"
     },
     {
       "path": "SECURITY.md",
-      "sha256": "f7af9f7bdce24530216b1ff635c5f0af8f798af5df1b5bdd4f76a678bd17cb55"
+      "sha256": "b17447052b5eadc27d44662900c44a5c4e6cac5edfa6a7ec9fe55be760d455b0"
     },
     {
       "path": "backend/src/awesome_stock/__init__.py",
@@ -219,7 +219,7 @@
     },
     {
       "path": "backend/src/awesome_stock/runtime/owner.py",
-      "sha256": "9286e84684d9d9a75a607a6b72f1a06d9787fced0d5f5dd9fcec3cb32c060d09"
+      "sha256": "96e091e31ec707c6197ed492af2f0a4da31bbe82c8688ea58ddd4d187f769afc"
     },
     {
       "path": "backend/src/awesome_stock/runtime/owner_connections.py",
@@ -443,11 +443,11 @@
     },
     {
       "path": "docs/DEVELOPMENT.md",
-      "sha256": "d1809476f3e88d946d60e7bbe632b3d17583d1bb1a7dd4180d9a54ab3018cca2"
+      "sha256": "0e9ac8da99465c111ad4b967e73fae87b89802bdbedd025a7e0ec7b0e5900d76"
     },
     {
       "path": "docs/OPTIONAL_PROVIDERS.md",
-      "sha256": "9b6c1b31b796e41a775bb5c3a46e4c26730e8c45ee517de1c4fbe6da8123315b"
+      "sha256": "947e5df5ab0416a02e0825cf16759c3c7d46d22bad6ad0ee7851e7341fe8b186"
     },
     {
       "path": "docs/OWNER_UI_DEPENDENCIES.json",
@@ -475,15 +475,15 @@
     },
     {
       "path": "docs/QUICKSTART.md",
-      "sha256": "19f1b5e365372cc9a32fb8ad03e04243ad3c95e2d46957ea669587b40843cf0e"
+      "sha256": "6f32fef4e29b7ce63a95d8a4a9acd978caf6be4b5967c6a9ca533ab36094f5b6"
     },
     {
       "path": "docs/RELEASE_SECURITY_REVIEW.md",
-      "sha256": "9a95d8971e0362bb04ea617d4f45b9aad4a0db69da66c77f0c5ae575506a18ab"
+      "sha256": "7daca9a7a88d730434ced5526d82ccc9e1178f68c727a6ba2674815dff5e34ae"
     },
     {
       "path": "docs/THIRD_PARTY_NOTICES_CANDIDATE.md",
-      "sha256": "8372a4149528b66b475b6224210ffcb38cc9e471074f87ca768f8dbb521f90ca"
+      "sha256": "88a8d5586a4378a22fc3e217900631775215950944523d2252faba54651a5715"
     },
     {
       "path": "docs/TROUBLESHOOTING.md",
@@ -491,7 +491,7 @@
     },
     {
       "path": "docs/VALIDATION.md",
-      "sha256": "3f33c33d24a146e247ae0a89cbbec8cca7f18a48d45018622b25d20aeeb68ce6"
+      "sha256": "e7e8b2037445b6e9ebe24b63af5c1aab11607800cdd765fe4d8cb4c980ffc634"
     },
     {
       "path": "docs/screenshots/academy.png",
@@ -1243,11 +1243,11 @@
     },
     {
       "path": "tests/install/test_owner_package.py",
-      "sha256": "68faebe5b4b5f6e1c23804467ba4b766db93ae019de3d77f4c21a312846e9450"
+      "sha256": "3fa98ac70d59fd6e17ce6f64d4728cb52b5f8157b1326361f96d707caf018f84"
     },
     {
       "path": "tests/install/test_owner_release_tree.py",
-      "sha256": "326d7e99d0990f2170d0ff94c07f01d7f751b38e97c60c6b55ef615a1ca5ac8d"
+      "sha256": "e89bc7689d5320ba79351bea4c0d73a36cc4319fc7836a17ab90189f3222bb42"
     },
     {
       "path": "tests/install/verify_owner_delivery.py",
@@ -1450,6 +1450,10 @@
       "sha256": "3f27f351305a977f1b71e16570380ce89ae9d77176e55fcbab18405523d2045e"
     },
     {
+      "path": "tests/owner/test_owner_bind.py",
+      "sha256": "8164a73bd118d130e3700a65c3f3d75608e10ce6a3d22c8596d8d8b009df8c62"
+    },
+    {
       "path": "tests/owner/test_owner_business.py",
       "sha256": "319c5ca66efcb90858f665b8b7bd058f7c5b283bd8b9f6508aea4aa685b9b6aa"
     },
@@ -1635,14 +1639,14 @@
     },
     {
       "path": "tools/package_owner.py",
-      "sha256": "06d5db949c3b0208295e784e2acb7c480e8b9b9921ebb20fcd48570b83bdc369"
+      "sha256": "0da95351a6b4569b2cbc98e3c933003582bc7476396a7cb9cff5a6501da59ce0"
     },
     {
       "path": "tools/prepare_owner_release.py",
       "sha256": "213a3128bf0a1c9904b9d0ca685bb2361ab885abad57c8bd6b790d3099ec863c"
     }
   ],
-  "count": 407,
+  "count": 408,
   "contains_private_history": false,
   "contains_user_data": false,
   "git_initialized": false,

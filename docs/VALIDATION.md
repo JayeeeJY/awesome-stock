@@ -1,12 +1,12 @@
 # 验证与验收说明
 
-适用：Community v1.0.1；沿用v1.0.0首发范围；更新2026-10-07。实际公开版本、提交和发布日期见 [GitHub Releases](https://github.com/JayeeeJY/awesome-stock/releases)。本文说明验证口径，不替代发行授权或安全认证。
+适用：Community v1.1.0；沿用 v1.0.x 的原生安装范围；更新 2026-10-29。实际公开版本、提交和发布日期见 [GitHub Releases](https://github.com/JayeeeJY/awesome-stock/releases)。本文说明验证口径，不替代发行授权或安全认证。
 
 ## 正式首发标准
 
 所有者已完成T01–T21及前序研究/计划功能签收。正式标准为「本人已完成的全功能验收＋最终工程验证」；不要求重复签收，不宣称做过长期交易日或受邀多人试用。
 
-原生安装目前在 macOS Apple Silicon（arm64）上验证。仓库提供实验性 Docker 镜像（见 README），v1.0.0 / v1.0.1 的源码包仍不包含它，也不把 Windows、Linux 或 Intel Mac 的原生安装标成正式支持。Yahoo 免 Key 接口按所有者决定暂缓，保留手工价格、成交 CSV 和用户自有 API。详见[支持范围](../OWNER_INSTALL.md)和[安全范围](RELEASE_SECURITY_REVIEW.md)。
+原生安装目前在 macOS Apple Silicon（arm64）上验证。v1.1.0 另有实验性 Docker 镜像（见 README）。v1.0.0、v1.0.1 和 v1.1.0 的源码包都不包含 Dockerfile，也不把 Windows、Linux 或 Intel Mac 的原生安装标成正式支持。Yahoo 免 Key 接口按所有者决定暂缓，保留手工价格、成交 CSV 和用户自有 API。详见[支持范围](../OWNER_INSTALL.md)和[安全范围](RELEASE_SECURITY_REVIEW.md)。
 
 ## 工程证据
 
@@ -28,3 +28,7 @@
 ## v1.0.1 登录视觉与首页补丁
 
 仅更新登录页视觉/粒子组件与产品图文，不改账本与本地账号协议。新增隔离浏览器检查覆盖粒子画面实际变化、减少动效静态星光、首次创建/口令错误/再次登录、路由离开清理、桌面与320/390宽度。全部展示记录为合成数据。锁定原Personal所用tsParticles 3.9.1（上游已将此系列标为deprecated），当前npm审计无已知漏洞；这不等于长期维护保证。粒子从本地包加载，失败时静态背景与登录可继续。完整检查与精确包的安装/恢复证据绑定到v1.0.1对应CI与Release。v1.0.0不覆盖。
+
+## v1.1.0 首屏、社区文件与实验性 Docker
+
+不改账本协议和已编译界面。变更是 README 首屏、Discussions/Issue 入口、贡献说明、路线图，以及实验性容器。源码包仍是 macOS Apple Silicon 的原生源码，不含 Dockerfile。镜像由 `v*` 标签的 GitHub Actions 用 `GITHUB_TOKEN` 推到 GHCR，本次没有新的镜像漏洞扫描。Linux 上做过容器冒烟：页面能打开，数据目录权限为 700。没有在 Windows 或 macOS 的 Docker Desktop 上复测，也没有重做 v1.0.1 的 macOS 隔离安装。对应提交的 CI 以 GitHub Actions 上该提交的 `Owner checks` 为准。
