@@ -4,8 +4,8 @@ Scope: Community v1.0.0; actual publication is recorded in GitHub Releases. Upda
 
 ## Current boundary
 
-- Source launcher: one local owner, HTTP on host loopback (default 4322). There is no default account or password; the owner creates the account.
-- The first-release scope is native source installation on macOS Apple Silicon (arm64). Docker installation and container images are excluded; Windows, Linux and Intel Mac are outside the supported first-release scope.
+- Source launcher: one local owner, HTTP on host loopback by default (port 4322). There is no default account or password; the owner creates the account. `--host 0.0.0.0` exists so a container can accept a published port. Do not use it to put the ledger on the public internet. Prefer publishing Docker as `-p 127.0.0.1:4322:4322`.
+- v1.0.0 and v1.0.1 are native source installs checked on macOS Apple Silicon (arm64). Later commits add an experimental Dockerfile. Windows, Linux and Intel Mac native installs are still outside the supported scope.
 - Accounts, trades, cash flows, research, plans, reviews and history persist in SQLite. Backups contain credential hashes and business data and are not encrypted. Exported JSON excludes account credentials but may contain personal text.
 - Host/Origin and CSRF checks protect the local API; sessions are process-local. Restart requires login again. There is no remote or multi-user deployment support, password recovery service or automatic broker execution.
 - OpenAI, DeepSeek, user-installed Ollama, Alpha Vantage and EODHD are optional and disabled by default. Yahoo public chart integration is deferred from this first release. Legacy query endpoints reject requests without network access or writes. Manual prices and trade CSV import remain available without a connection. Each user supplies their own service access and pays their provider. Keys stay in memory and are cleared on logout, password change or restart. Selected AI context is previewed before explicit transmission; provider-side handling remains outside this application's storage boundary.
@@ -20,7 +20,7 @@ The owner selected GitHub private vulnerability reporting on 2026-10-07. This ch
 
 Use [Report a vulnerability](https://github.com/JayeeeJY/awesome-stock/security/advisories/new) for security issues. Include the affected version, reproduction steps using synthetic records, and potential impact. Do not submit API keys, real portfolios or database backups. Do not post exploitable demonstrations in public issues. No response-time SLA is promised.
 
-Use [GitHub Issues](https://github.com/JayeeeJY/awesome-stock/issues) for ordinary bug reports and feature feedback once the repository is public. External code contributions are not accepted for this first release.
+Use [GitHub Issues](https://github.com/JayeeeJY/awesome-stock/issues) for bugs and feature requests, and [GitHub Discussions](https://github.com/JayeeeJY/awesome-stock/discussions) for questions. Pull requests are welcome after the change has been discussed in an issue. See CONTRIBUTING.md.
 
 ## Verification limits
 

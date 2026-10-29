@@ -13,7 +13,7 @@ python3 start_owner.py --data-dir "$HOME/Awesome-Stock-Data" --open-browser
 
 Python 版本须为 3.10 或以上。浏览器打开 [本地入口](http://127.0.0.1:4322/ledger)，按页面创建用户名与口令。**用户名/口令只用于登录这个本地账本，与模型服务账号无关。** 保留终端运行；关闭终端或按 Ctrl+C 会停止服务。再次使用时运行同一条启动命令，继续使用同一个数据目录。
 
-端口占用可添加 `--port 4324`，并访问对应端口。具体安装、升级和恢复见 [安装说明](../OWNER_INSTALL.md)。首发不包含 Docker；Windows、Linux 和 Intel Mac 暂不在正式支持范围。
+端口占用可添加 `--port 4324`，并访问对应端口。具体安装、升级和恢复见 [安装说明](../OWNER_INSTALL.md)。想在 Linux、Windows 或 macOS 上用 Docker 跑，见仓库 README 的 Docker 一节（实验支持，数据目录为容器内的 `/data`）。Intel Mac 原生安装和独立手机应用仍不在正式支持范围。
 
 ## 2. 先建立账本，不必配置 API
 

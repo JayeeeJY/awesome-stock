@@ -6,7 +6,7 @@ Technical inventory for v1.0.0 preparation, updated 2026-10-07. This is neither 
 
 The supported installation is native source on macOS Apple Silicon (arm64). The backend uses Python's standard library and project-owned modules. The shipped browser interface includes compiled Vue, Vue Router, Pinia, Element Plus and icons, with adapted original local UI source. Node and the locked npm toolchain rebuild the interface; they are not required to run the included assets. Python is installed separately by each user. No Python interpreter, model weights, private database or private Git history is bundled.
 
-Docker installation files, the container launcher and prebuilt images are excluded from the first-release archive and GitHub source tree. GitHub CI's secret scanner uses a container as development tooling; this does not add a product container installation option.
+The v1.0.0 / v1.0.1 source archives and the review tree generated from them do not include a Dockerfile. The git repository now has an experimental Dockerfile for a local build. It is not on the source-archive allowlist, and it is not a published image for those two releases. GitHub CI's secret scanner uses a container as development tooling; that scanner is not the product install.
 
 ## Frontend licenses and provenance
 

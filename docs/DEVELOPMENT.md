@@ -1,6 +1,6 @@
 # 开发与复现检查
 
-首发正式支持范围为macOS Apple Silicon（arm64）原生源码安装。CI使用的检查工具或Linux runner不构成Linux应用发行支持；首发包和审阅树均不包含容器部署入口。
+原生安装的正式验证范围是 macOS Apple Silicon（arm64）。CI 使用的检查工具或 Linux runner 不构成 Linux 应用发行支持。实验性 Dockerfile 在 Git 仓库根目录，不进入 `tools/package_owner.py` 的源码包白名单，审阅树也不包含容器部署入口。
 
 归档包含预编译Vue界面，运行只需Python标准库和浏览器；重建界面需要Node 22.12+及锁定npm依赖。前端依赖许可和漏洞检查须单独完成。
 

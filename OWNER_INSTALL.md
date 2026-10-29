@@ -1,6 +1,6 @@
 # Awesome Stock Community · 原生源码安装
 
-本次正式首发支持 **macOS Apple Silicon（arm64）**，需要Python 3.10+。发行包自带已编译界面，应用运行只使用Python标准库，无需Node、数据库服务或Docker。实际发行记录见仓库的 GitHub Releases；Docker安装暂缓，Windows、Linux和Intel Mac不列入首发正式支持范围。
+原生安装目前在 **macOS Apple Silicon（arm64）** 上验证，需要 Python 3.10+。发行包自带已编译界面，应用运行只使用 Python 标准库，无需 Node 或数据库服务。仓库另有实验性 Docker 入口，见 [README](README.md) 的 Docker 一节；v1.0.0 / v1.0.1 的源码包仍不包含 Dockerfile。Windows、Linux 和 Intel Mac 的原生安装还不在正式支持范围。实际发行记录见仓库的 GitHub Releases。
 
 没有默认账号、统一模型Key或代付服务；首次使用创建自己的账号。不配置模型或行情服务也可记账和手工研究。
 
@@ -13,7 +13,7 @@ python3 --version
 python3 start_owner.py --open-browser
 ```
 
-访问 http://127.0.0.1:4322/ledger ，按页面创建本地账号。默认数据位于程序目录的`.owner-state`。只在自己的电脑运行，端口绑定127.0.0.1。
+访问 http://127.0.0.1:4322/ledger ，按页面创建本地账号。默认数据位于程序目录的`.owner-state`。只在自己的电脑运行。默认端口绑定 127.0.0.1；Docker 入口会加上 `--host 0.0.0.0`，只为了让容器端口转发进得来，不要把这个端口公开到公网。
 
 建议为数据指定独立目录；以下路径由你选择，首次启动时会创建：
 

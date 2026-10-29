@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Experimental Docker image. Inside the container the server listens on `0.0.0.0:4322` and stores the ledger in `/data`. A `v*` tag publishes `ghcr.io/jayeeejy/awesome-stock`. The v1.0.0 and v1.0.1 source archives stay native-only.
+- Rewrote the README first screen. Removed personal contact details. Questions go to GitHub Discussions, and bugs go to Issues.
+- Issues and ideas are welcome. Pull requests are welcome after an issue discussion.
+
 ## v1.0.1 — 2026-10-07
 
 - Restored the Personal login starfield, connecting particles, brand lockup and glass card in Community. Local account creation/login is unchanged. Reduced motion shows a static background; particles are destroyed when leaving login.

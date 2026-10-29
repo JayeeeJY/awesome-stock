@@ -1,1 +1,5 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Ask a question / 使用问题
+    url: https://github.com/JayeeeJY/awesome-stock/discussions
+    about: Usage questions belong in Discussions, not in a new issue. 使用问题请发到 Discussions，不要开 Issue。

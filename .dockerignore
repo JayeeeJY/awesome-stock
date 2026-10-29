@@ -1,0 +1,14 @@
+.git
+.github
+.venv
+**/__pycache__
+**/.pytest_cache
+**/*.pyc
+node_modules
+qa
+.packages
+.owner-state
+.local-state
+*.sqlite3
+.env
+.env.*

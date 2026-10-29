@@ -1,38 +1,73 @@
-# Awesome Stock Community
+<div align="center">
 
-**AI 原生个人投资进化系统。**
+# 📒 Awesome Stock
 
-**Powered by Atom Awareness**<br>
-Independent AI Product & Research Studio.
+**不荐股的 AI 投资复盘工作台：记下每笔交易的依据，事后复盘，越投越有方法。**
 
-**Evolve Every Trade.**
+数据全在你的电脑上 · 可接 DeepSeek / OpenAI / 本地 Ollama · 不配 API 也能用
 
-已发布 · Community v1.0.1 · 本地运行 · macOS Apple Silicon
+[![Release](https://img.shields.io/github/v/release/JayeeeJY/awesome-stock)](https://github.com/JayeeeJY/awesome-stock/releases)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![Stars](https://img.shields.io/github/stars/JayeeeJY/awesome-stock?style=social)](https://github.com/JayeeeJY/awesome-stock/stargazers)
 
-把资产、研究、判断、计划与复盘连接起来，让每一次投资留下可回看的依据，逐步形成更适合自己的投资方法。
+简体中文 | [English](README.en.md)
 
-需要时，在 Ask Awesome 中自由提问、追问，或主动附加自己的材料。发送内容与模型调用由你确认，AI 回复作为可核对的草稿；判断与行动由你掌握。基础业务无需模型或行情 API。
-
-[下载 Community v1.0.1](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1) · [第一次使用](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/QUICKSTART.md) · [模型与行情配置](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/docs/OPTIONAL_PROVIDERS.md)
-
-支持 macOS Apple Silicon，Python 3.10+。项目自有代码采用 AGPL-3.0-only。
+<!-- 演示动图尚未录制。录好后把下面这张图换成 docs/screenshots/demo.gif。 -->
 
 ![Community 驾驶舱：从资产事实与待办开始](docs/screenshots/cockpit.png)
 
-*以下界面截取于 2026-10-07，来自正式发布的 Community v1.0.1。账号、标的、交易、价格、研究和计划均为合成示例，用于展示使用流程，不代表真实投资组合或收益。*
+</div>
 
-## 把分散的投资记录，连接成可以回看的过程
+> 你是不是也这样：持仓在券商 App，研究在备忘录，买卖理由全靠记忆。等到亏了，却想不起来当初为什么买。
 
-你可能在一个地方看持仓，在另一个地方写研究，靠记忆保存买卖理由，事后却难以还原当时为什么做出决定。
+**Awesome Stock 把这条线连起来：** 资产 → 研究证据 → 投资判断 → 执行计划 → 实际成交 → 决策复盘
 
-Awesome Stock 帮你留下这条线：
+- 🧾 **看清钱在哪**：多账户、多币种的持仓和成交，缺价格、缺汇率会直接提示
+- 🔍 **判断有依据**：支持证据、反方观点、失效条件和历史版本一起保存
+- 📋 **行动前先核对**：预算、现金、风险约束试算，执行与否由你决定
+- 🔁 **事后能复盘**：把「是否按计划执行」和「结果好坏」分开看，经验越攒越多
+- 🤖 **AI 只当助手**：Ask Awesome 帮你理解材料、找证据缺口；发送什么内容由你确认，不自动下单
 
-**资产事实 → 研究证据 → 投资判断 → 执行计划 → 实际成交 → 决策复盘**
+## 🚀 三步跑起来（macOS Apple Silicon，Python 3.10+）
 
-- **看清自己的钱在哪里。** 账户、现金、持仓和成交有清楚的记录；缺少价格或汇率时，明确告诉你还缺什么。
-- **把判断的依据保存下来。** 支持证据、反方观点和失效条件与历史版本一起保留，方便以后回看。
-- **在行动前核对计划。** 先检查预算、现金和自己的风险约束，再自行决定是否执行。
-- **在事后复盘过程。** 回看当时的依据，区分是否遵守计划与结果如何，积累值得保留的经验。
+原生安装目前在 macOS Apple Silicon 上验证。发行包自带已编译界面，不需要 Node、数据库或模型。
+
+```sh
+# 1. 下载并解压 Release 中的源码包
+# https://github.com/JayeeeJY/awesome-stock/releases/latest
+cd awesome-stock-owner
+# 2. 启动（无需 Node、数据库或模型）
+python3 start_owner.py --data-dir "$HOME/Awesome-Stock-Data" --open-browser
+# 3. 浏览器打开 http://127.0.0.1:4322/ledger ，创建本地账号
+```
+
+`/ledger` 会进入交易流水。默认端口是 4322；被占用时加上 `--port 4324`，并打开对应地址。没有默认账号密码。
+
+## Docker（Linux、Windows、macOS）
+
+容器里的服务监听 `0.0.0.0:4322`，账本写在 `/data`。镜像名是 `ghcr.io/jayeeejy/awesome-stock`。推送 `v*` 标签后，GitHub Actions 会用 `GITHUB_TOKEN` 构建并发布。v1.0.0 和 v1.0.1 还没有这张镜像；下一个版本标签出来之前，请自己构建。
+
+```sh
+# 已发布镜像（下一个 v* 标签发布之后；在此之前这张镜像还不存在）
+docker run -p 4322:4322 -v "$HOME/Awesome-Stock-Data:/data" ghcr.io/jayeeejy/awesome-stock
+
+# 自己构建。需要克隆本仓库，发行包里没有 Dockerfile。
+git clone https://github.com/JayeeeJY/awesome-stock.git
+cd awesome-stock
+docker build -t awesome-stock .
+docker run -p 4322:4322 -v "$HOME/Awesome-Stock-Data:/data" awesome-stock
+```
+
+然后打开 http://127.0.0.1:4322/ledger 。`-p 4322:4322` 会在这台电脑的所有网卡上监听；只想给自己用时，改成 `-p 127.0.0.1:4322:4322`。启动时会把 `/data` 收成仅本人可读（权限 700）。Windows PowerShell 可以把卷写成 `-v "${env:USERPROFILE}/Awesome-Stock-Data:/data"`。
+
+容器里的「本机 Ollama」指向容器自己的 `127.0.0.1`，不是宿主机上的 Ollama。DeepSeek 和 OpenAI 走容器的出站网络，Key 仍然只留在进程内存里。
+
+📖 [第一次使用](docs/QUICKSTART.md) · ⚙️ [模型与行情配置](docs/OPTIONAL_PROVIDERS.md) · 💬 [讨论区](https://github.com/JayeeeJY/awesome-stock/discussions) · 🗺️ [路线图](ROADMAP.md)
+
+> ⭐ 如果它对你有帮助，点个 Star，方便跟进后续版本（包括 Windows 原生安装）。
+
+*界面截取于 2026-10-07，来自 Community v1.0.1。账号、标的和金额都是合成示例，不代表真实持仓或收益，也不构成任何投资建议。*
 
 ## 在 Community 里，走完一次投资工作流程
 
@@ -82,7 +117,7 @@ AI 回复供你阅读、核对和整理；模型连接、发送内容与费用�
 
 ![手机宽度的持仓界面](docs/screenshots/portfolio-mobile.png)
 
-*手机宽度截图展示浏览器界面的响应式布局；首发安装支持仍为 macOS Apple Silicon，不代表独立手机应用已经发布。*
+*手机宽度截图展示浏览器界面的响应式布局，不代表已经发布独立手机应用。*
 
 </details>
 
@@ -108,7 +143,7 @@ AI 原生在 Community 中的具体体验，是让模型帮助理解和核对材
 
 下载 [Release 中的命名源码包](https://github.com/JayeeeJY/awesome-stock/releases/tag/v1.0.1)，解压进入 `awesome-stock-owner`，按[安装指南](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/OWNER_INSTALL.md)运行。包自带编译界面，无需 Node、数据库服务或模型即可启动。
 
-没有默认账号密码。Windows、Linux、Intel Mac、Docker 和独立移动客户端暂不在首发正式支持范围。Community v1.0.1 不支持券商同步、自动下单、空头或期权记账。
+没有默认账号密码。原生安装目前在 macOS Apple Silicon 上验证。Docker 可以在 Linux、Windows 和 macOS 上跑同一套本地服务，见上文，仍是实验支持。Intel Mac 原生安装和独立移动客户端还不在正式支持范围。当前版本不支持券商同步、自动下单、空头或期权记账。
 
 ## 一起让投资经验变得更有价值
 
@@ -120,15 +155,9 @@ AI 原生在 Community 中的具体体验，是让模型帮助理解和核对材
 
 Awesome Stock 是 Atom Awareness 工作室的个人投资产品，由 Evan 创建并维护。我会基于自己的日常使用，持续打磨 Community 的功能与体验，也欢迎你分享使用中的问题、想法与建议。
 
-欢迎通过以下渠道与我交流：
+使用上的问题请到 [GitHub Discussions](https://github.com/JayeeeJY/awesome-stock/discussions)，缺陷和功能想法请开 [Issue](https://github.com/JayeeeJY/awesome-stock/issues)。想改代码的话，先在 Issue 里说清楚，再提 Pull Request，见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-| 渠道 | 联系方式 |
-| --- | --- |
-| WhatsApp 用户名 | `Jiayong987` |
-| 微信号 | `ChuanLin007` |
-| 邮箱 | [316600025@qq.com](mailto:316600025@qq.com) |
-
-首发接收 Issue 与产品反馈，暂不接收外部代码贡献。请勿公开 API Key、真实持仓、交易明细或备份；安全问题请使用 [GitHub 私密漏洞报告](https://github.com/JayeeeJY/awesome-stock/security/advisories/new)。
+Issue 和讨论都欢迎。请勿公开 API Key、真实持仓、交易明细或备份；安全问题请使用 [GitHub 私密漏洞报告](https://github.com/JayeeeJY/awesome-stock/security/advisories/new)。
 
 Copyright (c) 2026 Evan。项目自有代码采用 [AGPL-3.0-only](https://github.com/JayeeeJY/awesome-stock/blob/v1.0.1/LICENSE)，第三方保留原许可；本次不提供独立商业许可。安装、隐私、安全与验证细节见仓库文档。
 

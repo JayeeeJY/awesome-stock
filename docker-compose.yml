@@ -1,0 +1,11 @@
+services:
+  awesome-stock:
+    build: .
+    image: ghcr.io/jayeeejy/awesome-stock
+    ports:
+      - "4322:4322"
+    volumes:
+      - awesome-stock-data:/data
+
+volumes:
+  awesome-stock-data:
