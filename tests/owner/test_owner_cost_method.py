@@ -17,7 +17,7 @@ def test_cost_choice_fees_backdated_recompute_restart_restore(tmp_path,method,op
     assert a['cost_method']==method and a['cash']=='847'
     assert h['open_cost']==open_cost and h['realized_pnl']==realized
     assert OwnerStore(store.directory).ledger()==result
-    backup=store.backup();assert backup['schema_version']==5
+    backup=store.backup();assert backup['schema_version']==6
     target=tmp_path.resolve()/'restored';restore_owner(store.directory/'backups'/backup['name'],target)
     assert OwnerStore(target).ledger()==result
 

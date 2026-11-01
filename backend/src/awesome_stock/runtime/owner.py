@@ -16,6 +16,7 @@ from awesome_stock.storage.owner_plan import workspace as plan_workspace, save_p
 from awesome_stock.storage.owner_evolve import workspace as evolve_workspace, save_review
 from awesome_stock.storage.owner_journal import workspace as journal_workspace, save as save_journal
 from awesome_stock.storage.owner import OwnerStore, LedgerInvalid, AccountHasHistory, restore_owner
+from awesome_stock.storage import owner_ask
 from awesome_stock.storage.local import Conflict
 from awesome_stock.storage.owner_transfer import preview as import_preview, commit as import_commit, export_data
 from awesome_stock.storage.owner_cash import save as save_cash, history as cash_history
@@ -47,6 +48,17 @@ def respond(start,response):
 
 def error(status,code):
     return ApiResponse.failure(ApiProblem(status,code,PUBLIC_MESSAGES[code],status in {429,503},None))
+
+
+ASK_PATHS = {'/api/v1/owner/ask-conversations','/api/v1/owner/ask-conversation','/api/v1/owner/ask-turns'}
+
+
+def connection_secrets(connections):
+    found=[]
+    for kind in ('ai','data','data_hk'):
+        key=(connections.config.get(kind) or {}).get('key') or ''
+        if isinstance(key,str) and key and key not in found:found.append(key)
+    return tuple(found)
 
 
 def application(*,port,data_dir,ui_dist=None):
@@ -168,6 +180,9 @@ def application(*,port,data_dir,ui_dist=None):
             if path=='/api/v1/owner/quote-fetch' and method=='POST':return respond(start,ApiResponse(200,data=connections.quote(_json_body(env))))
             if path=='/api/v1/owner/ai-preview' and method=='POST':return respond(start,ApiResponse(200,data=connections.preview(_json_body(env))))
             if path=='/api/v1/owner/ai-generate' and method=='POST':return respond(start,ApiResponse(200,data=connections.generate(_json_body(env))))
+            if path=='/api/v1/owner/ask-conversations' and method=='GET':return respond(start,ApiResponse(200,data=owner_ask.list_conversations(store)))
+            if path=='/api/v1/owner/ask-conversation' and method=='POST':return respond(start,ApiResponse(200,data=owner_ask.read_conversation(store,_json_body(env))))
+            if path=='/api/v1/owner/ask-turns' and method=='POST':return respond(start,ApiResponse(200,data=owner_ask.save_turn(store,_json_body(env,max_bytes=196608),connection_secrets(connections))))
             if path=='/api/v1/owner/cash-flows' and method=='GET':return respond(start,ApiResponse(200,data=cash_history(store)))
             if path=='/api/v1/owner/cash-flows' and method in {'POST','DELETE'}:return respond(start,ApiResponse(200,data=save_cash(store,_json_body(env),delete=method=='DELETE')))
             if path=='/api/v1/owner/import-preview' and method=='POST':return respond(start,ApiResponse(200,data=import_preview(store,_json_body(env))))
@@ -246,7 +261,7 @@ def application(*,port,data_dir,ui_dist=None):
         except AccountHasHistory:return respond(start,error(409,'account_has_history'))
         except Conflict:return respond(start,error(409,'local_conflict'))
         except LedgerInvalid:return respond(start,error(422,'owner_ledger_invalid'))
-        except (ValueError,TypeError,KeyError):return respond(start,error(400,'connection_config_invalid' if path=='/api/v1/owner/connections' else 'connection_request_invalid' if path in {'/api/v1/owner/quote-fetch','/api/v1/owner/ai-preview','/api/v1/owner/ai-generate'} else 'privacy_invalid' if path in {'/api/v1/owner/reset','/api/v1/owner/delete-backup'} else 'business_invalid' if path in {'/api/v1/owner/business','/api/v1/owner/screen','/api/v1/owner/handoff','/api/v1/owner/planning','/api/v1/owner/trends'} else 'owner_cash_invalid' if path=='/api/v1/owner/cash-flows' else 'owner_transfer_invalid' if path in {'/api/v1/owner/import-preview','/api/v1/owner/import-confirm'} else 'owner_plan_invalid' if path=='/api/v1/owner/plans' else 'owner_evolve_invalid' if path in {'/api/v1/owner/evolve','/api/v1/owner/journal'} else 'owner_research_invalid' if path in {'/api/v1/owner/documents','/api/v1/owner/trade-reference'} else 'owner_invalid'))
+        except (ValueError,TypeError,KeyError):return respond(start,error(400,'connection_config_invalid' if path=='/api/v1/owner/connections' else 'connection_request_invalid' if path in {'/api/v1/owner/quote-fetch','/api/v1/owner/ai-preview','/api/v1/owner/ai-generate'} else 'ask_invalid' if path in ASK_PATHS else 'privacy_invalid' if path in {'/api/v1/owner/reset','/api/v1/owner/delete-backup'} else 'business_invalid' if path in {'/api/v1/owner/business','/api/v1/owner/screen','/api/v1/owner/handoff','/api/v1/owner/planning','/api/v1/owner/trends'} else 'owner_cash_invalid' if path=='/api/v1/owner/cash-flows' else 'owner_transfer_invalid' if path in {'/api/v1/owner/import-preview','/api/v1/owner/import-confirm'} else 'owner_plan_invalid' if path=='/api/v1/owner/plans' else 'owner_evolve_invalid' if path in {'/api/v1/owner/evolve','/api/v1/owner/journal'} else 'owner_research_invalid' if path in {'/api/v1/owner/documents','/api/v1/owner/trade-reference'} else 'owner_invalid'))
         except (OSError,sqlite3.Error):return respond(start,error(503,'local_unavailable'))
     app.store=store;app.sessions=sessions;app.connections=connections
     return app

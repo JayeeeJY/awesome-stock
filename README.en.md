@@ -125,7 +125,7 @@ Responses are for you to read, check and organize. Model connections, outbound c
 
 In Community, AI-native collaboration means help understanding and checking material while preserving your control:
 
-- **Ask freely and follow up.** Ask Awesome has a free-text conversation box for investing concepts or discussion of your material.
+- **Ask freely and follow up.** Ask Awesome has a free-text conversation box for investing concepts or discussion of your material. Finished questions and answers are stored in the local data directory and can be restored by conversation after a restart. Page material and API keys are not written into the conversation record.
 - **Choose the context.** Explicitly attach current-page material and review the question, material and conversation history before sending. Opening the assistant does not call a model.
 - **Choose your service and check the answer.** Use your own DeepSeek or OpenAI API key, or local Ollama. Model responses are assistive drafts, not automatically confirmed decisions, plans or trades.
 

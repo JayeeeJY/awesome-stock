@@ -26,6 +26,7 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=backend/src .venv/bin/python -m pytest -q -
 npm ci --ignore-scripts
 npx playwright install chromium
 OWNER_PYTHON="$PWD/.venv/bin/python" npm run test:vue
+npm run test:ask-persist
 OWNER_PYTHON="$PWD/.venv/bin/python" npm run test:planning
 OWNER_PYTHON="$PWD/.venv/bin/python" npm run test:diagnosis
 OWNER_PYTHON="$PWD/.venv/bin/python" npm run test:ui

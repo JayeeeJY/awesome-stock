@@ -6,7 +6,7 @@ import secrets
 from pathlib import Path
 from .local import Conflict, _canonical
 
-TABLES=('trade_links','cash_flows','cash_flow_versions','ledger_events','trades','accounts','documents','document_versions','operations','audit')
+TABLES=('ask_turns','ask_conversations','trade_links','cash_flows','cash_flow_versions','ledger_events','trades','accounts','documents','document_versions','operations','audit')
 
 def preview_db(db):
     counts={name:db.execute('SELECT count(*) FROM '+name).fetchone()[0] for name in TABLES}
