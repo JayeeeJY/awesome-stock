@@ -6,7 +6,7 @@ import secrets
 from pathlib import Path
 from .local import Conflict, _canonical
 
-TABLES=('ask_turns','ask_conversations','trade_links','cash_flows','cash_flow_versions','ledger_events','trades','accounts','documents','document_versions','operations','audit')
+TABLES=('ask_seen_key_digests','ask_turns','ask_conversations','trade_links','cash_flows','cash_flow_versions','ledger_events','trades','accounts','documents','document_versions','operations','audit')
 
 def preview_db(db):
     counts={name:db.execute('SELECT count(*) FROM '+name).fetchone()[0] for name in TABLES}
@@ -25,6 +25,7 @@ def reset(store,body,expected_digest):
         if preview_db(db)['token']!=body['token']:raise Conflict('reset preview stale')
         db.execute('PRAGMA secure_delete=ON')
         for name in TABLES:db.execute('DELETE FROM '+name)
+        db.execute("DELETE FROM metadata WHERE key='ask_key_hmac_secret'")
         db.execute("INSERT INTO metadata VALUES ('data_epoch',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",(secrets.token_hex(32),))
     # No automatic backup: that would silently retain another copy of data requested for deletion.
     return {'reset':True,'retains_account':True,'backups_retained':True,'reauthentication_required':True,'physical_erasure_guaranteed':False}

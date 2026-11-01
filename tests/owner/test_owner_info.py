@@ -31,7 +31,7 @@ def test_settings_actual_custom_directory_and_no_credentials(app):
     auth=login(app);before=app.store.path.read_bytes()
     result=request(app,'/api/v1/owner/settings',**auth)['body']
     assert set(result)=={'username','mode','schema_version','data_directory','database_file','backup_directory','backup_encrypted','restore_to_new_directory_only','external_connections'}
-    assert result['username']=='tester' and result['schema_version']==7
+    assert result['username']=='tester' and result['schema_version']==8
     assert result['database_file']==str(app.store.path)
     assert result['backup_directory']==str(app.store.directory/'backups')
     assert result['backup_encrypted'] is result['external_connections'] is False

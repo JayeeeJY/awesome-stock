@@ -121,7 +121,7 @@ def test_upgrade_and_reopen_keep_saved_conversations(tmp_path):
     upgraded = OwnerStore(data)
     assert upgraded.ledger() == before
     with upgraded.connection() as db:
-        assert db.execute('PRAGMA user_version').fetchone()[0] == 7
+        assert db.execute('PRAGMA user_version').fetchone()[0] == 8
         assert db.execute("SELECT 1 FROM sqlite_master WHERE name='ask_turns'").fetchone()
     auth = login(app)
     first = save(app, auth, turn(question='升级前保存的问题', answer='升级前保存的回答'))
@@ -135,13 +135,13 @@ def test_upgrade_and_reopen_keep_saved_conversations(tmp_path):
     assert reopened.ledger() == before
     with reopened.connection() as db:
         assert db.execute('SELECT question FROM ask_turns ORDER BY position').fetchall() == [('升级前保存的问题',), (FOLLOWUP,)]
-        assert db.execute('PRAGMA user_version').fetchone()[0] == 7
+        assert db.execute('PRAGMA user_version').fetchone()[0] == 8
     restart = application(port=4322, data_dir=data)
     restored = request(restart, '/api/v1/owner/ask-conversation', 'POST', {'id': conversation}, **login(restart))
     assert restored['status'] == 200
     assert [item['question'] for item in restored['body']['turns']] == ['升级前保存的问题', FOLLOWUP]
     backup = reopened.backup()
-    assert backup['schema_version'] == 7
+    assert backup['schema_version'] == 8
     target = tmp_path.resolve() / 'restored-ledger'
     restore_owner(data / 'backups' / backup['name'], target)
     assert OwnerStore(target).ledger() == before
@@ -194,8 +194,8 @@ def app(tmp_path):
 
 
 CANARY_ANTHROPIC = 'sk-ant-api03-' + ('A' * 48)
-CANARY_OPENAI = 'sk-' + ('B' * 48)
-CANARY_BEARER = 'C' * 64
+CANARY_OPENAI = 'sk-' + ('B' * 40) + '12345678'
+CANARY_BEARER = ('C' * 48) + '1234567890'
 
 
 def database_bytes(store):
@@ -270,6 +270,8 @@ GATE_CANARIES = {
     'AV bare(configured pre)': 'VERA7Z1D2D74NVWM',
     'EODHD bare(configured pre)': '65e1ve7a0b9c42.71828182',
     'DeepSeek key(configured pre)': 'sk-ve7a0c1d2e3f4a5b6c7d8e9f0a1b2c3d',
+}
+UNCONFIGURED_SHAPES = {
     'AV bare(never configured)': 'QX9VERA2D74NVWMZ',
     'EODHD bare(never configured)': '15d3ve7a4de049.03453438',
     'GLM-style id.secret': '0f1e2d3c4b5a69788796a5b4c3d2e1f0.VeRaCaNaRy123456',
@@ -288,7 +290,6 @@ def test_restart_redacts_every_provider_key_shape_and_keeps_ordinary_text(tmp_pa
     app = application(port=4322, data_dir=data)
     assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
     auth = login(app)
-    configure_key(app, auth, {'kind': 'ai', 'provider': 'openai', 'model': 'gpt-test', 'key': SHORT_KEY, 'enabled': True})
     configure_key(app, auth, {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': GATE_CANARIES['DeepSeek key(configured pre)'], 'enabled': True})
     configure_key(app, auth, {'kind': 'data', 'provider': 'alphavantage', 'model': '', 'key': GATE_CANARIES['AV bare(configured pre)'], 'enabled': True})
     configure_key(app, auth, {'kind': 'data_hk', 'provider': 'eodhd', 'model': '', 'key': GATE_CANARIES['EODHD bare(configured pre)'], 'enabled': True})
@@ -304,16 +305,96 @@ def test_restart_redacts_every_provider_key_shape_and_keeps_ordinary_text(tmp_pa
         if ' ' not in canary:
             poisoned = save(restart, auth, turn(question='model probe', answer='plain answer', provider='deepseek', model=canary))
             assert poisoned['status'] == 400, name
-    ordinary = ' '.join(SAFE_TEXT)
-    kept = save(restart, auth, turn(question=ordinary + ' ' + SHORT_KEY, answer=ordinary, error='still ' + ordinary, provider='deepseek', model='deepseek-flash'))
+    for name, canary in UNCONFIGURED_SHAPES.items():
+        saved = save(restart, auth, turn(question=f'POST Q {canary} 市盈率?', answer=f'POST A {canary}', error=f'POST E {canary}', provider='deepseek', model='deepseek-flash'))
+        assert saved['status'] == 200, name
+        row = saved['body']['turns'][0]
+        assert row['question'] == f'POST Q {canary} 市盈率?' and row['answer'] == f'POST A {canary}' and row['error'] == f'POST E {canary}'
+    ordinary = ' '.join(SAFE_TEXT) + ' ' + SHORT_KEY
+    kept = save(restart, auth, turn(question=ordinary, answer=ordinary, error='still ' + ordinary, provider='deepseek', model='deepseek-flash'))
     assert kept['status'] == 200
-    assert SHORT_KEY not in kept['body']['turns'][0]['question'] and SHORT_KEY not in kept['body']['title']
-    assert all(token in kept['body']['turns'][0]['question'] for token in SAFE_TEXT)
+    assert kept['body']['turns'][0]['question'] == ordinary
     blob = database_bytes(restart.store)
-    for canary in (*GATE_CANARIES.values(), SHORT_KEY):
+    for canary in GATE_CANARIES.values():
         assert canary.encode() not in blob, canary
-    for token in SAFE_TEXT:
+    for token in (*SAFE_TEXT, SHORT_KEY, *UNCONFIGURED_SHAPES.values()):
         assert token.encode() in blob, token
+
+
+FALSE_POSITIVES = (
+    'risk-adjusted',
+    'risk-management',
+    'desk-research',
+    'task-oriented',
+    'SK-Hynix',
+    'bearer instruments',
+    'Bearer certificates',
+    '1234567890123456',
+    'report20261101.1234',
+    'democracy',
+)
+
+
+def test_shape_rules_do_not_rewrite_ordinary_text(tmp_path):
+    data = tmp_path.resolve() / 'ordinary'
+    app = application(port=4322, data_dir=data)
+    assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
+    auth = login(app)
+    configure_key(app, auth, {'kind': 'data', 'provider': 'alphavantage', 'model': '', 'key': 'demo', 'enabled': True})
+    for phrase in FALSE_POSITIVES:
+        saved = save(app, auth, turn(question=phrase, answer=phrase, error=phrase))
+        assert saved['status'] == 200, phrase
+        row = saved['body']['turns'][0]
+        assert row['question'] == phrase and row['answer'] == phrase and row['error'] == phrase and saved['body']['title'] == phrase
+        assert phrase.encode() in database_bytes(app.store)
+    # In-process exact match of a short key stays on token boundaries.
+    bordered = save(app, auth, turn(question='democracy uses demo today', answer='k9x2board', error=''))
+    assert bordered['status'] == 200
+    assert bordered['body']['turns'][0]['question'] == 'democracy uses [已隐藏凭据] today'
+    assert bordered['body']['turns'][0]['answer'] == 'k9x2board'
+
+
+def test_disabled_connection_and_short_keys_do_not_grow_the_digest_table(tmp_path):
+    from awesome_stock.storage.owner_ask import SEEN_KEY_DIGEST_CAP, remember_key
+    data = tmp_path.resolve() / 'cap'
+    app = application(port=4322, data_dir=data)
+    assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
+    auth = login(app)
+    disabled = request(app, '/api/v1/owner/connections', 'POST', {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': 'sk-disabled-key-1234567890', 'enabled': False}, **auth)
+    assert disabled['status'] == 200
+    with app.store.connection() as db:
+        assert db.execute('SELECT count(*) FROM ask_seen_key_digests').fetchone()[0] == 0
+    configure_key(app, auth, {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': 'k3Y', 'enabled': True})
+    with app.store.connection() as db:
+        assert db.execute('SELECT count(*) FROM ask_seen_key_digests').fetchone()[0] == 0
+    first = 'sk-oldest-key-' + ('a' * 20)
+    remember_key(app.store, first)
+    for index in range(SEEN_KEY_DIGEST_CAP):
+        remember_key(app.store, f'sk-cap-{index:02d}-' + ('b' * 20))
+    with app.store.connection() as db:
+        assert db.execute('SELECT count(*) FROM ask_seen_key_digests').fetchone()[0] == SEEN_KEY_DIGEST_CAP
+    blob = database_bytes(app.store)
+    assert first.encode() not in blob
+    saved = save(app, auth, turn(question='still ' + first, answer='ok', error=''))
+    assert saved['status'] == 200
+    assert first in saved['body']['turns'][0]['question']
+
+
+def test_reset_forgets_seen_key_digests(tmp_path):
+    data = tmp_path.resolve() / 'reset-keys'
+    app = application(port=4322, data_dir=data)
+    assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
+    auth = login(app)
+    configure_key(app, auth, {'kind': 'data', 'provider': 'alphavantage', 'model': '', 'key': 'VERA7Z1D2D74NVWM', 'enabled': True})
+    before = preview(app.store)
+    assert before['counts']['ask_seen_key_digests'] == 1
+    reset(app.store, {'token': before['token'], 'confirmation': '清空当前业务数据', 'current_password': PASSWORD}, app.store.owner().credential.digest_hex)
+    with app.store.connection() as db:
+        assert db.execute('SELECT count(*) FROM ask_seen_key_digests').fetchone()[0] == 0
+        assert db.execute("SELECT 1 FROM metadata WHERE key='ask_key_hmac_secret'").fetchone() is None
+    restart = application(port=4322, data_dir=data)
+    saved = save(restart, login(restart), turn(question='after reset VERA7Z1D2D74NVWM', answer='kept', error=''))
+    assert saved['body']['turns'][0]['question'] == 'after reset VERA7Z1D2D74NVWM'
 
 
 def test_duplicate_turn_conflict_uses_storage_guard(app):

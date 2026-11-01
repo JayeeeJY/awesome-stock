@@ -50,7 +50,7 @@ def credential(password):
     return make_password_credential(password,salt=secrets.token_bytes(16))
 
 
-def check_owner(db, version=7):
+def check_owner(db, version=8):
     if db.execute('PRAGMA application_id').fetchone()[0]!=OWNER_APP_ID or db.execute('PRAGMA user_version').fetchone()[0]!=version:
         raise ValueError('unsupported owner database')
     if db.execute('PRAGMA quick_check').fetchone()[0]!='ok':raise ValueError('database corrupt')
@@ -76,6 +76,8 @@ def check_owner(db, version=7):
         db.execute('SELECT id,conversation_id,position,question,answer,error,provider,model,created_at FROM ask_turns LIMIT 0')
     if version>=7:
         db.execute('SELECT length,digest FROM ask_seen_key_digests LIMIT 0')
+    if version>=8:
+        db.execute('SELECT seen_seq FROM ask_seen_key_digests LIMIT 0')
 
 def add_cash_tables(db):
     db.execute('CREATE TABLE cash_flows(id TEXT PRIMARY KEY,account_id TEXT NOT NULL,payload TEXT NOT NULL,revision INTEGER NOT NULL)')
@@ -92,7 +94,20 @@ def add_ask_tables(db):
 
 
 def add_seen_key_table(db):
-    db.execute('CREATE TABLE IF NOT EXISTS ask_seen_key_digests(length INTEGER NOT NULL,digest TEXT NOT NULL,PRIMARY KEY(length,digest))')
+    db.execute('CREATE TABLE IF NOT EXISTS ask_seen_key_digests(digest TEXT PRIMARY KEY,length INTEGER NOT NULL,seen_seq INTEGER NOT NULL)')
+
+
+def migrate_seen_key_table(db):
+    columns = {row[1] for row in db.execute('PRAGMA table_info(ask_seen_key_digests)')}
+    if not columns:
+        add_seen_key_table(db)
+        return
+    if 'seen_seq' in columns:
+        return
+    db.execute('ALTER TABLE ask_seen_key_digests RENAME TO ask_seen_key_digests_v7')
+    add_seen_key_table(db)
+    db.execute('INSERT INTO ask_seen_key_digests(digest,length,seen_seq) SELECT digest,length,rowid FROM ask_seen_key_digests_v7')
+    db.execute('DROP TABLE ask_seen_key_digests_v7')
 
 
 def add_research_tables(db):
@@ -114,7 +129,7 @@ def trade_payload(body):
 class OwnerStore(LocalStore):
     validate=staticmethod(check_owner)
     storage_mode='owner_local'
-    schema_version=7
+    schema_version=8
 
     def __init__(self,directory):
         self.directory=_private_directory(directory);self.path=self.directory/'owner.sqlite3'
@@ -123,9 +138,9 @@ class OwnerStore(LocalStore):
             if self.path.stat().st_mode&0o077:raise ValueError('database permissions must be 0600')
             with self.connection() as db:
                 version=db.execute('PRAGMA user_version').fetchone()[0]
-                if version not in (1,2,3,4,5,6,7):raise ValueError('unsupported owner version')
+                if version not in (1,2,3,4,5,6,7,8):raise ValueError('unsupported owner version')
                 check_owner(db,version)
-            if version<7:self._upgrade_schema()
+            if version<8:self._upgrade_schema()
             return
         temporary=self.directory/('.owner-init-'+uuid.uuid4().hex)
         fd=os.open(temporary,os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600);os.close(fd)
@@ -133,7 +148,7 @@ class OwnerStore(LocalStore):
         try:
             with db:
                 db.execute('BEGIN IMMEDIATE')
-                db.execute(f'PRAGMA application_id={OWNER_APP_ID}');db.execute('PRAGMA user_version=7')
+                db.execute(f'PRAGMA application_id={OWNER_APP_ID}');db.execute('PRAGMA user_version=8')
                 for sql in ['CREATE TABLE metadata(key TEXT PRIMARY KEY,value TEXT NOT NULL)',
                             'CREATE TABLE owner(slot INTEGER PRIMARY KEY CHECK(slot=1),user_id TEXT NOT NULL,username TEXT NOT NULL,credential TEXT NOT NULL)',
                             "CREATE TABLE accounts(id TEXT PRIMARY KEY,name TEXT NOT NULL,currency TEXT NOT NULL,opening_cash TEXT NOT NULL,cost_method TEXT NOT NULL DEFAULT 'avg' CHECK(cost_method IN ('avg','fifo')),broker TEXT NOT NULL DEFAULT '',revision INTEGER NOT NULL DEFAULT 1)",
@@ -153,7 +168,7 @@ class OwnerStore(LocalStore):
     def _upgrade_schema(self):
         with self.transaction() as db:
             version=db.execute('PRAGMA user_version').fetchone()[0]
-            if version==7:return
+            if version==8:return
             check_owner(db,version)
             legacy=object.__new__(LocalStore)
             legacy.directory=self.directory;legacy.path=self.path
@@ -168,8 +183,9 @@ class OwnerStore(LocalStore):
                 db.execute('ALTER TABLE accounts ADD COLUMN revision INTEGER NOT NULL DEFAULT 1')
             if version<6:add_ask_tables(db)
             if version<7:add_seen_key_table(db)
-            db.execute('PRAGMA user_version=7')
-            self._audit(db,'schema_upgraded','owner-schema',{'version':version},{'version':7,'backup':backup['name']})
+            elif version<8:migrate_seen_key_table(db)
+            db.execute('PRAGMA user_version=8')
+            self._audit(db,'schema_upgraded','owner-schema',{'version':version},{'version':8,'backup':backup['name']})
             check_owner(db)
 
     def owner(self):
@@ -443,5 +459,5 @@ class OwnerStore(LocalStore):
 def restore_owner(source,destination):
     manifest=json.loads((Path(source)/'manifest.json').read_text())
     version=manifest.get('schema_version')
-    if type(version) is not int or version not in (1,2,3,4,5,6,7):raise ValueError('unsupported backup version')
+    if type(version) is not int or version not in (1,2,3,4,5,6,7,8):raise ValueError('unsupported backup version')
     return restore(source,destination,validator=lambda db:check_owner(db,version),schema_version=version,mode='owner_local',filename='owner.sqlite3')

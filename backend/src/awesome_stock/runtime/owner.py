@@ -170,8 +170,9 @@ def application(*,port,data_dir,ui_dist=None):
             if path=='/api/v1/owner/connections' and method=='POST':
                 body=_json_body(env)
                 result=connections.configure(body)
-                key=body.get('key') if isinstance(body,dict) else ''
-                if isinstance(key,str) and key:owner_ask.remember_key(store,key)
+                if isinstance(body,dict) and body.get('enabled') is True:
+                    key=body.get('key')
+                    if isinstance(key,str) and key:owner_ask.remember_key(store,key)
                 return respond(start,ApiResponse(200,data=result))
             if path=='/api/v1/owner/news-fetch' and method=='POST':return respond(start,ApiResponse(200,data=connections.news_feed(_json_body(env))))
             if path=='/api/v1/owner/news-snapshots' and method=='POST':return respond(start,ApiResponse(200,data=news.save(store,_json_body(env),connections)))

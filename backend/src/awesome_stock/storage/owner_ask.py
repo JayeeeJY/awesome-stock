@@ -17,21 +17,18 @@ from .owner import identifier, text
 FIELDS = {'id', 'conversation_id', 'question', 'answer', 'error', 'provider', 'model'}
 PROVIDERS = {'openai', 'deepseek', 'ollama'}
 MODEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9._:/-]{0,119}')
-ASCII_RUN = re.compile(r'[!-~]+')
-# Prefix shapes, including short sk- tokens and case variants. The tail is at
-# least 8 characters so a bare "sk-" in prose is left alone.
-PREFIX_KEY = re.compile(r'(?:sk|rk|pk)[-_](?:ant-|proj-|live-|test-|or-)?[A-Za-z0-9_\-]{8,}', re.I)
-BEARER = re.compile(r'bearer\s+[A-Za-z0-9\-._~+/]{8,}={0,2}', re.I)
-# Exactly 16 uppercase letters/digits. Callers require both a letter and a digit
-# so tickers, ISINs, and long numbers do not match.
-AV_KEY = re.compile(r'(?<![A-Z0-9])[A-Z0-9]{16}(?![A-Z0-9])')
-# token.digits with a letter in the token, so prices such as 178.32 do not match.
-# EODHD keys look like hex.digits; the letter requirement also rejects long numeric prices.
-EODHD_KEY = re.compile(r'(?<![A-Za-z0-9])(?=[0-9A-Za-z]*[A-Za-z])[0-9A-Za-z]{8,}\.[0-9]{4,}(?![A-Za-z0-9])')
-# 32 hex digits, a dot, then a secret that contains a letter (GLM-style).
-GLM_KEY = re.compile(r'(?<![A-Za-z0-9])[0-9A-Fa-f]{32}\.(?=[A-Za-z0-9]*[A-Za-z])[A-Za-z0-9]{8,}(?![A-Za-z0-9])')
+# Left boundary so "risk-adjusted" is not read as a key. A plain sk-/rk-/pk-
+# tail must contain a digit; the ant-/proj-/live-/test-/or- forms may be letters.
+# That leaves SK-Hynix and pk-performance-benchmark untouched.
+PREFIX_KEY = re.compile(
+    r'(?<![A-Za-z0-9])(?:sk|rk|pk)[-_](?:(?:ant-|proj-|live-|test-|or-)[A-Za-z0-9_\-]{8,}|(?=[A-Za-z0-9_\-]*[0-9])[A-Za-z0-9_\-]{8,})',
+    re.I)
+# "bearer instruments" has no digit. A real bearer token is long and contains one.
+BEARER = re.compile(r'(?<![A-Za-z0-9])bearer\s+(?=[A-Za-z0-9\-._~+/]*[0-9])[A-Za-z0-9\-._~+/]{16,}={0,2}', re.I)
 REDACTED = '[已隐藏凭据]'
 HMAC_METADATA = 'ask_key_hmac_secret'
+SEEN_KEY_DIGEST_CAP = 32
+MIN_REMEMBERED_KEY = 12
 
 
 def _plain(value, limit):
@@ -45,11 +42,23 @@ def _known_secrets(secrets):
 
 
 def _shape_spans(value):
-    spans = [match.span() for pattern in (PREFIX_KEY, BEARER, EODHD_KEY, GLM_KEY) for match in pattern.finditer(value)]
-    for match in AV_KEY.finditer(value):
-        token = match.group()
-        if any(character.isalpha() for character in token) and any(character.isdigit() for character in token):
-            spans.append(match.span())
+    return [match.span() for pattern in (PREFIX_KEY, BEARER) for match in pattern.finditer(value)]
+
+
+def _bounded(value, secret):
+    spans = []
+    start = 0
+    size = len(secret)
+    while True:
+        found = value.find(secret, start)
+        if found < 0:
+            break
+        before = found == 0 or not value[found - 1].isalnum()
+        end = found + size
+        after = end == len(value) or not value[end].isalnum()
+        if before and after:
+            spans.append((found, end))
+        start = found + 1
     return spans
 
 
@@ -74,32 +83,36 @@ def _stored_digests(store):
 
 
 def remember_key(store, key):
-    if not isinstance(key, str) or not key or len(key) > 512 or '\x00' in key:
+    # Short keys are matched only while this process still has them. A digest
+    # would keep redacting them after restart and is too easy to collide with.
+    if not isinstance(key, str) or len(key) < MIN_REMEMBERED_KEY or len(key) > 512 or '\x00' in key:
         return
     secret = _install_secret(store)
     digest = _digest(secret, key)
     with store.transaction() as db:
-        db.execute('INSERT INTO ask_seen_key_digests(length,digest) VALUES (?,?) ON CONFLICT DO NOTHING', (len(key), digest))
+        seq = db.execute('SELECT COALESCE(MAX(seen_seq),0)+1 FROM ask_seen_key_digests').fetchone()[0]
+        db.execute('INSERT INTO ask_seen_key_digests(digest,length,seen_seq) VALUES (?,?,?) ON CONFLICT(digest) DO UPDATE SET seen_seq=excluded.seen_seq,length=excluded.length', (digest, len(key), seq))
+        db.execute('DELETE FROM ask_seen_key_digests WHERE digest NOT IN (SELECT digest FROM ask_seen_key_digests ORDER BY seen_seq DESC LIMIT ?)', (SEEN_KEY_DIGEST_CAP,))
 
 
 def _digest_spans(value, secret, digests):
-    if not digests:
-        return []
     by_length = {}
     for length, digest in digests:
-        if isinstance(length, int) and length > 0:
+        if isinstance(length, int) and length >= MIN_REMEMBERED_KEY:
             by_length.setdefault(length, set()).add(digest)
+    if not by_length:
+        return []
     spans = []
-    for run in ASCII_RUN.finditer(value):
-        token = run.group()
-        origin = run.start()
+    size = len(value)
+    for index in range(size):
+        if index and value[index - 1].isalnum():
+            continue
         for length, hashes in by_length.items():
-            if len(token) < length:
+            end = index + length
+            if end > size or (end < size and value[end].isalnum()):
                 continue
-            for index in range(len(token) - length + 1):
-                piece = token[index:index + length]
-                if _digest(secret, piece) in hashes:
-                    spans.append((origin + index, origin + index + length))
+            if _digest(secret, value[index:end]) in hashes:
+                spans.append((index, end))
     return spans
 
 
@@ -126,19 +139,16 @@ def _apply(value, spans):
 
 
 def _redact(value, secrets, store):
-    for secret in _known_secrets(secrets):
+    known = _known_secrets(secrets)
+    for secret in known:
         remember_key(store, secret)
     spans = []
-    for secret in _known_secrets(secrets):
-        start = 0
-        while True:
-            found = value.find(secret, start)
-            if found < 0:
-                break
-            spans.append((found, found + len(secret)))
-            start = found + len(secret)
+    for secret in known:
+        spans.extend(_bounded(value, secret))
     spans.extend(_shape_spans(value))
-    spans.extend(_digest_spans(value, _install_secret(store), _stored_digests(store)))
+    digests = _stored_digests(store)
+    if digests:
+        spans.extend(_digest_spans(value, _install_secret(store), digests))
     return _apply(value, spans)
 
 
