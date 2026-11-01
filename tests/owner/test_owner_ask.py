@@ -193,6 +193,61 @@ def app(tmp_path):
     return created
 
 
+CANARY_ANTHROPIC = 'sk-ant-api03-' + ('A' * 48)
+CANARY_OPENAI = 'sk-' + ('B' * 48)
+CANARY_BEARER = 'C' * 64
+
+
+def database_bytes(store):
+    blob = store.path.read_bytes()
+    for suffix in ('-wal', '-shm', '-journal'):
+        extra = store.path.parent / (store.path.name + suffix)
+        if extra.is_file():
+            blob += extra.read_bytes()
+    return blob
+
+
+def test_restart_without_loaded_key_does_not_store_pasted_key(tmp_path):
+    data = tmp_path.resolve() / 'canary-ledger'
+    app = application(port=4322, data_dir=data)
+    assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
+    login(app)
+    app.connections.configure({'kind': 'ai', 'provider': 'openai', 'model': 'gpt-test', 'key': 'sk-configured-' + ('D' * 40), 'enabled': True})
+    restart = application(port=4322, data_dir=data)
+    assert restart.connections.config == {}
+    question = CANARY_ANTHROPIC + ' 请解释市盈率'
+    answer = '模型复读 ' + CANARY_OPENAI
+    error = '失败 Bearer ' + CANARY_BEARER
+    saved = save(restart, login(restart), turn(question=question, answer=answer, error=error, provider='openai', model='gpt-test'))
+    assert saved['status'] == 200, saved['body']
+    row = saved['body']['turns'][0]
+    assert '请解释市盈率' in row['question'] and CANARY_ANTHROPIC not in row['question']
+    assert CANARY_OPENAI not in row['answer'] and CANARY_BEARER not in row['error']
+    assert CANARY_ANTHROPIC not in saved['body']['title']
+    blob = database_bytes(restart.store)
+    for canary in (CANARY_ANTHROPIC, CANARY_OPENAI, CANARY_BEARER):
+        assert canary.encode() not in blob
+    poisoned = save(restart, login(restart), turn(question='普通问题', answer='普通回答', provider='openai', model=CANARY_OPENAI))
+    assert poisoned['status'] == 400
+    assert CANARY_OPENAI.encode() not in database_bytes(restart.store)
+
+
+def test_cleared_connection_redacts_previously_configured_key(tmp_path):
+    key = 'plain-provider-key-77'
+    data = tmp_path.resolve() / 'rotated-key'
+    app = application(port=4322, data_dir=data)
+    assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
+    auth = login(app)
+    app.connections.configure({'kind': 'ai', 'provider': 'openai', 'model': 'gpt-test', 'key': key, 'enabled': True})
+    app.connections.clear()
+    assert app.connections.config == {}
+    saved = save(app, auth, turn(question='请忽略 ' + key, answer='没有密钥'))
+    assert saved['status'] == 200
+    assert key not in saved['body']['turns'][0]['question'] and key not in saved['body']['title']
+    assert '请忽略' in saved['body']['turns'][0]['question']
+    assert key.encode() not in database_bytes(app.store)
+
+
 def test_failed_turn_is_saved_without_material(app):
     saved = save(app, login(app), turn(question='失败的问题', answer='', error='服务没有返回完整答案。'))
     assert saved['status'] == 200

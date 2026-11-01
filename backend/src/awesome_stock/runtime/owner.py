@@ -58,6 +58,8 @@ def connection_secrets(connections):
     for kind in ('ai','data','data_hk'):
         key=(connections.config.get(kind) or {}).get('key') or ''
         if isinstance(key,str) and key and key not in found:found.append(key)
+    for key in getattr(connections,'seen_secrets',()):
+        if isinstance(key,str) and key and key not in found:found.append(key)
     return tuple(found)
 
 

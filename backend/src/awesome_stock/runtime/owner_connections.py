@@ -41,8 +41,9 @@ def transport(host,path,body,key='',local=False,local_host='127.0.0.1'):
 
 class Connections:
     def __init__(self,send=None):
-        self.send=send or transport;self.ollama_location='本机 Ollama（127.0.0.1:11434）';self.clear()
+        self.send=send or transport;self.ollama_location='本机 Ollama（127.0.0.1:11434）';self.seen_secrets=set();self.clear()
     def clear(self):
+        # Drop the active key. Keep seen_secrets so a later Ask write can still redact it.
         self.config={};self.previews={};self.receipts={};self.histories={};self.companies={};self.news={};self.last_call={}
     def status(self):
         return {'data_public':{'enabled':False,'provider':None,'model':None,'tested':False,'deferred':True},'ai':self._public('ai'),'data':self._public('data'),'data_hk':self._public('data_hk'),'secrets_persisted':False,'restart_disables':True,'ollama_location':self.ollama_location}
@@ -61,6 +62,7 @@ class Connections:
         if not isinstance(key,str) or len(key)>512 or any(ord(x)<33 or ord(x)>126 for x in key):raise ValueError('invalid key')
         if p!='ollama' and not key:raise ValueError('key required')
         if p=='ollama' and key:raise ValueError('local has no key')
+        if key:self.seen_secrets.add(key)
         if kind=='ai' and (not isinstance(model,str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._:/-]{0,119}',model)):raise ValueError('model required')
         if kind in {'data','data_hk'} and model!='':raise ValueError('data has no model')
         self.config[kind]={'provider':p,'model':model,'key':key,'tested':False};self.previews.clear();self.receipts.clear();self.histories.clear();self.companies.clear();self.news.clear()

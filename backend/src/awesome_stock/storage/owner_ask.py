@@ -12,6 +12,9 @@ from .owner import identifier, text
 FIELDS = {'id', 'conversation_id', 'question', 'answer', 'error', 'provider', 'model'}
 PROVIDERS = {'openai', 'deepseek', 'ollama'}
 MODEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9._:/-]{0,119}')
+# Key-shaped text is removed even when this process has no provider key loaded.
+KEY_SHAPED = re.compile(r'(?:sk|rk|pk)-(?:ant-|proj-|live-|test-|or-)?[A-Za-z0-9_\-]{16,}')
+BEARER = re.compile(r'Bearer\s+[A-Za-z0-9\-._~+/]{20,}={0,2}')
 REDACTED = '[已隐藏凭据]'
 
 
@@ -21,11 +24,19 @@ def _plain(value, limit):
     return value
 
 
+def _known_secrets(secrets):
+    return sorted((secret for secret in secrets if isinstance(secret, str) and len(secret) >= 12), key=len, reverse=True)
+
+
+def _contains_secret(value, secrets):
+    return bool(KEY_SHAPED.search(value) or BEARER.search(value) or any(secret in value for secret in _known_secrets(secrets)))
+
+
 def _redact(value, secrets):
-    for secret in secrets:
-        if isinstance(secret, str) and secret:
-            value = value.replace(secret, REDACTED)
-    return value
+    for secret in _known_secrets(secrets):
+        value = value.replace(secret, REDACTED)
+    value = KEY_SHAPED.sub(REDACTED, value)
+    return BEARER.sub(REDACTED, value)
 
 
 def _turns(db, conversation_id):
@@ -74,7 +85,7 @@ def save_turn(store, body, secrets=()):
     provider, model = body['provider'], body['model']
     if provider not in PROVIDERS or not isinstance(model, str) or not MODEL.fullmatch(model):
         raise ValueError('invalid provider')
-    if any(isinstance(secret, str) and secret and (secret in provider or secret in model) for secret in secrets):
+    if _contains_secret(provider, secrets) or _contains_secret(model, secrets):
         raise ValueError('invalid provider')
     now = datetime.now(timezone.utc).isoformat()
     with store.transaction() as db:

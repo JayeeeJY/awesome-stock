@@ -49,6 +49,9 @@ function turn(ask, question) {
   return ask.getByLabel('Ask Awesome 对话记录', {exact: true}).getByText(question, {exact: true})
 }
 async function send(ask, page, question) {
+  // generate() allows one AI call per second and answers 503 try_later inside that window.
+  // Space the test; do not change that product limit.
+  await delay(1100)
   const input = ask.getByLabel('给 Ask Awesome 的消息', {exact: true})
   await input.fill(question)
   await ask.getByRole('button', {name: '发送', exact: true}).click()
