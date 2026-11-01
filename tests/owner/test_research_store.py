@@ -117,6 +117,6 @@ def test_backup_failure_prevents_upgrade(store,monkeypatch):
 def test_current_backup_restores_history_and_links(store,tmp_path):
     n=store.save_document(document());d=store.save_document(document('decision',research_ref={'id':n['id'],'revision':1}))
     store.add_account(account());t=trade();store.trade(t);store.link_trade(link(t,d));before=store.documents()
-    b=store.backup();assert b['schema_version']==6
+    b=store.backup();assert b['schema_version']==7
     dest=tmp_path.resolve()/'restored';restore_owner(store.directory/'backups'/b['name'],dest)
     assert OwnerStore(dest).documents()==before

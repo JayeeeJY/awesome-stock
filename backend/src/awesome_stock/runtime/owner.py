@@ -167,7 +167,12 @@ def application(*,port,data_dir,ui_dist=None):
                 if path.endswith('/reset'):sessions.revoke_user(user.user_id);connections.clear()
                 return respond(start,ApiResponse(200,data=result))
             if path=='/api/v1/owner/connections' and method=='GET':return respond(start,ApiResponse(200,data=connections.status()))
-            if path=='/api/v1/owner/connections' and method=='POST':return respond(start,ApiResponse(200,data=connections.configure(_json_body(env))))
+            if path=='/api/v1/owner/connections' and method=='POST':
+                body=_json_body(env)
+                result=connections.configure(body)
+                key=body.get('key') if isinstance(body,dict) else ''
+                if isinstance(key,str) and key:owner_ask.remember_key(store,key)
+                return respond(start,ApiResponse(200,data=result))
             if path=='/api/v1/owner/news-fetch' and method=='POST':return respond(start,ApiResponse(200,data=connections.news_feed(_json_body(env))))
             if path=='/api/v1/owner/news-snapshots' and method=='POST':return respond(start,ApiResponse(200,data=news.save(store,_json_body(env),connections)))
             if path=='/api/v1/owner/news-source' and method=='POST':return respond(start,ApiResponse(200,data=news.read(store,_json_body(env))))

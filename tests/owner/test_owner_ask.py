@@ -121,7 +121,7 @@ def test_upgrade_and_reopen_keep_saved_conversations(tmp_path):
     upgraded = OwnerStore(data)
     assert upgraded.ledger() == before
     with upgraded.connection() as db:
-        assert db.execute('PRAGMA user_version').fetchone()[0] == 6
+        assert db.execute('PRAGMA user_version').fetchone()[0] == 7
         assert db.execute("SELECT 1 FROM sqlite_master WHERE name='ask_turns'").fetchone()
     auth = login(app)
     first = save(app, auth, turn(question='升级前保存的问题', answer='升级前保存的回答'))
@@ -135,13 +135,13 @@ def test_upgrade_and_reopen_keep_saved_conversations(tmp_path):
     assert reopened.ledger() == before
     with reopened.connection() as db:
         assert db.execute('SELECT question FROM ask_turns ORDER BY position').fetchall() == [('升级前保存的问题',), (FOLLOWUP,)]
-        assert db.execute('PRAGMA user_version').fetchone()[0] == 6
+        assert db.execute('PRAGMA user_version').fetchone()[0] == 7
     restart = application(port=4322, data_dir=data)
     restored = request(restart, '/api/v1/owner/ask-conversation', 'POST', {'id': conversation}, **login(restart))
     assert restored['status'] == 200
     assert [item['question'] for item in restored['body']['turns']] == ['升级前保存的问题', FOLLOWUP]
     backup = reopened.backup()
-    assert backup['schema_version'] == 6
+    assert backup['schema_version'] == 7
     target = tmp_path.resolve() / 'restored-ledger'
     restore_owner(data / 'backups' / backup['name'], target)
     assert OwnerStore(target).ledger() == before
@@ -254,6 +254,66 @@ def test_failed_turn_is_saved_without_material(app):
     row = saved['body']['turns'][0]
     assert row['answer'] == '' and row['error'] == '服务没有返回完整答案。'
     assert 'context' not in row and 'payload' not in row and 'material' not in row
+
+
+GATE_CANARIES = {
+    'sk-VERA': 'sk-VERA-CANARY-123456',
+    'sk-ant-VERA': 'sk-ant-VERA-CANARY-abcdefghijklmnop',
+    'sk-proj-VERA': 'sk-proj-VERACANARYabcdefghijklmnop0123',
+    'rk-VERA': 'rk-VERA-CANARY-1234567890',
+    'pk-VERA': 'pk-VERA-CANARY-1234567890',
+    'Bearer': 'Bearer xyzVERACANARY1234567890abcd',
+    'bearer(lower)': 'bearer xyzVERACANARYlower1234567890',
+    'SK-(upper)': 'SK-VERA-CANARY-UPPER-123456',
+    'sk_live_(underscore)': 'sk_live_VERACANARY1234567890abcd',
+    'sk-short(<16)': 'sk-VERA12345',
+    'AV bare(configured pre)': 'VERA7Z1D2D74NVWM',
+    'EODHD bare(configured pre)': '65e1ve7a0b9c42.71828182',
+    'DeepSeek key(configured pre)': 'sk-ve7a0c1d2e3f4a5b6c7d8e9f0a1b2c3d',
+    'AV bare(never configured)': 'QX9VERA2D74NVWMZ',
+    'EODHD bare(never configured)': '15d3ve7a4de049.03453438',
+    'GLM-style id.secret': '0f1e2d3c4b5a69788796a5b4c3d2e1f0.VeRaCaNaRy123456',
+}
+SAFE_TEXT = ('AAPL', '0700.HK', 'BRK.B', '600519.SS', 'US0378331005', '178.32', '2026-01-01', 'operation-1234567890', '1234567890123456')
+SHORT_KEY = 'k9x2'
+
+
+def configure_key(app, auth, body):
+    result = request(app, '/api/v1/owner/connections', 'POST', body, **auth)
+    assert result['status'] == 200, result['body']
+
+
+def test_restart_redacts_every_provider_key_shape_and_keeps_ordinary_text(tmp_path):
+    data = tmp_path.resolve() / 'gate-canary'
+    app = application(port=4322, data_dir=data)
+    assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
+    auth = login(app)
+    configure_key(app, auth, {'kind': 'ai', 'provider': 'openai', 'model': 'gpt-test', 'key': SHORT_KEY, 'enabled': True})
+    configure_key(app, auth, {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': GATE_CANARIES['DeepSeek key(configured pre)'], 'enabled': True})
+    configure_key(app, auth, {'kind': 'data', 'provider': 'alphavantage', 'model': '', 'key': GATE_CANARIES['AV bare(configured pre)'], 'enabled': True})
+    configure_key(app, auth, {'kind': 'data_hk', 'provider': 'eodhd', 'model': '', 'key': GATE_CANARIES['EODHD bare(configured pre)'], 'enabled': True})
+    restart = application(port=4322, data_dir=data)
+    assert restart.connections.config == {}
+    auth = login(restart)
+    for name, canary in GATE_CANARIES.items():
+        saved = save(restart, auth, turn(question=f'POST Q {canary} 市盈率?', answer=f'POST A {canary}', error=f'POST E {canary}', provider='deepseek', model='deepseek-flash'))
+        assert saved['status'] == 200, (name, saved['body'])
+        row = saved['body']['turns'][0]
+        assert canary not in row['question'] and canary not in row['answer'] and canary not in row['error']
+        assert canary not in saved['body']['title']
+        if ' ' not in canary:
+            poisoned = save(restart, auth, turn(question='model probe', answer='plain answer', provider='deepseek', model=canary))
+            assert poisoned['status'] == 400, name
+    ordinary = ' '.join(SAFE_TEXT)
+    kept = save(restart, auth, turn(question=ordinary + ' ' + SHORT_KEY, answer=ordinary, error='still ' + ordinary, provider='deepseek', model='deepseek-flash'))
+    assert kept['status'] == 200
+    assert SHORT_KEY not in kept['body']['turns'][0]['question'] and SHORT_KEY not in kept['body']['title']
+    assert all(token in kept['body']['turns'][0]['question'] for token in SAFE_TEXT)
+    blob = database_bytes(restart.store)
+    for canary in (*GATE_CANARIES.values(), SHORT_KEY):
+        assert canary.encode() not in blob, canary
+    for token in SAFE_TEXT:
+        assert token.encode() in blob, token
 
 
 def test_duplicate_turn_conflict_uses_storage_guard(app):

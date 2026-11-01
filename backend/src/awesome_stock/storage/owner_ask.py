@@ -1,10 +1,15 @@
 """Persist Ask Awesome questions and answers in the owner database.
 
-Page material, ledger holdings, and provider keys are not stored. Callers may
-pass in-memory secrets so a repeated key is redacted before the row is written.
+Page material, ledger holdings, and provider keys are not stored. Keys are
+memory-only, so a restart cannot reload them. Each configured key is recorded
+as HMAC-SHA256 under a per-install random secret, and Ask writes redact any
+substring with a stored digest plus key-shaped tokens.
 """
 from datetime import datetime, timezone
+import hashlib
+import hmac
 import re
+import secrets
 import uuid
 from .local import Conflict
 from .owner import identifier, text
@@ -12,10 +17,21 @@ from .owner import identifier, text
 FIELDS = {'id', 'conversation_id', 'question', 'answer', 'error', 'provider', 'model'}
 PROVIDERS = {'openai', 'deepseek', 'ollama'}
 MODEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9._:/-]{0,119}')
-# Key-shaped text is removed even when this process has no provider key loaded.
-KEY_SHAPED = re.compile(r'(?:sk|rk|pk)-(?:ant-|proj-|live-|test-|or-)?[A-Za-z0-9_\-]{16,}')
-BEARER = re.compile(r'Bearer\s+[A-Za-z0-9\-._~+/]{20,}={0,2}')
+ASCII_RUN = re.compile(r'[!-~]+')
+# Prefix shapes, including short sk- tokens and case variants. The tail is at
+# least 8 characters so a bare "sk-" in prose is left alone.
+PREFIX_KEY = re.compile(r'(?:sk|rk|pk)[-_](?:ant-|proj-|live-|test-|or-)?[A-Za-z0-9_\-]{8,}', re.I)
+BEARER = re.compile(r'bearer\s+[A-Za-z0-9\-._~+/]{8,}={0,2}', re.I)
+# Exactly 16 uppercase letters/digits. Callers require both a letter and a digit
+# so tickers, ISINs, and long numbers do not match.
+AV_KEY = re.compile(r'(?<![A-Z0-9])[A-Z0-9]{16}(?![A-Z0-9])')
+# token.digits with a letter in the token, so prices such as 178.32 do not match.
+# EODHD keys look like hex.digits; the letter requirement also rejects long numeric prices.
+EODHD_KEY = re.compile(r'(?<![A-Za-z0-9])(?=[0-9A-Za-z]*[A-Za-z])[0-9A-Za-z]{8,}\.[0-9]{4,}(?![A-Za-z0-9])')
+# 32 hex digits, a dot, then a secret that contains a letter (GLM-style).
+GLM_KEY = re.compile(r'(?<![A-Za-z0-9])[0-9A-Fa-f]{32}\.(?=[A-Za-z0-9]*[A-Za-z])[A-Za-z0-9]{8,}(?![A-Za-z0-9])')
 REDACTED = '[已隐藏凭据]'
+HMAC_METADATA = 'ask_key_hmac_secret'
 
 
 def _plain(value, limit):
@@ -25,18 +41,109 @@ def _plain(value, limit):
 
 
 def _known_secrets(secrets):
-    return sorted((secret for secret in secrets if isinstance(secret, str) and len(secret) >= 12), key=len, reverse=True)
+    return sorted((secret for secret in secrets if isinstance(secret, str) and secret), key=len, reverse=True)
 
 
-def _contains_secret(value, secrets):
-    return bool(KEY_SHAPED.search(value) or BEARER.search(value) or any(secret in value for secret in _known_secrets(secrets)))
+def _shape_spans(value):
+    spans = [match.span() for pattern in (PREFIX_KEY, BEARER, EODHD_KEY, GLM_KEY) for match in pattern.finditer(value)]
+    for match in AV_KEY.finditer(value):
+        token = match.group()
+        if any(character.isalpha() for character in token) and any(character.isdigit() for character in token):
+            spans.append(match.span())
+    return spans
 
 
-def _redact(value, secrets):
+def _digest(secret, value):
+    return hmac.new(secret, value.encode(), hashlib.sha256).hexdigest()
+
+
+def _install_secret(store):
+    with store.transaction() as db:
+        row = db.execute('SELECT value FROM metadata WHERE key=?', (HMAC_METADATA,)).fetchone()
+        if row:
+            return bytes.fromhex(row[0])
+        secret = secrets.token_bytes(32)
+        db.execute('INSERT INTO metadata VALUES (?,?)', (HMAC_METADATA, secret.hex()))
+        return secret
+
+
+def _stored_digests(store):
+    with store.connection() as db:
+        db.execute('BEGIN')
+        return [(row[0], row[1]) for row in db.execute('SELECT length,digest FROM ask_seen_key_digests')]
+
+
+def remember_key(store, key):
+    if not isinstance(key, str) or not key or len(key) > 512 or '\x00' in key:
+        return
+    secret = _install_secret(store)
+    digest = _digest(secret, key)
+    with store.transaction() as db:
+        db.execute('INSERT INTO ask_seen_key_digests(length,digest) VALUES (?,?) ON CONFLICT DO NOTHING', (len(key), digest))
+
+
+def _digest_spans(value, secret, digests):
+    if not digests:
+        return []
+    by_length = {}
+    for length, digest in digests:
+        if isinstance(length, int) and length > 0:
+            by_length.setdefault(length, set()).add(digest)
+    spans = []
+    for run in ASCII_RUN.finditer(value):
+        token = run.group()
+        origin = run.start()
+        for length, hashes in by_length.items():
+            if len(token) < length:
+                continue
+            for index in range(len(token) - length + 1):
+                piece = token[index:index + length]
+                if _digest(secret, piece) in hashes:
+                    spans.append((origin + index, origin + index + length))
+    return spans
+
+
+def _apply(value, spans):
+    if not spans:
+        return value
+    spans = sorted(spans)
+    merged = []
+    for start, end in spans:
+        if merged and start <= merged[-1][1]:
+            merged[-1] = (merged[-1][0], max(merged[-1][1], end))
+        else:
+            merged.append([start, end])
+    parts = []
+    cursor = 0
+    for start, end in merged:
+        if start < cursor:
+            continue
+        parts.append(value[cursor:start])
+        parts.append(REDACTED)
+        cursor = end
+    parts.append(value[cursor:])
+    return ''.join(parts)
+
+
+def _redact(value, secrets, store):
     for secret in _known_secrets(secrets):
-        value = value.replace(secret, REDACTED)
-    value = KEY_SHAPED.sub(REDACTED, value)
-    return BEARER.sub(REDACTED, value)
+        remember_key(store, secret)
+    spans = []
+    for secret in _known_secrets(secrets):
+        start = 0
+        while True:
+            found = value.find(secret, start)
+            if found < 0:
+                break
+            spans.append((found, found + len(secret)))
+            start = found + len(secret)
+    spans.extend(_shape_spans(value))
+    spans.extend(_digest_spans(value, _install_secret(store), _stored_digests(store)))
+    return _apply(value, spans)
+
+
+def _contains_secret(value, secrets, store):
+    return _redact(value, secrets, store) != value
 
 
 def _turns(db, conversation_id):
@@ -77,15 +184,15 @@ def save_turn(store, body, secrets=()):
     conversation_id = body['conversation_id']
     if conversation_id is not None:
         identifier(conversation_id)
-    question = _redact(text(body['question'], 4000), secrets)
-    answer = _redact(_plain(body['answer'], 30000), secrets)
-    error = _redact(_plain(body['error'], 4000), secrets)
+    question = _redact(text(body['question'], 4000), secrets, store)
+    answer = _redact(_plain(body['answer'], 30000), secrets, store)
+    error = _redact(_plain(body['error'], 4000), secrets, store)
     if not answer.strip() and not error.strip():
         raise ValueError('incomplete turn')
     provider, model = body['provider'], body['model']
     if provider not in PROVIDERS or not isinstance(model, str) or not MODEL.fullmatch(model):
         raise ValueError('invalid provider')
-    if _contains_secret(provider, secrets) or _contains_secret(model, secrets):
+    if _contains_secret(provider, secrets, store) or _contains_secret(model, secrets, store):
         raise ValueError('invalid provider')
     now = datetime.now(timezone.utc).isoformat()
     with store.transaction() as db:
