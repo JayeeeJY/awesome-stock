@@ -256,20 +256,28 @@ def test_failed_turn_is_saved_without_material(app):
     assert 'context' not in row and 'payload' not in row and 'material' not in row
 
 
-GATE_CANARIES = {
-    'sk-VERA': 'sk-VERA-CANARY-123456',
+# Shape rules still catch these without the key being configured.
+SHAPE_CANARIES = {
     'sk-ant-VERA': 'sk-ant-VERA-CANARY-abcdefghijklmnop',
     'sk-proj-VERA': 'sk-proj-VERACANARYabcdefghijklmnop0123',
-    'rk-VERA': 'rk-VERA-CANARY-1234567890',
-    'pk-VERA': 'pk-VERA-CANARY-1234567890',
     'Bearer': 'Bearer xyzVERACANARY1234567890abcd',
     'bearer(lower)': 'bearer xyzVERACANARYlower1234567890',
-    'SK-(upper)': 'SK-VERA-CANARY-UPPER-123456',
     'sk_live_(underscore)': 'sk_live_VERACANARY1234567890abcd',
+    'DeepSeek key(configured pre)': 'sk-ve7a0c1d2e3f4a5b6c7d8e9f0a1b2c3d',
+}
+# Hyphenated or short tails. Redacted only after that exact key was configured.
+CONFIGURED_ONLY_CANARIES = {
+    'sk-VERA': 'sk-VERA-CANARY-123456',
+    'rk-VERA': 'rk-VERA-CANARY-1234567890',
+    'pk-VERA': 'pk-VERA-CANARY-1234567890',
+    'SK-(upper)': 'SK-VERA-CANARY-UPPER-123456',
     'sk-short(<16)': 'sk-VERA12345',
+}
+GATE_CANARIES = {
+    **SHAPE_CANARIES,
+    **CONFIGURED_ONLY_CANARIES,
     'AV bare(configured pre)': 'VERA7Z1D2D74NVWM',
     'EODHD bare(configured pre)': '65e1ve7a0b9c42.71828182',
-    'DeepSeek key(configured pre)': 'sk-ve7a0c1d2e3f4a5b6c7d8e9f0a1b2c3d',
 }
 UNCONFIGURED_SHAPES = {
     'AV bare(never configured)': 'QX9VERA2D74NVWMZ',
@@ -291,6 +299,8 @@ def test_restart_redacts_every_provider_key_shape_and_keeps_ordinary_text(tmp_pa
     assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
     auth = login(app)
     configure_key(app, auth, {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': GATE_CANARIES['DeepSeek key(configured pre)'], 'enabled': True})
+    for canary in CONFIGURED_ONLY_CANARIES.values():
+        configure_key(app, auth, {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': canary, 'enabled': True})
     configure_key(app, auth, {'kind': 'data', 'provider': 'alphavantage', 'model': '', 'key': GATE_CANARIES['AV bare(configured pre)'], 'enabled': True})
     configure_key(app, auth, {'kind': 'data_hk', 'provider': 'eodhd', 'model': '', 'key': GATE_CANARIES['EODHD bare(configured pre)'], 'enabled': True})
     restart = application(port=4322, data_dir=data)
@@ -327,11 +337,19 @@ FALSE_POSITIVES = (
     'desk-research',
     'task-oriented',
     'SK-Hynix',
+    'SK-Hynix-2025',
+    'SK-Hynix-Q3-2025-earnings',
+    'pk-2026-review',
+    'rk-model-v2-final',
+    'sk-2025-plan',
     'bearer instruments',
     'Bearer certificates',
     '1234567890123456',
+    'trade 4829103756182934',
+    'TRD4829103756182934',
     'report20261101.1234',
     'democracy',
+    'sk-VERA12345',
 )
 
 

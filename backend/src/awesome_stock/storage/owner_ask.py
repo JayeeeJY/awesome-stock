@@ -17,11 +17,12 @@ from .owner import identifier, text
 FIELDS = {'id', 'conversation_id', 'question', 'answer', 'error', 'provider', 'model'}
 PROVIDERS = {'openai', 'deepseek', 'ollama'}
 MODEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9._:/-]{0,119}')
-# Left boundary so "risk-adjusted" is not read as a key. A plain sk-/rk-/pk-
-# tail must contain a digit; the ant-/proj-/live-/test-/or- forms may be letters.
-# That leaves SK-Hynix and pk-performance-benchmark untouched.
+# Left boundary so "risk-adjusted" is not read as a key. The explicit
+# ant-/proj-/live-/test-/or- forms stay. A plain tail is one contiguous
+# [A-Za-z0-9_] run of at least 20 characters with both a letter and a digit,
+# and it must end at a right boundary so "SK-Hynix-2025" is left alone.
 PREFIX_KEY = re.compile(
-    r'(?<![A-Za-z0-9])(?:sk|rk|pk)[-_](?:(?:ant-|proj-|live-|test-|or-)[A-Za-z0-9_\-]{8,}|(?=[A-Za-z0-9_\-]*[0-9])[A-Za-z0-9_\-]{8,})',
+    r'(?<![A-Za-z0-9])(?:sk|rk|pk)[-_](?:(?:ant-|proj-|live-|test-|or-)[A-Za-z0-9_\-]{8,}|(?=[A-Za-z0-9_]*[A-Za-z])(?=[A-Za-z0-9_]*[0-9])[A-Za-z0-9_]{20,}(?![A-Za-z0-9_\-]))',
     re.I)
 # "bearer instruments" has no digit. A real bearer token is long and contains one.
 BEARER = re.compile(r'(?<![A-Za-z0-9])bearer\s+(?=[A-Za-z0-9\-._~+/]*[0-9])[A-Za-z0-9\-._~+/]{16,}={0,2}', re.I)
