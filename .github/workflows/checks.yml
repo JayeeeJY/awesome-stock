@@ -67,6 +67,8 @@ jobs:
           npm run test:settings-appearance
       - name: Model configuration and explicit connection test (isolated fixture)
         run: npm run test:connections
+      - name: Ask conversation persistence (isolated fixture)
+        run: npm run test:ask-persist
       - name: Daily AI explicit consent browser flow (isolated fixture)
         run: npm run test:daily-ai
       - name: BYOK batch preview, retry, pause and long-draft browser flows (isolated fixture)

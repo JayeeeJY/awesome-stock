@@ -61,10 +61,18 @@ def test_config_rejects_untrusted_destination_and_bad_values(patch):
     with pytest.raises(ValueError):Connections().configure(dict(kind='ai',provider='openai',model='test',key=KEY,enabled=True)|patch)
 
 def test_api_never_persists_credentials_and_logout_clears(app):
-    auth=login(app);before=app.store.path.read_bytes()
+    auth=login(app)
     config=dict(kind='ai',provider='openai',model='test',key=KEY,enabled=True)
     r=request(app,'/api/v1/owner/connections','POST',config,**auth);assert r['status']==200 and KEY not in json.dumps(r)
-    assert app.store.path.read_bytes()==before
+    # The raw key stays out of the database. Only an HMAC digest is recorded so a later restart can still redact it.
+    blob=app.store.path.read_bytes()
+    for suffix in ('-wal','-shm','-journal'):
+        extra=app.store.path.parent/(app.store.path.name+suffix)
+        if extra.is_file():blob+=extra.read_bytes()
+    assert KEY.encode() not in blob
+    with app.store.connection() as db:
+        assert db.execute('SELECT count(*) FROM ask_seen_key_digests').fetchone()[0]==1
+        assert KEY not in db.execute("SELECT value FROM metadata WHERE key='ask_key_hmac_secret'").fetchone()[0]
     assert KEY not in json.dumps(request(app,'/api/v1/owner/export',**auth))
     request(app,'/api/v1/auth/logout','POST',{},**auth);assert app.connections.status()['ai']['enabled'] is False
 

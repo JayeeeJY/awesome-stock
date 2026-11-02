@@ -8,6 +8,7 @@
     "test:ui": "node tests/owner/browser_shell.mjs",
     "test:business": "node tests/owner/browser_business.mjs",
     "test:vue": "node tests/owner/browser_vue.mjs",
+    "test:ask-persist": "node tests/owner/browser_ask_persist.mjs",
     "test:planning": "node tests/owner/browser_plan_batch.mjs && node tests/owner/browser_allocation_layers.mjs && node tests/owner/browser_plan_execution.mjs && node tests/owner/browser_plan_trade.mjs",
     "test:diagnosis": "node tests/owner/browser_diagnosis.mjs",
     "test:daily-ai": "node tests/owner/browser_daily_ai.mjs",

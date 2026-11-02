@@ -115,12 +115,12 @@ def _headers(environ: dict[str, object]) -> dict[str, str]:
     return result
 
 
-def _json_body(environ: dict[str, object]) -> dict[str, object]:
+def _json_body(environ: dict[str, object], *, max_bytes: int = 65536) -> dict[str, object]:
     try:
         length = int(environ.get("CONTENT_LENGTH") or 0)
     except (TypeError, ValueError) as exc:
         raise ValueError("invalid content length") from exc
-    if length < 0 or length > 65536:
+    if length < 0 or length > max_bytes:
         raise ValueError("request body is too large")
     payload = environ["wsgi.input"].read(length) if length else b"{}"
     value = json.loads(payload.decode("utf-8"))
