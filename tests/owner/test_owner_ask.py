@@ -415,6 +415,50 @@ def test_reset_forgets_seen_key_digests(tmp_path):
     assert saved['body']['turns'][0]['question'] == 'after reset VERA7Z1D2D74NVWM'
 
 
+GLUED_KEYS = {
+    'av': 'VERA7Z1D2D74NVWM',
+    'eod': '65e1ve7a0b9c42.71828182',
+    'sk': 'sk-VERA-CANARY-123456',
+    'rk': 'rk-VERA-CANARY-1234567890',
+    'pk': 'pk-VERA-CANARY-1234567890',
+}
+
+
+def _assert_chinese_glue_redacted(target):
+    auth = login(target)
+    for key in GLUED_KEYS.values():
+        question = f'我的密钥是{key}谢谢'
+        answer = f'回答{key}完毕'
+        error = f'报错{key}结束'
+        saved = save(target, auth, turn(question=question, answer=answer, error=error, provider='deepseek', model='deepseek-flash'))
+        assert saved['status'] == 200, saved['body']
+        row = saved['body']['turns'][0]
+        assert key not in row['question'] and key not in row['answer'] and key not in row['error']
+        assert key not in saved['body']['title']
+        assert '我的密钥是' in row['question'] and '谢谢' in row['question']
+        assert '回答' in row['answer'] and '完毕' in row['answer']
+        assert '报错' in row['error'] and '结束' in row['error']
+    blob = database_bytes(target.store)
+    for key in GLUED_KEYS.values():
+        assert key.encode() not in blob
+
+
+def test_configured_key_glued_to_chinese_is_redacted_before_and_after_restart(tmp_path):
+    data = tmp_path.resolve() / 'chinese-glue'
+    app = application(port=4322, data_dir=data)
+    assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
+    auth = login(app)
+    configure_key(app, auth, {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': GLUED_KEYS['sk'], 'enabled': True})
+    configure_key(app, auth, {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': GLUED_KEYS['rk'], 'enabled': True})
+    configure_key(app, auth, {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': GLUED_KEYS['pk'], 'enabled': True})
+    configure_key(app, auth, {'kind': 'data', 'provider': 'alphavantage', 'model': '', 'key': GLUED_KEYS['av'], 'enabled': True})
+    configure_key(app, auth, {'kind': 'data_hk', 'provider': 'eodhd', 'model': '', 'key': GLUED_KEYS['eod'], 'enabled': True})
+    _assert_chinese_glue_redacted(app)
+    restart = application(port=4322, data_dir=data)
+    assert restart.connections.config == {}
+    _assert_chinese_glue_redacted(restart)
+
+
 def test_duplicate_turn_conflict_uses_storage_guard(app):
     # The HTTP conflict above covers the route. This guards a direct storage mismatch too.
     from awesome_stock.storage.owner_ask import save_turn

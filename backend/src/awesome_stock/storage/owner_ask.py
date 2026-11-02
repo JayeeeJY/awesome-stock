@@ -46,6 +46,12 @@ def _shape_spans(value):
     return [match.span() for pattern in (PREFIX_KEY, BEARER) for match in pattern.finditer(value)]
 
 
+def _ascii_alnum(character):
+    # str.isalnum() treats Han characters as alphanumeric, so a key glued to
+    # Chinese would look like the middle of a larger token and be kept.
+    return '0' <= character <= '9' or 'A' <= character <= 'Z' or 'a' <= character <= 'z'
+
+
 def _bounded(value, secret):
     spans = []
     start = 0
@@ -54,9 +60,9 @@ def _bounded(value, secret):
         found = value.find(secret, start)
         if found < 0:
             break
-        before = found == 0 or not value[found - 1].isalnum()
+        before = found == 0 or not _ascii_alnum(value[found - 1])
         end = found + size
-        after = end == len(value) or not value[end].isalnum()
+        after = end == len(value) or not _ascii_alnum(value[end])
         if before and after:
             spans.append((found, end))
         start = found + 1
@@ -106,11 +112,11 @@ def _digest_spans(value, secret, digests):
     spans = []
     size = len(value)
     for index in range(size):
-        if index and value[index - 1].isalnum():
+        if index and _ascii_alnum(value[index - 1]):
             continue
         for length, hashes in by_length.items():
             end = index + length
-            if end > size or (end < size and value[end].isalnum()):
+            if end > size or (end < size and _ascii_alnum(value[end])):
                 continue
             if _digest(secret, value[index:end]) in hashes:
                 spans.append((index, end))
