@@ -13,8 +13,12 @@ from urllib.parse import urlencode,urlsplit,parse_qs
 from awesome_stock.storage.owner_business import symbol, number, day, text
 
 from awesome_stock.research.market_identity import identity, valuation_day
+from awesome_stock.storage.owner_ask import MIN_REMEMBERED_KEY, PUBLIC_DEMO_KEY
 
 class ConnectionFailure(Exception):pass
+
+class ShortKeyRejected(ValueError):
+    """A newly entered API key is shorter than 12 characters and is not the public demo value."""
 
 # Fixed destinations prevent arbitrary URL, proxy, redirect, and cross-provider secret forwarding.
 def transport(host,path,body,key='',local=False,local_host='127.0.0.1'):
@@ -50,7 +54,7 @@ class Connections:
     def _public(self,kind):
         c=self.config.get(kind)
         return {'enabled':bool(c),'provider':c['provider'] if c else None,'model':c.get('model') if c else None,'tested':c.get('tested',False) if c else False}
-    def configure(self,body):
+    def configure(self,body,legacy_short=None):
         if not isinstance(body,dict) or set(body)!={'kind','provider','model','key','enabled'}:raise ValueError('invalid config')
         kind=body['kind']
         if kind not in {'ai','data','data_hk'} or type(body['enabled']) is not bool:raise ValueError('invalid kind')
@@ -62,7 +66,10 @@ class Connections:
         if not isinstance(key,str) or len(key)>512 or any(ord(x)<33 or ord(x)>126 for x in key):raise ValueError('invalid key')
         if p!='ollama' and not key:raise ValueError('key required')
         if p=='ollama' and key:raise ValueError('local has no key')
-        if key:self.seen_secrets.add(key)
+        if key and key!=PUBLIC_DEMO_KEY and len(key)<MIN_REMEMBERED_KEY:
+            held=any((self.config.get(name) or {}).get('key')==key for name in ('ai','data','data_hk'))
+            if not held and not (callable(legacy_short) and legacy_short(key) is True):raise ShortKeyRejected()
+        if key and key!=PUBLIC_DEMO_KEY:self.seen_secrets.add(key)
         if kind=='ai' and (not isinstance(model,str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._:/-]{0,119}',model)):raise ValueError('model required')
         if kind in {'data','data_hk'} and model!='':raise ValueError('data has no model')
         self.config[kind]={'provider':p,'model':model,'key':key,'tested':False};self.previews.clear();self.receipts.clear();self.histories.clear();self.companies.clear();self.news.clear()
@@ -275,7 +282,7 @@ class Connections:
                 output=raw['message']['content']
             except (TypeError,KeyError,ValueError):raise ConnectionFailure('invalid_model_output') from None
         if not isinstance(output,str) or not output.strip() or len(output)>30000:raise ConnectionFailure('invalid_model_output')
-        if c['key']:output=output.replace(c['key'],'[已隐藏凭据]')
+        if c['key'] and c['key']!=PUBLIC_DEMO_KEY:output=output.replace(c['key'],'[已隐藏凭据]')
         cnow=self.config['ai'];cnow['tested']=True
         result={'draft':output,'provider':c['provider'],'model':c['model'],'generated_at':datetime.now(timezone.utc).isoformat(),'context':payload,'confirmed_by_user':False,'stored':False,'fallback':False}
         if payload['task']=='research_synthesis':result.update(synthesis=parse_synthesis(output),receipt_id=token)

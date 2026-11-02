@@ -24,7 +24,7 @@ from .owner_info import academy, settings
 from awesome_stock.storage import owner_business as business, owner_privacy as privacy, owner_diagnosis as diagnosis, owner_diagnosis_scope as diagnosis_scope, owner_diagnosis_sources as diagnosis_sources, owner_daily as daily, owner_schedule as schedule, owner_coach as coach, owner_coach_period as coach_period, owner_feedback as feedback, owner_constitution as constitution, owner_trade_context as trade_context, owner_research_reports as research_reports, owner_fx as fx
 from .owner_scheduler import ScheduledOwnerServer
 from awesome_stock.storage import owner_market_history as market_history, owner_research_technical as research_technical, owner_research_position as research_position, owner_news as news, owner_company as company, owner_research_memory as research_memory
-from .owner_connections import Connections, ConnectionFailure
+from .owner_connections import Connections, ConnectionFailure, ShortKeyRejected
 from .server import _cookies, _headers, _json_body, _response, _file_response, QuietRequestHandler
 
 
@@ -57,9 +57,9 @@ def connection_secrets(connections):
     found=[]
     for kind in ('ai','data','data_hk'):
         key=(connections.config.get(kind) or {}).get('key') or ''
-        if isinstance(key,str) and key and key not in found:found.append(key)
+        if isinstance(key,str) and key and key!=owner_ask.PUBLIC_DEMO_KEY and key not in found:found.append(key)
     for key in getattr(connections,'seen_secrets',()):
-        if isinstance(key,str) and key and key not in found:found.append(key)
+        if isinstance(key,str) and key and key!=owner_ask.PUBLIC_DEMO_KEY and key not in found:found.append(key)
     return tuple(found)
 
 
@@ -169,10 +169,12 @@ def application(*,port,data_dir,ui_dist=None):
             if path=='/api/v1/owner/connections' and method=='GET':return respond(start,ApiResponse(200,data=connections.status()))
             if path=='/api/v1/owner/connections' and method=='POST':
                 body=_json_body(env)
-                result=connections.configure(body)
+                result=connections.configure(body,legacy_short=lambda candidate:owner_ask.is_legacy_short_key(store,candidate))
                 if isinstance(body,dict) and body.get('enabled') is True:
                     key=body.get('key')
-                    if isinstance(key,str) and key:owner_ask.remember_key(store,key)
+                    if isinstance(key,str) and key and key!=owner_ask.PUBLIC_DEMO_KEY:
+                        if len(key)<owner_ask.MIN_REMEMBERED_KEY:owner_ask.remember_legacy_short_key(store,key)
+                        else:owner_ask.remember_key(store,key)
                 return respond(start,ApiResponse(200,data=result))
             if path=='/api/v1/owner/news-fetch' and method=='POST':return respond(start,ApiResponse(200,data=connections.news_feed(_json_body(env))))
             if path=='/api/v1/owner/news-snapshots' and method=='POST':return respond(start,ApiResponse(200,data=news.save(store,_json_body(env),connections)))
@@ -269,9 +271,11 @@ def application(*,port,data_dir,ui_dist=None):
         except AccountHasHistory:return respond(start,error(409,'account_has_history'))
         except Conflict:return respond(start,error(409,'local_conflict'))
         except LedgerInvalid:return respond(start,error(422,'owner_ledger_invalid'))
+        except ShortKeyRejected:return respond(start,error(400,'connection_key_too_short'))
         except (ValueError,TypeError,KeyError):return respond(start,error(400,'connection_config_invalid' if path=='/api/v1/owner/connections' else 'connection_request_invalid' if path in {'/api/v1/owner/quote-fetch','/api/v1/owner/ai-preview','/api/v1/owner/ai-generate'} else 'ask_invalid' if path in ASK_PATHS else 'privacy_invalid' if path in {'/api/v1/owner/reset','/api/v1/owner/delete-backup'} else 'business_invalid' if path in {'/api/v1/owner/business','/api/v1/owner/screen','/api/v1/owner/handoff','/api/v1/owner/planning','/api/v1/owner/trends'} else 'owner_cash_invalid' if path=='/api/v1/owner/cash-flows' else 'owner_transfer_invalid' if path in {'/api/v1/owner/import-preview','/api/v1/owner/import-confirm'} else 'owner_plan_invalid' if path=='/api/v1/owner/plans' else 'owner_evolve_invalid' if path in {'/api/v1/owner/evolve','/api/v1/owner/journal'} else 'owner_research_invalid' if path in {'/api/v1/owner/documents','/api/v1/owner/trade-reference'} else 'owner_invalid'))
         except (OSError,sqlite3.Error):return respond(start,error(503,'local_unavailable'))
     app.store=store;app.sessions=sessions;app.connections=connections
+    owner_ask.adopt_configured_keys(store,connections)
     return app
 
 

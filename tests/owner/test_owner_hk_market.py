@@ -85,7 +85,7 @@ def test_connections_and_credentials_never_cross_provider_boundaries():
     with pytest.raises(conn.ConnectionFailure):c.market_history({'symbol':'TEST'})
     with pytest.raises(conn.ConnectionFailure):c.company_overview({'symbol':'TEST'})
     assert not calls
-    c.configure({'kind':'data','provider':'alphavantage','key':'other-key','model':'','enabled':True})
+    c.configure({'kind':'data','provider':'alphavantage','key':'other-key-xx','model':'','enabled':True})
     p=c.market_history({'symbol':'00700','market':'HK'})
     assert all(KEY in call[1] and 'other-key' not in call[1] for call in calls)
     assert KEY not in json.dumps(c.status()) and 'other-key' not in json.dumps(c.status())

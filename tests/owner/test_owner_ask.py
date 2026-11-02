@@ -365,10 +365,10 @@ def test_shape_rules_do_not_rewrite_ordinary_text(tmp_path):
         row = saved['body']['turns'][0]
         assert row['question'] == phrase and row['answer'] == phrase and row['error'] == phrase and saved['body']['title'] == phrase
         assert phrase.encode() in database_bytes(app.store)
-    # In-process exact match of a short key stays on token boundaries.
+    # demo is the public demonstration value, not a secret, so the word stays.
     bordered = save(app, auth, turn(question='democracy uses demo today', answer='k9x2board', error=''))
     assert bordered['status'] == 200
-    assert bordered['body']['turns'][0]['question'] == 'democracy uses [已隐藏凭据] today'
+    assert bordered['body']['turns'][0]['question'] == 'democracy uses demo today'
     assert bordered['body']['turns'][0]['answer'] == 'k9x2board'
 
 
@@ -382,7 +382,8 @@ def test_disabled_connection_and_short_keys_do_not_grow_the_digest_table(tmp_pat
     assert disabled['status'] == 200
     with app.store.connection() as db:
         assert db.execute('SELECT count(*) FROM ask_seen_key_digests').fetchone()[0] == 0
-    configure_key(app, auth, {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': 'k3Y', 'enabled': True})
+    rejected_short = request(app, '/api/v1/owner/connections', 'POST', {'kind': 'ai', 'provider': 'deepseek', 'model': 'deepseek-flash', 'key': 'k3Y', 'enabled': True}, **auth)
+    assert rejected_short['status'] == 400 and rejected_short['body']['error']['code'] == 'connection_key_too_short'
     with app.store.connection() as db:
         assert db.execute('SELECT count(*) FROM ask_seen_key_digests').fetchone()[0] == 0
     first = 'sk-oldest-key-' + ('a' * 20)
@@ -465,3 +466,155 @@ def test_duplicate_turn_conflict_uses_storage_guard(app):
     saved = save_turn(app.store, turn())
     with pytest.raises(Conflict):
         save_turn(app.store, turn(id=saved['turns'][0]['id'], answer='changed'))
+
+
+SHORT_KEY_MESSAGE = '这条 API Key 不到 12 个字符，已拒绝，没有保存。请换一条不少于 12 个字符的 Key。公开演示值 demo 除外，可以照常配置。'
+
+
+def assert_secret_not_in_data_dir(data, secret):
+    needle = secret.encode()
+    database = data / 'owner.sqlite3'
+    assert database.is_file()
+    assert needle not in database.read_bytes()
+    for suffix in ('-wal', '-journal'):
+        extra = data / ('owner.sqlite3' + suffix)
+        if extra.is_file():
+            assert needle not in extra.read_bytes(), suffix
+    backups = data / 'backups'
+    assert backups.is_dir()
+    files = [path for path in backups.rglob('*') if path.is_file()]
+    assert files
+    for path in files:
+        assert needle not in path.read_bytes(), path
+
+
+def test_new_eleven_character_key_is_rejected_and_absent_from_database_bytes(tmp_path):
+    short = 'Ab3dEf7hIjK'
+    assert len(short) == 11
+    data = tmp_path.resolve() / 'reject-short'
+    app = application(port=4322, data_dir=data)
+    assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
+    auth = login(app)
+    rejected = request(app, '/api/v1/owner/connections', 'POST', {'kind': 'ai', 'provider': 'openai', 'model': 'gpt-test', 'key': short, 'enabled': True}, **auth)
+    assert rejected['status'] == 400
+    assert rejected['body']['error']['code'] == 'connection_key_too_short'
+    assert rejected['body']['error']['message'] == SHORT_KEY_MESSAGE
+    assert short not in json.dumps(rejected['body'], ensure_ascii=False)
+    assert app.connections.config == {}
+    assert short not in app.connections.seen_secrets
+    with app.store.connection() as db:
+        assert db.execute('SELECT count(*) FROM ask_seen_key_digests').fetchone()[0] == 0
+    app.store.backup()
+    assert_secret_not_in_data_dir(data, short)
+
+
+def test_public_demo_key_is_not_a_secret_and_false_positives_stay_byte_identical(tmp_path):
+    data = tmp_path.resolve() / 'demo-key'
+    app = application(port=4322, data_dir=data)
+    assert request(app, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
+    auth = login(app)
+    for lookalike in ('Demo', 'DEMO'):
+        rejected = request(app, '/api/v1/owner/connections', 'POST', {'kind': 'data', 'provider': 'alphavantage', 'model': '', 'key': lookalike, 'enabled': True}, **auth)
+        assert rejected['status'] == 400 and rejected['body']['error']['code'] == 'connection_key_too_short', lookalike
+        assert lookalike not in json.dumps(rejected['body'], ensure_ascii=False)
+    configured = request(app, '/api/v1/owner/connections', 'POST', {'kind': 'data', 'provider': 'alphavantage', 'model': '', 'key': 'demo', 'enabled': True}, **auth)
+    assert configured['status'] == 200, configured['body']
+    assert configured['body']['data']['enabled'] is True
+    assert configured['body']['data']['provider'] == 'alphavantage'
+    assert app.connections.config['data']['key'] == 'demo'
+    assert 'demo' not in app.connections.seen_secrets
+    with app.store.connection() as db:
+        assert db.execute('SELECT count(*) FROM ask_seen_key_digests').fetchone()[0] == 0
+    for phrase in FALSE_POSITIVES:
+        saved = save(app, auth, turn(question=phrase, answer=phrase, error=phrase))
+        assert saved['status'] == 200, phrase
+        row = saved['body']['turns'][0]
+        assert row['question'] == phrase and row['answer'] == phrase and row['error'] == phrase and saved['body']['title'] == phrase
+        assert phrase.encode() in database_bytes(app.store)
+    sentence = 'democracy uses demo today'
+    bordered = save(app, auth, turn(question=sentence, answer='k9x2board', error=''))
+    assert bordered['status'] == 200
+    assert bordered['body']['turns'][0]['question'] == sentence
+    assert bordered['body']['turns'][0]['answer'] == 'k9x2board'
+    assert sentence.encode() in database_bytes(app.store)
+    assert '[已隐藏凭据]'.encode() not in database_bytes(app.store)
+
+
+def test_v110_configured_short_key_is_redacted_before_and_after_restart(tmp_path, monkeypatch):
+    short = 'Vw8kQ2mN4pL'
+    other = 'nEwSh0rt11x'
+    assert len(short) == 11 and len(other) == 11 and short != other
+    data = tmp_path.resolve() / 'v110-short-key'
+    prepared = application(port=4322, data_dir=data)
+    assert request(prepared, '/api/v1/owner/setup', 'POST', {'username': 'tester', 'password': PASSWORD})['status'] == 200
+    with prepared.store.transaction() as db:
+        db.execute('DROP TABLE IF EXISTS ask_turns')
+        db.execute('DROP TABLE IF EXISTS ask_conversations')
+        db.execute('DROP TABLE IF EXISTS ask_seen_key_digests')
+        db.execute("DELETE FROM metadata WHERE key='ask_key_hmac_secret'")
+        db.execute('PRAGMA user_version=5')
+    with sqlite3.connect(data / 'owner.sqlite3') as db:
+        assert db.execute('PRAGMA user_version').fetchone()[0] == 5
+        assert short.encode() not in (data / 'owner.sqlite3').read_bytes()
+
+    import awesome_stock.runtime.owner as owner_runtime
+    from awesome_stock.runtime.owner_connections import Connections
+
+    class HoldingV110Config(Connections):
+        def __init__(self, send=None):
+            super().__init__(send)
+            # v1.1.0 kept the key in process config and did not write it to the data directory.
+            self.config['ai'] = {'provider': 'openai', 'model': 'gpt-test', 'key': short, 'tested': False}
+
+    monkeypatch.setattr(owner_runtime, 'Connections', HoldingV110Config)
+    upgraded = application(port=4322, data_dir=data)
+    monkeypatch.setattr(owner_runtime, 'Connections', Connections)
+    with upgraded.store.connection() as db:
+        assert db.execute('PRAGMA user_version').fetchone()[0] == 8
+        assert db.execute('SELECT length FROM ask_seen_key_digests').fetchall() == [(11,)]
+    assert upgraded.connections.config['ai']['key'] == short
+    auth = login(upgraded)
+    edited = request(upgraded, '/api/v1/owner/connections', 'POST', {'kind': 'ai', 'provider': 'openai', 'model': 'gpt-test-edited', 'key': short, 'enabled': True}, **auth)
+    assert edited['status'] == 200, edited['body']
+    assert edited['body']['ai']['model'] == 'gpt-test-edited' and edited['body']['ai']['enabled'] is True
+    assert short not in json.dumps(edited['body'], ensure_ascii=False)
+    assert upgraded.connections.config['ai']['key'] == short
+    rejected = request(upgraded, '/api/v1/owner/connections', 'POST', {'kind': 'ai', 'provider': 'openai', 'model': 'gpt-should-not-stick', 'key': other, 'enabled': True}, **auth)
+    assert rejected['status'] == 400 and rejected['body']['error']['message'] == SHORT_KEY_MESSAGE
+    assert other not in json.dumps(rejected['body'], ensure_ascii=False)
+    assert upgraded.connections.config['ai']['key'] == short
+    assert upgraded.connections.config['ai']['model'] == 'gpt-test-edited'
+
+    def ask(target):
+        auth_now = login(target)
+        question = f'我的密钥是{short}谢谢'
+        answer = f'答案是{short}完毕'
+        error = f'报错{short}结束'
+        saved = save(target, auth_now, turn(question=question, answer=answer, error=error, provider='openai', model='gpt-test'))
+        assert saved['status'] == 200, saved['body']
+        row = saved['body']['turns'][0]
+        assert short not in row['question'] and short not in row['answer'] and short not in row['error']
+        assert short not in saved['body']['title'] and short not in row['model']
+        assert row['question'] == f'我的密钥是[已隐藏凭据]谢谢'
+        assert row['answer'] == '答案是[已隐藏凭据]完毕'
+        assert row['error'] == '报错[已隐藏凭据]结束'
+        assert '我的密钥是' in saved['body']['title'] and '谢谢' in saved['body']['title']
+        poisoned = save(target, auth_now, turn(question='模型名探针', answer='普通回答', provider='openai', model=short))
+        assert poisoned['status'] == 400
+        assert short not in json.dumps(poisoned['body'], ensure_ascii=False)
+
+    ask(upgraded)
+    assert_secret_not_in_data_dir(data, short)
+    assert_secret_not_in_data_dir(data, other)
+    restart = application(port=4322, data_dir=data)
+    assert restart.connections.config == {}
+    assert short not in restart.connections.seen_secrets
+    ask(restart)
+    reloaded = request(restart, '/api/v1/owner/connections', 'POST', {'kind': 'ai', 'provider': 'openai', 'model': 'gpt-reloaded', 'key': short, 'enabled': True}, **login(restart))
+    assert reloaded['status'] == 200, reloaded['body']
+    assert reloaded['body']['ai']['enabled'] is True and reloaded['body']['ai']['model'] == 'gpt-reloaded'
+    still_rejected = request(restart, '/api/v1/owner/connections', 'POST', {'kind': 'ai', 'provider': 'openai', 'model': 'gpt-test', 'key': other, 'enabled': True}, **login(restart))
+    assert still_rejected['status'] == 400 and still_rejected['body']['error']['code'] == 'connection_key_too_short'
+    restart.store.backup()
+    assert_secret_not_in_data_dir(data, short)
+    assert_secret_not_in_data_dir(data, other)

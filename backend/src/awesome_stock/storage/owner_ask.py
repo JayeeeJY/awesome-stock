@@ -1,9 +1,12 @@
 """Persist Ask Awesome questions and answers in the owner database.
 
 Page material, ledger holdings, and provider keys are not stored. Keys are
-memory-only, so a restart cannot reload them. Each configured key is recorded
-as HMAC-SHA256 under a per-install random secret, and Ask writes redact any
-substring with a stored digest plus key-shaped tokens.
+memory-only, so a restart cannot reload the raw value. A key that was enabled
+and is at least MIN_REMEMBERED_KEY characters is recorded as HMAC-SHA256 under
+a per-install random secret. Ask writes redact that exact key, including when
+Chinese text is glued to either side, plus a narrow set of key-shaped tokens.
+The public demo value is not a secret. A short key is recorded only when it
+was already in the live config from before the length rule.
 """
 from datetime import datetime, timezone
 import hashlib
@@ -30,6 +33,8 @@ REDACTED = '[已隐藏凭据]'
 HMAC_METADATA = 'ask_key_hmac_secret'
 SEEN_KEY_DIGEST_CAP = 32
 MIN_REMEMBERED_KEY = 12
+# Public demonstration value. Exact, case-sensitive match. Not a secret.
+PUBLIC_DEMO_KEY = 'demo'
 
 
 def _plain(value, limit):
@@ -39,7 +44,7 @@ def _plain(value, limit):
 
 
 def _known_secrets(secrets):
-    return sorted((secret for secret in secrets if isinstance(secret, str) and secret), key=len, reverse=True)
+    return sorted((secret for secret in secrets if isinstance(secret, str) and secret and secret != PUBLIC_DEMO_KEY), key=len, reverse=True)
 
 
 def _shape_spans(value):
@@ -89,11 +94,7 @@ def _stored_digests(store):
         return [(row[0], row[1]) for row in db.execute('SELECT length,digest FROM ask_seen_key_digests')]
 
 
-def remember_key(store, key):
-    # Short keys are matched only while this process still has them. A digest
-    # would keep redacting them after restart and is too easy to collide with.
-    if not isinstance(key, str) or len(key) < MIN_REMEMBERED_KEY or len(key) > 512 or '\x00' in key:
-        return
+def _store_digest(store, key):
     secret = _install_secret(store)
     digest = _digest(secret, key)
     with store.transaction() as db:
@@ -102,10 +103,61 @@ def remember_key(store, key):
         db.execute('DELETE FROM ask_seen_key_digests WHERE digest NOT IN (SELECT digest FROM ask_seen_key_digests ORDER BY seen_seq DESC LIMIT ?)', (SEEN_KEY_DIGEST_CAP,))
 
 
+def remember_key(store, key):
+    # Newly entered keys shorter than the minimum are rejected at configure
+    # time and are not recorded here. Recording them would keep matching
+    # ordinary short tokens after restart.
+    if not isinstance(key, str) or len(key) < MIN_REMEMBERED_KEY or len(key) > 512 or '\x00' in key or key == PUBLIC_DEMO_KEY:
+        return
+    _store_digest(store, key)
+
+
+def remember_legacy_short_key(store, key):
+    # A short key that v1.1.0 already held in the live config. The raw value
+    # stays in memory only; the digest lets a later restart strip it.
+    if not isinstance(key, str) or key == PUBLIC_DEMO_KEY or '\x00' in key or not 1 <= len(key) < MIN_REMEMBERED_KEY:
+        return
+    _store_digest(store, key)
+
+
+def is_legacy_short_key(store, key):
+    if not isinstance(key, str) or key == PUBLIC_DEMO_KEY or '\x00' in key or not 1 <= len(key) < MIN_REMEMBERED_KEY:
+        return False
+    with store.connection() as db:
+        db.execute('BEGIN')
+        row = db.execute('SELECT value FROM metadata WHERE key=?', (HMAC_METADATA,)).fetchone()
+        if row is None:
+            return False
+        digest = _digest(bytes.fromhex(row[0]), key)
+        return db.execute('SELECT 1 FROM ask_seen_key_digests WHERE digest=? AND length=?', (digest, len(key))).fetchone() is not None
+
+
+def adopt_configured_keys(store, connections):
+    """Fold keys still sitting in the live config into the in-memory matcher.
+
+    v1.1.0 never wrote API keys to the data directory. After a real restart the
+    config is empty and there is nothing to adopt. When this process still has
+    the old config, a short key is hashed so the next restart can strip it.
+    """
+    config = getattr(connections, 'config', {}) or {}
+    seen = getattr(connections, 'seen_secrets', None)
+    for kind in ('ai', 'data', 'data_hk'):
+        current = config.get(kind) or {}
+        key = current.get('key') if isinstance(current, dict) else ''
+        if not isinstance(key, str) or not key or key == PUBLIC_DEMO_KEY:
+            continue
+        if isinstance(seen, set):
+            seen.add(key)
+        if len(key) < MIN_REMEMBERED_KEY:
+            remember_legacy_short_key(store, key)
+        else:
+            remember_key(store, key)
+
+
 def _digest_spans(value, secret, digests):
     by_length = {}
     for length, digest in digests:
-        if isinstance(length, int) and length >= MIN_REMEMBERED_KEY:
+        if isinstance(length, int) and 1 <= length <= 512:
             by_length.setdefault(length, set()).add(digest)
     if not by_length:
         return []
@@ -148,7 +200,10 @@ def _apply(value, spans):
 def _redact(value, secrets, store):
     known = _known_secrets(secrets)
     for secret in known:
-        remember_key(store, secret)
+        if len(secret) < MIN_REMEMBERED_KEY:
+            remember_legacy_short_key(store, secret)
+        else:
+            remember_key(store, secret)
     spans = []
     for secret in known:
         spans.extend(_bounded(value, secret))
