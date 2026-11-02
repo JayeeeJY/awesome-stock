@@ -21,6 +21,7 @@ PUBLIC_MESSAGES = {
 
     'account_has_history': '账户有现金、成交、资金流水或历史业务引用，不能删除。请保留账户以供核对。',
     "connection_config_invalid": "模型或行情配置无效。模型名称不是登录账号或邮箱；云端需填写你自己的API Key，Ollama需填写本机已安装的模型名且不填写Key。",
+    "connection_key_too_short": "这条 API Key 不到 12 个字符，已拒绝，没有保存。请换一条不少于 12 个字符的 Key。公开演示值 demo 除外，可以照常配置。",
     "connection_request_invalid": "连接请求无效。请检查标的代码、问题和上下文，或重新预览后确认发送。",
     "connection_unavailable": "连接未启用、预览已过期，或服务请求失败。请核对配置、额度和服务状态；没有自动切换服务或重试。",
     "business_invalid": "输入无效。请核对必填字段、日期、普通十进制数及证据状态；试算需账户全部持仓具有三日内同币种价格，配置比例须合计100%。",
