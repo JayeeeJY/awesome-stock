@@ -6,12 +6,14 @@
 
 1. 打开本目录  
 2. 双击 `install.command`  
-3. 粘贴你的 vault 路径（含 `.obsidian` 的那个文件夹）  
-4. 在 Obsidian 打开 `7-Repo-Board/7-Repo-Board.canvas`
+3. **在弹出的文件夹选择窗口里**，选中你的 Obsidian vault（里面有 `.obsidian` 的那个文件夹）  
+4. 终端显示「安装完成」后，回到 Obsidian 打开 `7-Repo-Board/7-Repo-Board.canvas`
 
-若提示无法打开：终端执行一次  
+若双击没反应 / 被拦截：终端执行  
 `chmod +x install.command install.sh`  
 再双击。
+
+之前如果只看到一个 `>`：那是旧版在等你粘贴路径。请用本包新版（会弹窗选文件夹）。
 
 ## Windows
 
