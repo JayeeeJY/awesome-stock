@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"hdr-g","type":"group","x":0,"y":0,"width":2400,"height":140,"label":"HEADER","color":"#878580"},
+		{"id":"hdr-f","type":"file","file":"7-Repo-Board/_header.md","x":20,"y":40,"width":2360,"height":90},
+
+		{"id":"t01-g","type":"group","x":0,"y":160,"width":1180,"height":540,"label":"01 · kepano-obsidian","color":"#205EA6"},
+		{"id":"t01-f","type":"file","file":"7-Repo-Board/tiles/01-kepano-obsidian.md","x":20,"y":200,"width":1140,"height":480},
+
+		{"id":"t02-g","type":"group","x":1220,"y":160,"width":1180,"height":540,"label":"02 · jsoncanvas · open format","color":"#5E409D"},
+		{"id":"t02-f","type":"file","file":"7-Repo-Board/tiles/02-jsoncanvas.md","x":1240,"y":200,"width":1140,"height":480},
+
+		{"id":"t03-g","type":"group","x":0,"y":720,"width":1180,"height":440,"label":"03 · obsidian-releases · every plugin + theme","color":"#24837B"},
+		{"id":"t03-f","type":"file","file":"7-Repo-Board/tiles/03-obsidian-releases.md","x":20,"y":760,"width":1140,"height":380},
+
+		{"id":"t04-g","type":"group","x":1220,"y":720,"width":1180,"height":440,"label":"04 · sample-plugin · build what's missing","color":"#BC5215"},
+		{"id":"t04-f","type":"file","file":"7-Repo-Board/tiles/04-obsidian-sample-plugin.md","x":1240,"y":760,"width":1140,"height":380},
+
+		{"id":"t05-g","type":"group","x":0,"y":1180,"width":780,"height":420,"label":"05 · 40-questions · yearly review","color":"#AF3029"},
+		{"id":"t05-f","type":"file","file":"7-Repo-Board/tiles/05-40-questions.md","x":20,"y":1220,"width":740,"height":360},
+
+		{"id":"t06-g","type":"group","x":810,"y":1180,"width":780,"height":420,"label":"06 · minimal · the clean theme","color":"#AD8301"},
+		{"id":"t06-f","type":"file","file":"7-Repo-Board/tiles/06-obsidian-minimal.md","x":830,"y":1220,"width":740,"height":360},
+
+		{"id":"t07-g","type":"group","x":1620,"y":1180,"width":780,"height":420,"label":"07 · flexoki · colors for writing + code","color":"#A02F6F"},
+		{"id":"t07-f","type":"file","file":"7-Repo-Board/tiles/07-flexoki.md","x":1640,"y":1220,"width":740,"height":360},
+
+		{"id":"ftr-g","type":"group","x":0,"y":1620,"width":2400,"height":100,"label":"NAV","color":"#878580"},
+		{"id":"ftr-f","type":"file","file":"7-Repo-Board/_footer.md","x":20,"y":1650,"width":2360,"height":55}
+	],
+	"edges":[]
+}
